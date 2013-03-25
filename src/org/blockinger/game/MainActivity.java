@@ -41,6 +41,7 @@ import org.blockinger.game.db.HighscoreOpenHelper;
 import org.blockinger.game.db.ScoreDataSource;
 
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.ListActivity;
@@ -66,6 +67,8 @@ public class MainActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+		
+		// Make Hyperlink in this textview clickable (obsolete now)
 		TextView t2 = (TextView) findViewById(R.id.TextView1);
 	    t2.setMovementMethod(LinkMovementMethod.getInstance());
 		
@@ -119,6 +122,16 @@ public class MainActivity extends ListActivity {
 			case R.id.action_settings:
 				Intent intent = new Intent(this, SettingsActivity.class);
 				startActivity(intent);
+				return true;
+			case R.id.action_about:
+				Intent intent1 = new Intent(this, AboutActivity.class);
+				startActivity(intent1);
+				return true;
+			case R.id.action_donate:
+				String url = getResources().getString(R.string.donation_url);
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(Uri.parse(url));
+				startActivity(i);
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);

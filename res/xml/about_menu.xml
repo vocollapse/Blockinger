@@ -1,4 +1,4 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!-- 
     Copyright 2013 Simon Willeke
@@ -37,11 +37,26 @@
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
   -->
  
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	    <Preference
+	        android:key="pref_version"
+	        android:summary="@string/pref_version_summary"
+	        android:title="@string/pref_version_title" />
+	    
+	    <Preference
+	        android:key="pref_license"
+	        android:summary="@string/pref_license_summary"
+	        android:title="@string/pref_license_title" />
+	    
+	    <Preference
+	        android:key="pref_license_music"
+	        android:summary="@string/pref_license_music_summary"
+	        android:title="@string/pref_license_music_title" />
+	    
+	    <Preference
+	        android:key="pref_author"
+	        android:summary="@string/pref_author_summary"
+	        android:title="@string/pref_author_title" />
 
-    <!--
-         Customize dimensions originally defined in res/values/dimens.xml (such as
-         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
-    -->
-    <dimen name="activity_horizontal_margin">128dp</dimen>
-
-</resources>
+</PreferenceScreen>

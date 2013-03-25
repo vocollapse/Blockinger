@@ -39,6 +39,41 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
+ 
+    Copyright 2013 Simon Willeke
+    contact: hamstercount@hotmail.com
+ 
+ 
+    This file is part of Blockinger.
+
+    Blockinger is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Blockinger is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Blockinger.  If not, see <http://www.gnu.org/licenses/>.
+
+    Diese Datei ist Teil von Blockinger.
+
+    Blockinger ist Freie Software: Sie können es unter den Bedingungen
+    der GNU General Public License, wie von der Free Software Foundation,
+    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
+    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+    Blockinger wird in der Hoffnung, dass es nützlich sein wird, aber
+    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
+    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+    Siehe die GNU General Public License für weitere Details.
+
+    Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+  
 
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
@@ -64,6 +99,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int View01=0x7f0d0009;
         public static final int View02=0x7f0d000e;
         public static final int View03=0x7f0d000d;
+        public static final int action_about=0x7f0d0021;
+        public static final int action_donate=0x7f0d0022;
         public static final int action_settings=0x7f0d0020;
         public static final int blockinger_list_item=0x7f0d0019;
         public static final int boardView=0x7f0d0005;
@@ -132,68 +169,74 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int synthaccord=0x7f050004;
     }
     public static final class string {
+        public static final int action_about=0x7f0a0002;
+        public static final int action_donate=0x7f0a0003;
         public static final int action_settings=0x7f0a0001;
-        public static final int apm_title=0x7f0a000b;
+        public static final int apm_title=0x7f0a000d;
         public static final int app_name=0x7f0a0000;
-        public static final int author_url=0x7f0a0036;
-        public static final int defeatDialogReturn=0x7f0a000e;
-        public static final int defeatDialogTitle=0x7f0a000d;
-        public static final int donation_url=0x7f0a0039;
-        public static final int fps_title=0x7f0a000c;
-        public static final int highscoreListDescription=0x7f0a0006;
-        public static final int highscore_title=0x7f0a0010;
-        public static final int level_title=0x7f0a0009;
-        public static final int license_url=0x7f0a0030;
-        public static final int movespeed_pref_title=0x7f0a001b;
-        public static final int musicAuthorNote=0x7f0a0011;
-        public static final int music_url=0x7f0a0033;
-        public static final int musicvolume_pref_title=0x7f0a001d;
-        public static final int playerNameInputFieldHint=0x7f0a0005;
-        public static final int pref_antialiasing_summary=0x7f0a002a;
-        public static final int pref_antialiasing_title=0x7f0a002b;
-        public static final int pref_author_summary=0x7f0a0034;
-        public static final int pref_author_title=0x7f0a0035;
-        public static final int pref_donate_summary=0x7f0a0038;
-        public static final int pref_donate_title=0x7f0a0037;
-        public static final int pref_fps_summary=0x7f0a0015;
-        public static final int pref_fps_title=0x7f0a0016;
+        public static final int defeatDialogReturn=0x7f0a0010;
+        public static final int defeatDialogTitle=0x7f0a000f;
+        public static final int donation_url=0x7f0a003d;
+        public static final int fps_title=0x7f0a000e;
+        public static final int highscoreListDescription=0x7f0a0008;
+        public static final int highscore_title=0x7f0a0012;
+        public static final int level_title=0x7f0a000b;
+        public static final int license_url=0x7f0a0035;
+        public static final int movespeed_pref_title=0x7f0a001f;
+        public static final int musicAuthorNote=0x7f0a0013;
+        public static final int music_url=0x7f0a0038;
+        public static final int musicvolume_pref_title=0x7f0a0021;
+        public static final int playerNameInputFieldHint=0x7f0a0007;
+        public static final int pref_antialiasing_summary=0x7f0a002e;
+        public static final int pref_antialiasing_title=0x7f0a002f;
+        public static final int pref_author_summary=0x7f0a0039;
+        public static final int pref_author_title=0x7f0a003a;
+        public static final int pref_donate_summary=0x7f0a003c;
+        public static final int pref_donate_title=0x7f0a003b;
+        public static final int pref_fps_summary=0x7f0a0019;
+        public static final int pref_fps_title=0x7f0a001a;
         /**  Advanced Preference Strings 
+ Advanced Preference Strings 
          */
-        public static final int pref_fpslimit_summary=0x7f0a0022;
-        public static final int pref_fpslimit_title=0x7f0a0023;
-        public static final int pref_fpslimittext_default=0x7f0a0026;
-        public static final int pref_fpslimittext_summary=0x7f0a0024;
-        public static final int pref_fpslimittext_title=0x7f0a0025;
-        public static final int pref_license_music_summary=0x7f0a0031;
-        public static final int pref_license_music_title=0x7f0a0032;
-        public static final int pref_license_summary=0x7f0a002e;
-        public static final int pref_license_title=0x7f0a002f;
-        public static final int pref_phantom_summary=0x7f0a0013;
-        public static final int pref_phantom_title=0x7f0a0014;
-        public static final int pref_rng_summary=0x7f0a0019;
-        public static final int pref_rng_title=0x7f0a0017;
-        public static final int pref_rngs_default=0x7f0a0018;
-        public static final int pref_version_summary=0x7f0a002c;
-        public static final int pref_version_title=0x7f0a002d;
-        public static final int pref_vibDurOffset_default=0x7f0a0029;
-        public static final int pref_vibDurOffset_summary=0x7f0a0027;
-        public static final int pref_vibDurOffset_title=0x7f0a0028;
-        public static final int pref_vibration_button_summary=0x7f0a001f;
-        public static final int pref_vibration_button_title=0x7f0a001e;
-        public static final int pref_vibration_events_summary=0x7f0a0021;
-        public static final int pref_vibration_events_title=0x7f0a0020;
-        public static final int quitButtonString=0x7f0a0004;
-        public static final int resumeButtonString=0x7f0a0003;
-        public static final int score_title=0x7f0a0008;
-        public static final int softdropspeed_pref_title=0x7f0a001a;
-        public static final int soundvolume_pref_title=0x7f0a001c;
-        public static final int startButtonString=0x7f0a0002;
-        public static final int tab=0x7f0a000f;
-        public static final int time_title=0x7f0a000a;
-        public static final int title_activity_game=0x7f0a0007;
+        public static final int pref_fpslimit_summary=0x7f0a0026;
+        public static final int pref_fpslimit_title=0x7f0a0027;
+        public static final int pref_fpslimittext_default=0x7f0a002a;
+        public static final int pref_fpslimittext_summary=0x7f0a0028;
+        public static final int pref_fpslimittext_title=0x7f0a0029;
+        public static final int pref_license_music_summary=0x7f0a0036;
+        public static final int pref_license_music_title=0x7f0a0037;
+        public static final int pref_license_summary=0x7f0a0033;
+        public static final int pref_license_title=0x7f0a0034;
+        public static final int pref_phantom_summary=0x7f0a0017;
+        public static final int pref_phantom_title=0x7f0a0018;
+        public static final int pref_rng_summary=0x7f0a001d;
+        public static final int pref_rng_title=0x7f0a001b;
+        public static final int pref_rngs_default=0x7f0a001c;
+        public static final int pref_version_summary=0x7f0a0030;
+        public static final int pref_version_title=0x7f0a0031;
+        public static final int pref_vibDurOffset_default=0x7f0a002d;
+        public static final int pref_vibDurOffset_summary=0x7f0a002b;
+        public static final int pref_vibDurOffset_title=0x7f0a002c;
+        public static final int pref_vibration_button_summary=0x7f0a0023;
+        public static final int pref_vibration_button_title=0x7f0a0022;
+        public static final int pref_vibration_events_summary=0x7f0a0025;
+        public static final int pref_vibration_events_title=0x7f0a0024;
+        public static final int quitButtonString=0x7f0a0006;
+        public static final int repository_url=0x7f0a0032;
+        public static final int resumeButtonString=0x7f0a0005;
+        public static final int score_title=0x7f0a000a;
+        public static final int softdropspeed_pref_title=0x7f0a001e;
+        public static final int soundvolume_pref_title=0x7f0a0020;
+        public static final int startButtonString=0x7f0a0004;
+        public static final int tab=0x7f0a0011;
+        public static final int time_title=0x7f0a000c;
+        public static final int title_activity_about=0x7f0a0015;
+        public static final int title_activity_donate=0x7f0a0016;
+        public static final int title_activity_game=0x7f0a0009;
         /**  Preference Strings 
+ Preference Strings 
          */
-        public static final int title_activity_settings=0x7f0a0012;
+        public static final int title_activity_settings=0x7f0a0014;
     }
     public static final class style {
         /** 
@@ -213,6 +256,41 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
     
  API 11 theme customizations can go here. 
+ 
+    Copyright 2013 Simon Willeke
+    contact: hamstercount@hotmail.com
+ 
+ 
+    This file is part of Blockinger.
+
+    Blockinger is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Blockinger is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Blockinger.  If not, see <http://www.gnu.org/licenses/>.
+
+    Diese Datei ist Teil von Blockinger.
+
+    Blockinger ist Freie Software: Sie können es unter den Bedingungen
+    der GNU General Public License, wie von der Free Software Foundation,
+    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
+    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+    Blockinger wird in der Hoffnung, dass es nützlich sein wird, aber
+    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
+    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+    Siehe die GNU General Public License für weitere Details.
+
+    Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+  
 
         Base application theme for API 14+. This theme completely replaces
         AppBaseTheme from BOTH res/values/styles.xml and
@@ -234,7 +312,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int FullscreenTheme=0x7f0b0002;
     }
     public static final class xml {
-        public static final int preferences=0x7f040000;
+        public static final int about_menu=0x7f040000;
+        public static final int preferences=0x7f040001;
     }
     public static final class styleable {
         /** 

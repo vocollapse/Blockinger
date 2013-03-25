@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+    Copyright 2013 Simon Willeke
+    contact: hamstercount@hotmail.com
+ -->
+
+<!-- 
+    This file is part of Blockinger.
+
+    Blockinger is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Blockinger is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Blockinger.  If not, see <http://www.gnu.org/licenses/>.
+
+    Diese Datei ist Teil von Blockinger.
+
+    Blockinger ist Freie Software: Sie können es unter den Bedingungen
+    der GNU General Public License, wie von der Free Software Foundation,
+    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
+    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+    Blockinger wird in der Hoffnung, dass es nützlich sein wird, aber
+    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
+    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+    Siehe die GNU General Public License für weitere Details.
+
+    Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+  -->
+ 
+<resources>
+    
+    <string name="app_name">Blockinger</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_about">Über Blockinger</string>
+    <string name="action_donate">Spenden</string>
+    <string name="startButtonString">Neues Spiel</string>
+    <string name="resumeButtonString">Fortsetzen</string>
+    <string name="quitButtonString">Beenden</string>
+    <string name="playerNameInputFieldHint">Wähle einen Spielernamen</string>
+    <string name="highscoreListDescription">Highscores</string>
+
+    <string name="title_activity_game">Blockinger</string>
+    <string name="score_title">Punkte</string>
+    <string name="level_title">Level</string>
+    <string name="time_title">Zeit</string>
+    <string name="apm_title">APM</string>
+    <string name="fps_title">FPS</string>
+
+    <string name="defeatDialogTitle">Game Over</string>
+    <string name="defeatDialogReturn">Zurück</string>
+    
+    <string name="tab">\u0009</string>
+    
+    <string name="highscore_title">Highscores</string>
+    
+    <string name="musicAuthorNote">Musik von Pornophonique</string>
+    
+    
+    <!-- Preference Strings -->
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="title_activity_about">Über Blockinger</string>
+    <string name="title_activity_donate">Spenden</string>
+    
+    <string name="pref_phantom_summary">Zeigt dort einen Schatten, wo das aktive Tetrimino landen wird</string>
+    <string name="pref_phantom_title">Phantom</string>
+    
+    <string name="pref_fps_summary">zeigt die aktuelle Bildwiderholrate (Frames per Second) unter "APM" an</string>
+    <string name="pref_fps_title">FPS</string>
+    
+    <string name="pref_rng_title">Zufallsgenerator</string>
+    <string name="pref_rngs_default">sevenbag</string>
+    <string name="pref_rng_summary">Wähle, wie die Reihenfolge der Tetriminos generiert werden soll. 7-Bag-Randomization ist sehr empfehlenswert und wird auch im wettkampfgeeigneten Tetris eingesetzt</string>
+    <string-array name ="randomizer_preference_array">
+        <item>7-Bag-Randomization (standard)</item>
+        <item>Rainer Zufall</item>
+    </string-array>
+    <string-array name ="randomizer_preference_values">
+        <item>sevenbag</item>
+        <item>plain</item>
+    </string-array>
+    
+    <string name="softdropspeed_pref_title">Soft Drop Geschwindigkeit</string>
+    
+    <string name="movespeed_pref_title">Horizontale Geschwindigkeit</string>
+    
+    <string name="soundvolume_pref_title">Effektlautstärke</string>
+    
+    <string name="musicvolume_pref_title">Musiklautstärke</string>
+    
+    <string name="pref_vibration_button_title">Knopf-Vibration</string>
+    <string name="pref_vibration_button_summary">Kurze Vibration bei Knopfdruck als haptisches Feedback</string>
+    
+    <string name="pref_vibration_events_title">Ereignis-Vibration</string>
+    <string name="pref_vibration_events_summary">Lange Vibration bei wichtigen Spielereignissen</string>
+    
+    <!-- Advanced Preference Strings -->
+    <string name="pref_fpslimit_summary">Reduziert den Energieverbrauch deutlich aber kann das Spiel verlangsamen</string>
+    <string name="pref_fpslimit_title">FPS begrenzen</string>
+    
+    <string name="pref_fpslimittext_summary">Das Spiel versucht, diese Bildwiederholrate so gut wie möglich einzuhalten</string>
+    <string name="pref_fpslimittext_title">Ziel-FPS</string>
+    <string name="pref_fpslimittext_default">35</string>
+    
+    <string name="pref_vibDurOffset_summary">Erhöht die Dauer aller Vibrationen, um die Beschleunigungszeit des Vibrators zu kompensieren (Zeit in Millisekunden)</string>
+    <string name="pref_vibDurOffset_title">Kompensation für Vibrationsverzögerung</string>
+    <string name="pref_vibDurOffset_default">10</string>
+    
+    <string name="pref_antialiasing_summary">Verbessert die Darstellungsqualität von text deutlich. Deaktivieren reduziert die Rechenlast</string>
+    <string name="pref_antialiasing_title">Anti-Aliasing für Text</string>
+    
+    
+    
+    <string name="pref_version_summary">0.1.0\n<i>Hier berühren, um das öffentliche Verzeichnis dieses Projekts anzusehen</i></string>
+    <string name="pref_version_title">Version</string>
+    <string name="repository_url">https://github.com/hamstercount/Blockinger</string>
+    
+    <string name="pref_license_summary">Blockinger ist Freie Software: lizensiert unter der GNU General Public License <b>GPLv3</b>, wie von der Free Software Foundation veröffentlicht.\n<i>Hier berühren, um die Lizenz online anzusehen</i></string>
+    <string name="pref_license_title">Lizenz</string>
+    <string name="license_url">http://www.gnu.org/licenses/gpl-3.0</string>
+    
+    <string name="pref_license_music_summary">\"lemmings in love (karaoke)\" und \"sad robot (karaoke)\" von Pornophonique. Lizensiert unter einer Creative Commons Namensnennung-Nichtkommerziell-Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz <b>CC BY-NC-SA 3.0 DE</b>.\n<i>Hier berühren, um zur Website der Künstler zu gelangen</i></string>
+    <string name="pref_license_music_title">Musik Lizenz</string>
+    <string name="music_url">http://www.pornophonique.de</string>
+    
+    <string name="pref_author_summary">Simon Willeke\n<i>Hier berühren, um den Autor zu kontaktieren (z.B. für Anregungen, Kritik, Wünsche und alles was mit diesem Projekt zu tun hat)</i></string>
+    <string name="pref_author_title">Autor</string>
+    
+    <string name="pref_donate_title">Spenden</string>
+    <string name="pref_donate_summary">Wenn Sie mit dieser Software zufrieden sind, un dem Autor gerne etwas gutes tun möchten, können Sie eine Spende tätigen.\n<i>Hier berühren, um einen Link zur PayPal-Spendenseite des Autors zu öffnen</i></string>
+    <string name="donation_url">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick%26hosted_button_id=H6VS9SNRHMJSS</string>
+    
+</resources>

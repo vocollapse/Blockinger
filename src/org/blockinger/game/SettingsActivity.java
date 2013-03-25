@@ -37,13 +37,10 @@
 
 package org.blockinger.game;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
@@ -70,7 +67,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_vibDurOffset", ""));
 
         
-        pref = findPreference("pref_donate");
+        /*pref = findPreference("pref_donate");
         pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			
 			@Override
@@ -81,46 +78,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 				startActivity(i);
 				return true;
 			}
-		});
-        
-        pref = findPreference("pref_license_music");
-        pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				String url = getResources().getString(R.string.music_url);
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(url));
-				startActivity(i);
-				return true;
-			}
-		});
-        
-        pref = findPreference("pref_license");
-        pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				String url = getResources().getString(R.string.license_url);
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(url));
-				startActivity(i);
-				return true;
-			}
-		});
-        
-        pref = findPreference("pref_author");
-        pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				String url = getResources().getString(R.string.author_url);
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(url));
-				startActivity(i);
-				return true;
-			}
-		});
+		});*/
         
         
 	}
