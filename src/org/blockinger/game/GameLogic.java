@@ -120,7 +120,7 @@ public class GameLogic {
 	private int spawn_delay;
 	private int piece_start_x;
 	private int vibrationOffset;
-	private long softdroppresstime;
+	private long shortVibeTime;
 	
 	private GameLogic() {
 		date = new GregorianCalendar();
@@ -150,7 +150,7 @@ public class GameLogic {
 		nextPlayerDropTime = 0;
 		playerMoveInterval = 0;
 		nextPlayerMoveTime = 0;
-		softdroppresstime = 0;
+		shortVibeTime = 0;
 		playerSoftDrop = false;
 		leftMove = false;
 		rightMove = false;
@@ -192,7 +192,7 @@ public class GameLogic {
 		level = 0;
 		score = 0;
 		consecutiveBonusScore = 0;
-		softdroppresstime = 0;
+		shortVibeTime = 0;
 		multitetris = false;
 		maxLevel = cont.getResources().getInteger(R.integer.levels);
 		nextDropTime = dropIntervals[level];
@@ -380,8 +380,9 @@ public class GameLogic {
 	public void vibrateShort() {
 		if (!buttonVibrationEnabled || v == null)
 			return;
-		v.cancel();
-		v.vibrate(5 + vibrationOffset);
+		//v.cancel();
+		if((gameTime - shortVibeTime) > (150 + vibrationOffset))
+			v.vibrate(5 + vibrationOffset);
 	}
 
 
@@ -409,17 +410,16 @@ public class GameLogic {
 
 	public void downButtonReleased() {
 		clearPlayerSoftDrop = true;
-		if((gameTime - softdroppresstime) > 200)
-			vibrateShort();
+		vibrateShort();
 	    //Thread.yield();
 	}
 
 	public void downButtonPressed() {
-		softdroppresstime = gameTime;
 		actions++;
 		playerSoftDrop = true;
 		clearPlayerSoftDrop = false;
 		vibrateShort();
+		shortVibeTime = gameTime;
 		nextPlayerDropTime = gameTime;
     	//Thread.yield();
 	}
@@ -601,6 +601,7 @@ public class GameLogic {
 			if(gameTime >= nextPlayerMoveTime) {
 				if(activePieces[activeIndex].moveLeft()) {
 					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
+					shortVibeTime = gameTime;
 					dropPhantom = true;
 				} else
 					vibrateWall();
@@ -618,6 +619,7 @@ public class GameLogic {
 			if(gameTime >= nextPlayerMoveTime) {
 				if(activePieces[activeIndex].moveRight()) {
 					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
+					shortVibeTime = gameTime;
 					dropPhantom = true;
 				} else
 					vibrateWall();

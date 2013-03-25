@@ -56,9 +56,9 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
         Preference pref = findPreference("pref_rng");
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_rng", "").equals("sevenbag"))
-        	pref.setSummary("7-Bag-Randomization");
+        	pref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[0]);//"7-Bag-Randomization");
         else
-        	pref.setSummary("Plain Random");
+        	pref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[1]);
         
         pref = findPreference("pref_fpslimittext");
         pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_fpslimittext", ""));
@@ -66,19 +66,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         pref = findPreference("pref_vibDurOffset");
         pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_vibDurOffset", ""));
 
-        
-        /*pref = findPreference("pref_donate");
-        pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				String url = getResources().getString(R.string.donation_url);
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(url));
-				startActivity(i);
-				return true;
-			}
-		});*/
         
         
 	}
@@ -91,9 +78,9 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             Preference connectionPref = findPreference(key);
             // Set summary to be the user-description for the selected value
             if(sharedPreferences.getString(key, "").equals("sevenbag"))
-            	connectionPref.setSummary("7-Bag-Randomization");
+            	connectionPref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[0]);//"7-Bag-Randomization");
             else
-            	connectionPref.setSummary("Plain Random");
+            	connectionPref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[1]);
         }
 		if (key.equals("pref_fpslimittext")) {
             Preference connectionPref = findPreference(key);

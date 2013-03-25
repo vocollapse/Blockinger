@@ -103,7 +103,7 @@ public class AboutActivity extends PreferenceActivity {
 				i.setData(Uri.parse(url));
 				startActivity(i);*/
 				Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-		        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"hamstercount@hotmail.com"});
+		        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{getResources().getString(R.string.pref_author_url)});
 		        emailIntent.setType("plain/text");
 		        startActivity(Intent.createChooser(emailIntent, "Send email..."));
 				return true;

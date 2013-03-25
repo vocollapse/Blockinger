@@ -97,8 +97,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int LinearLayout2=0x7f0d0006;
         public static final int TextView1=0x7f0d0018;
         public static final int View01=0x7f0d0009;
-        public static final int View02=0x7f0d000e;
-        public static final int View03=0x7f0d000d;
+        public static final int View02=0x7f0d0007;
+        public static final int View03=0x7f0d000e;
         public static final int action_about=0x7f0d0021;
         public static final int action_donate=0x7f0d0022;
         public static final int action_settings=0x7f0d0020;
@@ -125,8 +125,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int text1=0x7f0d001a;
         public static final int text2=0x7f0d001b;
         public static final int textView1=0x7f0d0010;
-        public static final int top_right_spacer=0x7f0d0007;
-        public static final int view1=0x7f0d000c;
+        public static final int top_right_spacer=0x7f0d000c;
+        public static final int view1=0x7f0d000d;
         public static final int view2=0x7f0d000f;
     }
     public static final class integer {
@@ -176,7 +176,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int app_name=0x7f0a0000;
         public static final int defeatDialogReturn=0x7f0a0010;
         public static final int defeatDialogTitle=0x7f0a000f;
-        public static final int donation_url=0x7f0a003d;
+        public static final int donation_url=0x7f0a003e;
         public static final int fps_title=0x7f0a000e;
         public static final int highscoreListDescription=0x7f0a0008;
         public static final int highscore_title=0x7f0a0012;
@@ -191,8 +191,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int pref_antialiasing_title=0x7f0a002f;
         public static final int pref_author_summary=0x7f0a0039;
         public static final int pref_author_title=0x7f0a003a;
-        public static final int pref_donate_summary=0x7f0a003c;
-        public static final int pref_donate_title=0x7f0a003b;
+        public static final int pref_author_url=0x7f0a003b;
+        public static final int pref_category_advanced=0x7f0a0042;
+        public static final int pref_category_other=0x7f0a0041;
+        public static final int pref_category_sound=0x7f0a003f;
+        public static final int pref_category_vibration=0x7f0a0040;
+        public static final int pref_donate_summary=0x7f0a003d;
+        public static final int pref_donate_title=0x7f0a003c;
         public static final int pref_fps_summary=0x7f0a0019;
         public static final int pref_fps_title=0x7f0a001a;
         /**  Advanced Preference Strings 

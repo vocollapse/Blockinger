@@ -159,93 +159,50 @@ public class BlockBoardView extends SurfaceView implements Callback {
 		if(c==null)
 			return;
 
-		
-		// [DEPRECATED] Screen Orientation Switch
-/*		if (((float)(c.getWidth() / c.getHeight())) < 0.73f) {
-			if (!portraitInitialized){
-				BlockBoard.getInstance().invalidate();
-				landscapeInitialized = false;
-				portraitInitialized = true;
-				squaresize = (int) ((c.getWidth() - 2*columnOffset)/columns);
-				columnOffset = (int)((c.getWidth() - squaresize*columns)/2);
-				gridRowBorder = rowOffset + squaresize*rows;
-				gridColumnBorder = columnOffset + squaresize*columns;
-				prev_top = gridRowBorder + getResources().getInteger(R.integer.padding_columns)*squaresize;
-				prev_right = c.getWidth() - columnOffset;
-				prev_bottom = prev_top + 4*squaresize;
-				prev_left = prev_right - 4*squaresize;
-				textLeft = columnOffset;
-				textTop = prev_top;
-				textRight = prev_left - 2*squaresize;
-				textBottom = c.getHeight() - rowOffset - squaresize;
-				textSizeH = 1;
+		if (!landscapeInitialized){
+			int fpsenabled = 0;
+			if(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("pref_fps", false))
+				fpsenabled = 1;
+			
+			BlockBoard.getInstance().invalidate();
+			//portraitInitialized = false;
+			landscapeInitialized = true;
+			squaresize   = (int)(((c.getHeight()-1) - 2*rowOffset)/rows);
+			columnOffset = (int)(((c.getWidth()-1) - squaresize*(getResources().getInteger(R.integer.padding_columns)+4+columns))/2);
+			gridRowBorder = rowOffset + squaresize*rows;
+			gridColumnBorder = columnOffset + squaresize*columns;
+			prev_top = rowOffset;
+			prev_bottom = rowOffset + 4*squaresize;
+			prev_left = gridColumnBorder + getResources().getInteger(R.integer.padding_columns)*squaresize;
+			prev_right = prev_left + 4*squaresize;
+			textLeft = prev_left;
+			textTop = prev_bottom + 2*squaresize;
+			textRight = (c.getWidth()-1) - columnOffset;
+			textBottom = (c.getHeight()-1) - rowOffset - squaresize;
+			textSizeH = 1;
 
-				// Adaptive Text Size Setup
-				textPaint.setTextSize(textSizeH + 1);
-				while(textPaint.measureText("00:00:00") < (textRight - textLeft)) {
-					//stuff
-					textPaint.getTextBounds((String)"Level:32", 0, 6, textRect);
-					textHeight = textRect.height();
-					textEmptySpacing = ((textBottom - textTop) - (textLines*(textHeight + 3))) / (3 + getResources().getInteger(R.integer.enable_fps_text));
-					if(textEmptySpacing < 10)
-						break;
-					
-					textSizeH++;
-					textPaint.setTextSize(textSizeH + 1);
-				}
-				textPaint.setTextSize(textSizeH);
+			// Adaptive Text Size Setup
+			textPaint.setTextSize(textSizeH + 1);
+			while(textPaint.measureText("00:00:00") < (textRight - textLeft)) {
+				//stuff
 				textPaint.getTextBounds((String)"Level:32", 0, 6, textRect);
-				textHeight = textRect.height() + 3;
-				textEmptySpacing = ((textBottom - textTop) - (textLines*(textHeight))) / (3 + getResources().getInteger(R.integer.enable_fps_text));
-			}
-			//doDrawPortrait(c, fps);
-		} else {*/
-			if (!landscapeInitialized){
-				int fpsenabled = 0;
-				if(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("pref_fps", false))
-					fpsenabled = 1;
+				textHeight = textRect.height();
+				textEmptySpacing = ((textBottom - textTop) - (textLines*(textHeight + 3))) / (3 + fpsenabled);
+				if(textEmptySpacing < 10)
+					break;
 				
-				BlockBoard.getInstance().invalidate();
-				//portraitInitialized = false;
-				landscapeInitialized = true;
-				squaresize  = (int) ((c.getHeight() - 2*rowOffset)/rows);
-				columnOffset = (int)((c.getWidth() - squaresize*(getResources().getInteger(R.integer.padding_columns)+4+columns))/2);
-				gridRowBorder = rowOffset + squaresize*rows;
-				gridColumnBorder = columnOffset + squaresize*columns;
-				prev_top = rowOffset;
-				prev_bottom = rowOffset + 4*squaresize;
-				prev_left = gridColumnBorder + getResources().getInteger(R.integer.padding_columns)*squaresize;
-				prev_right = prev_left + 4*squaresize;
-				textLeft = prev_left;
-				textTop = prev_bottom + 2*squaresize;
-				textRight = c.getWidth() - columnOffset;
-				textBottom = c.getHeight() - rowOffset - squaresize;
-				textSizeH = 1;
-
-				// Adaptive Text Size Setup
+				textSizeH++;
 				textPaint.setTextSize(textSizeH + 1);
-				while(textPaint.measureText("00:00:00") < (textRight - textLeft)) {
-					//stuff
-					textPaint.getTextBounds((String)"Level:32", 0, 6, textRect);
-					textHeight = textRect.height();
-					textEmptySpacing = ((textBottom - textTop) - (textLines*(textHeight + 3))) / (3 + fpsenabled);
-					if(textEmptySpacing < 10)
-						break;
-					
-					textSizeH++;
-					textPaint.setTextSize(textSizeH + 1);
-				}
-				textPaint.setTextSize(textSizeH);
-				textPaint.getTextBounds((String)"Level:32", 0, 6, textRect);
-				textHeight = textRect.height() + 3;
-				textEmptySpacing = ((textBottom - textTop) - (textLines*(textHeight))) / (3 + fpsenabled);
 			}
-			//doDrawLandscape(c, fps);
-		//}
+			textPaint.setTextSize(textSizeH);
+			textPaint.getTextBounds((String)"Level:32", 0, 6, textRect);
+			textHeight = textRect.height() + 3;
+			textEmptySpacing = ((textBottom - textTop) - (textLines*(textHeight))) / (3 + fpsenabled);
+		}
 
 		// Background
 		paint.setColor(getResources().getColor(color.background_dark));
-		c.drawRect(0, 0, c.getWidth(), c.getHeight(), paint);
+		c.drawRect(0, 0, c.getWidth()-1, c.getHeight()-1, paint);
 		
 		blockBoard.draw(columnOffset, rowOffset, squaresize, c);
 		
@@ -303,40 +260,6 @@ public class BlockBoardView extends SurfaceView implements Callback {
 		c.drawLine(right, bottom, right, top, paint);
 		c.drawLine(right, bottom, left, bottom, paint);
 	}
-
-	/*private void drawText(int x, int y, Canvas c, int fps) {
-	    // draw Level Text
-		paint.setColor(getResources().getColor(color.white));
-		paint.setTextSize(getResources().getInteger(R.integer.text_size));
-		c.drawText(getResources().getString(R.string.level_title), x, y, paint);
-		c.drawText(gameLogic.getLevelString(), x, y + getResources().getInteger(R.integer.text_size) + 3, paint);
-
-	    // draw Score Text
-		paint.setColor(getResources().getColor(color.white));
-		paint.setTextSize(getResources().getInteger(R.integer.text_size));
-		c.drawText(getResources().getString(R.string.score_title), x, y + getResources().getInteger(R.integer.text_padding), paint);
-		c.drawText(gameLogic.getScoreString(), x, y + getResources().getInteger(R.integer.text_padding)+getResources().getInteger(R.integer.text_size) + 3, paint);
-
-	    // draw Time Text
-		paint.setColor(getResources().getColor(color.white));
-		paint.setTextSize(getResources().getInteger(R.integer.text_size));
-		c.drawText(getResources().getString(R.string.time_title), x, y + 2*getResources().getInteger(R.integer.text_padding), paint);
-		c.drawText(gameLogic.getTimeString(), x, y + 2*getResources().getInteger(R.integer.text_padding) + getResources().getInteger(R.integer.text_size) + 3, paint);
-
-	    // draw APM Text
-		paint.setColor(getResources().getColor(color.white));
-		paint.setTextSize(getResources().getInteger(R.integer.text_size));
-		c.drawText(getResources().getString(R.string.apm_title), x, y + 3*getResources().getInteger(R.integer.text_padding), paint);
-		c.drawText(gameLogic.getAPMString(), x, y + 3*getResources().getInteger(R.integer.text_padding) + getResources().getInteger(R.integer.text_size) + 3, paint);
-
-		if(!getResources().getBoolean(R.integer.enable_fps_text))
-			return;
-	    // draw FPS Text
-		paint.setColor(getResources().getColor(color.white));
-		paint.setTextSize(getResources().getInteger(R.integer.text_size));
-		c.drawText(getResources().getString(R.string.fps_title), x, y + 4*getResources().getInteger(R.integer.text_padding), paint);
-		c.drawText("" + fps, x, y + 4*getResources().getInteger(R.integer.text_padding) + getResources().getInteger(R.integer.text_size) + 3, paint);
-	}*/
 
 	private void drawTextFillBox(Canvas c, int fps) {	
 		

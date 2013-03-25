@@ -120,23 +120,30 @@
     
     
     
-    <string name="pref_version_summary">0.1.0\n<i>Touch here to view the public repository of this project</i></string>
+    <string name="pref_version_summary">0.1.0\nTouch here to view the public repository of this project</string>
     <string name="pref_version_title">Version</string>
     <string name="repository_url">https://github.com/hamstercount/Blockinger</string>
     
-    <string name="pref_license_summary">Blockinger is free software: licensed under the GNU General Public License <b>GPLv3</b> as published by the Free Software Foundation.\n<i> Touch here to view this license online</i></string>
+    <string name="pref_license_summary">Blockinger is free software: licensed under the GNU General Public License (GPLv3) as published by the Free Software Foundation.\nTouch here to view this license online</string>
     <string name="pref_license_title">License Information</string>
     <string name="license_url">http://www.gnu.org/licenses/gpl-3.0</string>
     
-    <string name="pref_license_music_summary">\"lemmings in love (karaoke)\" and \"sad robot (karaoke)\" by Pornophonique. Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Germany license <b>CC BY-NC-SA 3.0 DE</b>.\n<i>Touch here to open the artist\'s website</i></string>
+    <string name="pref_license_music_summary">\"lemmings in love (karaoke)\" and \"sad robot (karaoke)\" by Pornophonique. Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Germany license (CC BY-NC-SA 3.0 DE).\nTouch here to open the artist\'s website</string>
     <string name="pref_license_music_title">Music Attribution</string>
     <string name="music_url">http://www.pornophonique.de</string>
     
-    <string name="pref_author_summary">Simon Willeke\n<i>Touch here to contact the author for suggestions, feedback or anything related to this project</i></string>
+    <string name="pref_author_summary">Simon Willeke\nTouch here to contact the author for suggestions, feedback or anything related to this project</string>
     <string name="pref_author_title">Author</string>
+    <string name="pref_author_url">hamstercount@hotmail.com</string>
     
     <string name="pref_donate_title">Donate</string>
-    <string name="pref_donate_summary">If you are delighted by this Software and would like to let the Author benefit as well, you can place a Donation as you like.\n<i>Touch here to open a weblink</i></string>
-    <string name="donation_url">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick%26hosted_button_id=H6VS9SNRHMJSS</string>
+    <string name="pref_donate_summary">If you are delighted by this Software and would like to let the Author benefit as well, you can place a Donation as you like.\nTouch here to open a weblink</string>
+    <string name="donation_url">"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=H6VS9SNRHMJSS"</string>
 
+    
+    
+    <string name="pref_category_sound">SOUND</string>
+    <string name="pref_category_vibration">VIBRATION</string>
+    <string name="pref_category_other">OTHER</string>
+    <string name="pref_category_advanced">Advanced</string>
 </resources>

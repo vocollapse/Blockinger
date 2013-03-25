@@ -59,8 +59,6 @@
     <string name="defeatDialogTitle">Game Over</string>
     <string name="defeatDialogReturn">Zurück</string>
     
-    <string name="tab">\u0009</string>
-    
     <string name="highscore_title">Highscores</string>
     
     <string name="musicAuthorNote">Musik von Pornophonique</string>
@@ -84,10 +82,6 @@
         <item>7-Bag-Randomization (standard)</item>
         <item>Rainer Zufall</item>
     </string-array>
-    <string-array name ="randomizer_preference_values">
-        <item>sevenbag</item>
-        <item>plain</item>
-    </string-array>
     
     <string name="softdropspeed_pref_title">Soft Drop Geschwindigkeit</string>
     
@@ -109,34 +103,34 @@
     
     <string name="pref_fpslimittext_summary">Das Spiel versucht, diese Bildwiederholrate so gut wie möglich einzuhalten</string>
     <string name="pref_fpslimittext_title">Ziel-FPS</string>
-    <string name="pref_fpslimittext_default">35</string>
     
     <string name="pref_vibDurOffset_summary">Erhöht die Dauer aller Vibrationen, um die Beschleunigungszeit des Vibrators zu kompensieren (Zeit in Millisekunden)</string>
     <string name="pref_vibDurOffset_title">Kompensation für Vibrationsverzögerung</string>
-    <string name="pref_vibDurOffset_default">10</string>
     
-    <string name="pref_antialiasing_summary">Verbessert die Darstellungsqualität von text deutlich. Deaktivieren reduziert die Rechenlast</string>
+    <string name="pref_antialiasing_summary">Verbessert die Darstellungsqualität von Text deutlich. Deaktivieren reduziert die Rechenlast</string>
     <string name="pref_antialiasing_title">Anti-Aliasing für Text</string>
     
     
     
-    <string name="pref_version_summary">0.1.0\n<i>Hier berühren, um das öffentliche Verzeichnis dieses Projekts anzusehen</i></string>
+    <string name="pref_version_summary">0.1.0\nHier berühren, um das öffentliche Quelltextverzeichnis dieses Projekts anzusehen</string>
     <string name="pref_version_title">Version</string>
-    <string name="repository_url">https://github.com/hamstercount/Blockinger</string>
     
-    <string name="pref_license_summary">Blockinger ist Freie Software: lizensiert unter der GNU General Public License <b>GPLv3</b>, wie von der Free Software Foundation veröffentlicht.\n<i>Hier berühren, um die Lizenz online anzusehen</i></string>
+    <string name="pref_license_summary">Blockinger ist Freie Software: lizensiert unter der GNU General Public License (GPLv3), wie von der Free Software Foundation veröffentlicht.\nHier berühren, um die Lizenz online anzusehen</string>
     <string name="pref_license_title">Lizenz</string>
-    <string name="license_url">http://www.gnu.org/licenses/gpl-3.0</string>
     
-    <string name="pref_license_music_summary">\"lemmings in love (karaoke)\" und \"sad robot (karaoke)\" von Pornophonique. Lizensiert unter einer Creative Commons Namensnennung-Nichtkommerziell-Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz <b>CC BY-NC-SA 3.0 DE</b>.\n<i>Hier berühren, um zur Website der Künstler zu gelangen</i></string>
+    <string name="pref_license_music_summary">\"lemmings in love (karaoke)\" und \"sad robot (karaoke)\" von Pornophonique. Lizensiert unter einer Creative Commons Namensnennung-Nichtkommerziell-Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (CC BY-NC-SA 3.0 DE).\nHier berühren, um zur Website der Künstler zu gelangen</string>
     <string name="pref_license_music_title">Musik Lizenz</string>
-    <string name="music_url">http://www.pornophonique.de</string>
     
-    <string name="pref_author_summary">Simon Willeke\n<i>Hier berühren, um den Autor zu kontaktieren (z.B. für Anregungen, Kritik, Wünsche und alles was mit diesem Projekt zu tun hat)</i></string>
+    <string name="pref_author_summary">Simon Willeke\nHier berühren, um den Autor z.B. für Anregungen, Kritik, Wünsche und alles was dieses Projekt anbelangt zu kontaktieren</string>
     <string name="pref_author_title">Autor</string>
     
     <string name="pref_donate_title">Spenden</string>
-    <string name="pref_donate_summary">Wenn Sie mit dieser Software zufrieden sind, un dem Autor gerne etwas gutes tun möchten, können Sie eine Spende tätigen.\n<i>Hier berühren, um einen Link zur PayPal-Spendenseite des Autors zu öffnen</i></string>
-    <string name="donation_url">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick%26hosted_button_id=H6VS9SNRHMJSS</string>
+    <string name="pref_donate_summary">Wenn Sie mit dieser Software zufrieden sind, un dem Autor gerne etwas gutes tun möchten, können Sie eine Spende tätigen.\nHier berühren, um einen Link zur PayPal-Spendenseite des Autors zu öffnen</string>
     
+    
+    
+    <string name="pref_category_sound">TON</string>
+    <string name="pref_category_vibration">VIBRATION</string>
+    <string name="pref_category_other">SONSTIGES</string>
+    <string name="pref_category_advanced">Erweitert</string>
 </resources>
