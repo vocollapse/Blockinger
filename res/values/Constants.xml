@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="standardGameBackground">#303030</color>
+    <color name="square_blue">#BC8DBF</color>
+    <color name="square_orange">#FBAF5C</color>
+    <color name="square_yellow">#FFF467</color>
+    <color name="square_red">#F7977A</color>
+    <color name="square_green">#ACD372</color>
+    <color name="square_magenta">#998675</color>
+    <color name="square_cyan">#7BCDC8</color>
+    <color name="square_empty">#00000000</color>
+    <color name="square_error">#FFFFFF</color>
+    <integer name="spalten">10</integer>
+    <integer name="zeilen">18</integer>
+    <integer name="spaltenoffset">50</integer>
+    <integer name="zeilenoffset">10</integer>
+    <integer name="padding_columns">2</integer>
+    
+    <integer name="piece_start_x">3</integer>
+    
+    <integer name="spawn_delay">200</integer>
+    
+    <integer name="singleLineScore">10</integer>
+    <integer name="doubleLineScore">30</integer>
+    <integer name="trippleLineScore">50</integer>
+    <integer name="quadLineScore">80</integer>
+    <integer name="multiTetrisScore">120</integer>
+    <integer name="hardDropBonusFactor">18</integer> <!-- number of lines necessary to double the score -->
+    
+   
+    <integer name="clearAnimation_enableFlash">1</integer>
+    <integer name="clearAnimation_flashCount">3</integer>
+    <integer name="clearAnimation_flashInterval">200</integer>
+    <integer name="clearAnimation_enableBurst">0</integer>
+    <integer name="clearAnimation_burstDuration">200</integer>
+    
+    <integer name="levels">30</integer>
+    <integer-array name="intervals">
+          <item>1693</item>
+          <item>1524</item>
+          <item>1372</item>
+          <item>1235</item>
+          <item>1111</item>
+          <item>900</item>
+          <item>810</item>
+          <item>729</item>
+          <item>656</item>
+          <item>590</item>
+          <item>531</item>
+          <item>478</item>
+          <item>430</item>
+          <item>387</item>
+          <item>349</item>
+          <item>314</item>
+          <item>282</item>
+          <item>254</item>
+          <item>229</item>
+          <item>206</item>
+          <item>185</item>
+          <item>167</item>
+          <item>150</item>
+          <item>135</item>
+          <item>122</item>
+          <item>109</item>
+          <item>98</item>
+          <item>89</item>
+          <item>80</item>
+          <item>72</item>
+          <item>65</item>
+     </integer-array>
+     <integer-array name="line_thresholds">
+          <item>10</item>
+          <item>20</item>
+          <item>30</item>
+          <item>40</item>
+          <item>50</item>
+          <item>60</item>
+          <item>70</item>
+          <item>80</item>
+          <item>90</item>
+          <item>100</item>
+          <item>110</item>
+          <item>120</item>
+          <item>130</item>
+          <item>140</item>
+          <item>150</item>
+          <item>160</item>
+          <item>170</item>
+          <item>180</item>
+          <item>190</item>
+          <item>200</item>
+          <item>210</item>
+          <item>220</item>
+          <item>230</item>
+          <item>240</item>
+          <item>250</item>
+          <item>260</item>
+          <item>270</item>
+          <item>280</item>
+          <item>290</item>
+          <item>300</item>
+          <item>310</item>
+          <item>320</item>
+          <item>330</item>
+          <item>340</item>
+          <item>350</item>
+          <item>360</item>
+          <item>370</item>
+          <item>380</item>
+          <item>390</item>
+          <item>400</item>
+          <item>410</item>
+          <item>420</item>
+          <item>430</item>
+          <item>440</item>
+          <item>450</item>
+          <item>460</item>
+          <item>470</item>
+          <item>480</item>
+          <item>490</item>
+          <item>500</item>
+     </integer-array>
+</resources>

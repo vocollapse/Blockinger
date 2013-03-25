@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:robobunny="http://robobunny.com">
+    
+    <CheckBoxPreference 
+        android:key="pref_phantom"
+        android:summary="@string/pref_phantom_summary"
+        android:defaultValue="true"
+        android:title="@string/pref_phantom_title"/>
+    
+    <CheckBoxPreference 
+        android:key="pref_fps"
+        android:summary="@string/pref_fps_summary"
+        android:defaultValue="false"
+        android:title="@string/pref_fps_title"/>
+    
+    <PreferenceCategory
+        android:title="SOUND"
+        android:key="sound_settings">
+        
+	    <org.blockinger.game.SeekBarPreference
+	        android:key="pref_soundvolume"
+	        android:title="@string/soundvolume_pref_title"
+	        android:defaultValue="80"
+	        android:max="100"
+	        robobunny:min="0"
+	        robobunny:unitsLeft=""
+	        robobunny:unitsRight=" %" />
+	    
+	    <org.blockinger.game.SeekBarPreference
+	        android:key="pref_musicvolume"
+	        android:title="@string/musicvolume_pref_title"
+	        android:defaultValue="60"
+	        android:max="100"
+	        robobunny:min="0"
+	        robobunny:unitsLeft=""
+	        robobunny:unitsRight=" %" />
+	    
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="VIBRATION"
+        android:key="vibration_settings">
+        
+	    <CheckBoxPreference 
+	        android:key="pref_vibration_button"
+	        android:summary="@string/pref_vibration_button_summary"
+	        android:defaultValue="true"
+	        android:title="@string/pref_vibration_button_title"/>
+        
+	    <CheckBoxPreference 
+	        android:key="pref_vibration_events"
+	        android:summary="@string/pref_vibration_events_summary"
+	        android:defaultValue="true"
+	        android:title="@string/pref_vibration_events_title"/>
+    
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="OTHER"
+        android:key="other_settings">
+	    
+        
+	    <PreferenceScreen android:title="Advanced">
+    
+		    <ListPreference
+		        android:entries="@array/randomizer_preference_array"
+		        android:entryValues="@array/randomizer_preference_values"
+		        android:key="pref_rng"
+		        android:title="@string/pref_rng_title"
+		        android:dialogTitle="@string/pref_rng_title"
+		        android:defaultValue="@string/pref_rngs_default" />
+    
+		    <org.blockinger.game.SeekBarPreference
+		        android:key="pref_softdropspeed"
+		        android:title="@string/softdropspeed_pref_title"
+		        android:defaultValue="10"
+		        android:max="20"
+		        robobunny:min="1"
+		        robobunny:unitsLeft=""
+		        robobunny:unitsRight=" Lines per Second" />
+		    
+		    <org.blockinger.game.SeekBarPreference
+		        android:key="pref_movespeed"
+		        android:title="@string/movespeed_pref_title"
+		        android:defaultValue="3"
+		        android:max="20"
+		        robobunny:min="1"
+		        robobunny:unitsLeft=""
+		        robobunny:unitsRight=" Squares per Second" />
+	        
+		    <CheckBoxPreference 
+		        android:key="pref_fpslimit"
+		        android:summary="@string/pref_fpslimit_summary"
+		        android:defaultValue="true"
+		        android:title="@string/pref_fpslimit_title" />
+		    
+		    <EditTextPreference
+		        android:dialogMessage="@string/pref_fpslimittext_summary"
+		        android:positiveButtonText="OK"
+		        android:negativeButtonText="Cancel"
+		        android:dependency="pref_fpslimit"
+		        android:numeric="integer"
+		        android:key="pref_fpslimittext"
+		        android:title="@string/pref_fpslimittext_title"
+		        android:dialogTitle="@string/pref_fpslimittext_title"
+		        android:defaultValue="@string/pref_fpslimittext_default" />
+		    
+		    <EditTextPreference
+		        android:dialogMessage="@string/pref_vibDurOffset_summary"
+		        android:positiveButtonText="OK"
+		        android:negativeButtonText="Cancel"
+		        android:key="pref_vibDurOffset"
+		        android:numeric="integer"
+		        android:title="@string/pref_vibDurOffset_title"
+		        android:dialogTitle="@string/pref_vibDurOffset_title"
+		        android:defaultValue="@string/pref_vibDurOffset_default" />
+		    
+		    <CheckBoxPreference 
+		        android:key="pref_antialiasing"
+		        android:summary="@string/pref_antialiasing_summary"
+		        android:defaultValue="true"
+		        android:title="@string/pref_antialiasing_title" />
+		    
+	    </PreferenceScreen>
+	    
+	    <Preference
+	        android:key="pref_version"
+	        android:summary="@string/pref_version_summary"
+	        android:title="@string/pref_version_title" />
+	    
+	    <Preference
+	        android:key="pref_license"
+	        android:summary="@string/pref_license_summary"
+	        android:title="@string/pref_license_title" />
+	    
+	    <Preference
+	        android:key="pref_license_music"
+	        android:summary="@string/pref_license_music_summary"
+	        android:title="@string/pref_license_music_title" />
+	    
+	    <Preference
+	        android:key="pref_author"
+	        android:summary="@string/pref_author_summary"
+	        android:title="@string/pref_author_title" />
+	    
+	    <Preference
+	        android:key="pref_donate"
+	        android:summary="@string/pref_donate_summary"
+	        android:title="@string/pref_donate_title" />
+	    
+    </PreferenceCategory>
+</PreferenceScreen>

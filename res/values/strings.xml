@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Blockinger</string>
+    <string name="action_settings">Settings</string>
+    <string name="startButtonString">New Game</string>
+    <string name="resumeButtonString">Resume Game</string>
+    <string name="quitButtonString">Quit</string>
+    <string name="playerNameInputFieldHint">Choose your player name</string>
+    <string name="highscoreListDescription">Highscores</string>
+
+    <string name="title_activity_game">Blockinger</string>
+    <string name="score_title">Score</string>
+    <string name="level_title">Level</string>
+    <string name="time_title">Time</string>
+    <string name="apm_title">APM</string>
+    <string name="fps_title">FPS</string>
+
+    <string name="defeatDialogTitle">Game Over</string>
+    <string name="defeatDialogReturn">Return</string>
+    
+    <string name="tab">\u0009</string>
+    
+    <string name="highscore_title">Highscores</string>
+    
+    <string name="musicAuthorNote">music by pornophonique</string>
+    
+    
+    <!-- Preference Strings -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_phantom_summary">Shows the drop location of the active piece</string>
+    <string name="pref_phantom_title">Phantom</string>
+    
+    <string name="pref_fps_summary">The current Frames per Second will be shown below "APM"</string>
+    <string name="pref_fps_title">Display FPS</string>
+    
+    <string name="pref_rng_title">Piece Generation</string>
+    <string name="pref_rngs_default">sevenbag</string>
+    <string name="pref_rng_summary">Choose how the sequence of pieces is generated. 7-Bag-Randomization is highly recommended and is also used in competitive Tetris</string>
+    <string-array name ="randomizer_preference_array">
+        <item>7-Bag-Randomization (default)</item>
+        <item>Plain Random</item>
+    </string-array>
+    <string-array name ="randomizer_preference_values">
+        <item>sevenbag</item>
+        <item>plain</item>
+    </string-array>
+    
+    <string name="softdropspeed_pref_title">Soft Drop Speed</string>
+    
+    <string name="movespeed_pref_title">Horizontal Speed</string>
+    
+    <string name="soundvolume_pref_title">Effects Volume</string>
+    
+    <string name="musicvolume_pref_title">Music Volume</string>
+    
+    <string name="pref_vibration_button_title">Button Vibration</string>
+    <string name="pref_vibration_button_summary">Vibrates shortly when pressing the game buttons</string>
+    
+    <string name="pref_vibration_events_title">Event Vibration</string>
+    <string name="pref_vibration_events_summary">Vibrates on important game events</string>
+    
+    <!-- Advanced Preference Strings -->
+    <string name="pref_fpslimit_summary">Significantly lowers power consumption but may slow down the game</string>
+    <string name="pref_fpslimit_title">Limit FPS</string>
+    
+    <string name="pref_fpslimittext_summary">The game tries to maintain this frame rate as closely as possible</string>
+    <string name="pref_fpslimittext_title">Target FPS</string>
+    <string name="pref_fpslimittext_default">35</string>
+    
+    <string name="pref_vibDurOffset_summary">Compensate for the delay of your phone\'s vibrator (time in milliseconds)</string>
+    <string name="pref_vibDurOffset_title">Vibration Delay Compensation</string>
+    <string name="pref_vibDurOffset_default">10</string>
+    
+    <string name="pref_antialiasing_summary">Improves the display quality of text. Disable this for better performance</string>
+    <string name="pref_antialiasing_title">Text Anti-Aliasing</string>
+    
+    
+    
+    <string name="pref_version_summary">x.y.z</string>
+    <string name="pref_version_title">Version Information</string>
+    
+    <string name="pref_license_summary">Placeholder</string>
+    <string name="pref_license_title">License Information</string>
+    <string name="license_url">http://www.example.com</string>
+    
+    <string name="pref_license_music_summary">\"lemmings in love (karaoke)\" and \"sad robot (karaoke)\" by Pornophonique. Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Germany license (CC BY-NC-SA 3.0 DE). Touch here to open the artist\'s website</string>
+    <string name="pref_license_music_title">Music Attribution</string>
+    <string name="music_url">http://www.pornophonique.de</string>
+    
+    <string name="pref_author_summary">Simon Willeke</string>
+    <string name="pref_author_title">Author Information</string>
+    <string name="author_url">http://www.example.com</string>
+    
+    <string name="pref_donate_title">Donate</string>
+    <string name="pref_donate_summary">Touch here to open a weblink</string>
+    <string name="donation_url">http://www.example.com</string>
+
+</resources>
