@@ -109,7 +109,7 @@
     
     <string name="pref_fpslimittext_summary">The game tries to maintain this frame rate as closely as possible</string>
     <string name="pref_fpslimittext_title">Target FPS</string>
-    <string name="pref_fpslimittext_default">35</string>
+    <string name="pref_fpslimittext_default">25</string>
     
     <string name="pref_vibDurOffset_summary">Compensate for the delay of your phone\'s vibrator (time in milliseconds)</string>
     <string name="pref_vibDurOffset_title">Vibration Delay Compensation</string>
