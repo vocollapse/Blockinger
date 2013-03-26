@@ -26,6 +26,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class color {
         public static final int black_overlay=0x7f06000a;
+        public static final int darkbluegreen=0x7f06000b;
         public static final int square_blue=0x7f060001;
         public static final int square_cyan=0x7f060007;
         public static final int square_empty=0x7f060008;
@@ -86,11 +87,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int hard_drop_button_icon=0x7f020000;
         public static final int highscores_header=0x7f020001;
         public static final int ic_launcher=0x7f020002;
-        public static final int left_button_icon=0x7f020003;
-        public static final int right_button_icon=0x7f020004;
-        public static final int rotate_left_button_icon=0x7f020005;
-        public static final int rotate_right_button_icon=0x7f020006;
-        public static final int soft_drop_button_icon=0x7f020007;
+        public static final int iconinger_v1=0x7f020003;
+        public static final int left_button_icon=0x7f020004;
+        public static final int right_button_icon=0x7f020005;
+        public static final int rotate_left_button_icon=0x7f020006;
+        public static final int rotate_right_button_icon=0x7f020007;
+        public static final int soft_drop_button_icon=0x7f020008;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0d0000;

@@ -38,5 +38,7 @@
  <resources>
 
     <color name="black_overlay">#66000000</color>
+    <color name="darkbluegreen">#FF408080</color>
+    <!-- 64,128,128 -->
 
 </resources>
