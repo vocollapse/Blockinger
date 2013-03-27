@@ -86,6 +86,7 @@ public class DefeatDialogFragment extends DialogFragment {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
+				GameLogic.getInstance().setRestartable(true);//restartMe = true;
 				((GameActivity)getActivity()).putScore(score);
 				getActivity().finish();
 			}

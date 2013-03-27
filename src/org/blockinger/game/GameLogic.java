@@ -121,6 +121,7 @@ public class GameLogic {
 	private int piece_start_x;
 	private int vibrationOffset;
 	private long shortVibeTime;
+	private boolean continuousSoftDrop;
 	
 	private GameLogic() {
 		date = new GregorianCalendar();
@@ -163,6 +164,7 @@ public class GameLogic {
 		clearRightMove = false;
 		clearPlayerSoftDrop = false;
 		dropPhantom = true;
+		continuousSoftDrop = false;
 		prevPhantomY = 0;
 		vibrationOffset = 0;
 	}
@@ -257,6 +259,7 @@ public class GameLogic {
 		clearRightMove = false;
 		clearPlayerSoftDrop = false;
 		dropPhantom = true;
+		continuousSoftDrop = false;
 		prevPhantomY = 0;
 	}
 	
@@ -343,7 +346,6 @@ public class GameLogic {
 			//DEFEAT HERE
 			dialog.setData(score, gameTime, (int)((float)actions*(60000.0f / gameTime)));
 			dialog.show(fragmentManager, "hamster");
-			restartMe = true;
 		}
 	}
 	
@@ -536,9 +538,27 @@ public class GameLogic {
 				level++;
 			nextDropTime = gameTime + dropIntervals[Math.min(level,maxLevel)];
 			nextPlayerDropTime = gameTime;
-			
-		// Soft Drop
+
+		// Initial Soft Drop
 		} else if(playerSoftDrop) {
+			playerSoftDrop = false;
+			continuousSoftDrop = true;
+			if(!activePieces[activeIndex].drop()) {
+				// piece finished
+				vibrateBottom();
+				clearLines();
+				pieceTransition();
+				BlockBoard.getInstance().invalidate();
+			} else {
+				//vibrateShort(); DAS WUERDE HIER BEI JEDEM TICK VIBRIEREN UND DAS MUSS DOCH NICHT SEIN. BEIM BESTEN WILLEN NICHT MEIN LIEBER FREUND.
+			}
+			if((level < maxLevel) && (clearedLines > lineThresholds[Math.min(level,maxLevel - 1)]))
+				level++;
+			nextDropTime = nextPlayerDropTime + dropIntervals[Math.min(level,maxLevel)];
+			nextPlayerDropTime = nextPlayerDropTime + 2*playerDropInterval; // initial interval is doubled!
+			
+		// Continuous Soft Drop
+		} else if(continuousSoftDrop) {
 			if(gameTime >= nextPlayerDropTime) {
 				if(!activePieces[activeIndex].drop()) {
 					// piece finished
@@ -570,7 +590,7 @@ public class GameLogic {
 			}
 
 			if(clearPlayerSoftDrop) {
-				playerSoftDrop = false;
+				continuousSoftDrop = false;
 				clearPlayerSoftDrop = false;
 			}
 			
@@ -768,6 +788,10 @@ public class GameLogic {
 		setFragmentManager(null);
 		v = null;
 		sound.release();
+	}
+
+	public void setRestartable(boolean b) {
+		restartMe = b;
 	}
 	
 }
