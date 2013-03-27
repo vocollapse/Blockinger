@@ -113,7 +113,7 @@
 		        android:key="pref_softdropspeed"
 		        android:title="@string/softdropspeed_pref_title"
 		        android:defaultValue="10"
-		        android:max="40"
+		        android:max="20"
 		        robobunny:min="1"
 		        robobunny:unitsLeft=""
 		        robobunny:unitsRight=" Lines per Second" />
@@ -122,7 +122,7 @@
 		        android:key="pref_movespeed"
 		        android:title="@string/movespeed_pref_title"
 		        android:defaultValue="3"
-		        android:max="20"
+		        android:max="10"
 		        robobunny:min="1"
 		        robobunny:unitsLeft=""
 		        robobunny:unitsRight=" Squares per Second" />

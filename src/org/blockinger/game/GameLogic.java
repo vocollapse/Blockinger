@@ -122,6 +122,8 @@ public class GameLogic {
 	private int vibrationOffset;
 	private long shortVibeTime;
 	private boolean continuousSoftDrop;
+	private boolean continuousLeftMove;
+	private boolean continuousRightMove;
 	
 	private GameLogic() {
 		date = new GregorianCalendar();
@@ -165,6 +167,8 @@ public class GameLogic {
 		clearPlayerSoftDrop = false;
 		dropPhantom = true;
 		continuousSoftDrop = false;
+		continuousLeftMove = false;
+		continuousRightMove = false;
 		prevPhantomY = 0;
 		vibrationOffset = 0;
 	}
@@ -260,6 +264,8 @@ public class GameLogic {
 		clearPlayerSoftDrop = false;
 		dropPhantom = true;
 		continuousSoftDrop = false;
+		continuousLeftMove = false;
+		continuousRightMove = false;
 		prevPhantomY = 0;
 	}
 	
@@ -346,6 +352,7 @@ public class GameLogic {
 			//DEFEAT HERE
 			dialog.setData(score, gameTime, (int)((float)actions*(60000.0f / gameTime)));
 			dialog.show(fragmentManager, "hamster");
+			((GameActivity)dialog.getActivity()).putScore(score);
 		}
 	}
 	
@@ -613,11 +620,22 @@ public class GameLogic {
 
 		
 		// Reset Move Time
-		if(!leftMove && !rightMove)
+		if((!leftMove && !rightMove) && (!continuousLeftMove && !continuousRightMove))
 			nextPlayerMoveTime = gameTime;
 		
 		// Left Move
 		if(leftMove) {
+			continuousLeftMove = true;
+			leftMove = false;
+			if(activePieces[activeIndex].moveLeft()) {
+				vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
+				shortVibeTime = gameTime;
+				dropPhantom = true;
+			} else
+				vibrateWall();
+			nextPlayerMoveTime = nextPlayerMoveTime + 2*playerMoveInterval; // first interval is doubled!
+			
+		} else if(continuousLeftMove) {
 			if(gameTime >= nextPlayerMoveTime) {
 				if(activePieces[activeIndex].moveLeft()) {
 					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
@@ -629,13 +647,24 @@ public class GameLogic {
 			}
 
 			if(clearLeftMove) {
-				leftMove = false;
+				continuousLeftMove = false;
 				clearLeftMove = false;
 			}
 		}
 		
 		// Right Move
 		if(rightMove) {
+			continuousRightMove = true;
+			rightMove = false;
+			if(activePieces[activeIndex].moveRight()) {
+				vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
+				shortVibeTime = gameTime;
+				dropPhantom = true;
+			} else
+				vibrateWall();
+			nextPlayerMoveTime = nextPlayerMoveTime + 2*playerMoveInterval; // first interval is doubled!
+			
+		} else if(continuousRightMove) {
 			if(gameTime >= nextPlayerMoveTime) {
 				if(activePieces[activeIndex].moveRight()) {
 					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
@@ -647,7 +676,7 @@ public class GameLogic {
 			}
 
 			if(clearRightMove) {
-				rightMove = false;
+				continuousRightMove = false;
 				clearRightMove = false;
 			}
 		}

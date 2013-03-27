@@ -52,14 +52,12 @@ public class DefeatDialogFragment extends DialogFragment {
 	private CharSequence scoreString;
 	private CharSequence timeString;
 	private CharSequence apmString;
-	private long score;
 	
 	public DefeatDialogFragment() {
 		super();
 		scoreString = "unknown";
 		timeString = "unknown";
 		apmString = "unknown";
-		score = -1;
 	}
 	
 	public void setData(long scoreArg, long timeMillis, int apm) {
@@ -70,7 +68,6 @@ public class DefeatDialogFragment extends DialogFragment {
 		scoreString = String.valueOf(scoreArg);
 		timeString = formatter.format(date.getTime());
 		apmString = String.valueOf(apm);
-		score = scoreArg;
 	}
 	
 	@Override
@@ -87,7 +84,6 @@ public class DefeatDialogFragment extends DialogFragment {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				GameLogic.getInstance().setRestartable(true);//restartMe = true;
-				((GameActivity)getActivity()).putScore(score);
 				getActivity().finish();
 			}
 		});
