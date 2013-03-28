@@ -54,7 +54,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="org.blockinger.game.MainActivity"
+            android:name="org.blockinger.game.activities.MainActivity"
             android:configChanges="orientation|screenLayout|screenSize"
             android:icon="@drawable/iconinger_v1"
             android:label="@string/app_name"
@@ -66,16 +66,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.blockinger.game.GameActivity"
-            android:theme="@style/FullscreenTheme" >
+            android:name="org.blockinger.game.activities.GameActivity"
+            android:label ="@string/title_activity_game">
+<!--             android:theme="@style/FullscreenTheme"> -->
         </activity>
         <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
         <activity
-            android:name="org.blockinger.game.SettingsActivity"
+            android:name="org.blockinger.game.activities.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-            android:name="org.blockinger.game.AboutActivity"
+            android:name="org.blockinger.game.activities.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
     </application>

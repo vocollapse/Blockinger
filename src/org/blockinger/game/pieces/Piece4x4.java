@@ -37,8 +37,8 @@
 
 package org.blockinger.game.pieces;
 
-import org.blockinger.game.BlockBoard;
 import org.blockinger.game.Square;
+import org.blockinger.game.components.Board;
 
 import android.content.Context;
 
@@ -57,7 +57,7 @@ public abstract class Piece4x4 extends Piece {
 	 * @return true if rotation was successfull.
 	 */
 	@Override
-	public boolean turnLeft() {
+	public boolean turnLeft(Board board) {
 		int maxLeftOffset = -4;
 		int maxRightOffset = -4;
 		int maxBottomOffset = -4;
@@ -92,8 +92,8 @@ public abstract class Piece4x4 extends Piece {
 			for(int j = 0; j < 4; j++) {
 				if(rotated[i][j] != null) {
 					leftOffset = - (x+j);
-					rightOffset = (x+j) - (BlockBoard.getInstance().getWidth() - 1);
-					bottomOffset = (y+i) - (BlockBoard.getInstance().getHeight() - 1);
+					rightOffset = (x+j) - (board.getWidth() - 1);
+					bottomOffset = (y+i) - (board.getHeight() - 1);
 					if(!rotated[i][j].isEmpty()) // left border violation
 						if (maxLeftOffset < leftOffset)
 							maxLeftOffset = leftOffset;
@@ -103,8 +103,8 @@ public abstract class Piece4x4 extends Piece {
 					if(!rotated[i][j].isEmpty()) // bottom border violation
 						if (maxBottomOffset < bottomOffset)
 							maxBottomOffset = bottomOffset;
-					if(BlockBoard.getInstance().get(x+j,y+i) != null)
-						if(!rotated[i][j].isEmpty() && !BlockBoard.getInstance().get(x+j,y+i).isEmpty()) // collision
+					if(board.get(x+j,y+i) != null)
+						if(!rotated[i][j].isEmpty() && !board.get(x+j,y+i).isEmpty()) // collision
 							return false;
 				}
 			}
@@ -121,7 +121,7 @@ public abstract class Piece4x4 extends Piece {
 					reDraw();
 					return true;
 				} else {
-					if(setPosition(x - maxRightOffset, y, false)) {
+					if(setPosition(x - maxRightOffset, y, false, board)) {
 						reDraw();
 						return true;
 					} else {
@@ -131,7 +131,7 @@ public abstract class Piece4x4 extends Piece {
 					}
 				}
 			} else {
-				if(setPosition(x + maxLeftOffset, y, false)) {
+				if(setPosition(x + maxLeftOffset, y, false, board)) {
 					reDraw();
 					return true;
 				} else {
@@ -141,7 +141,7 @@ public abstract class Piece4x4 extends Piece {
 				}
 			}
 		} else {
-			if(setPosition(x, y - maxBottomOffset, false)) {
+			if(setPosition(x, y - maxBottomOffset, false, board)) {
 				reDraw();
 				return true;
 			} else {
@@ -156,7 +156,7 @@ public abstract class Piece4x4 extends Piece {
 	 * @return true if rotation was successfull.
 	 */
 	@Override
-	public boolean turnRight() {
+	public boolean turnRight(Board board) {
 		int maxLeftOffset = -4;
 		int maxRightOffset = -4;
 		int maxBottomOffset = -4;
@@ -192,8 +192,8 @@ public abstract class Piece4x4 extends Piece {
 			for(int j = 0; j < 4; j++) {
 				if(rotated[i][j] != null) {
 					leftOffset = - (x+j);
-					rightOffset = (x+j) - (BlockBoard.getInstance().getWidth() - 1);
-					bottomOffset = (y+i) - (BlockBoard.getInstance().getHeight() - 1);
+					rightOffset = (x+j) - (board.getWidth() - 1);
+					bottomOffset = (y+i) - (board.getHeight() - 1);
 					if(!rotated[i][j].isEmpty()) // left border violation
 						if (maxLeftOffset < leftOffset)
 							maxLeftOffset = leftOffset;
@@ -203,8 +203,8 @@ public abstract class Piece4x4 extends Piece {
 					if(!rotated[i][j].isEmpty()) // bottom border violation
 						if (maxBottomOffset < bottomOffset)
 							maxBottomOffset = bottomOffset;
-					if(BlockBoard.getInstance().get(x+j,y+i) != null)
-						if(!rotated[i][j].isEmpty() && !BlockBoard.getInstance().get(x+j,y+i).isEmpty()) // collision
+					if(board.get(x+j,y+i) != null)
+						if(!rotated[i][j].isEmpty() && !board.get(x+j,y+i).isEmpty()) // collision
 							return false;
 				}
 			}
@@ -221,7 +221,7 @@ public abstract class Piece4x4 extends Piece {
 					reDraw();
 					return true;
 				} else {
-					if(setPosition(x - maxRightOffset, y, false)) {
+					if(setPosition(x - maxRightOffset, y, false, board)) {
 						reDraw();
 						return true;
 					} else {
@@ -231,7 +231,7 @@ public abstract class Piece4x4 extends Piece {
 					}
 				}
 			} else {
-				if(setPosition(x + maxLeftOffset, y, false)) {
+				if(setPosition(x + maxLeftOffset, y, false, board)) {
 					reDraw();
 					return true;
 				} else {
@@ -241,7 +241,7 @@ public abstract class Piece4x4 extends Piece {
 				}
 			}
 		} else {
-			if(setPosition(x, y - maxBottomOffset, false)) {
+			if(setPosition(x, y - maxBottomOffset, false, board)) {
 				reDraw();
 				return true;
 			} else {

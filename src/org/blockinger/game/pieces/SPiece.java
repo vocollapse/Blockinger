@@ -54,9 +54,10 @@ public class SPiece extends Piece3x3 {
 		pattern[2][1] = sSquare;
 		reDraw();
 	}
-	
-	public void reset() {
-		super.reset();
+
+	@Override
+	public void reset(Context c) {
+		super.reset(c);
 		pattern[1][1] = sSquare;
 		pattern[1][2] = sSquare;
 		pattern[2][0] = sSquare;

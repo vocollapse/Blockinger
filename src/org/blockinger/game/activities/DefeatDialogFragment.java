@@ -35,11 +35,10 @@
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
  */
 
-package org.blockinger.game;
+package org.blockinger.game.activities;
 
-import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
-import java.util.Locale;
+import org.blockinger.game.R;
+import org.blockinger.game.components.GameState;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -52,6 +51,7 @@ public class DefeatDialogFragment extends DialogFragment {
 	private CharSequence scoreString;
 	private CharSequence timeString;
 	private CharSequence apmString;
+	private long score;
 	
 	public DefeatDialogFragment() {
 		super();
@@ -60,14 +60,11 @@ public class DefeatDialogFragment extends DialogFragment {
 		apmString = "unknown";
 	}
 	
-	public void setData(long scoreArg, long timeMillis, int apm) {
-		GregorianCalendar date = new GregorianCalendar();
-		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss",Locale.US);
-
-		date.setTimeInMillis(timeMillis + GameLogic.getInstance().hourOffset*(3600000));
+	public void setData(long scoreArg, String time, int apm) {
 		scoreString = String.valueOf(scoreArg);
-		timeString = formatter.format(date.getTime());
+		timeString = time;
 		apmString = String.valueOf(apm);
+		score = scoreArg;
 	}
 	
 	@Override
@@ -83,7 +80,8 @@ public class DefeatDialogFragment extends DialogFragment {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				GameLogic.getInstance().setRestartable(true);//restartMe = true;
+				((GameActivity)getActivity()).putScore(score);
+				GameState.getNewInstance((GameActivity)getActivity());
 				getActivity().finish();
 			}
 		});

@@ -55,8 +55,9 @@ public class IPiece extends Piece4x4 {
 		reDraw();
 	}
 	
-	public void reset() {
-		super.reset();
+	@Override
+	public void reset(Context c) {
+		super.reset(c);
 		pattern[1][0] = iSquare;
 		pattern[1][1] = iSquare;
 		pattern[1][2] = iSquare;

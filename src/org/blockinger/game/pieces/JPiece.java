@@ -54,9 +54,10 @@ public class JPiece extends Piece3x3 {
 		pattern[2][2] = jSquare;
 		reDraw();
 	}
-	
-	public void reset() {
-		super.reset();
+
+	@Override
+	public void reset(Context c) {
+		super.reset(c);
 		pattern[1][0] = jSquare;
 		pattern[1][1] = jSquare;
 		pattern[1][2] = jSquare;

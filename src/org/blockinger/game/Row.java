@@ -37,6 +37,8 @@
 
 package org.blockinger.game;
 
+import org.blockinger.game.components.Board;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -142,12 +144,12 @@ public class Row {
 			return false;
 	}
 	
-	public void cycle(long time) {
-		animator.cycle(time);
+	public void cycle(long time, Board board) {
+		animator.cycle(time, board);
 	}
 	
-	public void clear() {
-		animator.start();
+	public void clear(Board board, int currentDropInterval) {
+		animator.start(board, currentDropInterval);
 		
 		// clear this Row
 		fillStatus = 0;
@@ -156,8 +158,8 @@ public class Row {
 		}
 	}
 	
-	public void finishClear() {
-		Row topRow = BlockBoard.getInstance().getTopRow();
+	public void finishClear(Board board) {
+		Row topRow = board.getTopRow();
 
 		// disconnect tempRow
 		above().setBelow(below());
@@ -169,126 +171,10 @@ public class Row {
 		topRow.above().setBelow(this);
 		topRow.setAbove(this);
 		
-		BlockBoard.getInstance().finishClear(this);
+		board.finishClear(this);
 	}
 
-	public boolean interrupt() {
-		return animator.finish();
-	}
-	
-	public class Animator {
-
-		public static final int animationStageIdle = 0;
-		public static final int animationStageFlash = 1;
-		public static final int animationStageBurst = 2;
-		
-		// Config
-		private long flashInterval;
-		private long flashFinishTime;
-		//private long burstFinishTime;
-		//private boolean useFlash;
-		//private boolean useBurst;
-		private int squareSize;
-		
-		// State
-		private long startTime;
-		private int stage;
-		//private long burstProgress;
-		//private int brustWidth;
-		//private int burstHeight;
-		//private Paint transparentPaint;
-		private boolean drawEnable;
-		private long nextFlash;
-		
-		// Data
-		//private Context context;
-		private Row row;
-		private Bitmap bitmapRow;
-		private int flashCount;
-		private int rawFlashInterval;
-		
-		// Constructor
-		public Animator(Context c, Row r) {
-			rawFlashInterval = c.getResources().getInteger(R.integer.clearAnimation_flashInterval);
-			flashCount = c.getResources().getInteger(R.integer.clearAnimation_flashCount);
-			stage = animationStageIdle;
-			this.row = r;
-			drawEnable = true;
-			startTime = 0;
-			flashFinishTime = 0;
-			nextFlash = 0;
-			flashInterval = 0;
-			//useFlash = false;
-			//useBurst = false;
-			//burstFinishTime = 0;
-			//burstProgress = 0;
-			//brustWidth = 0;
-			//burstHeight = 0;
-			//transparentPaint = new Paint();
-			squareSize = 0;
-		}
-		
-		public void cycle(long time) {
-			if(stage == animationStageIdle)
-				return;
-			
-			if(time >= flashFinishTime)
-				finish();
-			else if (time >= nextFlash) {
-				nextFlash += flashInterval;
-				drawEnable = !drawEnable;
-				BlockBoard.getInstance().invalidate();
-			}
-		}
-
-		public void start() {
-			bitmapRow = row.drawBitmap(squareSize);
-			stage = animationStageFlash;
-			startTime = System.currentTimeMillis();
-			flashInterval = Math.min( // Choose base flash interval on slow levels and shorter interval on fast levels.
-					rawFlashInterval,
-					(int)((float)GameLogic.getInstance().getCurrentDropinterval() / (float)flashCount)
-			);
-			flashFinishTime = startTime + 2*flashInterval*flashCount;
-			nextFlash = startTime + flashInterval;
-			drawEnable = false;
-			BlockBoard.getInstance().invalidate();
-		}
-		
-		public boolean finish() {
-			if(animationStageIdle == stage)
-				return false;
-			stage = animationStageIdle;
-			row.finishClear();
-			drawEnable = true;
-			return true;
-		}
-		
-		public void draw(int x, int y, int ss, Canvas c) {
-			//float scaleFactor = flashFinishTime / (flashFinishTime-flashProgress);
-			//Bitmap bm = Bitmap.createBitmap(brustWidth, burstHeight, Bitmap.Config.ARGB_8888);
-			//Canvas tamp = new Canvas(bm);
-			//transparentPaint.setAlpha(do{(shit.here())}while(you += shit));
-			this.squareSize = ss;
-			if(drawEnable) {
-				if(stage == animationStageIdle)
-					bitmapRow = row.drawBitmap(ss);
-				//bitmapRow.scale(scaleFactor, scaleFactor, px, py);
-				if (bitmapRow != null)
-					c.drawBitmap(bitmapRow, x, y, null);
-			}
-		}
-		
-		public void startFlash() {
-			
-		}
-		
-		public void cancelBurst() {
-			
-		}
-		
-		public void startBurst() {
-			
-		}
+	public boolean interrupt(Board board) {
+		return animator.finish(board);
 	}
 }

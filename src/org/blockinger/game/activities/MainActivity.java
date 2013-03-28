@@ -35,8 +35,10 @@
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
  */
 
-package org.blockinger.game;
+package org.blockinger.game.activities;
 
+import org.blockinger.game.R;
+import org.blockinger.game.components.GameState;
 import org.blockinger.game.db.HighscoreOpenHelper;
 import org.blockinger.game.db.ScoreDataSource;
 
@@ -196,8 +198,9 @@ public class MainActivity extends ListActivity {
     }
 
     public void onClickQuit(View view) {
-		this.finish();
 	    mainMenuMusicPlayer.release();
+	    GameState.destroy();
+		this.finish();
     }
     
     @Override
@@ -207,8 +210,8 @@ public class MainActivity extends ListActivity {
     
     @Override
     protected void onDestroy() {
-    	super.onDestroy();
 	    mainMenuMusicPlayer.release();
+    	super.onDestroy();
     };
     
     @Override
@@ -218,15 +221,7 @@ public class MainActivity extends ListActivity {
 	    Cursor cursor = datasource.getCursor();
 	    adapter.changeCursor(cursor);
 	    
-	    /*// Music is running
-	    try {
-	    	if(mainMenuMusicPlayer.isPlaying())
-		    	return;
-	    } catch (Exception e) {
-		}
-	    
-	    // no music is running
-*/	    mainMenuMusicPlayer.release();
+	    mainMenuMusicPlayer.release();
 	    try{
 		    if(mainMenuMusicPlayer == null) {
 			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.lemmings03);

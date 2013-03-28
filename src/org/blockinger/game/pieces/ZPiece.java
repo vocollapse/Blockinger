@@ -55,8 +55,9 @@ public class ZPiece extends Piece3x3 {
 		reDraw();
 	}
 
-	public void reset() {
-		super.reset();
+	@Override
+	public void reset(Context c) {
+		super.reset(c);
 		pattern[1][0] = zSquare;
 		pattern[1][1] = zSquare;
 		pattern[2][1] = zSquare;

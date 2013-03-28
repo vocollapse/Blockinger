@@ -35,7 +35,9 @@
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
  */
 
-package org.blockinger.game;
+package org.blockinger.game.activities;
+
+import org.blockinger.game.R;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;

@@ -37,14 +37,13 @@
 
 package org.blockinger.game.pieces;
 
-import org.blockinger.game.BlockBoard;
 import org.blockinger.game.R;
 import org.blockinger.game.Square;
+import org.blockinger.game.components.Board;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.view.View;
 
 public abstract class Piece {
 
@@ -68,7 +67,6 @@ public abstract class Piece {
 	private Bitmap bm;
 	private Canvas cvPhantom;
 	private Bitmap bmPhantom;
-	private Context context;
 	private boolean isPhantom;
 	
 	/**
@@ -79,7 +77,6 @@ public abstract class Piece {
 	protected Piece(Context c, int dimension) {
 		this.dim = dimension;
 		squareSize = 1;
-		context = c;
 		x = c.getResources().getInteger(R.integer.piece_start_x);
 		y = 0;
 		active = false;
@@ -97,8 +94,8 @@ public abstract class Piece {
 		}
 	}
 	
-	public void reset() {
-		x = context.getResources().getInteger(R.integer.piece_start_x);
+	public void reset(Context c) {
+		x = c.getResources().getInteger(R.integer.piece_start_x);
 		y = 0;
 		active = false;
 		for(int i = 0; i < dim; i++) {
@@ -117,12 +114,12 @@ public abstract class Piece {
 		return active;
 	}
 	
-	public void place() {
+	public void place(Board board) {
 		active = false;
 		for(int i = 0; i < dim; i++) {
 			for(int j = 0; j < dim; j++) {
 				if(pattern[i][j] != null)
-					BlockBoard.getInstance().set(x+j,y+i,pattern[i][j]);
+					board.set(x+j,y+i,pattern[i][j]);
 			}
 		}
 	}
@@ -131,7 +128,7 @@ public abstract class Piece {
 	 * 
 	 * @return true if movement was successfull.
 	 */
-	public boolean setPosition(int x_new, int y_new, boolean noInterrupt) {
+	public boolean setPosition(int x_new, int y_new, boolean noInterrupt, Board board) {
 		boolean collision = false;
 		int leftOffset = 0;
 		int rightOffset = 0;
@@ -140,22 +137,22 @@ public abstract class Piece {
 			for(int j = 0; j < dim; j++) {
 				if(pattern[i][j] != null) {
 					leftOffset = - (x_new+j);
-					rightOffset = (x_new+j) - (BlockBoard.getInstance().getWidth() - 1);
-					bottomOffset = (y_new+i) - (BlockBoard.getInstance().getHeight() - 1);
+					rightOffset = (x_new+j) - (board.getWidth() - 1);
+					bottomOffset = (y_new+i) - (board.getHeight() - 1);
 					if(!pattern[i][j].isEmpty() && (leftOffset > 0)) // left border violation
 						return false;
 					if(!pattern[i][j].isEmpty() && (rightOffset > 0)) // right border violation
 						return false;
 					if(!pattern[i][j].isEmpty() && (bottomOffset > 0)) // bottom border violation
 						return false;
-					if(BlockBoard.getInstance().get(x_new+j,y_new+i) != null) {
-						collision = (!pattern[i][j].isEmpty() && !BlockBoard.getInstance().get(x_new+j,y_new+i).isEmpty()); // collision
+					if(board.get(x_new+j,y_new+i) != null) {
+						collision = (!pattern[i][j].isEmpty() && !board.get(x_new+j,y_new+i).isEmpty()); // collision
 						if(collision) {
 							if(noInterrupt)
 								return false;
 							// Try to avoid collision by interrupting all running clear animations.
-							BlockBoard.getInstance().interruptClearAnimation();
-							collision = !BlockBoard.getInstance().get(x_new+j,y_new+i).isEmpty(); // Still not empty?
+							board.interruptClearAnimation();
+							collision = !board.get(x_new+j,y_new+i).isEmpty(); // Still not empty?
 							if(collision)
 								return false; // All hope is lost.
 						}
@@ -171,47 +168,47 @@ public abstract class Piece {
 	/**
 	 * @return true if rotation was successfull.
 	 */
-	public abstract boolean turnLeft();
+	public abstract boolean turnLeft(Board board);
 
 	/**
 	 * @return true if rotation was successfull.
 	 */
-	public abstract boolean turnRight();
+	public abstract boolean turnRight(Board board);
 
 	/**
 	 * 
 	 * @return true if movement to the left was successfull.
 	 */
-	public boolean moveLeft() {
+	public boolean moveLeft(Board board) {
 		if(!active)
 			return true;
-		return setPosition(x - 1, y, false);
+		return setPosition(x - 1, y, false, board);
 	}
 
 	/**
 	 * 
 	 * @return true if movement to the right was successfull.
 	 */
-	public boolean moveRight() {
+	public boolean moveRight(Board board) {
 		if(!active)
 			return true;
-		return setPosition(x + 1, y, false);
+		return setPosition(x + 1, y, false, board);
 	}
 	
 	/**
 	 * 
 	 * @return true if drop was successfull. Otherwise the ground or other pieces was hit.
 	 */
-	public boolean drop() {
+	public boolean drop(Board board) {
 		if(!active)
 			return true;
-		return setPosition(x, y + 1, false);
+		return setPosition(x, y + 1, false, board);
 	}
 
-	public int hardDrop(boolean noInterrupt) {
+	public int hardDrop(boolean noInterrupt, Board board) {
 		int i=0;
-		while(setPosition(x, y + 1, noInterrupt)){
-			if(i >= BlockBoard.getInstance().getHeight())
+		while(setPosition(x, y + 1, noInterrupt, board)){
+			if(i >= board.getHeight())
 				throw new RuntimeException("Hard Drop Error: dropped too far.");
 			i++;
 		}
@@ -249,7 +246,7 @@ public abstract class Piece {
 	 * @param c
 	 * @param view
 	 */
-	public void drawOnBoard(int xOffset, int yOffset, int ss, Canvas c, View view) {
+	public void drawOnBoard(int xOffset, int yOffset, int ss, Canvas c) {
 		if(!active)
 			return;
 		if(ss != squareSize) {
@@ -263,19 +260,12 @@ public abstract class Piece {
 	}
 	
 	// draw on preview position
-	public void drawOnPreview(int xpos, int ypos, int ss, Canvas c, View view) {
+	public void drawOnPreview(int xpos, int ypos, int ss, Canvas c) {
 		if(ss != squareSize) {
 			squareSize = ss;
 			reDraw();
 		}
 		c.drawBitmap(bm, xpos, ypos, null);
-		
-		/*for(int i = 0; i < dim; i++) {
-			for(int j = 0; j < dim; j++) {
-				if(pattern[i][j] != null)
-					pattern[i][j].draw(xpos + j*squareSize, ypos + i*squareSize, squareSize, c, isPhantom);
-			}
-		}*/
 	}
 
 	public int getDim() {
@@ -299,15 +289,15 @@ public abstract class Piece {
 		y = y_new;
 	}
 
-	public boolean setPositionSimpleCollision(int x_new, int y_new) {
+	public boolean setPositionSimpleCollision(int x_new, int y_new, Board board) {
 		for(int i = 0; i < dim; i++) {
 			for(int j = 0; j < dim; j++) {
 				if(pattern[i][j] != null) {
-					if(BlockBoard.getInstance().get(x_new+j,y_new+i) == null) {
+					if(board.get(x_new+j,y_new+i) == null) {
 						if(!pattern[i][j].isEmpty())
 							return false;
 					} else {
-						if(!pattern[i][j].isEmpty() && !BlockBoard.getInstance().get(x_new+j,y_new+i).isEmpty())
+						if(!pattern[i][j].isEmpty() && !board.get(x_new+j,y_new+i).isEmpty())
 							return false;
 					}
 					
