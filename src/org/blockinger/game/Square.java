@@ -61,10 +61,12 @@ public class Square {
 	private Canvas phantomCanv;
 	//private Context context;
 	private int squaresize;
+	private int phantomAlpha;
 	
 	public Square(int type, Context c) {
 		this.type = type;
 		paint = new Paint();
+		phantomAlpha = c.getResources().getInteger(R.integer.phantom_alpha);
 		squaresize = 0;
 		switch(type){
 			case type_blue:
@@ -105,7 +107,7 @@ public class Square {
 
 		paint.setAlpha(255);
 		canv.drawRect(0, 0, squaresize, squaresize, paint);
-		paint.setAlpha(80);
+		paint.setAlpha(phantomAlpha);
 		phantomCanv.drawRect(0, 0, squaresize, squaresize, paint);
 		//canv.draw
 	}

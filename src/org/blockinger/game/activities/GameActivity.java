@@ -47,12 +47,17 @@ import org.blockinger.game.components.Sound;
 
 
 import android.database.Cursor;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageButton;
+import android.widget.Button;
 import android.view.View.OnTouchListener;
 
 
@@ -64,6 +69,8 @@ public class GameActivity extends FragmentActivity {
 	public GameState game;
 	private WorkThread mainThread;
 	private DefeatDialogFragment dialog;
+	private MediaPlayer gameMusicPlayer;
+	//private int songtime;
 
 	public static final int start_new_game = 0;
 	public static final int resume_old_game = 1;
@@ -79,20 +86,19 @@ public class GameActivity extends FragmentActivity {
 		int value = start_new_game;
 		
 		/* Create Components */
-		//GameState resumable = game;
 		game = (GameState)getLastCustomNonConfigurationInstance();
 		if(game == null) {
 			/* Check for Resuming */
 			if(b!=null)
 				value = b.getInt("mode");
 				
-			if((value == start_new_game))// || (resumable == null))
-				game = GameState.getNewInstance(this);//new GameState(this);
-			else
-				game = GameState.getInstance(this);//resumable;
+			if((value == start_new_game)) {
+				game = GameState.getNewInstance(this);
+				game.setLevel(b.getInt("level"));
+			} else
+				game = GameState.getInstance(this);
 		}
 		game.reconnect(this);
-		
 		dialog = new DefeatDialogFragment();
 		sound = new Sound(this);
 		controls = new Controls(this);
@@ -106,8 +112,16 @@ public class GameActivity extends FragmentActivity {
 		} else 
 			game.setPlayerName("Anonymous");
 		dialog.setCancelable(false);
+		if(!game.isResumable())
+			gameOver(game.getScore(), game.getTimeString(), game.getAPM());
 		
 		/* Register Button callback Methods */
+		((Button)findViewById(R.id.pausebutton_1)).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				GameActivity.this.finish();
+			}
+		});
 		((ImageButton)findViewById(R.id.rightButton)).setOnTouchListener(new OnTouchListener() {
 		    @Override
 		    public boolean onTouch(View v, MotionEvent event) {
@@ -234,26 +248,57 @@ public class GameActivity extends FragmentActivity {
 	    MainActivity.getAdapter().changeCursor(cursor);
 	}
     
-/*    @Override
-    protected void onPause() {
-    	super.onPause();
-    };*/
-    
     @Override
     protected void onStop() {
     	super.onStop();
+    	game.setSongtime(gameMusicPlayer.getCurrentPosition());
+    	gameMusicPlayer.release();
     	//game.disconnect();
     };
     
     @Override
     protected void onDestroy() {
     	super.onDestroy();
+    	try {
+        	game.setSongtime(gameMusicPlayer.getCurrentPosition());
+    	} catch(IllegalStateException e) {
+    		
+    	}
+    	gameMusicPlayer.release();
     	game.disconnect();
     };
     
     @Override
     protected void onResume() {
     	super.onResume();
+    	try {
+    		gameMusicPlayer.release();
+    	} catch(IllegalStateException e) {
+    		
+    	}
+    	
+	    try{
+		    if(gameMusicPlayer == null) {
+			    gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
+		    } else if (!gameMusicPlayer.isPlaying()) {
+			    gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
+		    }
+	    } catch(IllegalStateException e) {
+	    	gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
+	    }
+
+	    gameMusicPlayer.setLooping(true);
+	    gameMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
+	    gameMusicPlayer.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+			
+			@Override
+			public void onSeekComplete(MediaPlayer mp) {
+				mp.start();
+			}
+		});
+	    gameMusicPlayer.seekTo(game.getSongtime());
+	    
+	    //gameMusicPlayer.start();
     };
     
     @Override
@@ -262,9 +307,6 @@ public class GameActivity extends FragmentActivity {
         return game;
     }
 	
-
-
-
 	public void gameOver(long score, String gameTime, int apm) {
 		dialog.setData(score, gameTime, apm);
 		dialog.show(getSupportFragmentManager(), "hamster");

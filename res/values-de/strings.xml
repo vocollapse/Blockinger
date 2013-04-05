@@ -41,13 +41,19 @@
     
     <string name="app_name">Blockinger</string>
     <string name="action_settings">Einstellungen</string>
+    <string name="action_backtomain">Zurück</string>
     <string name="action_about">Über Blockinger</string>
     <string name="action_donate">Spenden</string>
     <string name="startButtonString">Neues Spiel</string>
     <string name="resumeButtonString">Fortsetzen</string>
     <string name="quitButtonString">Beenden</string>
+    <string name="pausebutton">Pause</string>
     <string name="playerNameInputFieldHint">Wähle einen Spielernamen</string>
     <string name="highscoreListDescription">Highscores</string>
+
+    <string name="startLevelDialogTitle">Startlevel</string>
+    <string name="startLevelDialogCancel">Abbrechen</string>
+    <string name="startLevelDialogStart">Start</string>
 
     <string name="title_activity_game">Blockinger</string>
     <string name="score_title">Punkte</string>
@@ -133,4 +139,40 @@
     <string name="pref_category_vibration">VIBRATION</string>
     <string name="pref_category_other">SONSTIGES</string>
     <string name="pref_category_advanced">Erweitert</string>
+    
+    
+    <string-array name ="levelChooseArray">
+        <item>Level 0</item>
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+        <item>Level 4</item>
+        <item>Level 5</item>
+        <item>Level 6</item>
+        <item>Level 7</item>
+        <item>Level 8</item>
+        <item>Level 9</item>
+        <item>Level 10</item>
+        <item>Level 11</item>
+        <item>Level 12</item>
+        <item>Level 13</item>
+        <item>Level 14</item>
+        <item>Level 15</item>
+        <item>Level 16</item>
+        <item>Level 17</item>
+        <item>Level 18</item>
+        <item>Level 19</item>
+        <item>Level 20</item>
+        <item>Level 21</item>
+        <item>Level 22</item>
+        <item>Level 23</item>
+        <item>Level 24</item>
+        <item>Level 25</item>
+        <item>Level 26</item>
+        <item>Level 27</item>
+        <item>Level 28</item>
+        <item>Level 29</item>
+        <item>Level 30</item>
+    </string-array>
+    
 </resources>

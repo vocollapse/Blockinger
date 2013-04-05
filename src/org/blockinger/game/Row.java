@@ -150,15 +150,15 @@ public class Row {
 	
 	public void clear(Board board, int currentDropInterval) {
 		animator.start(board, currentDropInterval);
-		
+	}
+	
+	public void finishClear(Board board) {
 		// clear this Row
 		fillStatus = 0;
 		for(int i = 0; i < width; i++) {
 			elements[i] = emptySquare;
 		}
-	}
-	
-	public void finishClear(Board board) {
+		
 		Row topRow = board.getTopRow();
 
 		// disconnect tempRow

@@ -60,40 +60,52 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.5"
+        android:layout_weight="0.53"
         android:gravity="center"
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
+            android:layout_height="0dp"
+            android:layout_weight="1.4"
             android:gravity="center" >
 
             <ImageButton
                 android:id="@+id/leftButton"
                 style="@android:style/Widget.ImageWell"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:adjustViewBounds="false"
                 android:clickable="true"
                 android:contentDescription="left move Button"
-                android:scaleType="fitCenter"
-                android:src="@drawable/left_button_icon" />
+                android:scaleType="centerInside"
+                android:src="@drawable/left_button_icon_hd" />
+
+            <View
+                android:id="@+id/View04"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1" />
 
             <ImageButton
                 android:id="@+id/rightButton"
                 style="@android:style/Widget.ImageWell"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:contentDescription="right Move Button"
-                android:scaleType="fitCenter"
-                android:src="@drawable/right_button_icon" />
+                android:scaleType="centerInside"
+                android:src="@drawable/right_button_icon_hd" />
 
         </LinearLayout>
+
+        <View
+            android:id="@+id/spacerl0"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.07" />
 
         <ImageButton
             android:id="@+id/softDropButton"
@@ -103,8 +115,14 @@
             android:layout_weight="0.6"
             android:clickable="true"
             android:contentDescription="soft Drop Button"
-            android:scaleType="fitCenter"
-            android:src="@drawable/soft_drop_button_icon" />
+            android:scaleType="centerInside"
+            android:src="@drawable/soft_drop_button_icon_hd" />
+
+        <View
+            android:id="@+id/View03"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.07" />
 
         <ImageButton
             android:id="@+id/hardDropButton"
@@ -114,8 +132,8 @@
             android:layout_weight="0.6"
             android:clickable="true"
             android:contentDescription="Hard Drop Button"
-            android:scaleType="fitCenter"
-            android:src="@drawable/hard_drop_button_icon" />
+            android:scaleType="centerInside"
+            android:src="@drawable/hard_drop_button_icon_hd" />
 
     </LinearLayout>
 
@@ -132,11 +150,17 @@
         android:layout_weight="0.4"
         android:orientation="vertical" >
 
+        <Button
+            android:id="@+id/pausebutton_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pausebutton" />
+
         <View
             android:id="@+id/View02"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.7" />
+            android:layout_weight="0.5" />
 
         <ImageButton
             android:id="@+id/rotateRightButton"
@@ -146,8 +170,8 @@
             android:layout_weight="1"
             android:clickable="true"
             android:contentDescription="rotate right Button"
-            android:scaleType="fitCenter"
-            android:src="@drawable/rotate_right_button_icon" />
+            android:scaleType="centerInside"
+            android:src="@drawable/rotate_right_button_icon_hd" />
 
         <View
             android:id="@+id/View01"
@@ -163,8 +187,8 @@
             android:layout_weight="1"
             android:clickable="true"
             android:contentDescription="rotate left Button"
-            android:scaleType="fitCenter"
-            android:src="@drawable/rotate_left_button_icon" />
+            android:scaleType="centerInside"
+            android:src="@drawable/rotate_left_button_icon_hd" />
 
         <View
             android:id="@+id/bottom_right_spacer"
@@ -178,6 +202,6 @@
         android:id="@+id/top_right_spacer"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.08" />
+        android:layout_weight="0.06" />
 
 </LinearLayout>

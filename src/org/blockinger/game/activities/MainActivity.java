@@ -46,8 +46,10 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.v4.widget.SimpleCursorAdapter;
@@ -55,14 +57,17 @@ import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends ListActivity implements DialogInterface.OnClickListener{
 
 	public static ScoreDataSource datasource;
-	public Cursor mc;
-	public static SimpleCursorAdapter adapter;
-	public MediaPlayer mainMenuMusicPlayer;
+	private Cursor mc;
+	private static SimpleCursorAdapter adapter;
+	private MediaPlayer mainMenuMusicPlayer;
+	private AlertDialog.Builder dialog;
+	private int startLevel;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +93,27 @@ public class MainActivity extends ListActivity {
 	        new String[] {HighscoreOpenHelper.COLUMN_SCORE, HighscoreOpenHelper.COLUMN_PLAYERNAME},
 	        new int[] {R.id.text1, R.id.text2},
 	        SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
-
 	    setListAdapter(adapter);
+	    
+	    /* Create Startlevel Dialog */
+	    startLevel = 0;
+	    dialog = new AlertDialog.Builder(this);
+		dialog.setTitle(R.string.startLevelDialogTitle);
+		dialog.setSingleChoiceItems(R.array.levelChooseArray, startLevel, this);
+		dialog.setNegativeButton(R.string.startLevelDialogCancel, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		dialog.setPositiveButton(R.string.startLevelDialogStart, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				MainActivity.this.start();
+			}
+		});
+	    //dialog = new StartLevelDialog();
+	    //dialog.setHost(this);
 	    
 	    try{
 		    if(mainMenuMusicPlayer == null) {
@@ -139,17 +163,17 @@ public class MainActivity extends ListActivity {
 				return super.onOptionsItemSelected(item);
 		}
 	}
-
-
-    public void onClickStart(View view) {
+	
+	public void start() {
 		Intent intent = new Intent(this, GameActivity.class);
 		Bundle b = new Bundle();
 		b.putInt("mode", GameActivity.start_new_game); //Your id
+		b.putInt("level", startLevel); //Your id
 		b.putString("playername", ((TextView)findViewById(R.id.nicknameEditView)).getText().toString()); //Your id
 		intent.putExtras(b); //Put your id to your next Intent
 		startActivity(intent);
 	    mainMenuMusicPlayer.release();
-	    try{
+	    /*try{
 		    if(mainMenuMusicPlayer == null) {
 			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
 			    mainMenuMusicPlayer.setLooping(true);
@@ -166,7 +190,13 @@ public class MainActivity extends ListActivity {
 		    mainMenuMusicPlayer.setLooping(true);
 		    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
 		    mainMenuMusicPlayer.start();
-	    }
+	    }*/
+	}
+
+
+    public void onClickStart(View view) {
+		dialog.setSingleChoiceItems(R.array.levelChooseArray, startLevel, this);
+		dialog.show();
     }
 
     public void onClickResume(View view) {
@@ -177,7 +207,7 @@ public class MainActivity extends ListActivity {
 		intent.putExtras(b); //Put your id to your next Intent
 		startActivity(intent);
 	    mainMenuMusicPlayer.release();
-	    try{
+	    /*try{
 		    if(mainMenuMusicPlayer == null) {
 			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
 			    mainMenuMusicPlayer.setLooping(true);
@@ -194,7 +224,7 @@ public class MainActivity extends ListActivity {
 		    mainMenuMusicPlayer.setLooping(true);
 		    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
 		    mainMenuMusicPlayer.start();
-	    }
+	    }*/
     }
 
     public void onClickQuit(View view) {
@@ -206,12 +236,13 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onStop() {
     	super.onStop();
+	    mainMenuMusicPlayer.release();
     };
     
     @Override
     protected void onDestroy() {
-	    mainMenuMusicPlayer.release();
     	super.onDestroy();
+	    mainMenuMusicPlayer.release();
     };
     
     @Override
@@ -240,6 +271,12 @@ public class MainActivity extends ListActivity {
 		    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
 		    mainMenuMusicPlayer.start();
 	    }
+	    
+	    if(!GameState.isFinished()) {
+	    	((Button)findViewById(R.id.resumeButton)).setEnabled(true);
+	    } else {
+	    	((Button)findViewById(R.id.resumeButton)).setEnabled(false);
+	    }
     };
 
 	public static ScoreDataSource getDS() {
@@ -248,6 +285,11 @@ public class MainActivity extends ListActivity {
 
 	public static SimpleCursorAdapter getAdapter() {
 		return adapter;
+	}
+
+	@Override
+	public void onClick(DialogInterface arg0, int arg1) {
+		startLevel = arg1;
 	}
 
 }

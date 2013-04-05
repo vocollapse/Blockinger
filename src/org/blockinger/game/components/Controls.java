@@ -125,8 +125,10 @@ public class Controls extends Component {
 		if (!buttonVibrationEnabled || v == null)
 			return;
 		//v.cancel();
-		if((host.game.getTime() - shortVibeTime) > (150 + vibrationOffset))
+		if((host.game.getTime() - shortVibeTime) > (host.getResources().getInteger(R.integer.shortVibeInterval) + vibrationOffset)) {
+			shortVibeTime = host.game.getTime();
 			v.vibrate(5 + vibrationOffset);
+		}
 	}
 
 
@@ -163,7 +165,6 @@ public class Controls extends Component {
 		playerSoftDrop = true;
 		clearPlayerSoftDrop = false;
 		vibrateShort();
-		shortVibeTime = host.game.getTime();
 		host.game.setNextPlayerDropTime(host.game.getTime());
 		//nextPlayerDropTime = host.game.getTime();
     	//Thread.yield();
@@ -222,9 +223,7 @@ public class Controls extends Component {
 		long gameTime = host.game.getTime();
 		Piece active = host.game.getActivePiece();
 		Board board = host.game.getBoard();
-		int level = host.game.getLevel();
 		int maxLevel = host.game.getMaxLevel();
-		int clearedLines = host.game.getClearedLines();
 		
 		if(playerHardDrop) {
 			board.interruptClearAnimation();
@@ -235,7 +234,7 @@ public class Controls extends Component {
 			board.invalidate();
 			playerHardDrop = false;
 			
-			if((level < maxLevel) && (clearedLines > lineThresholds[Math.min(level,maxLevel - 1)]))
+			if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
 				host.game.nextLevel();
 			host.game.setNextDropTime(gameTime + host.game.getAutoDropInterval());
 			host.game.setNextPlayerDropTime(gameTime);
@@ -255,8 +254,8 @@ public class Controls extends Component {
 			} else {
 				//vibrateShort(); DAS WUERDE HIER BEI JEDEM TICK VIBRIEREN UND DAS MUSS DOCH NICHT SEIN. BEIM BESTEN WILLEN NICHT MEIN LIEBER FREUND.
 			}
-			if((level < maxLevel) && (clearedLines > lineThresholds[Math.min(level,maxLevel - 1)]))
-				level++;
+			if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
+				host.game.nextLevel();
 			host.game.setNextDropTime(host.game.getNextPlayerDropTime() + host.game.getAutoDropInterval());
 			host.game.setNextPlayerDropTime(host.game.getNextPlayerDropTime() + 2*host.game.getSoftDropInterval());
 			//nextDropTime = nextPlayerDropTime + host.game.getAutoDropInterval();
@@ -274,8 +273,8 @@ public class Controls extends Component {
 				} else {
 					//vibrateShort(); DAS WUERDE HIER BEI JEDEM TICK VIBRIEREN UND DAS MUSS DOCH NICHT SEIN. BEIM BESTEN WILLEN NICHT MEIN LIEBER FREUND.
 				}
-				if((level < maxLevel) && (clearedLines > lineThresholds[Math.min(level,maxLevel - 1)]))
-					level++;
+				if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
+					host.game.nextLevel();
 				host.game.setNextDropTime(host.game.getNextPlayerDropTime() + host.game.getAutoDropInterval());
 				host.game.setNextPlayerDropTime(host.game.getNextPlayerDropTime() + host.game.getSoftDropInterval());
 				//nextDropTime = nextPlayerDropTime + host.game.getAutoDropInterval();
@@ -290,8 +289,8 @@ public class Controls extends Component {
 					host.game.pieceTransition(eventVibrationEnabled);
 					board.invalidate();
 				}
-				if((level < maxLevel) && (clearedLines > lineThresholds[Math.min(level,maxLevel - 1)]))
-					level++;
+				if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
+					host.game.nextLevel();
 				host.game.setNextDropTime(host.game.getNextDropTime() + host.game.getAutoDropInterval());
 				host.game.setNextPlayerDropTime(host.game.getNextDropTime() + host.game.getSoftDropInterval());
 				//nextDropTime = nextDropTime + host.game.getAutoDropInterval();
@@ -312,8 +311,8 @@ public class Controls extends Component {
 				host.game.pieceTransition(eventVibrationEnabled);
 				board.invalidate();
 			}
-			if((level < maxLevel) && (clearedLines > lineThresholds[Math.min(level,maxLevel - 1)]))
-				level++;
+			if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
+				host.game.nextLevel();
 			host.game.setNextDropTime(host.game.getNextDropTime() + host.game.getAutoDropInterval());
 			host.game.setNextPlayerDropTime(host.game.getNextDropTime());
 			//nextDropTime = nextDropTime + host.game.getAutoDropInterval();
@@ -335,7 +334,6 @@ public class Controls extends Component {
 			leftMove = false;
 			if(active.moveLeft(board)) {
 				vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
-				shortVibeTime = gameTime;
 				host.display.invalidatePhantom();
 			} else
 				vibrateWall();
@@ -346,7 +344,6 @@ public class Controls extends Component {
 			if(gameTime >= host.game.getNextPlayerMoveTime()) {
 				if(active.moveLeft(board)) {
 					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
-					shortVibeTime = gameTime;
 					host.display.invalidatePhantom();
 				} else
 					vibrateWall();
@@ -365,7 +362,6 @@ public class Controls extends Component {
 			rightMove = false;
 			if(active.moveRight(board)) {
 				vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
-				shortVibeTime = gameTime;
 				host.display.invalidatePhantom();
 			} else
 				vibrateWall();
@@ -375,7 +371,6 @@ public class Controls extends Component {
 			if(gameTime >= host.game.getNextPlayerMoveTime()) {
 				if(active.moveRight(board)) {
 					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
-					shortVibeTime = gameTime;
 					host.display.invalidatePhantom();
 				} else
 					vibrateWall();

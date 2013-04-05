@@ -38,7 +38,6 @@
 package org.blockinger.game.activities;
 
 import org.blockinger.game.R;
-import org.blockinger.game.components.GameState;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -72,16 +71,16 @@ public class DefeatDialogFragment extends DialogFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setTitle(R.string.defeatDialogTitle);
 		builder.setMessage(
-				"Score:" + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + scoreString + "\n" +
-				"Time:" + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + timeString + "\n" +
-				"Total APM:" + getString(R.string.tab) + getString(R.string.tab) + getString(R.string.tab) + apmString
+				"Score:\n    " + scoreString + "\n\n" +
+				"Time:\n    " + timeString + "\n\n" +
+				"Total APM:\n    " + apmString
 				);
 		builder.setNeutralButton(R.string.defeatDialogReturn, new DialogInterface.OnClickListener() {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				((GameActivity)getActivity()).putScore(score);
-				GameState.getNewInstance((GameActivity)getActivity());
+				//GameState.getNewInstance((GameActivity)getActivity());
 				getActivity().finish();
 			}
 		});

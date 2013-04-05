@@ -72,6 +72,12 @@
             android:contentDescription="@string/highscoreListDescription" >
         </ListView>
 
+        <View
+            android:id="@+id/hdivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/holo_grey" />
+
         <EditText
             android:id="@+id/nicknameEditView"
             android:layout_width="match_parent"
@@ -81,6 +87,7 @@
             android:imeOptions="actionDone"
             android:singleLine="true" >
         </EditText>
+
     </LinearLayout>
 
     <View
@@ -116,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:layout_weight="1"
+            android:enabled="false"
             android:onClick="onClickResume"
             android:text="@string/resumeButtonString" />
 

@@ -45,6 +45,8 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 
@@ -95,6 +97,19 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             connectionPref.setSummary(sharedPreferences.getString(key, ""));
         }
 
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.backtomain, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		finish();
+		return true;
 	}
 	
 	@SuppressWarnings("deprecation")

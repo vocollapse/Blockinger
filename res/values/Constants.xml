@@ -54,6 +54,8 @@
     <integer name="zeilenoffset">0</integer>
     <integer name="padding_columns">2</integer>
     
+    <integer name="phantom_alpha">93</integer>
+    
     <integer name="piece_start_x">3</integer>
     
     <integer name="spawn_delay">200</integer>
@@ -64,6 +66,8 @@
     <integer name="quadLineScore">80</integer>
     <integer name="multiTetrisScore">120</integer>
     <integer name="hardDropBonusFactor">18</integer> <!-- number of lines necessary to double the score -->
+    
+    <integer name="shortVibeInterval">100</integer>
     
    
     <integer name="clearAnimation_enableFlash">1</integer>

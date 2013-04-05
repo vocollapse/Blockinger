@@ -14,6 +14,11 @@ import android.preference.PreferenceManager;
 
 public class GameState extends Component {
 
+	public final static int state_startable = 0;
+	public final static int state_running = 1;
+	public final static int state_paused = 2;
+	public final static int state_finished = 3;
+	
 	private static GameState instance;
 	
 	// References
@@ -30,8 +35,9 @@ public class GameState extends Component {
 	private Piece[] previewPieces;
 	private boolean scheduleSpawn;
 	private long spawnTime;
-	private boolean paused;
-	private boolean restartMe;
+	//private boolean paused;
+	//private boolean restartMe;
+	private int stateOfTheGame;
 	private long score;
 	//private long consecutiveBonusScore;
 	private int clearedLines;
@@ -55,9 +61,11 @@ public class GameState extends Component {
 	private int spawn_delay;
 	private int piece_start_x;
 	private long actions;
+	private int songtime;
 	
 	private GameState(GameActivity ga) {
 		super(ga);
+		setSongtime(0);
 		actions = 0;
 		board = new Board(host);
 		date = new GregorianCalendar();
@@ -83,6 +91,7 @@ public class GameState extends Component {
 		gameTime = 0;
 		level = 0;
 		score = 0;
+		songtime = 0;
 		//consecutiveBonusScore = 0;
 		maxLevel = host.getResources().getInteger(R.integer.levels);
 
@@ -125,8 +134,9 @@ public class GameState extends Component {
 		previewIndex = rng.next();
 		activePieces[activeIndex].setActive(true);
 
-		paused = true;
-		restartMe = false;
+		//paused = true;
+		//restartMe = false;
+		stateOfTheGame = state_startable;
 		scheduleSpawn = false;
 		spawnTime = 0;
 	}
@@ -156,10 +166,14 @@ public class GameState extends Component {
 	}
 	
 	public void setRunning(boolean b) {
-		if(b)
+		if(b) {
 			currentTime = System.currentTimeMillis();
-		
-		paused = !b;
+			if(stateOfTheGame != state_finished)
+				stateOfTheGame = state_running;
+		} else {
+			if(stateOfTheGame == state_running)
+				stateOfTheGame = state_paused;
+		}
 	}
 	
 	public void clearLines(boolean playerHardDrop, int hardDropDistance) {
@@ -240,14 +254,13 @@ public class GameState extends Component {
 		
 		// Checking for Defeat
 		if(!activePieces[activeIndex].setPosition(piece_start_x, 0, false, board)) {
-			restartMe = true;
-			setRunning(false);
+			stateOfTheGame = state_finished;
 			host.gameOver(score, getTimeString(), (int)((float)actions*(60000.0f / gameTime)));
 		}
 	}
 	
 	public boolean isResumable() {
-		return !restartMe;
+		return (stateOfTheGame != state_finished);
 	}
 
 	public String getScoreString() {
@@ -264,7 +277,7 @@ public class GameState extends Component {
 	 * @return true if controls is allowed to cycle()
 	 */
 	public boolean cycle(long tempTime) {
-		if(paused)
+		if(stateOfTheGame != state_running)
 			return false;
 		
 		gameTime += (tempTime - currentTime);
@@ -311,7 +324,6 @@ public class GameState extends Component {
 		setRunning(true);
 	}
 
-	@Override
 	public void disconnect() {
 		setRunning(false);
 		board.disconnect();
@@ -383,6 +395,38 @@ public class GameState extends Component {
 	public static GameState getNewInstance(GameActivity ga) {
 		instance = new GameState(ga);
 		return instance;
+	}
+
+	public static boolean hasInstance() {
+		return (instance != null);
+	}
+
+	public long getScore() {
+		return score;
+	}
+
+	public int getAPM() {
+		return (int)((float)actions*(60000.0f / gameTime));
+	}
+
+	public int getSongtime() {
+		return songtime;
+	}
+	
+	public static boolean isFinished() {
+		if(instance == null)
+			return true;
+		return !instance.isResumable();
+	}
+
+	public void setSongtime(int songtime) {
+		this.songtime = songtime;
+	}
+
+	public void setLevel(int int1) {
+		level = int1;
+		nextDropTime = host.getResources().getIntArray(R.array.intervals)[int1];
+		clearedLines = 10*int1;
 	}
 	
 }
