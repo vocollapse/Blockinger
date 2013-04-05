@@ -68,6 +68,9 @@
     <string name="tab">\u0009</string>
     
     <string name="anonymous">Anonymous</string>
+    <string name="scoreLabel">Score:</string>
+    <string name="timeLabel">Time:</string>
+    <string name="apmLabel">Total APM:</string>
     <string name="highscore_title">Highscores</string>
     
     <string name="musicAuthorNote">music by pornophonique</string>

@@ -71,9 +71,12 @@ public class DefeatDialogFragment extends DialogFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setTitle(R.string.defeatDialogTitle);
 		builder.setMessage(
-				"Score:\n    " + scoreString + "\n\n" +
-				"Time:\n    " + timeString + "\n\n" +
-				"Total APM:\n    " + apmString
+				getResources().getString(R.string.scoreLabel) + 
+				"\n    " + scoreString + "\n\n" +
+				getResources().getString(R.string.timeLabel) +
+				"\n    " + timeString + "\n\n" +
+				getResources().getString(R.string.apmLabel) +
+				"\n    " + apmString
 				);
 		builder.setNeutralButton(R.string.defeatDialogReturn, new DialogInterface.OnClickListener() {
 			

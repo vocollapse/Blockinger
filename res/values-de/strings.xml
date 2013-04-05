@@ -66,6 +66,9 @@
     <string name="defeatDialogReturn">Zurück</string>
     
     <string name="anonymous">Anonym</string>
+    <string name="scoreLabel">Punkte:</string>
+    <string name="timeLabel">Zeit:</string>
+    <string name="apmLabel">APM Durchschnitt:</string>
     <string name="highscore_title">Highscores</string>
     
     <string name="musicAuthorNote">Musik von Pornophonique</string>

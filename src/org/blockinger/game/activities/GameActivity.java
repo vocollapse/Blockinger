@@ -241,7 +241,7 @@ public class GameActivity extends FragmentActivity {
 	public void putScore(long score) {
 		String playerName = game.getPlayerName();
 		if(playerName == null || playerName.equals(""))
-			playerName = "Anonymous";
+			playerName = getResources().getString(R.string.anonymous);//"Anonymous";
 	    MainActivity.getDS().createScore(score, playerName);
 	    MainActivity.getDS().open();
 	    Cursor cursor = MainActivity.getDS().getCursor();
