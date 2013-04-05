@@ -113,10 +113,16 @@
 		        android:key="pref_softdropspeed"
 		        android:title="@string/softdropspeed_pref_title"
 		        android:defaultValue="10"
-		        android:max="20"
+		        android:max="30"
 		        robobunny:min="1"
 		        robobunny:unitsLeft=""
 		        robobunny:unitsRight=" Lines per Second" />
+		    
+		    <CheckBoxPreference 
+		        android:key="pref_accelerationV"
+		        android:summary="@string/pref_accelerationV_summary"
+		        android:defaultValue="true"
+		        android:title="@string/pref_accelerationV_title"/>
 		    
 		    <org.blockinger.game.SeekBarPreference
 		        android:key="pref_movespeed"
@@ -126,6 +132,12 @@
 		        robobunny:min="1"
 		        robobunny:unitsLeft=""
 		        robobunny:unitsRight=" Squares per Second" />
+		    
+		    <CheckBoxPreference 
+		        android:key="pref_accelerationH"
+		        android:summary="@string/pref_accelerationH_summary"
+		        android:defaultValue="true"
+		        android:title="@string/pref_accelerationH_title"/>
 	        
 		    <CheckBoxPreference 
 		        android:key="pref_fpslimit"

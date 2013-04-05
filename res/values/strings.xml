@@ -67,6 +67,7 @@
     
     <string name="tab">\u0009</string>
     
+    <string name="anonymous">Anonymous</string>
     <string name="highscore_title">Highscores</string>
     
     <string name="musicAuthorNote">music by pornophonique</string>
@@ -124,11 +125,16 @@
     <string name="pref_antialiasing_summary">Improves the display quality of text. Disable this for better performance</string>
     <string name="pref_antialiasing_title">Text Anti-Aliasing</string>
     
+    <string name="pref_accelerationH_summary">Short delay after the initial move. Useful for beginners</string>
+    <string name="pref_accelerationH_title">Horizontal Acceleration</string>
+    
+    <string name="pref_accelerationV_summary">Short delay after the initial move. Useful for beginners</string>
+    <string name="pref_accelerationV_title">Soft Drop Acceleration</string>
     
     
     <string name="pref_version_summary">0.1.0\nTouch here to view the public repository of this project</string>
     <string name="pref_version_title">Version</string>
-    <string name="repository_url">https://github.com/hamstercount/Blockinger</string>
+    <string name="repository_url">https://github.com/vocollapse/Blockinger</string>
     
     <string name="pref_license_summary">Blockinger is free software: licensed under the GNU General Public License (GPLv3) as published by the Free Software Foundation.\nTouch here to view this license online</string>
     <string name="pref_license_title">License Information</string>
@@ -140,7 +146,7 @@
     
     <string name="pref_author_summary">Simon Willeke\nTouch here to contact the author for suggestions, feedback or anything related to this project</string>
     <string name="pref_author_title">Author</string>
-    <string name="pref_author_url">hamstercount@hotmail.com</string>
+    <string name="pref_author_url">rasyl@web.de</string>
     
     <string name="pref_donate_title">Donate</string>
     <string name="pref_donate_summary">If you are delighted by this Software and would like to let the Author benefit as well, you can place a Donation as you like.\nTouch here to open a weblink</string>

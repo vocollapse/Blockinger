@@ -73,6 +73,8 @@ public class Controls extends Component {
 	private boolean rightRotation;
 	private boolean buttonVibrationEnabled;
 	private boolean eventVibrationEnabled;
+	private int initialHIntervalFactor;
+	private int initialVIntervalFactor;
 	
 	public Controls(GameActivity ga) {
 		super(ga);
@@ -89,6 +91,14 @@ public class Controls extends Component {
 		} catch(NumberFormatException e) {
 			vibrationOffset = 0;
 		}
+		if(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_accelerationH", true))
+			initialHIntervalFactor = 2;
+		else
+			initialHIntervalFactor = 1;
+		if(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_accelerationV", true))
+			initialVIntervalFactor = 2;
+		else
+			initialVIntervalFactor = 1;
 		playerSoftDrop = false;
 		leftMove = false;
 		rightMove = false;
@@ -257,9 +267,9 @@ public class Controls extends Component {
 			if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
 				host.game.nextLevel();
 			host.game.setNextDropTime(host.game.getNextPlayerDropTime() + host.game.getAutoDropInterval());
-			host.game.setNextPlayerDropTime(host.game.getNextPlayerDropTime() + 2*host.game.getSoftDropInterval());
+			host.game.setNextPlayerDropTime(host.game.getNextPlayerDropTime() + initialVIntervalFactor*host.game.getSoftDropInterval());
 			//nextDropTime = nextPlayerDropTime + host.game.getAutoDropInterval();
-			//nextPlayerDropTime = nextPlayerDropTime + 2*host.game.getSoftDropInterval(); // initial interval is doubled!
+			//nextPlayerDropTime = nextPlayerDropTime + initialIntervalFactor*host.game.getSoftDropInterval(); // initial interval is doubled!
 			
 		// Continuous Soft Drop
 		} else if(continuousSoftDrop) {
@@ -337,8 +347,8 @@ public class Controls extends Component {
 				host.display.invalidatePhantom();
 			} else
 				vibrateWall();
-			host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + 2*host.game.getMoveInterval());
-			//nextPlayerMoveTime = nextPlayerMoveTime + 2*host.game.getMoveInterval(); // first interval is doubled!
+			host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + initialHIntervalFactor*host.game.getMoveInterval());
+			//nextPlayerMoveTime = nextPlayerMoveTime + initialIntervalFactor*host.game.getMoveInterval(); // first interval is doubled!
 			
 		} else if(continuousLeftMove) {
 			if(gameTime >= host.game.getNextPlayerMoveTime()) {
@@ -365,7 +375,7 @@ public class Controls extends Component {
 				host.display.invalidatePhantom();
 			} else
 				vibrateWall();
-			host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + 2*host.game.getMoveInterval()); // first interval is doubled!
+			host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + initialHIntervalFactor*host.game.getMoveInterval()); // first interval is doubled!
 			
 		} else if(continuousRightMove) {
 			if(gameTime >= host.game.getNextPlayerMoveTime()) {

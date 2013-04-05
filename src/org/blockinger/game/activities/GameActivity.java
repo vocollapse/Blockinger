@@ -110,7 +110,7 @@ public class GameActivity extends FragmentActivity {
 			if(b.getString("playername") != null)
 				game.setPlayerName(b.getString("playername"));
 		} else 
-			game.setPlayerName("Anonymous");
+			game.setPlayerName(getResources().getString(R.string.anonymous));
 		dialog.setCancelable(false);
 		if(!game.isResumable())
 			gameOver(game.getScore(), game.getTimeString(), game.getAPM());
@@ -272,7 +272,8 @@ public class GameActivity extends FragmentActivity {
     protected void onResume() {
     	super.onResume();
     	try {
-    		gameMusicPlayer.release();
+    		if(gameMusicPlayer != null)
+    			gameMusicPlayer.release();
     	} catch(IllegalStateException e) {
     		
     	}

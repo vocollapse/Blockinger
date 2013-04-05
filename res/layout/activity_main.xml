@@ -101,14 +101,13 @@
         android:gravity="center" >
 
         <Button
-            android:id="@+id/restartButton"
+            android:id="@+id/quitButton"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClickStart"
-            android:text="@string/startButtonString" />
+            android:onClick="onClickQuit"
+            android:text="@string/quitButtonString" />
 
         <View
             android:id="@+id/spacer1"
@@ -134,14 +133,13 @@
             android:layout_weight="0.25" />
 
         <Button
-            android:id="@+id/quitButton"
+            android:id="@+id/restartButton"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClickQuit"
-            android:text="@string/quitButtonString" />
+            android:onClick="onClickStart"
+            android:text="@string/startButtonString" />
     </LinearLayout>
 
     <TextView

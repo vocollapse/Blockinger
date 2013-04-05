@@ -65,6 +65,7 @@
     <string name="defeatDialogTitle">Game Over</string>
     <string name="defeatDialogReturn">Zurück</string>
     
+    <string name="anonymous">Anonym</string>
     <string name="highscore_title">Highscores</string>
     
     <string name="musicAuthorNote">Musik von Pornophonique</string>
@@ -115,6 +116,12 @@
     
     <string name="pref_antialiasing_summary">Verbessert die Darstellungsqualität von Text deutlich. Deaktivieren reduziert die Rechenlast</string>
     <string name="pref_antialiasing_title">Anti-Aliasing für Text</string>
+    
+    <string name="pref_accelerationH_summary">Je länger man die Bewegungsbuttons gedrückt hält, desto so schneller wird die Bewegung. Nützlich, um ungewollte Bewegungen zu verhindern</string>
+    <string name="pref_accelerationH_title">Horizontale Beschleunigung</string>
+    
+    <string name="pref_accelerationV_summary">Je länger man die Bewegungsbuttons gedrückt hält, desto so schneller wird die Bewegung. Nützlich, um ungewollte Bewegungen zu verhindern</string>
+    <string name="pref_accelerationV_title">Soft Drop Beschleunigung</string>
     
     
     

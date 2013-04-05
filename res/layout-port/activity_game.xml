@@ -88,7 +88,7 @@
                     android:id="@+id/View03"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.2" />
+                    android:layout_weight="0.1" />
 
                 <ImageButton
                     android:id="@+id/rightButton"
@@ -106,7 +106,7 @@
                 android:id="@+id/View04"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.1" />
 
             <ImageButton
                 android:id="@+id/softDropButton"
@@ -151,7 +151,7 @@
                 style="@android:style/Widget.ImageWell"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="1.05"
                 android:clickable="true"
                 android:contentDescription="rotate right Button"
                 android:scaleType="centerInside"
@@ -161,14 +161,14 @@
                 android:id="@+id/View01"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.1" />
 
             <ImageButton
                 android:id="@+id/rotateLeftButton"
                 style="@android:style/Widget.ImageWell"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="1.05"
                 android:clickable="true"
                 android:contentDescription="rotate left Button"
                 android:scaleType="centerInside"
@@ -178,7 +178,7 @@
                 android:id="@+id/spacerl0"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.1" />
 
             <ImageButton
                 android:id="@+id/hardDropButton"
