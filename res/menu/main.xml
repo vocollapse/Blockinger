@@ -40,7 +40,8 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="1"
-        android:showAsAction="ifRoom"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_settings"
         android:title="@string/action_settings"
         android:enabled="true"/>
     <item

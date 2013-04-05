@@ -77,6 +77,7 @@
     <integer name="clearAnimation_burstDuration">200</integer>
     
     <integer name="levels">30</integer>
+    <integer name="levelsplusone">31</integer>
     <integer-array name="intervals">
           <item>1693</item>
           <item>1524</item>

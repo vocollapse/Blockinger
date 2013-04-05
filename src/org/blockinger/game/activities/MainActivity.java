@@ -57,10 +57,12 @@ import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.Button;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-public class MainActivity extends ListActivity implements DialogInterface.OnClickListener{
+public class MainActivity extends ListActivity {
 
 	public static ScoreDataSource datasource;
 	private Cursor mc;
@@ -68,6 +70,9 @@ public class MainActivity extends ListActivity implements DialogInterface.OnClic
 	private MediaPlayer mainMenuMusicPlayer;
 	private AlertDialog.Builder dialog;
 	private int startLevel;
+	private View dialogView;
+	private SeekBar leveldialogBar;
+	private TextView leveldialogtext;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +104,7 @@ public class MainActivity extends ListActivity implements DialogInterface.OnClic
 	    startLevel = 0;
 	    dialog = new AlertDialog.Builder(this);
 		dialog.setTitle(R.string.startLevelDialogTitle);
-		dialog.setSingleChoiceItems(R.array.levelChooseArray, startLevel, this);
+		dialog.setCancelable(false);
 		dialog.setNegativeButton(R.string.startLevelDialogCancel, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -112,8 +117,6 @@ public class MainActivity extends ListActivity implements DialogInterface.OnClic
 				MainActivity.this.start();
 			}
 		});
-	    //dialog = new StartLevelDialog();
-	    //dialog.setHost(this);
 	    
 	    try{
 		    if(mainMenuMusicPlayer == null) {
@@ -195,7 +198,30 @@ public class MainActivity extends ListActivity implements DialogInterface.OnClic
 
 
     public void onClickStart(View view) {
-		dialog.setSingleChoiceItems(R.array.levelChooseArray, startLevel, this);
+		//dialog.setSingleChoiceItems(R.array.levelChooseArray, startLevel, this);
+		dialogView = getLayoutInflater().inflate(R.layout.seek_bar_dialog, null);
+		leveldialogtext = ((TextView)dialogView.findViewById(R.id.leveldialogleveldisplay));
+		leveldialogBar = ((SeekBar)dialogView.findViewById(R.id.levelseekbar));
+		leveldialogBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+
+			@Override
+			public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+				leveldialogtext.setText("" + arg1);
+				startLevel = arg1;
+			}
+
+			@Override
+			public void onStartTrackingTouch(SeekBar arg0) {
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar arg0) {
+			}
+			
+		});
+		leveldialogBar.setProgress(startLevel);
+		leveldialogtext.setText("" + startLevel);
+		dialog.setView(dialogView);
 		dialog.show();
     }
 
@@ -285,11 +311,6 @@ public class MainActivity extends ListActivity implements DialogInterface.OnClic
 
 	public static SimpleCursorAdapter getAdapter() {
 		return adapter;
-	}
-
-	@Override
-	public void onClick(DialogInterface arg0, int arg1) {
-		startLevel = arg1;
 	}
 
 }
