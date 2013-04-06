@@ -1,6 +1,6 @@
 /*
- * Copyright 2013 Simon Willeke
- * contact: hamstercount@hotmail.com
+ * Copyright 2011 Kirk Baucom
+ * contact: robobunny.com
  */
 
 /*
