@@ -39,8 +39,11 @@ package org.blockinger.game.activities;
 
 import org.blockinger.game.R;
 
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -49,14 +52,18 @@ import android.view.MenuItem;
 
 public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 
+	@SuppressLint("NewApi")
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 
 		addPreferencesFromResource(R.xml.preferences);
-		/*ActionBar actionBar = getActionBar();
-	    actionBar.setDisplayHomeAsUpEnabled(true);*/
+		
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+	        ActionBar actionBar = getActionBar();
+	        actionBar.setDisplayHomeAsUpEnabled(true);
+	    }
 
 
         Preference pref = findPreference("pref_rng");

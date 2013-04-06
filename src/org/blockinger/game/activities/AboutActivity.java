@@ -39,15 +39,20 @@ package org.blockinger.game.activities;
 
 import org.blockinger.game.R;
 
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.view.MenuItem;
 
 public class AboutActivity extends PreferenceActivity {
 
+	@SuppressLint("NewApi")
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
@@ -55,6 +60,10 @@ public class AboutActivity extends PreferenceActivity {
 
 		addPreferencesFromResource(R.xml.about_menu);
 
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+	        ActionBar actionBar = getActionBar();
+	        actionBar.setDisplayHomeAsUpEnabled(true);
+	    }
         
 		Preference pref = findPreference("pref_license_music");
         pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
@@ -112,6 +121,12 @@ public class AboutActivity extends PreferenceActivity {
 			}
 		});
 		
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		finish();
+		return true;
 	}
 	
 }
