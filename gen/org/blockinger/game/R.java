@@ -88,7 +88,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class drawable {
         public static final int hard_drop_button_icon_hd=0x7f020000;
         public static final int ic_settings=0x7f020001;
-        public static final int iconinger_v1=0x7f020002;
+        public static final int iconinger_v2=0x7f020002;
         public static final int left_button_icon_hd=0x7f020003;
         public static final int right_button_icon_hd=0x7f020004;
         public static final int rotate_left_button_icon_hd=0x7f020005;

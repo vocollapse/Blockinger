@@ -50,13 +50,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/iconinger_v1"
+        android:icon="@drawable/iconinger_v2"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name="org.blockinger.game.activities.MainActivity"
             android:configChanges="orientation|screenLayout|screenSize"
-            android:icon="@drawable/iconinger_v1"
+            android:icon="@drawable/iconinger_v2"
             android:label="@string/app_name"
             android:theme="@style/AppTheme" >
             <intent-filter>
@@ -73,11 +73,11 @@
         <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
         <activity
             android:name="org.blockinger.game.activities.SettingsActivity"
-            android:label="@string/title_activity_settings" >
+            android:label="@string/title_activity_settings" android:icon="@drawable/ic_settings">
         </activity>
         <activity
             android:name="org.blockinger.game.activities.AboutActivity"
-            android:label="@string/title_activity_about" >
+            android:label="@string/title_activity_about" android:icon="@drawable/iconinger_v2">
         </activity>
     </application>
 
