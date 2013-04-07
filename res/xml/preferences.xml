@@ -99,7 +99,8 @@
         android:key="other_settings">
 	    
         
-	    <PreferenceScreen android:title="@string/pref_category_advanced">
+	    <PreferenceScreen
+	        android:title="@string/pref_category_advanced" >
     
 		    <ListPreference
 		        android:entries="@array/randomizer_preference_array"

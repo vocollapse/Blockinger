@@ -152,9 +152,9 @@
     <string name="pref_author_url">rasyl@web.de</string>
     
     <string name="pref_donate_title">Donate</string>
-    <string name="pref_donate_summary">If you are delighted by this Software and would like to let the Author benefit as well, you can place a Donation as you like.\nTouch here to open a weblink</string>
+    <string name="pref_donate_summary">If you are grateful for this Software and would like to let the Author benefit as well, you can place a Donation as you like.</string>
     <string name="donation_url">"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=H6VS9SNRHMJSS"</string>
-
+	<string name="donate_button">Go to Paypal</string>
     
     
     <string name="pref_category_sound">SOUND</string>

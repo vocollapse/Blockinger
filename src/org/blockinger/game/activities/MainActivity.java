@@ -68,7 +68,8 @@ public class MainActivity extends ListActivity {
 	private Cursor mc;
 	private static SimpleCursorAdapter adapter;
 	private MediaPlayer mainMenuMusicPlayer;
-	private AlertDialog.Builder dialog;
+	private AlertDialog.Builder startLevelDialog;
+	private AlertDialog.Builder donateDialog;
 	private int startLevel;
 	private View dialogView;
 	private SeekBar leveldialogBar;
@@ -102,22 +103,43 @@ public class MainActivity extends ListActivity {
 	    
 	    /* Create Startlevel Dialog */
 	    startLevel = 0;
-	    dialog = new AlertDialog.Builder(this);
-		dialog.setTitle(R.string.startLevelDialogTitle);
-		dialog.setCancelable(false);
-		dialog.setNegativeButton(R.string.startLevelDialogCancel, new DialogInterface.OnClickListener() {
+	    startLevelDialog = new AlertDialog.Builder(this);
+		startLevelDialog.setTitle(R.string.startLevelDialogTitle);
+		startLevelDialog.setCancelable(false);
+		startLevelDialog.setNegativeButton(R.string.startLevelDialogCancel, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 			}
 		});
-		dialog.setPositiveButton(R.string.startLevelDialogStart, new DialogInterface.OnClickListener() {
+		startLevelDialog.setPositiveButton(R.string.startLevelDialogStart, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				MainActivity.this.start();
 			}
 		});
 	    
+		/* Create Donate Dialog */
+	    donateDialog = new AlertDialog.Builder(this);
+	    donateDialog.setTitle(R.string.pref_donate_title);
+	    donateDialog.setMessage(R.string.pref_donate_summary);
+	    donateDialog.setNegativeButton(R.string.startLevelDialogCancel, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+	    donateDialog.setPositiveButton(R.string.donate_button, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				String url = getResources().getString(R.string.donation_url);
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(Uri.parse(url));
+				startActivity(i);
+			}
+		});
+		
+		/* Start Music */
 	    try{
 		    if(mainMenuMusicPlayer == null) {
 			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.lemmings03);
@@ -157,10 +179,7 @@ public class MainActivity extends ListActivity {
 				startActivity(intent1);
 				return true;
 			case R.id.action_donate:
-				String url = getResources().getString(R.string.donation_url);
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(url));
-				startActivity(i);
+				donateDialog.show();
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
@@ -221,8 +240,8 @@ public class MainActivity extends ListActivity {
 		});
 		leveldialogBar.setProgress(startLevel);
 		leveldialogtext.setText("" + startLevel);
-		dialog.setView(dialogView);
-		dialog.show();
+		startLevelDialog.setView(dialogView);
+		startLevelDialog.show();
     }
 
     public void onClickResume(View view) {

@@ -141,8 +141,8 @@
     <string name="pref_author_title">Autor</string>
     
     <string name="pref_donate_title">Spenden</string>
-    <string name="pref_donate_summary">Wenn Sie mit dieser Software zufrieden sind, un dem Autor gerne etwas gutes tun möchten, können Sie eine Spende tätigen.\nHier berühren, um einen Link zur PayPal-Spendenseite des Autors zu öffnen</string>
-    
+    <string name="pref_donate_summary">Wenn Sie mit dieser Software zufrieden sind, un dem Autor gerne etwas gutes tun möchten, können Sie eine Spende tätigen.</string>
+    <string name="donate_button">Zu Paypal</string>
     
     
     <string name="pref_category_sound">TON</string>

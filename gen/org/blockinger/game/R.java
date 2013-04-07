@@ -196,6 +196,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int app_name=0x7f0a0000;
         public static final int defeatDialogReturn=0x7f0a0015;
         public static final int defeatDialogTitle=0x7f0a0014;
+        public static final int donate_button=0x7f0a004c;
         public static final int donation_url=0x7f0a004b;
         public static final int fps_title=0x7f0a0013;
         public static final int highscoreListDescription=0x7f0a000a;
@@ -217,10 +218,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int pref_author_summary=0x7f0a0046;
         public static final int pref_author_title=0x7f0a0047;
         public static final int pref_author_url=0x7f0a0048;
-        public static final int pref_category_advanced=0x7f0a004f;
-        public static final int pref_category_other=0x7f0a004e;
-        public static final int pref_category_sound=0x7f0a004c;
-        public static final int pref_category_vibration=0x7f0a004d;
+        public static final int pref_category_advanced=0x7f0a0050;
+        public static final int pref_category_other=0x7f0a004f;
+        public static final int pref_category_sound=0x7f0a004d;
+        public static final int pref_category_vibration=0x7f0a004e;
         public static final int pref_donate_summary=0x7f0a004a;
         public static final int pref_donate_title=0x7f0a0049;
         public static final int pref_fps_summary=0x7f0a0022;
