@@ -128,7 +128,7 @@
     
     
     
-    <string name="pref_version_summary">0.1.0\nHier berühren, um das öffentliche Quelltextverzeichnis dieses Projekts anzusehen</string>
+    <string name="pref_version_summary">1.0\nHier berühren, um das öffentliche Quelltextverzeichnis dieses Projekts anzusehen</string>
     <string name="pref_version_title">Version</string>
     
     <string name="pref_license_summary">Blockinger ist Freie Software: lizensiert unter der GNU General Public License (GPLv3), wie von der Free Software Foundation veröffentlicht.\nHier berühren, um die Lizenz online anzusehen</string>
