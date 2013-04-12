@@ -13,45 +13,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <View
-            android:id="@+id/paddingLeft"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0" />
-
-        <TextView
-            android:id="@+id/leveldialoglabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="@string/level_title"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <View
-            android:id="@+id/padding"
+        <SeekBar
+            android:id="@+id/levelseekbar"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="5" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="@integer/levels" />
 
         <TextView
             android:id="@+id/leveldialogleveldisplay"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <View
-            android:id="@+id/paddingRight"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0" />
+            android:id="@+id/view1"
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
-
-    <SeekBar
-        android:id="@+id/levelseekbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="@integer/levels" />
 
 </LinearLayout>

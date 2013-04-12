@@ -46,7 +46,7 @@
     <string name="action_donate">Donate</string>
     <string name="startButtonString">New Game</string>
     <string name="resumeButtonString">Resume Game</string>
-    <string name="quitButtonString">Quit</string>
+    <string name="quitButtonString">Exit</string>
     <string name="pausebutton">Pause</string>
     <string name="playerNameInputFieldHint">Choose your player name</string>
     <string name="highscoreListDescription">Highscores</string>

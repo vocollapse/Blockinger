@@ -41,17 +41,16 @@ import org.blockinger.game.R;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
-public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener, OnPreferenceClickListener {
+public class AdvancedSettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 
 	@SuppressLint("NewApi")
 	@SuppressWarnings("deprecation")
@@ -59,17 +58,15 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 
-		addPreferencesFromResource(R.xml.simple_preferences);
+		addPreferencesFromResource(R.xml.advanced_preferences);
 		
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 	        ActionBar actionBar = getActionBar();
 	        actionBar.setDisplayHomeAsUpEnabled(true);
 	    }
 
-		Preference pref = findPreference("pref_advanced");
-		pref.setOnPreferenceClickListener(this);
-		
- /*       Preference pref = findPreference("pref_rng");
+
+        Preference pref = findPreference("pref_rng");
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_rng", "").equals("sevenbag"))
         	pref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[0]);//"7-Bag-Randomization");
         else
@@ -80,16 +77,16 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
         pref = findPreference("pref_vibDurOffset");
         pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_vibDurOffset", ""));
-*/
+
         
         
 	}
 
-	//@SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,String key) {
 
-		/*if (key.equals("pref_rng")) {
+		if (key.equals("pref_rng")) {
             Preference connectionPref = findPreference(key);
             // Set summary to be the user-description for the selected value
             if(sharedPreferences.getString(key, "").equals("sevenbag"))
@@ -106,7 +103,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             Preference connectionPref = findPreference(key);
             // Set summary to be the user-description for the selected value
             connectionPref.setSummary(sharedPreferences.getString(key, ""));
-        }*/
+        }
 
 	}
 	
@@ -128,13 +125,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 	protected void onPause() {
 	    super.onPause();
 	    getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
-	}
-
-	@Override
-	public boolean onPreferenceClick(Preference preference) {
-		Intent intent = new Intent(this, AdvancedSettingsActivity.class);
-		startActivity(intent);
-		return true;
 	}
 
 

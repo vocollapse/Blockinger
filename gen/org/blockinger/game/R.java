@@ -98,48 +98,44 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class id {
         public static final int LinearLayout1=0x7f0d0000;
         public static final int LinearLayout2=0x7f0d0009;
-        public static final int TextView1=0x7f0d001b;
+        public static final int TextView1=0x7f0d0019;
         public static final int View01=0x7f0d000d;
         public static final int View02=0x7f0d000b;
         public static final int View03=0x7f0d0006;
         public static final int View04=0x7f0d0002;
-        public static final int action_about=0x7f0d002b;
-        public static final int action_donate=0x7f0d002c;
-        public static final int action_settings=0x7f0d002a;
-        public static final int blockinger_list_item=0x7f0d001c;
+        public static final int action_about=0x7f0d0026;
+        public static final int action_donate=0x7f0d0027;
+        public static final int action_exit=0x7f0d0028;
+        public static final int action_settings=0x7f0d0025;
+        public static final int blockinger_list_item=0x7f0d001a;
         public static final int boardView=0x7f0d0008;
         public static final int bottom_right_spacer=0x7f0d000f;
         public static final int hardDropButton=0x7f0d0007;
         public static final int hdivider=0x7f0d0011;
         public static final int leftButton=0x7f0d0001;
-        public static final int leveldialoglabel=0x7f0d0021;
-        public static final int leveldialogleveldisplay=0x7f0d0023;
-        public static final int levelseekbar=0x7f0d0025;
+        public static final int leveldialogleveldisplay=0x7f0d001f;
+        public static final int levelseekbar=0x7f0d001e;
         public static final int nicknameEditView=0x7f0d0014;
-        public static final int padding=0x7f0d0022;
-        public static final int paddingLeft=0x7f0d0020;
-        public static final int paddingRight=0x7f0d0024;
-        public static final int paddingtop=0x7f0d001f;
+        public static final int paddingtop=0x7f0d001d;
         public static final int pausebutton_1=0x7f0d000a;
-        public static final int quitButton=0x7f0d0016;
-        public static final int restartButton=0x7f0d001a;
-        public static final int resumeButton=0x7f0d0018;
+        public static final int restartButton=0x7f0d0018;
+        public static final int resumeButton=0x7f0d0016;
         public static final int rightButton=0x7f0d0003;
         public static final int rotateLeftButton=0x7f0d000e;
         public static final int rotateRightButton=0x7f0d000c;
-        public static final int seekBarPrefBarContainer=0x7f0d0029;
-        public static final int seekBarPrefUnitsLeft=0x7f0d0028;
-        public static final int seekBarPrefUnitsRight=0x7f0d0026;
-        public static final int seekBarPrefValue=0x7f0d0027;
+        public static final int seekBarPrefBarContainer=0x7f0d0024;
+        public static final int seekBarPrefUnitsLeft=0x7f0d0023;
+        public static final int seekBarPrefUnitsRight=0x7f0d0021;
+        public static final int seekBarPrefValue=0x7f0d0022;
         public static final int softDropButton=0x7f0d0005;
         public static final int spacer0=0x7f0d0015;
-        public static final int spacer1=0x7f0d0017;
-        public static final int spacer2=0x7f0d0019;
+        public static final int spacer2=0x7f0d0017;
         public static final int spacerl0=0x7f0d0004;
-        public static final int text1=0x7f0d001d;
-        public static final int text2=0x7f0d001e;
+        public static final int text1=0x7f0d001b;
+        public static final int text2=0x7f0d001c;
         public static final int textView1=0x7f0d0013;
         public static final int top_right_spacer=0x7f0d0010;
+        public static final int view1=0x7f0d0020;
         public static final int view2=0x7f0d0012;
     }
     public static final class integer {
@@ -278,15 +274,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
+
     
  API 11 theme customizations can go here. 
  
@@ -346,7 +345,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class xml {
         public static final int about_menu=0x7f040000;
-        public static final int preferences=0x7f040001;
+        public static final int advanced_preferences=0x7f040001;
+        public static final int simple_preferences=0x7f040002;
     }
     public static final class styleable {
         /** 

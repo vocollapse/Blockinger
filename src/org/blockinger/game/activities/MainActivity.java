@@ -79,7 +79,8 @@ public class MainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+		PreferenceManager.setDefaultValues(this, R.xml.simple_preferences, false);
+		PreferenceManager.setDefaultValues(this, R.xml.advanced_preferences, false);
 		
 		// Make Hyperlink in this textview clickable (obsolete now)
 		TextView t2 = (TextView) findViewById(R.id.TextView1);
@@ -181,6 +182,11 @@ public class MainActivity extends ListActivity {
 			case R.id.action_donate:
 				donateDialog.show();
 				return true;
+			case R.id.action_exit:
+			    mainMenuMusicPlayer.release();
+			    GameState.destroy();
+			    MainActivity.this.finish();
+				return true;
 			default:
 				return super.onOptionsItemSelected(item);
 		}
@@ -272,11 +278,11 @@ public class MainActivity extends ListActivity {
 	    }*/
     }
 
-    public void onClickQuit(View view) {
+/*    public void onClickQuit(View view) {
 	    mainMenuMusicPlayer.release();
 	    GameState.destroy();
 		this.finish();
-    }
+    }*/
     
     @Override
     protected void onStop() {

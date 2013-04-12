@@ -76,6 +76,10 @@
             android:label="@string/title_activity_settings" android:icon="@drawable/ic_settings">
         </activity>
         <activity
+            android:name="org.blockinger.game.activities.AdvancedSettingsActivity"
+            android:label="@string/pref_category_advanced" android:icon="@drawable/ic_settings">
+        </activity>
+        <activity
             android:name="org.blockinger.game.activities.AboutActivity"
             android:label="@string/title_activity_about" android:icon="@drawable/iconinger_v2">
         </activity>

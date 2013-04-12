@@ -101,21 +101,6 @@
         android:gravity="center" >
 
         <Button
-            android:id="@+id/quitButton"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClickQuit"
-            android:text="@string/quitButtonString" />
-
-        <View
-            android:id="@+id/spacer1"
-            android:layout_width="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.25" />
-
-        <Button
             android:id="@+id/resumeButton"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
