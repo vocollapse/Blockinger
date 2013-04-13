@@ -34,13 +34,12 @@
     Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
   -->
- 
+  
  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
     android:gravity="center"
     android:orientation="horizontal"
     tools:context=".GameActivity" >
@@ -141,7 +140,8 @@
         android:id="@+id/boardView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1.4" />
+        android:layout_weight="1.4"
+        android:background="@null" />
 
     <LinearLayout
         android:id="@+id/LinearLayout2"

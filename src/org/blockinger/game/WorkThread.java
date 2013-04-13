@@ -63,7 +63,7 @@ public class WorkThread extends Thread {
         try {
         	fpslimit = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(host).getString("pref_fpslimittext", "35"));
         } catch(NumberFormatException e) {
-        	fpslimit = 35;
+        	fpslimit = 25;
         }
         if(fpslimit < 5)
         	fpslimit = 5;

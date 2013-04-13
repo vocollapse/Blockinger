@@ -44,6 +44,7 @@ import org.blockinger.game.pieces.Piece;
 
 import android.R.color;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.preference.PreferenceManager;
@@ -153,8 +154,9 @@ public class Display extends Component {
 		}
 
 		// Background
-		paint.setColor(host.getResources().getColor(color.background_dark));
-		c.drawRect(0, 0, c.getWidth()-1, c.getHeight()-1, paint);
+		//paint.setColor(host.getResources().getColor(color.background_dark));
+		//c.drawRect(0, 0, c.getWidth()-1, c.getHeight()-1, paint);
+		c.drawColor(Color.argb(0, 0, 0, 0), android.graphics.PorterDuff.Mode.CLEAR);
 		
 		host.game.getBoard().draw(columnOffset, rowOffset, squaresize, c);
 		
@@ -238,12 +240,12 @@ public class Display extends Component {
 		c.drawText("" + fps, textLeft, textTop + 10*textHeight + 4*textEmptySpacing, textPaint);
 	}
 	
-	public void drawActive(int spaltenOffset, int zeilenOffset, int spaltenAbstand,
+	private void drawActive(int spaltenOffset, int zeilenOffset, int spaltenAbstand,
 			Canvas c) {
 		host.game.getActivePiece().drawOnBoard(spaltenOffset, zeilenOffset, spaltenAbstand, c);
 	}
 
-	public void drawPhantom(int spaltenOffset, int zeilenOffset, int spaltenAbstand,
+	private void drawPhantom(int spaltenOffset, int zeilenOffset, int spaltenAbstand,
 			Canvas c) {
 		Piece active = host.game.getActivePiece();
 		int y = active.getY();
@@ -271,7 +273,7 @@ public class Display extends Component {
 		dropPhantom = false;
 	}
 
-	public void drawPreview(int spaltenOffset, int zeilenOffset, int spaltenAbstand,
+	private void drawPreview(int spaltenOffset, int zeilenOffset, int spaltenAbstand,
 			Canvas c) {
 		host.game.getPreviewPiece().drawOnPreview(spaltenOffset, zeilenOffset, spaltenAbstand, c);
 	}

@@ -67,8 +67,10 @@
         </activity>
         <activity
             android:name="org.blockinger.game.activities.GameActivity"
-            android:label ="@string/title_activity_game">
+            android:label ="@string/title_activity_game"
+            android:theme="@style/AppTheme">
 <!--             android:theme="@style/FullscreenTheme"> -->
+			
         </activity>
         <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
         <activity

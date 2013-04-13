@@ -40,6 +40,7 @@ package org.blockinger.game;
 import org.blockinger.game.activities.GameActivity;
 
 import android.content.Context;
+import android.graphics.PixelFormat;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -67,7 +68,9 @@ public class BlockBoardView extends SurfaceView implements Callback {
 	}
 	
 	public void init() {
+		setZOrderOnTop(true);
 		getHolder().addCallback(this);
+		getHolder().setFormat(PixelFormat.TRANSPARENT);
 	}
 
 	@Override
