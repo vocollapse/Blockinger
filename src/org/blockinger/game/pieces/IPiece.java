@@ -48,20 +48,20 @@ public class IPiece extends Piece4x4 {
 	public IPiece(Context c) {
 		super(c);
 		iSquare = new Square(Piece.type_I,c);
-		pattern[1][0] = iSquare;
-		pattern[1][1] = iSquare;
-		pattern[1][2] = iSquare;
-		pattern[1][3] = iSquare;
+		pattern[2][0] = iSquare;
+		pattern[2][1] = iSquare;
+		pattern[2][2] = iSquare;
+		pattern[2][3] = iSquare;
 		reDraw();
 	}
 	
 	@Override
 	public void reset(Context c) {
 		super.reset(c);
-		pattern[1][0] = iSquare;
-		pattern[1][1] = iSquare;
-		pattern[1][2] = iSquare;
-		pattern[1][3] = iSquare;
+		pattern[2][0] = iSquare;
+		pattern[2][1] = iSquare;
+		pattern[2][2] = iSquare;
+		pattern[2][3] = iSquare;
 		reDraw();
 	}
 

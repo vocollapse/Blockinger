@@ -65,11 +65,11 @@
     <integer name="trippleLineScore">50</integer>
     <integer name="quadLineScore">80</integer>
     <integer name="multiTetrisScore">120</integer>
-    <integer name="hardDropBonusFactor">18</integer> <!-- number of lines necessary to double the score -->
+    <integer name="hardDropBonusFactor">15</integer> <!-- number of lines necessary to double the score -->
     
     <integer name="shortVibeInterval">100</integer>
     
-    <integer name="popup_attack">150</integer>
+    <integer name="popup_attack">125</integer>
     <integer name="popup_sustain">1050</integer>
     <integer name="popup_decay">300</integer>
    

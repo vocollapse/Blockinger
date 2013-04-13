@@ -44,6 +44,7 @@
     <string name="action_backtomain">Back</string>
     <string name="action_about">About</string>
     <string name="action_donate">Donate</string>
+    <string name="action_help">Help</string>
     <string name="startButtonString">New Game</string>
     <string name="resumeButtonString">Resume Game</string>
     <string name="quitButtonString">Exit</string>
@@ -56,6 +57,7 @@
     <string name="startLevelDialogStart">Start</string>
     
     <string name="title_activity_game">Blockinger</string>
+    <string name="title_activity_help">Help</string>
     <string name="score_title">Score</string>
     <string name="level_title">Level</string>
     <string name="time_title">Time</string>
@@ -76,7 +78,7 @@
     <string name="musicAuthorNote">music by pornophonique</string>
     
     
-    <!-- Preference Strings -->
+<!-- Preference Strings -->
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_about">About</string>
     <string name="title_activity_donate">Donate</string>
@@ -113,13 +115,13 @@
     <string name="pref_vibration_events_title">Event Vibration</string>
     <string name="pref_vibration_events_summary">Vibrates on important game events</string>
     
-    <!-- Advanced Preference Strings -->
+<!-- Advanced Preference Strings -->
     <string name="pref_fpslimit_summary">Significantly lowers power consumption but may slow down the game</string>
     <string name="pref_fpslimit_title">Limit FPS</string>
     
     <string name="pref_fpslimittext_summary">The game tries to maintain this frame rate as closely as possible</string>
     <string name="pref_fpslimittext_title">Target FPS</string>
-    <string name="pref_fpslimittext_default">25</string>
+    <string name="pref_fpslimittext_default">35</string>
     
     <string name="pref_vibDurOffset_summary">Compensate for the delay of your phone\'s vibrator (time in milliseconds)</string>
     <string name="pref_vibDurOffset_title">Vibration Delay Compensation</string>
@@ -135,7 +137,7 @@
     <string name="pref_accelerationV_title">Soft Drop Acceleration</string>
     
     
-    <string name="pref_version_summary">1.3\nTouch here to view the public repository of this project</string>
+    <string name="pref_version_summary">1.4\nTouch here to view the public repository of this project</string>
     <string name="pref_version_title">Version</string>
     <string name="repository_url">https://github.com/vocollapse/Blockinger</string>
     
@@ -163,38 +165,33 @@
     <string name="pref_category_advanced">Advanced</string>
     
     
-    <string-array name ="levelChooseArray">
-        <item>Level 0</item>
-        <item>Level 1</item>
-        <item>Level 2</item>
-        <item>Level 3</item>
-        <item>Level 4</item>
-        <item>Level 5</item>
-        <item>Level 6</item>
-        <item>Level 7</item>
-        <item>Level 8</item>
-        <item>Level 9</item>
-        <item>Level 10</item>
-        <item>Level 11</item>
-        <item>Level 12</item>
-        <item>Level 13</item>
-        <item>Level 14</item>
-        <item>Level 15</item>
-        <item>Level 16</item>
-        <item>Level 17</item>
-        <item>Level 18</item>
-        <item>Level 19</item>
-        <item>Level 20</item>
-        <item>Level 21</item>
-        <item>Level 22</item>
-        <item>Level 23</item>
-        <item>Level 24</item>
-        <item>Level 25</item>
-        <item>Level 26</item>
-        <item>Level 27</item>
-        <item>Level 28</item>
-        <item>Level 29</item>
-        <item>Level 30</item>
-    </string-array>
+<!-- Help Menu Strings -->
+    <string name="pref_help_scoring_title">Scoring</string>
+    <string name="pref_help_scoring_summary">How does the scoring work?</string>
+    <string name="pref_help_scoring_message">Basic points per cleared line are:\n10 points for 1 line,\n30 points for 2 lines,\n50 points for 3 lines,\n80 points for 4 lines (called "Tetris").\n\nScoring consecutive Tetrises provides 40 bonus points per Tetris.\n\nAdditionally the player receives a point multiplier for using the instant placement button (called "hard drop").\nThis multiplier is linearily dependent on the dropping distance. The maximum hard drop distance is 15 Squares, where the player receives a multiplier to the basic score of x2.</string>
+    
+    <string name="pref_help_levels_title">Levels</string>
+    <string name="pref_help_levels_summary">What do Levels mean?</string>
+    <string name="pref_help_levels_message">Levels are a measurement of difficulty.\nThe speed at which pieces automatically drop down increases by 10% per level.\nThe current level increases after clearing 10 additional lines.</string>
+    
+    <string name="pref_help_vibration_title">Vibration</string>
+    <string name="pref_help_vibration_summary">How to achieve an optimal haptic feedback with vibration.</string>
+    <string name="pref_help_vibration_message">There are some problems with the vibration functionality that can occur on a few devices.\nAlso most tablet devices don\'t support Vibration at all.\nIf your device supports vibration but you don\'t notice the button vibrations, you can increase the vibration duration. This setting is called "Vibration Delay Compensation" and can be found under advanced settings.\nThe duration of button vibrations should be adjusted to be just barely noticeable.</string>
+    
+    <string name="pref_help_apm_title">APM</string>
+    <string name="pref_help_apm_summary">What does APM mean?</string>
+    <string name="pref_help_apm_message">APM means "Actions Per Minute".\nThis is a measurement of the player\'s finger speed.</string>
+    
+    <string name="pref_help_fps_title">FPS</string>
+    <string name="pref_help_fps_summary">What does FPS mean? What is it useful for?</string>
+    <string name="pref_help_fps_message">FPS means "Frames Per Second".\nThis measures the frequency of display updates. Low FPS can be notices by slow reactions from the game and choppy displaying. High FPS on the other hand consume more power. A good trade-off between display smoothness and power consumption can be achieved between 25 to 35 FPS.\nFPS can be limited in advanced settings.</string>
+    
+    <string name="pref_help_randomizer_title">Randomizer</string>
+    <string name="pref_help_randomizer_summary">What is the difference between the two randomizer modes? (advanced settings)</string>
+    <string name="pref_help_randomizer_message">7-Bag-Randomization:\nGenerates randomly permutated sequences of all 7 pieces. This means, that the player can never encounter 3 identical pieces in a row.\n\nPlain Random:\nThe next piece will be independently generated at random.</string>
+    
+    <string name="pref_help_resumability_title">Resumability</string>
+    <string name="pref_help_resumability_summary">Under which conditions is an interrupted game resumable?</string>
+    <string name="pref_help_resumability_message">The game is resumable from the main screen, if the "Pause" button or the native android "Back" button was hit.\nThe game is also resumable, if the player switches to another application or the home screen and doesn\'t exit Blockinger.\nThe game will not be resumable, if the nativ android "Back" button or the "Exit" button were hit from the main screen.</string>
     
 </resources>

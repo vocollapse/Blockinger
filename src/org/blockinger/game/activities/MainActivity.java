@@ -182,6 +182,10 @@ public class MainActivity extends ListActivity {
 			case R.id.action_donate:
 				donateDialog.show();
 				return true;
+			case R.id.action_help:
+				Intent intent2 = new Intent(this, HelpActivity.class);
+				startActivity(intent2);
+				return true;
 			case R.id.action_exit:
 			    mainMenuMusicPlayer.release();
 			    GameState.destroy();

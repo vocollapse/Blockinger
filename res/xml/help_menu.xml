@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <!-- 
     Copyright 2013 Simon Willeke
     contact: hamstercount@hotmail.com
@@ -35,38 +37,41 @@
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
   -->
  
- <menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	    <Preference
+	        android:key="pref_help_scoring"
+	        android:summary="@string/pref_help_scoring_summary"
+	        android:title="@string/pref_help_scoring_title" />
+	    
+	    <Preference
+	        android:key="pref_help_levels"
+	        android:summary="@string/pref_help_levels_summary"
+	        android:title="@string/pref_help_levels_title" />
+	    
+	    <Preference
+	        android:key="pref_help_vibration"
+	        android:summary="@string/pref_help_vibration_summary"
+	        android:title="@string/pref_help_vibration_title" />
+	    
+	    <Preference
+	        android:key="pref_help_apm"
+	        android:summary="@string/pref_help_apm_summary"
+	        android:title="@string/pref_help_apm_title" />
+	    
+	    <Preference
+	        android:key="pref_help_fps"
+	        android:summary="@string/pref_help_fps_summary"
+	        android:title="@string/pref_help_fps_title" />
+	    
+	    <Preference
+	        android:key="pref_help_randomizer"
+	        android:summary="@string/pref_help_randomizer_summary"
+	        android:title="@string/pref_help_randomizer_title" />
+	    
+	    <Preference
+	        android:key="pref_help_resumability"
+	        android:summary="@string/pref_help_resumability_summary"
+	        android:title="@string/pref_help_resumability_title" />
 
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="1"
-        android:showAsAction="ifRoom|withText"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/action_settings"
-        android:enabled="true"/>
-    <item
-        android:id="@+id/action_about"
-        android:orderInCategory="2"
-        android:showAsAction="never"
-        android:title="@string/action_about"
-        android:enabled="true"/>
-    <item
-        android:id="@+id/action_donate"
-        android:orderInCategory="3"
-        android:showAsAction="never"
-        android:title="@string/action_donate"
-        android:enabled="true"/>
-    <item
-        android:id="@+id/action_help"
-        android:orderInCategory="4"
-        android:showAsAction="never"
-        android:title="@string/action_help"
-        android:enabled="true"/>
-    <item
-        android:id="@+id/action_exit"
-        android:orderInCategory="5"
-        android:showAsAction="never"
-        android:title="@string/quitButtonString"
-        android:enabled="true"/>
-
-</menu>
+</PreferenceScreen>

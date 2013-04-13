@@ -91,7 +91,7 @@ public class Square {
 				paint.setColor(c.getResources().getColor(R.color.square_cyan));
 				break;
 			case type_empty:
-				return; // draw nothing
+				return;
 			default: // error: white
 				paint.setColor(c.getResources().getColor(R.color.square_error));
 				break;
@@ -99,6 +99,9 @@ public class Square {
 	}
 	
 	public void reDraw(int ss) {
+		if(type == type_empty)
+			return;
+		
 		squaresize = ss;
 		bm = Bitmap.createBitmap(ss, ss, Bitmap.Config.ARGB_8888);
 		phantomBM = Bitmap.createBitmap(ss, ss, Bitmap.Config.ARGB_8888);
@@ -124,6 +127,9 @@ public class Square {
 	}
 
 	public void draw(int x, int y, int squareSize, Canvas c, boolean isPhantom) { // top left corner of square
+		if(type == type_empty)
+			return;
+		
 		if(squareSize != squaresize)
 			reDraw(squareSize);
 		

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- 
+<!--
     Copyright 2013 Simon Willeke
     contact: hamstercount@hotmail.com
- -->
+-->
 
-<!-- 
+<!--
     This file is part of Blockinger.
 
     Blockinger is free software: you can redistribute it and/or modify
@@ -35,12 +34,12 @@
 
     Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
-  -->
-  
+-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.blockinger.game"
-    android:versionCode="3"
-    android:versionName="1.3" >
+    android:versionCode="4"
+    android:versionName="1.4" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -67,23 +66,31 @@
         </activity>
         <activity
             android:name="org.blockinger.game.activities.GameActivity"
-            android:label ="@string/title_activity_game"
-            android:theme="@style/AppTheme">
-<!--             android:theme="@style/FullscreenTheme"> -->
-			
+            android:label="@string/title_activity_game"
+            android:theme="@style/AppTheme" >
+
+            <!-- android:theme="@style/FullscreenTheme"> -->
+
         </activity>
         <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
         <activity
             android:name="org.blockinger.game.activities.SettingsActivity"
-            android:label="@string/title_activity_settings" android:icon="@drawable/ic_settings">
+            android:icon="@drawable/ic_settings"
+            android:label="@string/title_activity_settings" >
         </activity>
         <activity
             android:name="org.blockinger.game.activities.AdvancedSettingsActivity"
-            android:label="@string/pref_category_advanced" android:icon="@drawable/ic_settings">
+            android:icon="@drawable/ic_settings"
+            android:label="@string/pref_category_advanced" >
         </activity>
         <activity
             android:name="org.blockinger.game.activities.AboutActivity"
-            android:label="@string/title_activity_about" android:icon="@drawable/iconinger_v2">
+            android:icon="@drawable/iconinger_v2"
+            android:label="@string/title_activity_about" >
+        </activity>
+        <activity
+            android:name="org.blockinger.game.activities.HelpActivity"
+            android:label="@string/title_activity_help" >
         </activity>
     </application>
 

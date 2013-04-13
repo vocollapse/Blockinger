@@ -44,6 +44,7 @@
     <string name="action_backtomain">Zurück</string>
     <string name="action_about">Über Blockinger</string>
     <string name="action_donate">Spenden</string>
+    <string name="action_help">Hilfe</string>
     <string name="startButtonString">Neues Spiel</string>
     <string name="resumeButtonString">Fortsetzen</string>
     <string name="quitButtonString">Beenden</string>
@@ -56,6 +57,7 @@
     <string name="startLevelDialogStart">Start</string>
 
     <string name="title_activity_game">Blockinger</string>
+    <string name="title_activity_help">Hilfe</string>
     <string name="score_title">Punkte</string>
     <string name="level_title">Level</string>
     <string name="time_title">Zeit</string>
@@ -74,7 +76,7 @@
     <string name="musicAuthorNote">Musik von Pornophonique</string>
     
     
-    <!-- Preference Strings -->
+<!-- Preference Strings -->
     <string name="title_activity_settings">Einstellungen</string>
     <string name="title_activity_about">Über Blockinger</string>
     <string name="title_activity_donate">Spenden</string>
@@ -101,13 +103,13 @@
     
     <string name="musicvolume_pref_title">Musiklautstärke</string>
     
-    <string name="pref_vibration_button_title">Knopf-Vibration</string>
+    <string name="pref_vibration_button_title">Tastenvibration</string>
     <string name="pref_vibration_button_summary">Kurze Vibration bei Knopfdruck als haptisches Feedback</string>
     
-    <string name="pref_vibration_events_title">Ereignis-Vibration</string>
+    <string name="pref_vibration_events_title">Ereignisvibration</string>
     <string name="pref_vibration_events_summary">Lange Vibration bei wichtigen Spielereignissen</string>
     
-    <!-- Advanced Preference Strings -->
+<!-- Advanced Preference Strings -->
     <string name="pref_fpslimit_summary">Reduziert den Energieverbrauch deutlich aber kann das Spiel verlangsamen</string>
     <string name="pref_fpslimit_title">FPS begrenzen</string>
     
@@ -151,38 +153,33 @@
     <string name="pref_category_advanced">Erweitert</string>
     
     
-    <string-array name ="levelChooseArray">
-        <item>Level 0</item>
-        <item>Level 1</item>
-        <item>Level 2</item>
-        <item>Level 3</item>
-        <item>Level 4</item>
-        <item>Level 5</item>
-        <item>Level 6</item>
-        <item>Level 7</item>
-        <item>Level 8</item>
-        <item>Level 9</item>
-        <item>Level 10</item>
-        <item>Level 11</item>
-        <item>Level 12</item>
-        <item>Level 13</item>
-        <item>Level 14</item>
-        <item>Level 15</item>
-        <item>Level 16</item>
-        <item>Level 17</item>
-        <item>Level 18</item>
-        <item>Level 19</item>
-        <item>Level 20</item>
-        <item>Level 21</item>
-        <item>Level 22</item>
-        <item>Level 23</item>
-        <item>Level 24</item>
-        <item>Level 25</item>
-        <item>Level 26</item>
-        <item>Level 27</item>
-        <item>Level 28</item>
-        <item>Level 29</item>
-        <item>Level 30</item>
-    </string-array>
+<!-- Help Menu Strings -->
+    <string name="pref_help_scoring_title">Punkte</string>
+    <string name="pref_help_scoring_summary">Wie genau werden die Punkte vergeben?</string>
+    <string name="pref_help_scoring_message">Punkte für gesprengte Reihen:\n10 Punkte für 1 Reinhe,\n30 Punkte für 2 Reihen,\n50 Punkte für 3 Reihen,\n80 Punkte für 4 Reihen (genannt "Tetris").\n\nMehrfache Tetrisse hintereinander geben zusätzliche 40 Bonuspunkte per Tetris.\n\nDiese Punkte werden außerdem noch mit einem Bonusfaktor multiplizert, falls ein "hard drop" ausgeführt wurde.\nDie Größe des Faktors hängt von der Fallhöhe ab. Maximal können 15 Quadrate übersprungen werden, in diesem Fall werden die erreichten Punkte mit dem Faktor 2 multipliziert.</string>
+    
+    <string name="pref_help_levels_title">Level</string>
+    <string name="pref_help_levels_summary">Was bedeuten Level?</string>
+    <string name="pref_help_levels_message">Level sind gleichbedeutend mit Schwierigkeitsgrad.\nDie Tetriminos fallen je Level um 10% schneller.\nDas aktuelle Level wird erhöht, sobald 10 reihen gesprengt wurden.</string>
+    
+    <string name="pref_help_vibration_title">Vibration</string>
+    <string name="pref_help_vibration_summary">Wie sollte die Vibration eingestellt werden?</string>
+    <string name="pref_help_vibration_message">Auf einigen Geräten kann es zu Problemen mit der Vibration kommen.\nAußerdem haben viele Tablets keinen eingebauten Vibrator.\nWenn dein Gerät Vibrationen unterstützt, aber trotzdem keine Tastenvibration wahrgenommen werden, kann die Dauer der Vibration in den erweiterten Einstellungen erhöht werden (Kompensation für Vibrationsverzögerung).\nDie Dauer der Tastenvibration sollte so kurz eingestellt werden, dass sie gerade noch wahrnehmbar ist.</string>
+    
+    <string name="pref_help_apm_title">APM</string>
+    <string name="pref_help_apm_summary">Was bedeutet APM?</string>
+    <string name="pref_help_apm_message">APM bedeutet "Actions Per Minute" und stellt ein Maß für die Fingergeschwindigkeit dar.</string>
+    
+    <string name="pref_help_fps_title">FPS</string>
+    <string name="pref_help_fps_summary">Was bedeutet APM? Wofür ist es nützlich?</string>
+    <string name="pref_help_fps_message">FPS bedeutet "Frames Per Second" und gibt die Frequenz an, mit der die Anzeige aktualisiert wird. Niedrige FPS äußern sich in ruckeligem Spielverhalten und verzögerten Reaktionen auf Eingaben. Hohe FPS verursachen hingegen einen erhöhten Energieverbrauch. Ein guter Kompromiss zwischen flüssiger Darstellung und Energieverbrauch lässt sich zwischen 25 und 35 FPS erreichen.\FPS können in den erweiterten Einstellungen begrenzt werden.</string>
+    
+    <string name="pref_help_randomizer_title">Zufallsgenerator</string>
+    <string name="pref_help_randomizer_summary">Was ist der Unterschied zwischen den beiden Zufallsgeneratoren? (in erweiterteten Einstellungen)</string>
+    <string name="pref_help_randomizer_message">7-Bag-Randomization:\nEs werden zufällig geordnete Sequenzen aller 7 Tetriminos generiert. Dies hat zur Folge, dass niemals drei identische Tetriminos hintereinander auftreten können.\n\nReiner Zufall:\nDas nächste Tetrimino wird komplett zufällig generiert.</string>
+    
+    <string name="pref_help_resumability_title">Fortsetzbarkeit</string>
+    <string name="pref_help_resumability_summary">Unter welchen Bedingungen kann ein unterbrochenes Spiel fortgesetzt werden?</string>
+    <string name="pref_help_resumability_message">Das Spiel ist immer dann fortsetzbar, wenn nicht der "Beenden"-Knopf oder die systemeigene "Zurück"-Taste im Hauptmenü gedrückt wurde.</string>
     
 </resources>

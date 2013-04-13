@@ -199,8 +199,8 @@ public class Display extends Component {
 
 	private void drawPreview(int left, int top, int right, int bottom, Canvas c) {
 		//Background
-		paint.setColor(host.getResources().getColor(color.background_dark));
-		c.drawRect(left, top, right, bottom, paint);
+		//paint.setColor(host.getResources().getColor(color.background_dark));
+		//c.drawRect(left, top, right, bottom, paint);
 		
 		// Piece
 		drawPreview(left, top, squaresize, c);
