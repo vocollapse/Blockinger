@@ -79,8 +79,8 @@ public class MainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		PreferenceManager.setDefaultValues(this, R.xml.simple_preferences, false);
-		PreferenceManager.setDefaultValues(this, R.xml.advanced_preferences, false);
+		PreferenceManager.setDefaultValues(this, R.xml.simple_preferences, true);
+		PreferenceManager.setDefaultValues(this, R.xml.advanced_preferences, true);
 		
 		// Make Hyperlink in this textview clickable (obsolete now)
 		TextView t2 = (TextView) findViewById(R.id.TextView1);

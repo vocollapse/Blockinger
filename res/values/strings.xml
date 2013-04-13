@@ -135,7 +135,7 @@
     <string name="pref_accelerationV_title">Soft Drop Acceleration</string>
     
     
-    <string name="pref_version_summary">1.1\nTouch here to view the public repository of this project</string>
+    <string name="pref_version_summary">1.2\nTouch here to view the public repository of this project</string>
     <string name="pref_version_title">Version</string>
     <string name="repository_url">https://github.com/vocollapse/Blockinger</string>
     

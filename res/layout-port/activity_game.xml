@@ -158,7 +158,7 @@
                 android:src="@drawable/rotate_right_button_icon_hd" />
 
             <View
-                android:id="@+id/View01"
+                android:id="@+id/paddingbottom"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="0.1" />
