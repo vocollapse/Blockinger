@@ -69,6 +69,9 @@
     
     <integer name="shortVibeInterval">100</integer>
     
+    <integer name="popup_attack">150</integer>
+    <integer name="popup_sustain">1050</integer>
+    <integer name="popup_decay">300</integer>
    
     <integer name="clearAnimation_enableFlash">1</integer>
     <integer name="clearAnimation_flashCount">3</integer>

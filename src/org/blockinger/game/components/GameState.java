@@ -99,6 +99,12 @@ public class GameState extends Component {
 	private int piece_start_x;
 	private long actions;
 	private int songtime;
+
+	private long popupTime;
+	private String popupString;
+	private int popupAttack;
+	private int popupSustain;
+	private int popupDecay;
 	
 	private GameState(GameActivity ga) {
 		super(ga);
@@ -124,12 +130,15 @@ public class GameState extends Component {
 		hardDropBonusFactor = host.getResources().getInteger(R.integer.hardDropBonusFactor);
 		spawn_delay = host.getResources().getInteger(R.integer.spawn_delay);
 		piece_start_x = host.getResources().getInteger(R.integer.piece_start_x);
+		popupAttack = host.getResources().getInteger(R.integer.popup_attack);
+		popupSustain = host.getResources().getInteger(R.integer.popup_sustain);
+		popupDecay = host.getResources().getInteger(R.integer.popup_decay);
+		popupString = "";
+		popupTime = -(popupAttack + popupSustain + popupDecay);
 		clearedLines = 0;
-		gameTime = 0;
 		level = 0;
 		score = 0;
 		songtime = 0;
-		//consecutiveBonusScore = 0;
 		maxLevel = host.getResources().getInteger(R.integer.levels);
 
 		nextDropTime = host.getResources().getIntArray(R.array.intervals)[0];
@@ -227,16 +236,19 @@ public class GameState extends Component {
 				addScore = singleLineScore;
 				multitetris = false;
 				host.sound.clearSound();
+				popupTime = gameTime;
 				break;
 			case 2:
 				addScore = doubleLineScore;
 				multitetris = false;
 				host.sound.clearSound();
+				popupTime = gameTime;
 				break;
 			case 3:
 				addScore = trippleLineScore;
 				multitetris = false;
 				host.sound.clearSound();
+				popupTime = gameTime;
 				break;
 			case 4:
 				if(multitetris)
@@ -245,11 +257,14 @@ public class GameState extends Component {
 					addScore = quadLineScore;
 				multitetris = true;
 				host.sound.tetrisSound();
+				popupTime = gameTime;
 				break;
 			default:
 				addScore = 0;
 				//consecutiveBonusScore = 0;
 				host.sound.dropSound();
+				if((gameTime - popupTime) < (popupAttack + popupSustain))
+					popupTime = gameTime - (popupAttack + popupSustain);
 				break;
 		}
 		//long tempBonus = consecutiveBonusScore;
@@ -257,7 +272,8 @@ public class GameState extends Component {
 		if(playerHardDrop)
 			addScore = (int)((float)addScore* (1.0f + ((float)hardDropDistance/(float)hardDropBonusFactor)));
 		score += addScore;// + tempBonus;
-		board.popupScore(addScore);
+		if(addScore != 0)
+			popupString = "+"+addScore;
 		// host.saveScore(score); is not supported by ScoreDataSource
 	}
 
@@ -464,6 +480,31 @@ public class GameState extends Component {
 		level = int1;
 		nextDropTime = host.getResources().getIntArray(R.array.intervals)[int1];
 		clearedLines = 10*int1;
+	}
+
+	public String getPopupString() {
+		return popupString;
+	}
+
+	public int getPopupAlpha() {
+		long x = gameTime - popupTime;
+		
+		if(x < (popupAttack+popupSustain))
+			return 255;
+		
+		if(x < (popupAttack+popupSustain+popupDecay))
+			return (int)(255.0f*(1.0f + (((float)(popupAttack + popupSustain - x))/((float)popupDecay))));
+		
+		return 0;
+	}
+
+	public float getPopupSize() {
+		long x = gameTime - popupTime;
+		
+		if(x < popupAttack)
+			return (int)(60.0f*(1.0f + (((float)x)/((float)popupAttack))));
+		
+		return 120;
 	}
 	
 }

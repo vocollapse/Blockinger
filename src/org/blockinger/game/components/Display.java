@@ -76,6 +76,7 @@ public class Display extends Component {
 	private Paint textPaint;
 	private Rect textRect;
 	private int textHeight;
+	private Paint popUptextPaint;
 	
 	public Display(GameActivity ga) {
 		super(ga);
@@ -95,11 +96,15 @@ public class Display extends Component {
 		
 		rowOffset = host.getResources().getInteger(R.integer.zeilenoffset);
 		columnOffset = host.getResources().getInteger(R.integer.spaltenoffset);
-		
+
 		textPaint = new Paint();
 		textRect = new Rect();
 		textPaint.setColor(host.getResources().getColor(color.white));
 		textPaint.setAntiAlias(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_antialiasing", true));
+		popUptextPaint = new Paint();
+		popUptextPaint.setColor(host.getResources().getColor(color.white));
+		popUptextPaint.setAntiAlias(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_antialiasing", true));
+		popUptextPaint.setTextSize(120);
 		textSizeH = 1;
 		textHeight = 2;
 		if(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_fps", false))
@@ -170,6 +175,8 @@ public class Display extends Component {
 	    drawPreview(prev_left, prev_top, prev_right, prev_bottom, c);
 
 	    drawTextFillBox(c, fps);
+	    
+	    drawPopupText(c);
 	}
 
 	private void drawGrid(int x, int y, int xBorder, int yBorder, Canvas c) {
@@ -276,6 +283,34 @@ public class Display extends Component {
 	private void drawPreview(int spaltenOffset, int zeilenOffset, int spaltenAbstand,
 			Canvas c) {
 		host.game.getPreviewPiece().drawOnPreview(spaltenOffset, zeilenOffset, spaltenAbstand, c);
+	}
+
+	private void drawPopupText(Canvas c) {
+		
+		final int offset = 6;
+		final int diagonaloffset = 6;
+		
+		String text = host.game.getPopupString();
+		popUptextPaint.setTextSize(host.game.getPopupSize());
+		popUptextPaint.setColor(host.getResources().getColor(color.black));
+		popUptextPaint.setAlpha(host.game.getPopupAlpha());
+
+		int left = columnOffset + ((int)columns*squaresize/2) - ((int)popUptextPaint.measureText(text)/2); // middle minus half text width
+		int top = c.getHeight()/2;
+		
+		c.drawText(text, offset+left, top, popUptextPaint); // right
+		c.drawText(text, diagonaloffset+left, diagonaloffset+top, popUptextPaint); // bottom right
+		c.drawText(text, left, offset+top, popUptextPaint); // bottom
+		c.drawText(text, -diagonaloffset+left, diagonaloffset+top, popUptextPaint); // bottom left
+		c.drawText(text, -offset+left, top, popUptextPaint); // left
+		c.drawText(text, -diagonaloffset+left, -diagonaloffset+top, popUptextPaint); // top left
+		c.drawText(text, left, -offset+top, popUptextPaint); // top
+		c.drawText(text, diagonaloffset+left, -diagonaloffset+top, popUptextPaint); // top right
+
+		popUptextPaint.setColor(host.getResources().getColor(color.white));
+		popUptextPaint.setAlpha(host.game.getPopupAlpha());
+		c.drawText(text, left, top, popUptextPaint);
+		
 	}
 
 	public void invalidatePhantom() {
