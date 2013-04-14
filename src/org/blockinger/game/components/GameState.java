@@ -511,6 +511,9 @@ public class GameState extends Component {
 	}
 
 	public int getPopupColor() {
+		if(host == null)
+			return 0;
+		
 		if(multitetris)
 			return host.getResources().getColor(R.color.yellow);
 		return host.getResources().getColor(color.white);
