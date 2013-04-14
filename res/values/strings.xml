@@ -168,7 +168,7 @@
 <!-- Help Menu Strings -->
     <string name="pref_help_scoring_title">Scoring</string>
     <string name="pref_help_scoring_summary">How does the scoring work?</string>
-    <string name="pref_help_scoring_message">Basic points per cleared line are:\n10 points for 1 line,\n30 points for 2 lines,\n50 points for 3 lines,\n80 points for 4 lines (called "Tetris").\n\nScoring consecutive Tetrises provides 40 bonus points per Tetris.\n\nAdditionally the player receives a point multiplier for using the instant placement button (called "hard drop").\nThis multiplier is linearily dependent on the dropping distance. The maximum hard drop distance is 15 Squares, where the player receives a multiplier to the basic score of x2.</string>
+    <string name="pref_help_scoring_message">Basic points per cleared line are:\n10 points for 1 line,\n30 points for 2 lines,\n50 points for 3 lines,\n80 points for 4 lines (called \"Tetris\").\n\nScoring consecutive Tetrises provides 40 bonus points per Tetris.\n\nAdditionally the player receives a score multiplier for using the instant placement button (called \"hard drop\").\nThis multiplier is linearily dependent on the dropping distance. The maximum hard drop distance is 15 Squares, where the player receives a multiplier to the basic score of x2.</string>
     
     <string name="pref_help_levels_title">Levels</string>
     <string name="pref_help_levels_summary">What do Levels mean?</string>
@@ -176,15 +176,15 @@
     
     <string name="pref_help_vibration_title">Vibration</string>
     <string name="pref_help_vibration_summary">How to achieve an optimal haptic feedback with vibration.</string>
-    <string name="pref_help_vibration_message">There are some problems with the vibration functionality that can occur on a few devices.\nAlso most tablet devices don\'t support Vibration at all.\nIf your device supports vibration but you don\'t notice the button vibrations, you can increase the vibration duration. This setting is called "Vibration Delay Compensation" and can be found under advanced settings.\nThe duration of button vibrations should be adjusted to be just barely noticeable.</string>
+    <string name="pref_help_vibration_message">There are some problems with the vibration functionality that can occur on a few devices.\nAlso most tablet devices don\'t support Vibration at all.\nIf your device does support vibration but you don\'t notice the button vibrations, you can increase the vibration duration. This setting is called \"Vibration Delay Compensation\" and can be found under advanced settings.\nThe duration of button vibrations should be adjusted to be just barely noticeable.</string>
     
     <string name="pref_help_apm_title">APM</string>
     <string name="pref_help_apm_summary">What does APM mean?</string>
-    <string name="pref_help_apm_message">APM means "Actions Per Minute".\nThis is a measurement of the player\'s finger speed.</string>
+    <string name="pref_help_apm_message">APM means \"Actions Per Minute\".\nThis is a measurement of the player\'s finger speed.</string>
     
     <string name="pref_help_fps_title">FPS</string>
     <string name="pref_help_fps_summary">What does FPS mean? What is it useful for?</string>
-    <string name="pref_help_fps_message">FPS means "Frames Per Second".\nThis measures the frequency of display updates. Low FPS can be notices by slow reactions from the game and choppy displaying. High FPS on the other hand consume more power. A good trade-off between display smoothness and power consumption can be achieved between 25 to 35 FPS.\nFPS can be limited in advanced settings.</string>
+    <string name="pref_help_fps_message">FPS means \"Frames Per Second\".\nThis measures the frequency of display updates. Low FPS can be notices by slow reactions from the game and choppy displaying. High FPS on the other hand consume more power. A good trade-off between display smoothness and power consumption can be achieved between 25 and 35 FPS.\nFPS can be limited in advanced settings.</string>
     
     <string name="pref_help_randomizer_title">Randomizer</string>
     <string name="pref_help_randomizer_summary">What is the difference between the two randomizer modes? (advanced settings)</string>
@@ -192,6 +192,6 @@
     
     <string name="pref_help_resumability_title">Resumability</string>
     <string name="pref_help_resumability_summary">Under which conditions is an interrupted game resumable?</string>
-    <string name="pref_help_resumability_message">The game is resumable from the main screen, if the "Pause" button or the native android "Back" button was hit.\nThe game is also resumable, if the player switches to another application or the home screen and doesn\'t exit Blockinger.\nThe game will not be resumable, if the nativ android "Back" button or the "Exit" button were hit from the main screen.</string>
+    <string name="pref_help_resumability_message">The game is resumable from the main screen, if the \"Pause\" button or the native android \"Back\" button was hit.\nThe game is also resumable, if the player switches to another application or the home screen and doesn\'t exit Blockinger.\nThe game will not be resumable, if the nativ android \"Back\" button or the \"Exit\" button were hit from the main screen.</string>
     
 </resources>

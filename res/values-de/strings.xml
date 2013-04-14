@@ -156,7 +156,7 @@
 <!-- Help Menu Strings -->
     <string name="pref_help_scoring_title">Punkte</string>
     <string name="pref_help_scoring_summary">Wie genau werden die Punkte vergeben?</string>
-    <string name="pref_help_scoring_message">Punkte für gesprengte Reihen:\n10 Punkte für 1 Reinhe,\n30 Punkte für 2 Reihen,\n50 Punkte für 3 Reihen,\n80 Punkte für 4 Reihen (genannt "Tetris").\n\nMehrfache Tetrisse hintereinander geben zusätzliche 40 Bonuspunkte per Tetris.\n\nDiese Punkte werden außerdem noch mit einem Bonusfaktor multiplizert, falls ein "hard drop" ausgeführt wurde.\nDie Größe des Faktors hängt von der Fallhöhe ab. Maximal können 15 Quadrate übersprungen werden, in diesem Fall werden die erreichten Punkte mit dem Faktor 2 multipliziert.</string>
+    <string name="pref_help_scoring_message">Punkte für gesprengte Reihen:\n10 Punkte für 1 Reihe,\n30 Punkte für 2 Reihen,\n50 Punkte für 3 Reihen,\n80 Punkte für 4 Reihen (genannt \"Tetris\").\n\nMehrfache Tetrisse hintereinander geben zusätzliche 40 Bonuspunkte per Tetris.\n\nDiese Punkte werden außerdem noch mit einem Bonusfaktor multiplizert, falls ein \"hard drop\" ausgeführt wurde.\nDie Größe des Faktors hängt von der Fallhöhe ab. Maximal können 15 Quadrate übersprungen werden, in diesem Fall werden die erreichten Punkte mit dem Faktor 2 multipliziert.</string>
     
     <string name="pref_help_levels_title">Level</string>
     <string name="pref_help_levels_summary">Was bedeuten Level?</string>
@@ -164,15 +164,15 @@
     
     <string name="pref_help_vibration_title">Vibration</string>
     <string name="pref_help_vibration_summary">Wie sollte die Vibration eingestellt werden?</string>
-    <string name="pref_help_vibration_message">Auf einigen Geräten kann es zu Problemen mit der Vibration kommen.\nAußerdem haben viele Tablets keinen eingebauten Vibrator.\nWenn dein Gerät Vibrationen unterstützt, aber trotzdem keine Tastenvibration wahrgenommen werden, kann die Dauer der Vibration in den erweiterten Einstellungen erhöht werden (Kompensation für Vibrationsverzögerung).\nDie Dauer der Tastenvibration sollte so kurz eingestellt werden, dass sie gerade noch wahrnehmbar ist.</string>
+    <string name="pref_help_vibration_message">Auf einigen Geräten kann es zu Problemen mit der Vibration kommen. Außerdem haben viele Tablets keinen eingebauten Vibrator.\nWenn dein Gerät Vibrationen unterstützt, aber trotzdem keine Tastenvibration wahrgenommen werden, kann die Dauer der Vibration in den erweiterten Einstellungen erhöht werden (\"Kompensation für Vibrationsverzögerung\").\nDie Dauer der Tastenvibration sollte so kurz eingestellt werden, dass sie gerade noch wahrnehmbar ist.</string>
     
     <string name="pref_help_apm_title">APM</string>
     <string name="pref_help_apm_summary">Was bedeutet APM?</string>
-    <string name="pref_help_apm_message">APM bedeutet "Actions Per Minute" und stellt ein Maß für die Fingergeschwindigkeit dar.</string>
+    <string name="pref_help_apm_message">APM bedeutet \"Actions Per Minute\" und stellt ein Maß für die Fingergeschwindigkeit dar.</string>
     
     <string name="pref_help_fps_title">FPS</string>
     <string name="pref_help_fps_summary">Was bedeutet APM? Wofür ist es nützlich?</string>
-    <string name="pref_help_fps_message">FPS bedeutet "Frames Per Second" und gibt die Frequenz an, mit der die Anzeige aktualisiert wird. Niedrige FPS äußern sich in ruckeligem Spielverhalten und verzögerten Reaktionen auf Eingaben. Hohe FPS verursachen hingegen einen erhöhten Energieverbrauch. Ein guter Kompromiss zwischen flüssiger Darstellung und Energieverbrauch lässt sich zwischen 25 und 35 FPS erreichen.\FPS können in den erweiterten Einstellungen begrenzt werden.</string>
+    <string name="pref_help_fps_message">FPS bedeutet \"Frames Per Second\" und gibt die Frequenz an, mit der die Anzeige aktualisiert wird. Niedrige FPS äußern sich in ruckeligem Spielverhalten und verzögerten Reaktionen auf Eingaben. Hohe FPS verursachen hingegen einen erhöhten Energieverbrauch. Ein guter Kompromiss zwischen flüssiger Darstellung und Energieverbrauch lässt sich zwischen 25 und 35 FPS erreichen.\FPS können in den erweiterten Einstellungen begrenzt werden.</string>
     
     <string name="pref_help_randomizer_title">Zufallsgenerator</string>
     <string name="pref_help_randomizer_summary">Was ist der Unterschied zwischen den beiden Zufallsgeneratoren? (in erweiterteten Einstellungen)</string>
@@ -180,6 +180,6 @@
     
     <string name="pref_help_resumability_title">Fortsetzbarkeit</string>
     <string name="pref_help_resumability_summary">Unter welchen Bedingungen kann ein unterbrochenes Spiel fortgesetzt werden?</string>
-    <string name="pref_help_resumability_message">Das Spiel ist immer dann fortsetzbar, wenn nicht der "Beenden"-Knopf oder die systemeigene "Zurück"-Taste im Hauptmenü gedrückt wurde.</string>
+    <string name="pref_help_resumability_message">Das Spiel ist immer dann fortsetzbar, wenn nicht der \"Beenden\"-Knopf oder die systemeigene \"Zurück\"-Taste im Hauptmenü gedrückt wurden.</string>
     
 </resources>
