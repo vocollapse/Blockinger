@@ -76,16 +76,20 @@
     <string name="musicAuthorNote">Musik von Pornophonique</string>
     
     
-<!-- Preference Strings -->
     <string name="title_activity_settings">Einstellungen</string>
     <string name="title_activity_about">Über Blockinger</string>
     <string name="title_activity_donate">Spenden</string>
     
+    
+<!-- Preference Strings -->
     <string name="pref_phantom_summary">Zeigt dort einen Schatten, wo das aktive Tetrimino landen wird</string>
     <string name="pref_phantom_title">Phantom</string>
     
-    <string name="pref_fps_summary">zeigt die aktuelle Bildwiderholrate (Frames per Second) unter "APM" an</string>
+    <string name="pref_fps_summary">Zeigt die aktuelle Bildwiderholrate (Frames per Second) unter "APM" an</string>
     <string name="pref_fps_title">FPS</string>
+    
+    <string name="pref_popup_summary">Die Punkte für erfolgreich gesprengte Reihen werden kurz eingeblendet</string>
+    <string name="pref_popup_title">Pop-Up Text</string>
     
     <string name="pref_rng_title">Zufallsgenerator</string>
     <string name="pref_rngs_default">sevenbag</string>
@@ -180,6 +184,6 @@
     
     <string name="pref_help_resumability_title">Fortsetzbarkeit</string>
     <string name="pref_help_resumability_summary">Unter welchen Bedingungen kann ein unterbrochenes Spiel fortgesetzt werden?</string>
-    <string name="pref_help_resumability_message">Das Spiel ist immer dann fortsetzbar, wenn nicht der \"Beenden\"-Knopf oder die systemeigene \"Zurück\"-Taste im Hauptmenü gedrückt wurden.</string>
+    <string name="pref_help_resumability_message">Das Spiel ist immer dann fortsetzbar, wenn nicht der \"Beenden\"-Menüpunkt im Hauptmenü gedrückt wurde.</string>
     
 </resources>

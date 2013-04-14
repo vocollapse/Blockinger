@@ -89,6 +89,9 @@
     <string name="pref_fps_summary">The current Frames per Second will be shown below "APM"</string>
     <string name="pref_fps_title">Display FPS</string>
     
+    <string name="pref_popup_summary">The points for each successful line clear are shortly popping up</string>
+    <string name="pref_popup_title">Pop-Up Text</string>
+    
     <string name="pref_rng_title">Piece Generation</string>
     <string name="pref_rngs_default">sevenbag</string>
     <string name="pref_rng_summary">Choose how the sequence of pieces is generated. 7-Bag-Randomization is highly recommended and is also used in competitive Tetris</string>
@@ -192,6 +195,6 @@
     
     <string name="pref_help_resumability_title">Resumability</string>
     <string name="pref_help_resumability_summary">Under which conditions is an interrupted game resumable?</string>
-    <string name="pref_help_resumability_message">The game is resumable from the main screen, if the \"Pause\" button or the native android \"Back\" button was hit.\nThe game is also resumable, if the player switches to another application or the home screen and doesn\'t exit Blockinger.\nThe game will not be resumable, if the nativ android \"Back\" button or the \"Exit\" button were hit from the main screen.</string>
+    <string name="pref_help_resumability_message">The game is resumable from the main screen, if the \"Pause\" button or the native android \"Back\" button was hit.\nThe game is also resumable, if the player switches to another application or the home screen and doesn\'t exit Blockinger.\nThe game will not be resumable, if the \"Exit\" menu entry was hit from the main screen.</string>
     
 </resources>

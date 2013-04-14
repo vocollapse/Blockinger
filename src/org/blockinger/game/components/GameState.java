@@ -46,6 +46,7 @@ import org.blockinger.game.R;
 import org.blockinger.game.activities.GameActivity;
 import org.blockinger.game.pieces.*;
 
+import android.R.color;
 import android.preference.PreferenceManager;
 
 
@@ -505,6 +506,12 @@ public class GameState extends Component {
 			return (int)(60.0f*(1.0f + (((float)x)/((float)popupAttack))));
 		
 		return 120;
+	}
+
+	public int getPopupColor() {
+		if(multitetris)
+			return host.getResources().getColor(R.color.yellow);
+		return host.getResources().getColor(color.white);
 	}
 	
 }

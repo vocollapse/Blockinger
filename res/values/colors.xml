@@ -39,6 +39,8 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="darkbluegreen">#FF408080</color>
+    <color name="yellow">#ffffff30</color>
+    <color name="transparent">#00000000</color>
     <color name="holo_grey">#FF4D4D4D</color>
     <!-- 64,128,128 -->
 

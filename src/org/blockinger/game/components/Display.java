@@ -175,8 +175,9 @@ public class Display extends Component {
 	    drawPreview(prev_left, prev_top, prev_right, prev_bottom, c);
 
 	    drawTextFillBox(c, fps);
-	    
-	    drawPopupText(c);
+
+		if(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_popup", true))
+			drawPopupText(c);
 	}
 
 	private void drawGrid(int x, int y, int xBorder, int yBorder, Canvas c) {
@@ -307,7 +308,7 @@ public class Display extends Component {
 		c.drawText(text, left, -offset+top, popUptextPaint); // top
 		c.drawText(text, diagonaloffset+left, -diagonaloffset+top, popUptextPaint); // top right
 
-		popUptextPaint.setColor(host.getResources().getColor(color.white));
+		popUptextPaint.setColor(host.game.getPopupColor());
 		popUptextPaint.setAlpha(host.game.getPopupAlpha());
 		c.drawText(text, left, top, popUptextPaint);
 		

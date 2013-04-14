@@ -52,6 +52,12 @@
         android:defaultValue="false"
         android:title="@string/pref_fps_title"/>
     
+    <CheckBoxPreference 
+        android:key="pref_popup"
+        android:summary="@string/pref_popup_summary"
+        android:defaultValue="true"
+        android:title="@string/pref_popup_title"/>
+    
     <PreferenceCategory
         android:title="@string/pref_category_sound"
         android:key="sound_settings">
