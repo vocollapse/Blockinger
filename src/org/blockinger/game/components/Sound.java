@@ -48,6 +48,7 @@ public class Sound extends Component {
 	private MediaPlayer tetrisSoundPlayer;
 	private MediaPlayer dropSoundPlayer;
 	private MediaPlayer clearSoundPlayer;
+	private MediaPlayer gameOverPlayer;
 	
 	public Sound(GameActivity c) {
 		super(c);
@@ -62,6 +63,10 @@ public class Sound extends Component {
 		clearSoundPlayer = MediaPlayer.create(c,R.raw.synthaccord);
 		clearSoundPlayer.setLooping(false);
 		clearSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
+		
+		gameOverPlayer = MediaPlayer.create(c,R.raw.gameover);
+		gameOverPlayer.setLooping(false);
+		gameOverPlayer.setVolume(0.015f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
 	}
 	
 	public void clearSound() {
@@ -82,6 +87,7 @@ public class Sound extends Component {
 		dropSoundPlayer.release();
 		clearSoundPlayer.release();
 		tetrisSoundPlayer.release();
+		gameOverPlayer.release();
 	}
 
 	public void tetrisSound() {
@@ -89,5 +95,12 @@ public class Sound extends Component {
 		//	tetrisSoundPlayer.stop();
 		tetrisSoundPlayer.seekTo(0);
 		tetrisSoundPlayer.start();
+	}
+
+	public void gameOverSound() {
+		//if(tetrisSoundPlayer.isPlaying())
+		//	tetrisSoundPlayer.stop();
+		gameOverPlayer.seekTo(0);
+		gameOverPlayer.start();
 	}
 }

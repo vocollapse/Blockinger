@@ -247,10 +247,15 @@ public class GameActivity extends FragmentActivity {
 	    Cursor cursor = MainActivity.getDS().getCursor();
 	    MainActivity.getAdapter().changeCursor(cursor);
 	}
+
+    public void pauseMusic() {
+    	gameMusicPlayer.pause();
+    };
     
     @Override
     protected void onStop() {
     	super.onStop();
+    	gameMusicPlayer.pause();
     	game.setSongtime(gameMusicPlayer.getCurrentPosition());
     	gameMusicPlayer.release();
     	//game.disconnect();

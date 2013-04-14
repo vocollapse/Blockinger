@@ -309,6 +309,8 @@ public class GameState extends Component {
 		// Checking for Defeat
 		if(!activePieces[activeIndex].setPosition(piece_start_x, 0, false, board)) {
 			stateOfTheGame = state_finished;
+			host.sound.gameOverSound();
+			host.pauseMusic();
 			host.gameOver(score, getTimeString(), (int)((float)actions*(60000.0f / gameTime)));
 		}
 	}

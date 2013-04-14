@@ -183,10 +183,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class raw {
         public static final int drop2=0x7f050000;
-        public static final int lemmings03=0x7f050001;
-        public static final int sadrobot01=0x7f050002;
-        public static final int seqlong=0x7f050003;
-        public static final int synthaccord=0x7f050004;
+        public static final int gameover=0x7f050001;
+        public static final int lemmings03=0x7f050002;
+        public static final int sadrobot01=0x7f050003;
+        public static final int seqlong=0x7f050004;
+        public static final int synthaccord=0x7f050005;
     }
     public static final class string {
         public static final int action_about=0x7f0a0003;
