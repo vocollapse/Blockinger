@@ -1,0 +1,52 @@
+Thank you for using Blockinger.
+
+Punkte
+------
+Punkte für gesprengte Reihen:
+10 Punkte für 1 Reihe,
+30 Punkte für 2 Reihen,
+50 Punkte für 3 Reihen,
+80 Punkte für 4 Reihen (genannt "Tetris").
+Mehrfache Tetrisse hintereinander geben zusätzliche 40 Bonuspunkte per Tetris.
+Diese Punkte werden außerdem noch mit einem Bonusfaktor multiplizert, falls ein "hard drop" ausgeführt wurde.
+Die Größe des Faktors hängt von der Fallhöhe ab.
+Maximal können 15 Quadrate übersprungen werden, in diesem Fall werden die erreichten Punkte mit dem Faktor 2 multipliziert.
+
+Level
+-----
+Level sind gleichbedeutend mit Schwierigkeitsgrad.
+Die Tetriminos fallen je Level um 10% schneller.
+Das aktuelle Level wird erhöht, sobald 10 Reihen gesprengt wurden.
+
+Vibration
+---------
+Auf einigen Geräten kann es zu Problemen mit der Vibration kommen.
+Außerdem haben viele Tablets keinen eingebauten Vibrator.
+Wenn dein Gerät Vibrationen unterstützt, aber trotzdem keine Tastenvibration wahrgenommen werden,
+kann die Dauer der Vibration in den erweiterten Einstellungen erhöht werden ("Kompensation für Vibrationsverzögerung").
+Die Dauer der Tastenvibration sollte so kurz eingestellt werden, dass sie gerade noch wahrnehmbar ist.
+
+APM
+---
+APM bedeutet "Actions Per Minute" und stellt ein Maß für die Fingergeschwindigkeit dar.
+
+FPS
+---
+FPS bedeutet "Frames Per Second" und gibt die Frequenz an, mit der die Anzeige aktualisiert wird.
+Niedrige FPS äußern sich in ruckeligem Spielverhalten und verzögerten Reaktionen auf Eingaben.
+Hohe FPS verursachen hingegen einen erhöhten Energieverbrauch.
+Ein guter Kompromiss zwischen flüssiger Darstellung und Energieverbrauch lässt sich zwischen 25 und 35 FPS erreichen.
+FPS können in den erweiterten Einstellungen begrenzt werden.
+
+Zufallsgenerator
+----------------
+7-Bag-Randomization:
+  Es werden zufällig geordnete Sequenzen aller 7 Tetriminos generiert.
+  Dies hat zur Folge, dass niemals drei identische Tetriminos hintereinander auftreten können.
+Reiner Zufall:
+  Das nächste Tetrimino wird komplett zufällig generiert.
+
+Fortsetzbarkeit
+---------------
+Das Spiel ist immer dann fortsetzbar, wenn der "Beenden"-Menüpunkt im Hauptmenü noch nicht gedrückt wurde
+    

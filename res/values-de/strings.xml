@@ -164,7 +164,7 @@
     
     <string name="pref_help_levels_title">Level</string>
     <string name="pref_help_levels_summary">Was bedeuten Level?</string>
-    <string name="pref_help_levels_message">Level sind gleichbedeutend mit Schwierigkeitsgrad.\nDie Tetriminos fallen je Level um 10% schneller.\nDas aktuelle Level wird erhöht, sobald 10 reihen gesprengt wurden.</string>
+    <string name="pref_help_levels_message">Level sind gleichbedeutend mit Schwierigkeitsgrad.\nDie Tetriminos fallen je Level um 10% schneller.\nDas aktuelle Level wird erhöht, sobald 10 Reihen gesprengt wurden.</string>
     
     <string name="pref_help_vibration_title">Vibration</string>
     <string name="pref_help_vibration_summary">Wie sollte die Vibration eingestellt werden?</string>
@@ -175,8 +175,8 @@
     <string name="pref_help_apm_message">APM bedeutet \"Actions Per Minute\" und stellt ein Maß für die Fingergeschwindigkeit dar.</string>
     
     <string name="pref_help_fps_title">FPS</string>
-    <string name="pref_help_fps_summary">Was bedeutet APM? Wofür ist es nützlich?</string>
-    <string name="pref_help_fps_message">FPS bedeutet \"Frames Per Second\" und gibt die Frequenz an, mit der die Anzeige aktualisiert wird. Niedrige FPS äußern sich in ruckeligem Spielverhalten und verzögerten Reaktionen auf Eingaben. Hohe FPS verursachen hingegen einen erhöhten Energieverbrauch. Ein guter Kompromiss zwischen flüssiger Darstellung und Energieverbrauch lässt sich zwischen 25 und 35 FPS erreichen.\FPS können in den erweiterten Einstellungen begrenzt werden.</string>
+    <string name="pref_help_fps_summary">Was bedeutet FPS? Wofür ist es nützlich?</string>
+    <string name="pref_help_fps_message">FPS bedeutet \"Frames Per Second\" und gibt die Frequenz an, mit der die Anzeige aktualisiert wird. Niedrige FPS äußern sich in ruckeligem Spielverhalten und verzögerten Reaktionen auf Eingaben. Hohe FPS verursachen hingegen einen erhöhten Energieverbrauch. Ein guter Kompromiss zwischen flüssiger Darstellung und Energieverbrauch lässt sich zwischen 25 und 35 FPS erreichen.\nFPS können in den erweiterten Einstellungen begrenzt werden.</string>
     
     <string name="pref_help_randomizer_title">Zufallsgenerator</string>
     <string name="pref_help_randomizer_summary">Was ist der Unterschied zwischen den beiden Zufallsgeneratoren? (in erweiterteten Einstellungen)</string>
@@ -184,6 +184,6 @@
     
     <string name="pref_help_resumability_title">Fortsetzbarkeit</string>
     <string name="pref_help_resumability_summary">Unter welchen Bedingungen kann ein unterbrochenes Spiel fortgesetzt werden?</string>
-    <string name="pref_help_resumability_message">Das Spiel ist immer dann fortsetzbar, wenn nicht der \"Beenden\"-Menüpunkt im Hauptmenü gedrückt wurde.</string>
+    <string name="pref_help_resumability_message">Das Spiel ist immer dann fortsetzbar, wenn der \"Beenden\"-Menüpunkt im Hauptmenü noch nicht gedrückt wurde.</string>
     
 </resources>
