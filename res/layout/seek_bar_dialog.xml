@@ -47,7 +47,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/paddingbottom"
+        android:id="@+id/holdbutton"
         android:layout_width="wrap_content"
         android:layout_height="16dp" />
 

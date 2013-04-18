@@ -76,7 +76,8 @@ public class DefeatDialogFragment extends DialogFragment {
 				getResources().getString(R.string.timeLabel) +
 				"\n    " + timeString + "\n\n" +
 				getResources().getString(R.string.apmLabel) +
-				"\n    " + apmString
+				"\n    " + apmString + "\n\n" +
+				getResources().getString(R.string.hint)
 				);
 		builder.setNeutralButton(R.string.defeatDialogReturn, new DialogInterface.OnClickListener() {
 			

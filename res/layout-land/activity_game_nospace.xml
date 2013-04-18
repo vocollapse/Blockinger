@@ -53,12 +53,6 @@
         android:gravity="center"
         android:orientation="vertical" >
 
-        <View
-            android:id="@+id/View05"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.4" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -77,12 +71,6 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/left_button_icon_noburn" />
 
-            <View
-                android:id="@+id/View04"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1" />
-
             <ImageButton
                 android:id="@+id/rightButton"
                 style="@android:style/Widget.ImageWell"
@@ -95,12 +83,6 @@
                 android:src="@drawable/right_button_icon_noburn" />
         </LinearLayout>
 
-        <View
-            android:id="@+id/spacerl0"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.4" />
-
         <ImageButton
             android:id="@+id/softDropButton"
             style="@android:style/Widget.ImageWell"
@@ -112,16 +94,10 @@
             android:scaleType="centerInside"
             android:src="@drawable/soft_drop_button_icon_noburn" />
 
-        <View
-            android:id="@+id/View03"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.2" />
-
         <Button
             android:id="@+id/pausebutton_1"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="@string/pausebutton" />
 
@@ -141,12 +117,6 @@
         android:layout_weight="1"
         android:orientation="vertical" >
 
-        <View
-            android:id="@+id/View06"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.4" />
-
         <ImageButton
             android:id="@+id/rotateRightButton"
             style="@android:style/Widget.ImageWell"
@@ -157,12 +127,6 @@
             android:contentDescription="rotate right Button"
             android:scaleType="centerInside"
             android:src="@drawable/rotate_right_button_icon_noburn" />
-
-        <View
-            android:id="@+id/View02"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.1" />
 
         <ImageButton
             android:id="@+id/rotateLeftButton"
@@ -175,12 +139,6 @@
             android:scaleType="centerInside"
             android:src="@drawable/rotate_left_button_icon_noburn" />
 
-        <View
-            android:id="@+id/bottom_right_spacer"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.4" />
-
         <ImageButton
             android:id="@+id/hardDropButton"
             style="@android:style/Widget.ImageWell"
@@ -192,17 +150,12 @@
             android:scaleType="centerInside"
             android:src="@drawable/hard_drop_button_icon_noburn" />
 
-        <View
-            android:id="@+id/View01"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.2" />
-
-        <View
-            android:id="@+id/View07"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_weight="0" />
+        <Button
+            android:id="@+id/holdButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/holdbuttonstring" />
 
     </LinearLayout>
 

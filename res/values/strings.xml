@@ -49,6 +49,7 @@
     <string name="resumeButtonString">Resume Game</string>
     <string name="quitButtonString">Exit</string>
     <string name="pausebutton">Pause</string>
+    <string name="holdbuttonstring">Hold</string>
     <string name="playerNameInputFieldHint">Choose your player name</string>
     <string name="highscoreListDescription">Highscores</string>
 
@@ -73,6 +74,7 @@
     <string name="scoreLabel">Score:</string>
     <string name="timeLabel">Time:</string>
     <string name="apmLabel">Total APM:</string>
+    <string name="hint">Hint: Blockinger is playable in both screen orientations.</string>
     <string name="highscore_title">Highscores</string>
     
     <string name="musicAuthorNote">music by pornophonique</string>
@@ -196,5 +198,6 @@
     <string name="pref_help_resumability_title">Resumability</string>
     <string name="pref_help_resumability_summary">Under which conditions is an interrupted game resumable?</string>
     <string name="pref_help_resumability_message">The game is resumable from the main screen, if the \"Pause\" button or the native android \"Back\" button was hit.\nThe game is also resumable, if the player switches to another application or the home screen and doesn\'t exit Blockinger.\nThe game will not be resumable, if the \"Exit\" menu entry was hit from the main screen.</string>
+
     
 </resources>

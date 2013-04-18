@@ -49,6 +49,7 @@
     <string name="resumeButtonString">Fortsetzen</string>
     <string name="quitButtonString">Beenden</string>
     <string name="pausebutton">Pause</string>
+    <string name="holdbuttonstring">Halten</string>
     <string name="playerNameInputFieldHint">Wähle einen Spielernamen</string>
     <string name="highscoreListDescription">Highscores</string>
 
@@ -71,6 +72,7 @@
     <string name="scoreLabel">Punkte:</string>
     <string name="timeLabel">Zeit:</string>
     <string name="apmLabel">APM Durchschnitt:</string>
+    <string name="hint">Tipp: Blockinger lässt sich im Hoch- und Querformat spielen.</string>
     <string name="highscore_title">Highscores</string>
     
     <string name="musicAuthorNote">Musik von Pornophonique</string>
