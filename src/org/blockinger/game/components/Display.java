@@ -100,6 +100,7 @@ public class Display extends Component {
 		textPaint = new Paint();
 		textRect = new Rect();
 		textPaint.setColor(host.getResources().getColor(color.white));
+		textPaint.setAlpha(host.getResources().getInteger(R.integer.textalpha));
 		textPaint.setAntiAlias(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_antialiasing", true));
 		popUptextPaint = new Paint();
 		popUptextPaint.setColor(host.getResources().getColor(color.white));

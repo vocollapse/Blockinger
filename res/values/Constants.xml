@@ -55,6 +55,7 @@
     <integer name="padding_columns">2</integer>
     
     <integer name="phantom_alpha">93</integer>
+    <integer name="textalpha">192</integer>
     
     <integer name="piece_start_x">3</integer>
     
