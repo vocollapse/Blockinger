@@ -71,15 +71,6 @@
 	        robobunny:unitsLeft=""
 	        robobunny:unitsRight=" %" />
 	    
-	    <org.blockinger.game.SeekBarPreference
-	        android:key="pref_musicvolume"
-	        android:title="@string/musicvolume_pref_title"
-	        android:defaultValue="60"
-	        android:max="100"
-	        robobunny:min="0"
-	        robobunny:unitsLeft=""
-	        robobunny:unitsRight=" %" />
-	    
     </PreferenceCategory>
     
     <PreferenceCategory
