@@ -67,7 +67,6 @@ public class MainActivity extends ListActivity {
 	public static ScoreDataSource datasource;
 	private Cursor mc;
 	private static SimpleCursorAdapter adapter;
-	private MediaPlayer mainMenuMusicPlayer;
 	private AlertDialog.Builder startLevelDialog;
 	private AlertDialog.Builder donateDialog;
 	private int startLevel;
@@ -139,26 +138,6 @@ public class MainActivity extends ListActivity {
 				startActivity(i);
 			}
 		});
-		
-		/* Start Music */
-	    try{
-		    if(mainMenuMusicPlayer == null) {
-			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.lemmings03);
-			    mainMenuMusicPlayer.setLooping(true);
-			    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-			    mainMenuMusicPlayer.start();
-		    } else if (!mainMenuMusicPlayer.isPlaying()) {
-			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.lemmings03);
-			    mainMenuMusicPlayer.setLooping(true);
-			    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-			    mainMenuMusicPlayer.start();
-		    }
-	    } catch(IllegalStateException e) {
-	    	mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.lemmings03);
-		    mainMenuMusicPlayer.setLooping(true);
-		    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-		    mainMenuMusicPlayer.start();
-	    }
 	}
 
 	@Override
@@ -187,7 +166,6 @@ public class MainActivity extends ListActivity {
 				startActivity(intent2);
 				return true;
 			case R.id.action_exit:
-			    mainMenuMusicPlayer.release();
 			    GameState.destroy();
 			    MainActivity.this.finish();
 				return true;
@@ -204,25 +182,6 @@ public class MainActivity extends ListActivity {
 		b.putString("playername", ((TextView)findViewById(R.id.nicknameEditView)).getText().toString()); //Your id
 		intent.putExtras(b); //Put your id to your next Intent
 		startActivity(intent);
-	    mainMenuMusicPlayer.release();
-	    /*try{
-		    if(mainMenuMusicPlayer == null) {
-			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-			    mainMenuMusicPlayer.setLooping(true);
-			    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-			    mainMenuMusicPlayer.start();
-		    } else if (!mainMenuMusicPlayer.isPlaying()) {
-			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-			    mainMenuMusicPlayer.setLooping(true);
-			    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-			    mainMenuMusicPlayer.start();
-		    }
-	    } catch(IllegalStateException e) {
-	    	mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-		    mainMenuMusicPlayer.setLooping(true);
-		    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-		    mainMenuMusicPlayer.start();
-	    }*/
 	}
 
 
@@ -261,25 +220,6 @@ public class MainActivity extends ListActivity {
 		b.putString("playername", ((TextView)findViewById(R.id.nicknameEditView)).getText().toString()); //Your id
 		intent.putExtras(b); //Put your id to your next Intent
 		startActivity(intent);
-	    mainMenuMusicPlayer.release();
-	    /*try{
-		    if(mainMenuMusicPlayer == null) {
-			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-			    mainMenuMusicPlayer.setLooping(true);
-			    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-			    mainMenuMusicPlayer.start();
-		    } else if (!mainMenuMusicPlayer.isPlaying()) {
-			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-			    mainMenuMusicPlayer.setLooping(true);
-			    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-			    mainMenuMusicPlayer.start();
-		    }
-	    } catch(IllegalStateException e) {
-	    	mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-		    mainMenuMusicPlayer.setLooping(true);
-		    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-		    mainMenuMusicPlayer.start();
-	    }*/
     }
 
 /*    public void onClickQuit(View view) {
@@ -291,13 +231,11 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onStop() {
     	super.onStop();
-	    mainMenuMusicPlayer.release();
     };
     
     @Override
     protected void onDestroy() {
     	super.onDestroy();
-	    mainMenuMusicPlayer.release();
     };
     
     @Override
@@ -306,26 +244,6 @@ public class MainActivity extends ListActivity {
     	datasource.open();
 	    Cursor cursor = datasource.getCursor();
 	    adapter.changeCursor(cursor);
-	    
-	    mainMenuMusicPlayer.release();
-	    try{
-		    if(mainMenuMusicPlayer == null) {
-			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.lemmings03);
-			    mainMenuMusicPlayer.setLooping(true);
-			    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-			    mainMenuMusicPlayer.start();
-		    } else if (!mainMenuMusicPlayer.isPlaying()) {
-			    mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.lemmings03);
-			    mainMenuMusicPlayer.setLooping(true);
-			    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-			    mainMenuMusicPlayer.start();
-		    }
-	    } catch(IllegalStateException e) {
-	    	mainMenuMusicPlayer = MediaPlayer.create(this, R.raw.lemmings03);
-		    mainMenuMusicPlayer.setLooping(true);
-		    mainMenuMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-		    mainMenuMusicPlayer.start();
-	    }
 	    
 	    if(!GameState.isFinished()) {
 	    	((Button)findViewById(R.id.resumeButton)).setEnabled(true);

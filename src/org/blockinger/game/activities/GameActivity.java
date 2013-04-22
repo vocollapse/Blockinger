@@ -69,7 +69,6 @@ public class GameActivity extends FragmentActivity {
 	public GameState game;
 	private WorkThread mainThread;
 	private DefeatDialogFragment dialog;
-	private MediaPlayer gameMusicPlayer;
 	//private int songtime;
 
 	public static final int start_new_game = 0;
@@ -249,62 +248,23 @@ public class GameActivity extends FragmentActivity {
 	}
 
     public void pauseMusic() {
-    	gameMusicPlayer.pause();
     };
     
     @Override
     protected void onStop() {
     	super.onStop();
-    	gameMusicPlayer.pause();
-    	game.setSongtime(gameMusicPlayer.getCurrentPosition());
-    	gameMusicPlayer.release();
     	//game.disconnect();
     };
     
     @Override
     protected void onDestroy() {
     	super.onDestroy();
-    	try {
-        	game.setSongtime(gameMusicPlayer.getCurrentPosition());
-    	} catch(IllegalStateException e) {
-    		
-    	}
-    	gameMusicPlayer.release();
     	game.disconnect();
     };
     
     @Override
     protected void onResume() {
     	super.onResume();
-    	try {
-    		if(gameMusicPlayer != null)
-    			gameMusicPlayer.release();
-    	} catch(IllegalStateException e) {
-    		
-    	}
-    	
-	    try{
-		    if(gameMusicPlayer == null) {
-			    gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-		    } else if (!gameMusicPlayer.isPlaying()) {
-			    gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-		    }
-	    } catch(IllegalStateException e) {
-	    	gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-	    }
-
-	    gameMusicPlayer.setLooping(true);
-	    gameMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-	    gameMusicPlayer.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-			
-			@Override
-			public void onSeekComplete(MediaPlayer mp) {
-				mp.start();
-			}
-		});
-	    gameMusicPlayer.seekTo(game.getSongtime());
-	    
-	    //gameMusicPlayer.start();
     };
     
     @Override
