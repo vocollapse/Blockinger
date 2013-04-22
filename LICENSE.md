@@ -1,3 +1,11 @@
+1. Software License
+2. Music License (english)
+3. Musik Lizenz (deutsch)
+
+--
+
+1. Software License
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -618,57 +626,701 @@ an absolute waiver of all civil liability in connection with the
 Program, unless a warranty or assumption of liability accompanies a
 copy of the Program in return for a fee.
 
-                     END OF TERMS AND CONDITIONS
 
-            How to Apply These Terms to Your New Programs
+--
 
-  If you develop a new program, and you want it to be of the greatest
-possible use to the public, the best way to achieve this is to make it
-free software which everyone can redistribute and change under these terms.
+2. Music License (english)
 
-  To do so, attach the following notices to the program.  It is safest
-to attach them to the start of each source file to most effectively
-state the exclusion of warranty; and each file should have at least
-the "copyright" line and a pointer to where the full notice is found.
+                    Creative Commons BY-NC-SA 3.0 US
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
+COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
+COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
+AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE
+TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY
+BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED
+HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
+1. Definitions
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+a.  "Adaptation" means a work based upon the Work, or upon the Work and other
+    pre-existing works, such as a translation, adaptation, derivative work,
+    arrangement of music or other alterations of a literary or artistic work,
+    or phonogram or performance and includes cinematographic adaptations or
+    any other form in which the Work may be recast, transformed, or adapted
+    including in any form recognizably derived from the original, except that
+    a work that constitutes a Collection will not be considered an Adaptation
+    for the purpose of this License. For the avoidance of doubt, where the
+    Work is a musical work, performance or phonogram, the synchronization of
+    the Work in timed-relation with a moving image ("synching") will be
+    considered an Adaptation for the purpose of this License.
+b.  "Collection" means a collection of literary or artistic works, such as
+    encyclopedias and anthologies, or performances, phonograms or broadcasts,
+    or other works or subject matter other than works listed in Section 1(g)
+    below, which, by reason of the selection and arrangement of their
+    contents, constitute intellectual creations, in which the Work is included
+    in its entirety in unmodified form along with one or more other
+    contributions, each constituting separate and independent works in
+    themselves, which together are assembled into a collective whole. A work
+    that constitutes a Collection will not be considered an Adaptation (as
+    defined above) for the purposes of this License.
+c.  "Distribute" means to make available to the public the original and copies
+    of the Work or Adaptation, as appropriate, through sale or other transfer
+    of ownership.
+d.  "License Elements" means the following high-level license attributes as
+    selected by Licensor and indicated in the title of this License:
+    Attribution, Noncommercial, ShareAlike.
+e.  "Licensor" means the individual, individuals, entity or entities that
+    offer(s) the Work under the terms of this License.
+f.  "Original Author" means, in the case of a literary or artistic work, the
+    individual, individuals, entity or entities who created the Work or if no
+    individual or entity can be identified, the publisher; and in addition (i)
+    in the case of a performance the actors, singers, musicians, dancers, and
+    other persons who act, sing, deliver, declaim, play in, interpret or
+    otherwise perform literary or artistic works or expressions of folklore;
+    (ii) in the case of a phonogram the producer being the person or legal
+    entity who first fixes the sounds of a performance or other sounds; and,
+    (iii) in the case of broadcasts, the organization that transmits the
+    broadcast.
+g.  "Work" means the literary and/or artistic work offered under the terms of
+    this License including without limitation any production in the literary,
+    scientific and artistic domain, whatever may be the mode or form of its
+    expression including digital form, such as a book, pamphlet and other
+    writing; a lecture, address, sermon or other work of the same nature; a
+    dramatic or dramatico-musical work; a choreographic work or entertainment
+    in dumb show; a musical composition with or without words; a
+    cinematographic work to which are assimilated works expressed by a process
+    analogous to cinematography; a work of drawing, painting, architecture,
+    sculpture, engraving or lithography; a photographic work to which are
+    assimilated works expressed by a process analogous to photography; a work
+    of applied art; an illustration, map, plan, sketch or three-dimensional
+    work relative to geography, topography, architecture or science; a
+    performance; a broadcast; a phonogram; a compilation of data to the extent
+    it is protected as a copyrightable work; or a work performed by a variety
+    or circus performer to the extent it is not otherwise considered a
+    literary or artistic work.
+h.  "You" means an individual or entity exercising rights under this License
+    who has not previously violated the terms of this License with respect to
+    the Work, or who has received express permission from the Licensor to
+    exercise rights under this License despite a previous violation.
+i.  "Publicly Perform" means to perform public recitations of the Work and to
+    communicate to the public those public recitations, by any means or
+    process, including by wire or wireless means or public digital
+    performances; to make available to the public Works in such a way that
+    members of the public may access these Works from a place and at a place
+    individually chosen by them; to perform the Work to the public by any
+    means or process and the communication to the public of the performances
+    of the Work, including by public digital performance; to broadcast and
+    rebroadcast the Work by any means including signs, sounds or images.
+j.  "Reproduce" means to make copies of the Work by any means including
+    without limitation by sound or visual recordings and the right of fixation
+    and reproducing fixations of the Work, including storage of a protected
+    performance or phonogram in digital form or other electronic medium.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+2. Fair Dealing Rights. Nothing in this License is intended to reduce, limit,
+or restrict any uses free from copyright or rights arising from limitations or
+exceptions that are provided for in connection with the copyright protection
+under copyright law or other applicable laws.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+3. License Grant. Subject to the terms and conditions of this License,
+Licensor hereby grants You a worldwide, royalty-free, non-exclusive, perpetual
+(for the duration of the applicable copyright) license to exercise the rights
+in the Work as stated below:
 
-Also add information on how to contact you by electronic and paper mail.
+    to Reproduce the Work, to incorporate the Work into one or more
+    Collections, and to Reproduce the Work as incorporated in the Collections;
+    to create and Reproduce Adaptations provided that any such Adaptation,
+    including any translation in any medium, takes reasonable steps to clearly
+    label, demarcate or otherwise identify that changes were made to the
+    original Work. For example, a translation could be marked "The original
+    work was translated from English to Spanish," or a modification could
+    indicate "The original work has been modified.";
+    to Distribute and Publicly Perform the Work including as incorporated in
+    Collections; and,
+    to Distribute and Publicly Perform Adaptations.
 
-  If the program does terminal interaction, make it output a short
-notice like this when it starts in an interactive mode:
+The above rights may be exercised in all media and formats whether now known
+or hereafter devised. The above rights include the right to make such
+modifications as are technically necessary to exercise the rights in other
+media and formats. Subject to Section 8(f), all rights not expressly granted
+by Licensor are hereby reserved, including but not limited to the rights
+described in Section 4(e).
 
-    <program>  Copyright (C) <year>  <name of author>
-    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
-    This is free software, and you are welcome to redistribute it
-    under certain conditions; type `show c' for details.
+4. Restrictions. The license granted in Section 3 above is expressly made
+subject to and limited by the following restrictions:
 
-The hypothetical commands `show w' and `show c' should show the appropriate
-parts of the General Public License.  Of course, your program's commands
-might be different; for a GUI interface, you would use an "about box".
+    You may Distribute or Publicly Perform the Work only under the terms of
+    this License. You must include a copy of, or the Uniform Resource
+    Identifier (URI) for, this License with every copy of the Work You
+    Distribute or Publicly Perform. You may not offer or impose any terms on
+    the Work that restrict the terms of this License or the ability of the
+    recipient of the Work to exercise the rights granted to that recipient
+    under the terms of the License. You may not sublicense the Work. You must
+    keep intact all notices that refer to this License and to the disclaimer
+    of warranties with every copy of the Work You Distribute or Publicly
+    Perform. When You Distribute or Publicly Perform the Work, You may not
+    impose any effective technological measures on the Work that restrict the
+    ability of a recipient of the Work from You to exercise the rights granted
+    to that recipient under the terms of the License. This Section 4(a)
+    applies to the Work as incorporated in a Collection, but this does not
+    require the Collection apart from the Work itself to be made subject to
+    the terms of this License. If You create a Collection, upon notice from
+    any Licensor You must, to the extent practicable, remove from the
+    Collection any credit as required by Section 4(d), as requested. If You
+    create an Adaptation, upon notice from any Licensor You must, to the
+    extent practicable, remove from the Adaptation any credit as required by
+    Section 4(d), as requested.
+    You may Distribute or Publicly Perform an Adaptation only under: (i) the
+    terms of this License; (ii) a later version of this License with the same
+    License Elements as this License; (iii) a Creative Commons jurisdiction
+    license (either this or a later license version) that contains the same
+    License Elements as this License (e.g.,
+    Attribution-NonCommercial-ShareAlike 3.0 US) ("Applicable License"). You
+    must include a copy of, or the URI, for Applicable License with every
+    copy of each Adaptation You Distribute or Publicly Perform. You may not
+    offer or impose any terms on the Adaptation that restrict the terms of
+    the Applicable License or the ability of the recipient of the Adaptation
+    to exercise the rights granted to that recipient under the terms of the
+    Applicable License. You must keep intact all notices that refer to the
+    Applicable License and to the disclaimer of warranties with every copy of
+    the Work as included in the Adaptation You Distribute or Publicly Perform.
+    When You Distribute or Publicly Perform the Adaptation, You may not impose
+    any effective technological measures on the Adaptation that restrict the
+    ability of a recipient of the Adaptation from You to exercise the rights
+    granted to that recipient under the terms of the Applicable License. This
+    Section 4(b) applies to the Adaptation as incorporated in a Collection,
+    but this does not require the Collection apart from the Adaptation itself
+    to be made subject to the terms of the Applicable License.
+    You may not exercise any of the rights granted to You in Section 3 above
+    in any manner that is primarily intended for or directed toward commercial
+    advantage or private monetary compensation. The exchange of the Work for
+    other copyrighted works by means of digital file-sharing or otherwise
+    shall not be considered to be intended for or directed toward commercial
+    advantage or private monetary compensation, provided there is no payment
+    of any monetary compensation in con-nection with the exchange of
+    copyrighted works.
+    If You Distribute, or Publicly Perform the Work or any Adaptations or
+    Collections, You must, unless a request has been made pursuant to
+    Section 4(a), keep intact all copyright notices for the Work and provide,
+    reasonable to the medium or means You are utilizing: (i) the name of the
+    Original Author (or pseudonym, if applicable) if supplied, and/or if the
+    Original Author and/or Licensor designate another party or parties (e.g.,
+    a sponsor institute, publishing entity, journal) for attribution
+    ("Attribution Parties") in Licensor's copyright notice, terms of service
+    or by other reasonable means, the name of such party or parties; (ii) the
+    title of the Work if supplied; (iii) to the extent reasonably practicable,
+    the URI, if any, that Licensor specifies to be associated with the Work,
+    unless such URI does not refer to the copyright notice or licensing
+    information for the Work; and, (iv) consistent with Section 3(b), in the
+    case of an Adaptation, a credit identifying the use of the Work in the
+    Adaptation (e.g., "French translation of the Work by Original Author," or
+    "Screenplay based on original Work by Original Author"). The credit
+    required by this Section 4(d) may be implemented in any reasonable manner;
+    provided, however, that in the case of a Adaptation or Collection, at a
+    minimum such credit will appear, if a credit for all contributing authors
+    of the Adaptation or Collection appears, then as part of these credits and
+    in a manner at least as prominent as the credits for the other
+    contributing authors. For the avoidance of doubt, You may only use the
+    credit required by this Section for the purpose of attribution in the
+    manner set out above and, by exercising Your rights under this License,
+    You may not implicitly or explicitly assert or imply any connection with,
+    sponsorship or endorsement by the Original Author, Licensor and/or
+    Attribution Parties, as appropriate, of You or Your use of the Work,
+    without the separate, express prior written permission of the Original
+    Author, Licensor and/or Attribution Parties.
 
-  You should also get your employer (if you work as a programmer) or school,
-if any, to sign a "copyright disclaimer" for the program, if necessary.
-For more information on this, and how to apply and follow the GNU GPL, see
-<http://www.gnu.org/licenses/>.
+    For the avoidance of doubt:
+        Non-waivable Compulsory License Schemes. In those jurisdictions in
+        which the right to collect royalties through any statutory or
+        compulsory licensing scheme cannot be waived, the Licensor reserves
+        the exclusive right to collect such royalties for any exercise by You
+        of the rights granted under this License;
+        Waivable Compulsory License Schemes. In those jurisdictions in which
+        the right to collect royalties through any statutory or compulsory
+        licensing scheme can be waived, the Licensor reserves the exclusive
+        right to collect such royalties for any exercise by You of the rights
+        granted under this License if Your exercise of such rights is for a
+        purpose or use which is otherwise than noncommercial as permitted
+        under Section 4(c) and otherwise waives the right to collect royalties
+        through any statutory or compulsory licensing scheme; and,
+        Voluntary License Schemes. The Licensor reserves the right to collect
+        royalties, whether individually or, in the event that the Licensor is
+        a member of a collecting society that administers voluntary licensing
+        schemes, via that society, from any exercise by You of the rights
+        granted under this License that is for a purpose or use which is
+        otherwise than noncommercial as permitted under Section 4(c).
+    Except as otherwise agreed in writing by the Licensor or as may be
+    otherwise permitted by applicable law, if You Reproduce, Distribute or
+    Publicly Perform the Work either by itself or as part of any Adaptations
+    or Collections, You must not distort, mutilate, modify or take other
+    derogatory action in relation to the Work which would be prejudicial to
+    the Original Author's honor or reputation. Licensor agrees that in those
+    jurisdictions (e.g. Japan), in which any exercise of the right granted in
+    Section 3(b) of this License (the right to make Adaptations) would be
+    deemed to be a distortion, mutilation, modification or other derogatory
+    action prejudicial to the Original Author's honor and reputation, the
+    Licensor will waive or not assert, as appropriate, this Section, to the
+    fullest extent permitted by the applicable national law, to enable You to
+    reasonably exercise Your right under Section 3(b) of this License (right
+    to make Adaptations) but not otherwise.
 
-  The GNU General Public License does not permit incorporating your program
-into proprietary programs.  If your program is a subroutine library, you
-may consider it more useful to permit linking proprietary applications with
-the library.  If this is what you want to do, use the GNU Lesser General
-Public License instead of this License.  But first, please read
-<http://www.gnu.org/philosophy/why-not-lgpl.html>.
+5. Representations, Warranties and Disclaimer
+
+UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING AND TO THE
+FULLEST EXTENT PERMITTED BY APPLICABLE LAW, LICENSOR OFFERS THE WORK AS-IS AND
+MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK,
+EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION,
+WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE
+PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS
+DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THIS EXCLUSION MAY NOT
+APPLY TO YOU.
+
+6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW,
+IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY
+SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT
+OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES.
+
+7. Termination
+
+    This License and the rights granted hereunder will terminate automatically
+    upon any breach by You of the terms of this License. Individuals or
+    entities who have received Adaptations or Collections from You under this
+    License, however, will not have their licenses terminated provided such
+    individuals or entities remain in full compliance with those licenses.
+    Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this
+    License.
+    Subject to the above terms and conditions, the license granted here is
+    perpetual (for the duration of the applicable copyright in the Work).
+    Notwithstanding the above, Licensor reserves the right to release the Work
+    under different license terms or to stop distributing the Work at any time;
+    provided, however that any such election will not serve to withdraw this
+    License (or any other license that has been, or is required to be, granted
+    under the terms of this License), and this License will continue in full
+    force and effect unless terminated as stated above.
+
+8. Miscellaneous
+
+    Each time You Distribute or Publicly Perform the Work or a Collection, the
+    Licensor offers to the recipient a license to the Work on the same terms
+    and conditions as the license granted to You under this License.
+    Each time You Distribute or Publicly Perform an Adaptation, Licensor
+    offers to the recipient a license to the original Work on the same terms
+    and conditions as the license granted to You under this License.
+    If any provision of this License is invalid or unenforceable under
+    applicable law, it shall not affect the validity or enforceability of the
+    remainder of the terms of this License, and without further action by the
+    parties to this agreement, such provision shall be reformed to the minimum
+    extent necessary to make such provision valid and enforceable.
+    No term or provision of this License shall be deemed waived and no breach
+    consented to unless such waiver or consent shall be in writing and signed
+    by the party to be charged with such waiver or consent.
+    This License constitutes the entire agreement between the parties with
+    respect to the Work licensed here. There are no understandings, agreements
+    or representations with respect to the Work not specified here. Licensor
+    shall not be bound by any additional provisions that may appear in any
+    communication from You. This License may not be modified without the
+    mutual written agreement of the Licensor and You.
+    The rights granted under, and the subject matter referenced, in this
+    License were drafted utilizing the terminology of the Berne Convention
+    for the Protection of Literary and Artistic Works (as amended on September
+    28, 1979), the Rome Convention of 1961, the WIPO Copyright Treaty of 1996,
+    the WIPO Performances and Phonograms Treaty of 1996 and the Universal
+    Copyright Convention (as revised on July 24, 1971). These rights and
+    subject matter take effect in the relevant jurisdiction in which the
+    License terms are sought to be enforced according to the corresponding
+    provisions of the implementation of those treaty provisions in the
+    applicable national law. If the standard suite of rights granted under
+    applicable copyright law includes additional rights not granted under this
+    License, such additional rights are deemed to be included in the License;
+    this License is not intended to restrict the license of any rights under
+    applicable law.
+
+    Creative Commons Notice
+
+    Creative Commons is not a party to this License, and makes no warranty
+    whatsoever in connection with the Work. Creative Commons will not be
+    liable to You or any party on any legal theory for any damages whatsoever,
+    including without limitation any general, special, incidental or
+    consequential damages arising in connection to this license.
+    Notwithstanding the foregoing two (2) sentences, if Creative Commons has
+    expressly identified itself as the Licensor hereunder, it shall have all
+    rights and obligations of Licensor.
+    Except for the limited purpose of indicating to the public that the Work
+    is licensed under the CCPL, Creative Commons does not authorize the use
+    by either party of the trademark "Creative Commons" or any related
+    trademark or logo of Creative Commons without the prior written consent of
+    Creative Commons. Any permitted use will be in compliance with
+    Creative Commons' then-current trademark usage guidelines, as may be
+    published on its website or otherwise made available upon request from
+    time to time. For the avoidance of doubt, this trademark restriction does
+    not form part of this License.
+    Creative Commons may be contacted at http://creativecommons.org/.
+
+
+--
+
+3. Musik Lizenz (deutsch)
+
+                    Creative Commons BY-NC-SA 3.0 DE
+
+DER GEGENSTAND DIESER LIZENZ (WIE UNTER "SCHUTZGEGENSTAND" DEFINIERT) WIRD
+UNTER DEN BEDINGUNGEN DIESER CREATIVE COMMONS PUBLIC LICENSE ("CCPL", "LIZENZ"
+ODER "LIZENZVERTRAG") ZUR VERFÜGUNG GESTELLT. DER SCHUTZGEGENSTAND IST DURCH
+DAS URHEBERRECHT UND/ODER ANDERE GESETZE GESCHÜTZT. JEDE FORM DER NUTZUNG DES
+SCHUTZGEGENSTANDES, DIE NICHT AUFGRUND DIESER LIZENZ ODER DURCH GESETZE
+GESTATTET IST, IST UNZULÄSSIG.
+
+DURCH DIE AUSÜBUNG EINES DURCH DIESE LIZENZ GEWÄHRTEN RECHTS AN DEM
+SCHUTZGEGENSTAND ERKLÄREN SIE SICH MIT DEN LIZENZBEDINGUNGEN RECHTSVERBINDLICH
+EINVERSTANDEN. SOWEIT DIESE LIZENZ ALS LIZENZVERTRAG ANZUSEHEN IST, GEWÄHRT
+IHNEN DER LIZENZGEBER DIE IN DER LIZENZ GENANNTEN RECHTE UNENTGELTLICH UND IM
+AUSTAUSCH DAFÜR, DASS SIE DAS GEBUNDENSEIN AN DIE LIZENZBEDINGUNGEN
+AKZEPTIEREN.
+
+1. Definitionen
+
+a.  Der Begriff "Abwandlung" im Sinne dieser Lizenz bezeichnet das Ergebnis
+    jeglicher Art von Veränderung des Schutzgegenstandes, solange die
+    eigenpersönlichen Züge des Schutzgegenstandes darin nicht verblassen und
+    daran eigene Schutzrechte entstehen. Das kann insbesondere eine
+    Bearbeitung, Umgestaltung, Änderung, Anpassung, Übersetzung oder
+    Heranziehung des Schutzgegenstandes zur Vertonung von Laufbildern sein.
+    Nicht als Abwandlung des Schutzgegenstandes gelten seine Aufnahme in eine
+    Sammlung oder ein Sammelwerk und die freie Benutzung des
+    Schutzgegenstandes.
+b.  Der Begriff "Sammelwerk" im Sinne dieser Lizenz meint eine
+    Zusammenstellung von literarischen, künstlerischen oder wissenschaftlichen
+    Inhalten, sofern diese Zusammenstellung aufgrund von Auswahl und Anordnung
+    der darin enthaltenen selbständigen Elemente eine geistige Schöpfung
+    darstellt, unabhängig davon, ob die Elemente systematisch oder methodisch
+    angelegt und dadurch einzeln zugänglich sind oder nicht.
+c.  "Verbreiten" im Sinne dieser Lizenz bedeutet, den Schutzgegenstand oder
+    Abwandlungen im Original oder in Form von Vervielfältigungsstücken, mithin
+    in körperlich fixierter Form der Öffentlichkeit anzubieten oder in Verkehr
+    zu bringen.
+d.  Unter "Lizenzelementen" werden im Sinne dieser Lizenz die folgenden
+    übergeordneten Lizenzcharakteristika verstanden, die vom Lizenzgeber
+    ausgewählt wurden und in der Bezeichnung der Lizenz zum Ausdruck kommen:
+    "Namensnennung", "Keine kommerzielle Nutzung", "Weitergabe unter gleichen
+    Bedingungen".
+e.  Der "Lizenzgeber" im Sinne dieser Lizenz ist diejenige natürliche oder
+    juristische Person oder Gruppe, die den Schutzgegenstand unter den
+    Bedingungen dieser Lizenz anbietet und insoweit als Rechteinhaberin
+    auftritt.
+f.  "Rechteinhaber" im Sinne dieser Lizenz ist der Urheber des
+    Schutzgegenstandes oder jede andere natürliche oder juristische Person
+    oder Gruppe von Personen, die am Schutzgegenstand ein Immaterialgüterrecht
+    erlangt hat, welches die in Abschnitt 3 genannten Handlungen erfasst und
+    bei dem eine Einräumung von Nutzungsrechten oder eine Weiterübertragung an
+    Dritte möglich ist.
+g.  Der Begriff "Schutzgegenstand" bezeichnet in dieser Lizenz den
+    literarischen, künstlerischen oder wissenschaftlichen Inhalt, der unter
+    den Bedingungen dieser Lizenz angeboten wird. Das kann insbesondere eine
+    persönliche geistige Schöpfung jeglicher Art, ein Werk der kleinen Münze,
+    ein nachgelassenes Werk oder auch ein Lichtbild oder anderes Objekt eines
+    verwandten Schutzrechts sein, unabhängig von der Art seiner Fixierung und
+    unabhängig davon, auf welche Weise jeweils eine Wahrnehmung erfolgen kann,
+    gleichviel ob in analoger oder digitaler Form. Soweit Datenbanken oder
+    Zusammenstellungen von Daten einen immaterialgüterrechtlichen Schutz
+    eigener Art genießen, unterfallen auch sie dem Begriff "Schutzgegenstand"
+    im Sinne dieser Lizenz.
+h.  Mit "Sie" bzw. "Ihnen" ist die natürliche oder juristische Person gemeint,
+    die in dieser Lizenz im Abschnitt 3 genannte Nutzungen des
+    Schutzgegenstandes vornimmt und zuvor in Hinblick auf den Schutzgegenstand
+    nicht gegen Bedingungen dieser Lizenz verstoßen oder aber die
+    ausdrückliche Erlaubnis des Lizenzgebers erhalten hat, die durch diese
+    Lizenz gewährten Nutzungsrechte trotz eines vorherigen Verstoßes
+    auszuüben.
+i.  Unter "Öffentlich Zeigen" im Sinne dieser Lizenz sind Veröffentlichungen
+    und Präsentationen des Schutzgegenstandes zu verstehen, die für eine
+    Mehrzahl von Mitgliedern der Öffentlichkeit bestimmt sind und in
+    unkörperlicher Form mittels öffentlicher Wiedergabe in Form von Vortrag,
+    Aufführung, Vorführung, Darbietung, Sendung, Weitersendung, zeit- und
+    ortsunabhängiger Zugänglichmachung oder in körperlicher Form mittels
+    Ausstellung erfolgen, unabhängig von bestimmten Veranstaltungen und
+    unabhängig von den zum Einsatz kommenden Techniken und Verfahren,
+    einschließlich drahtgebundener oder drahtloser Mittel und Einstellen in
+    das Internet.
+j.  "Vervielfältigen" im Sinne dieser Lizenz bedeutet, mittels beliebiger
+    Verfahren Vervielfältigungsstücke des Schutzgegenstandes herzustellen,
+    insbesondere durch Ton- oder Bildaufzeichnungen, und umfasst auch den
+    Vorgang, erstmals körperliche Fixierungen des Schutzgegenstandes sowie
+    Vervielfältigungsstücke dieser Fixierungen anzufertigen, sowie die
+    Übertragung des Schutzgegenstandes auf einen Bild- oder Tonträger oder
+    auf ein anderes elektronisches Medium, gleichviel ob in digitaler oder
+    analoger Form.
+
+2. Schranken des Immaterialgüterrechts
+
+Diese Lizenz ist in keiner Weise darauf gerichtet, Befugnisse zur Nutzung
+des Schutzgegenstandes zu vermindern, zu beschränken oder zu vereiteln, die
+Ihnen aufgrund der Schranken des Urheberrechts oder anderer Rechtsnormen
+bereits ohne Weiteres zustehen oder sich aus dem Fehlen eines
+immaterialgüterrechtlichen Schutzes ergeben.
+
+3. Einräumung von Nutzungsrechten
+
+Unter den Bedingungen dieser Lizenz räumt Ihnen der Lizenzgeber - unbeschadet
+unverzichtbarer Rechte und vorbehaltlich des Abschnitts 4.f) - das
+vergütungsfreie, räumlich und zeitlich (für die Dauer des Schutzrechts am
+Schutzgegenstand) unbeschränkte einfache Recht ein, den Schutzgegenstand auf
+die folgenden Arten und Weisen zu nutzen ("unentgeltlich eingeräumtes
+einfaches Nutzungsrecht für jedermann"):
+
+    Den Schutzgegenstand in beliebiger Form und Menge zu vervielfältigen, ihn
+    in Sammelwerke zu integrieren und ihn als Teil solcher Sammelwerke zu
+    vervielfältigen;
+    Abwandlungen des Schutzgegenstandes anzufertigen, einschließlich
+    Übersetzungen unter Nutzung jedweder Medien, sofern deutlich erkennbar
+    gemacht wird, dass es sich um Abwandlungen handelt;
+    den Schutzgegenstand, allein oder in Sammelwerke aufgenommen, öffentlich
+    zu zeigen und zu verbreiten;
+    Abwandlungen des Schutzgegenstandes zu veröffentlichen, öffentlich zu
+    zeigen und zu verbreiten.
+
+Das vorgenannte Nutzungsrecht wird für alle bekannten sowie für alle noch
+nicht bekannten Nutzungsarten eingeräumt. Es beinhaltet auch das Recht, solche
+Änderungen am Schutzgegenstand vorzunehmen, die für bestimmte nach dieser
+Lizenz zulässige Nutzungen technisch erforderlich sind. Alle sonstigen Rechte,
+die über diesen Abschnitt hinaus nicht ausdrücklich durch den Lizenzgeber
+eingeräumt werden, bleiben diesem allein vorbehalten. Soweit Datenbanken oder
+Zusammenstellungen von Daten Schutzgegenstand dieser Lizenz oder Teil dessen
+sind und einen immaterialgüterrechtlichen Schutz eigener Art genießen,
+verzichtet der Lizenzgeber auf sämtliche aus diesem Schutz resultierenden
+Rechte.
+
+4. Bedingungen
+
+Die Einräumung des Nutzungsrechts gemäß Abschnitt 3 dieser Lizenz erfolgt
+ausdrücklich nur unter den folgenden Bedingungen:
+
+    Sie dürfen den Schutzgegenstand ausschließlich unter den Bedingungen
+    dieser Lizenz verbreiten oder öffentlich zeigen. Sie müssen dabei stets
+    eine Kopie dieser Lizenz oder deren vollständige Internetadresse in Form
+    des Uniform-Resource-Identifier (URI) beifügen. Sie dürfen keine Vertrags-
+    oder Nutzungsbedingungen anbieten oder fordern, die die Bedingungen dieser
+    Lizenz oder die durch diese Lizenz gewährten Rechte beschränken. Sie
+    dürfen den Schutzgegenstand nicht unterlizenzieren. Bei jeder Kopie des
+    Schutzgegenstandes, die Sie verbreiten oder öffentlich zeigen, müssen Sie
+    alle Hinweise unverändert lassen, die auf diese Lizenz und den
+    Haftungsausschluss hinweisen. Wenn Sie den Schutzgegenstand verbreiten
+    oder öffentlich zeigen, dürfen Sie (in Bezug auf den Schutzgegenstand)
+    keine technischen Maßnahmen ergreifen, die den Nutzer des
+    Schutzgegenstandes in der Ausübung der ihm durch diese Lizenz gewährten
+    Rechte behindern können. Dieser Abschnitt 4.a) gilt auch für den Fall,
+    dass der Schutzgegenstand einen Bestandteil eines Sammelwerkes bildet, was
+    jedoch nicht bedeutet, dass das Sammelwerk insgesamt dieser Lizenz
+    unterstellt werden muss. Sofern Sie ein Sammelwerk erstellen, müssen Sie
+    auf die Mitteilung eines Lizenzgebers hin aus dem Sammelwerk die in
+    Abschnitt 4.d) aufgezählten Hinweise entfernen. Wenn Sie eine Abwandlung
+    vornehmen, müssen Sie auf die Mitteilung eines Lizenzgebers hin von der
+    Abwandlung die in Abschnitt 4.d) aufgezählten Hinweise entfernen.
+
+    Sie dürfen eine Abwandlung ausschließlich unter den Bedingungen
+        dieser Lizenz,
+        einer späteren Version dieser Lizenz mit denselben Lizenzelementen;
+        einer rechtsordnungsspezifischen Creative-Commons-Lizenz mit denselben
+        Lizenzelementen ab Version 3.0 aufwärts (z.B. Namensnennung - Keine
+        kommerzielle Nutzung - Weitergabe unter gleichen Bedingungen 3.0 US)
+        oder
+        der Creative-Commons-Unported-Lizenz mit denselben Lizenzelementen ab
+        Version 3.0 aufwärts
+
+    verbreiten oder öffentlich zeigen ("Verwendbare Lizenz").
+
+    Sie müssen stets eine Kopie der verwendbaren Lizenz oder deren
+    vollständige Internetadresse in Form des Uniform-Resource-Identifier (URI)
+    beifügen, wenn Sie die Abwandlung verbreiten oder öffentlich zeigen. Sie
+    dürfen keine Vertrags- oder Nutzungsbedingungen anbieten oder fordern, die
+    die Bedingungen der verwendbaren Lizenz oder die durch sie gewährten
+    Rechte beschränken. Bei jeder Abwandlung, die Sie verbreiten oder
+    öffentlich zeigen, müssen Sie alle Hinweise auf die verwendbare Lizenz und
+    den Haftungsausschluss unverändert lassen. Wenn Sie die Abwandlung
+    verbreiten oder öffentlich zeigen, dürfen Sie (in Bezug auf die
+    Abwandlung) keine technischen Maßnahmen ergreifen, die den Nutzer der
+    Abwandlung in der Ausübung der ihm durch die verwendbare Lizenz gewährten
+    Rechte behindern können. Dieser Abschnitt 4.b) gilt auch für den Fall,
+    dass die Abwandlung einen Bestandteil eines Sammelwerkes bildet, was
+    jedoch nicht bedeutet, dass das Sammelwerk insgesamt der verwendbaren
+    Lizenz unterstellt werden muss.
+    Die Rechteeinräumung gemäß Abschnitt 3 gilt nur für Handlungen, die nicht
+    vorrangig auf einen geschäftlichen Vorteil oder eine geldwerte Vergütung
+    gerichtet sind ("nicht-kommerzielle Nutzung", "Non-commercial-Option").
+    Wird Ihnen in Zusammenhang mit dem Schutzgegenstand dieser Lizenz ein
+    anderer Schutzgegenstand überlassen, ohne dass eine vertragliche
+    Verpflichtung hierzu besteht (etwa im Wege von File-Sharing), so wird dies
+    nicht als auf geschäftlichen Vorteil oder geldwerte Vergütung gerichtet
+    angesehen, wenn in Verbindung mit dem Austausch der Schutzgegenstände
+    tatsächlich keine Zahlung oder geldwerte Vergütung geleistet wird.
+
+    Die Verbreitung und das öffentliche Zeigen des Schutzgegenstandes oder auf
+    ihm aufbauender Abwandlungen oder ihn enthaltender Sammelwerke ist Ihnen
+    nur unter der Bedingung gestattet, dass Sie, vorbehaltlich etwaiger
+    Mitteilungen im Sinne von Abschnitt 4.a), alle dazu gehörenden
+    Rechtevermerke unberührt lassen. Sie sind verpflichtet, die
+    Rechteinhaberschaft in einer der Nutzung entsprechenden, angemessenen Form
+    anzuerkennen, indem Sie - soweit bekannt - Folgendes angeben:
+        Den Namen (oder das Pseudonym, falls ein solches verwendet wird) des
+        Rechteinhabers und / oder, falls der Lizenzgeber im Rechtevermerk, in
+        den Nutzungsbedingungen oder auf andere angemessene Weise eine
+        Zuschreibung an Dritte vorgenommen hat (z.B. an eine Stiftung, ein
+        Verlagshaus oder eine Zeitung) ("Zuschreibungsempfänger"), Namen bzw.
+        Bezeichnung dieses oder dieser Dritten;
+        den Titel des Inhaltes;
+        in einer praktikablen Form den Uniform-Resource-Identifier (URI, z.B.
+        Internetadresse), den der Lizenzgeber zum Schutzgegenstand angegeben
+        hat, es sei denn, dieser URI verweist nicht auf den Rechtevermerk oder
+        die Lizenzinformationen zum Schutzgegenstand;
+        und im Falle einer Abwandlung des Schutzgegenstandes in
+        Übereinstimmung mit Abschnitt 3.b) einen Hinweis darauf, dass es sich
+        um eine Abwandlung handelt.
+
+    Die nach diesem Abschnitt 4.d) erforderlichen Angaben können in jeder
+    angemessenen Form gemacht werden; im Falle einer Abwandlung des
+    Schutzgegenstandes oder eines Sammelwerkes müssen diese Angaben das
+    Minimum darstellen und bei gemeinsamer Nennung mehrerer Rechteinhaber
+    dergestalt erfolgen, dass sie zumindest ebenso hervorgehoben sind wie die
+    Hinweise auf die übrigen Rechteinhaber. Die Angaben nach diesem Abschnitt
+    dürfen Sie ausschließlich zur Angabe der Rechteinhaberschaft in der oben
+    bezeichneten Weise verwenden. Durch die Ausübung Ihrer Rechte aus dieser
+    Lizenz dürfen Sie ohne eine vorherige, separat und schriftlich vorliegende
+    Zustimmung des Lizenzgebers und / oder des Zuschreibungsempfängers weder
+    explizit noch implizit irgendeine Verbindung zum Lizenzgeber oder
+    Zuschreibungsempfänger und ebenso wenig eine Unterstützung oder Billigung
+    durch ihn andeuten.
+    Die oben unter 4.a) bis d) genannten Einschränkungen gelten nicht für
+    solche Teile des Schutzgegenstandes, die allein deshalb unter den
+    Schutzgegenstandsbegriff fallen, weil sie als Datenbanken oder
+    Zusammenstellungen von Daten einen immaterialgüterrechtlichen Schutz
+    eigener Art genießen.
+
+    Bezüglich Vergütung für die Nutzung des Schutzgegenstandes gilt Folgendes:
+        Unverzichtbare gesetzliche Vergütungsansprüche: Soweit unverzichtbare
+        Vergütungsansprüche im Gegenzug für gesetzliche Lizenzen vorgesehen
+        oder Pauschalabgabensysteme (zum Beispiel für Leermedien) vorhanden
+        sind, behält sich der Lizenzgeber das ausschließliche Recht vor, die
+        entsprechende Vergütung einzuziehen für jede Ausübung eines Rechts aus
+        dieser Lizenz durch Sie.
+        Vergütung bei Zwangslizenzen: Sofern Zwangslizenzen außerhalb dieser
+        Lizenz vorgesehen sind und zustande kommen, behält sich der
+        Lizenzgeber das ausschließliche Recht auf Einziehung der
+        entsprechenden Vergütung für den Fall vor, dass Sie eine Nutzung des
+        Schutzgegenstandes für andere als die in Abschnitt 4.c) als nicht-
+        kommerziell definierten Zwecke vornehmen, verzichtet für alle übrigen,
+        lizenzgerechten Fälle von Nutzung jedoch auf jegliche Vergütung.
+        Vergütung in sonstigen Fällen: Bezüglich lizenzgerechter Nutzung des
+        Schutzgegenstandes durch Sie, die nicht unter die beiden vorherigen
+        Abschnitte (i) und (ii) fällt, verzichtet der Lizenzgeber auf jegliche
+        Vergütung, unabhängig davon, ob eine Einziehung der Vergütung durch
+        ihn selbst oder nur durch eine Verwertungsgesellschaft möglich wäre.
+        Der Lizenzgeber behält sich jedoch das ausschließliche Recht auf
+        Einziehung der entsprechenden Vergütung (durch ihn selbst oder eine
+        Verwertungsgesellschaft) für den Fall vor, dass Sie eine Nutzung des
+        Schutzgegenstandes für andere als die in Abschnitt 4.c) als nicht-
+        kommerziell definierten Zwecke vornehmen.
+    Persönlichkeitsrechte bleiben - soweit sie bestehen - von dieser Lizenz
+    unberührt.
+
+5. Gewährleistung
+
+SOFERN KEINE ANDERS LAUTENDE, SCHRIFTLICHE VEREINBARUNG ZWISCHEN DEM
+LIZENZGEBER UND IHNEN GESCHLOSSEN WURDE UND SOWEIT MÄNGEL NICHT ARGLISTIG
+VERSCHWIEGEN WURDEN, BIETET DER LIZENZGEBER DEN SCHUTZGEGENSTAND UND DIE
+EINRÄUMUNG VON RECHTEN UNTER AUSSCHLUSS JEGLICHER GEWÄHRLEISTUNG AN UND
+ÜBERNIMMT WEDER AUSDRÜCKLICH NOCH KONKLUDENT GARANTIEN IRGENDEINER ART. DIES
+UMFASST INSBESONDERE DAS FREISEIN VON SACH- UND RECHTSMÄNGELN, UNABHÄNGIG VON
+DEREN ERKENNBARKEIT FÜR DEN LIZENZGEBER, DIE VERKEHRSFÄHIGKEIT DES
+SCHUTZGEGENSTANDES, SEINE VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK SOWIE DIE
+KORREKTHEIT VON BESCHREIBUNGEN. DIESE GEWÄHRLEISTUNGSBESCHRÄNKUNG GILT NICHT,
+SOWEIT MÄNGEL ZU SCHÄDEN DER IN ABSCHNITT 6 BEZEICHNETEN ART FÜHREN UND AUF
+SEITEN DES LIZENZGEBERS DAS JEWEILS GENANNTE VERSCHULDEN BZW. VERTRETENMÜSSEN
+EBENFALLS VORLIEGT.
+
+6. Haftungsbeschränkung
+
+DER LIZENZGEBER HAFTET IHNEN GEGENÜBER IN BEZUG AUF SCHÄDEN AUS DER VERLETZUNG
+DES LEBENS, DES KÖRPERS ODER DER GESUNDHEIT NUR, SOFERN IHM WENIGSTENS
+FAHRLÄSSIGKEIT VORZUWERFEN IST, FÜR SONSTIGE SCHÄDEN NUR BEI GROBER
+FAHRLÄSSIGKEIT ODER VORSATZ, UND ÜBERNIMMT DARÜBER HINAUS KEINERLEI
+FREIWILLIGE HAFTUNG.
+
+7. Erlöschen
+
+    Diese Lizenz und die durch sie eingeräumten Nutzungsrechte erlöschen mit
+    Wirkung für die Zukunft im Falle eines Verstoßes gegen die
+    Lizenzbedingungen durch Sie, ohne dass es dazu der Kenntnis des
+    Lizenzgebers vom Verstoß oder einer weiteren Handlung einer der
+    Vertragsparteien bedarf. Mit natürlichen oder juristischen Personen, die
+    Abwandlungen des Schutzgegenstandes oder diesen enthaltende Sammelwerke
+    unter den Bedingungen dieser Lizenz von Ihnen erhalten haben, bestehen
+    nachträglich entstandene Lizenzbeziehungen jedoch solange weiter, wie die
+    genannten Personen sich ihrerseits an sämtliche Lizenzbedingungen halten.
+    Darüber hinaus gelten die Ziffern 1, 2, 5, 6, 7, und 8 auch nach einem
+    Erlöschen dieser Lizenz fort.
+    Vorbehaltlich der oben genannten Bedingungen gilt diese Lizenz unbefristet
+    bis der rechtliche Schutz für den Schutzgegenstand ausläuft. Davon
+    abgesehen behält der Lizenzgeber das Recht, den Schutzgegenstand unter
+    anderen Lizenzbedingungen anzubieten oder die eigene Weitergabe des
+    Schutzgegenstandes jederzeit einzustellen, solange die Ausübung dieses
+    Rechts nicht einer Kündigung oder einem Widerruf dieser Lizenz (oder
+    irgendeiner Weiterlizenzierung, die auf Grundlage dieser Lizenz bereits
+    erfolgt ist bzw. zukünftig noch erfolgen muss) dient und diese Lizenz
+    unter Berücksichtigung der oben zum Erlöschen genannten Bedingungen
+    vollumfänglich wirksam bleibt.
+
+8. Sonstige Bestimmungen
+
+    Jedes Mal wenn Sie den Schutzgegenstand für sich genommen oder als Teil
+    eines Sammelwerkes verbreiten oder öffentlich zeigen, bietet der
+    Lizenzgeber dem Empfänger eine Lizenz zu den gleichen Bedingungen und im
+    gleichen Umfang an, wie Ihnen in Form dieser Lizenz.
+    Jedes Mal wenn Sie eine Abwandlung des Schutzgegenstandes verbreiten oder
+    öffentlich zeigen, bietet der Lizenzgeber dem Empfänger eine Lizenz am
+    ursprünglichen Schutzgegenstand zu den gleichen Bedingungen und im
+    gleichen Umfang an, wie Ihnen in Form dieser Lizenz.
+    Sollte eine Bestimmung dieser Lizenz unwirksam sein, so bleibt davon die
+    Wirksamkeit der Lizenz im Übrigen unberührt.
+    Keine Bestimmung dieser Lizenz soll als abbedungen und kein Verstoß gegen
+    sie als zulässig gelten, solange die von dem Verzicht oder von dem Verstoß
+    betroffene Seite nicht schriftlich zugestimmt hat.
+    Diese Lizenz (zusammen mit in ihr ausdrücklich vorgesehenen Erlaubnissen,
+    Mitteilungen und Zustimmungen, soweit diese tatsächlich vorliegen) stellt
+    die vollständige Vereinbarung zwischen dem Lizenzgeber und Ihnen in Bezug
+    auf den Schutzgegenstand dar. Es bestehen keine Abreden, Vereinbarungen
+    oder Erklärungen in Bezug auf den Schutzgegenstand, die in dieser Lizenz
+    nicht genannt sind. Rechtsgeschäftliche Änderungen des Verhältnisses
+    zwischen dem Lizenzgeber und Ihnen sind nur über Modifikationen dieser
+    Lizenz möglich. Der Lizenzgeber ist an etwaige zusätzliche, einseitig
+    durch Sie übermittelte Bestimmungen nicht gebunden. Diese Lizenz kann nur
+    durch schriftliche Vereinbarung zwischen Ihnen und dem Lizenzgeber
+    modifiziert werden. Derlei Modifikationen wirken ausschließlich zwischen
+    dem Lizenzgeber und Ihnen und wirken sich nicht auf die Dritten gemäß
+    Ziffern 8.a) und b) angeboteten Lizenzen aus.
+    Sofern zwischen Ihnen und dem Lizenzgeber keine anderweitige Vereinbarung
+    getroffen wurde und soweit Wahlfreiheit besteht, findet auf diesen
+    Lizenzvertrag das Recht der Bundesrepublik Deutschland Anwendung.
+
+Creative Commons Notice
+
+    Creative Commons ist nicht Partei dieser Lizenz und übernimmt keinerlei
+    Gewähr oder dergleichen in Bezug auf den Schutzgegenstand. Creative
+    Commons haftet Ihnen oder einer anderen Partei unter keinem rechtlichen
+    Gesichtspunkt für irgendwelche Schäden, die - abstrakt oder konkret,
+    zufällig oder vorhersehbar - im Zusammenhang mit dieser Lizenz entstehen.
+    Unbeschadet der vorangegangen beiden Sätze, hat Creative Commons alle
+    Rechte und Pflichten eines Lizenzgebers, wenn es sich ausdrücklich als
+    Lizenzgeber im Sinne dieser Lizenz bezeichnet.
+    Creative Commons gewährt den Parteien nur insoweit das Recht, das Logo und
+    die Marke "Creative Commons" zu nutzen, als dies notwendig ist, um der
+    Öffentlichkeit gegenüber kenntlich zu machen, dass der Schutzgegenstand
+    unter einer CCPL steht. Ein darüber hinaus gehender Gebrauch der Marke
+    "Creative Commons" oder einer verwandten Marke oder eines verwandten Logos
+    bedarf der vorherigen schriftlichen Zustimmung von Creative Commons. Jeder
+    erlaubte Gebrauch richtet sich nach der Creative Commons
+    Marken-Nutzungs-Richtlinie in der jeweils aktuellen Fassung, die von Zeit
+    zu Zeit auf der Website veröffentlicht oder auf andere Weise auf Anfrage
+    zugänglich gemacht wird. Zur Klarstellung: Die genannten Einschränkungen
+    der Markennutzung sind nicht Bestandteil dieser Lizenz.
+    Creative Commons kann kontaktiert werden über http://creativecommons.org/.
