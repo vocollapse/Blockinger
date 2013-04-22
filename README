@@ -1,5 +1,10 @@
 Thank you for using Blockinger.
 
+Music by Pornophonique.
+Music License: Creative Commons BY-NC-SA 3.0 DE
+Artwork and Sound Effects License: GNU GENERAL PUBLIC LICENSE Version 3
+Software License: GNU GENERAL PUBLIC LICENSE Version 3
+
 Scoring
 -------
 Basic points per cleared line are:
@@ -43,7 +48,7 @@ Randomizer
 7-Bag-Randomization:
   Generates randomly permutated sequences of all 7 pieces. This means, that the player can never encounter 3 identical pieces in a row.
 Plain Random:
-   The next piece will be independently generated at random.
+  The next piece will be independently generated at random.
 
 Resumability
 ------------

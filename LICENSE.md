@@ -1,10 +1,10 @@
-1. Software License
+1. Software, Sound Effects and Artwork License
 2. Music License (english)
-3. Musik Lizenz (deutsch)
+3. Musiklizenz (deutsch)
 
 --
 
-1. Software License
+1. Software, Sound Effects and Artwork License
 
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
@@ -961,7 +961,7 @@ THE POSSIBILITY OF SUCH DAMAGES.
 
 --
 
-3. Musik Lizenz (deutsch)
+3. Musiklizenz (deutsch)
 
                     Creative Commons BY-NC-SA 3.0 DE
 
