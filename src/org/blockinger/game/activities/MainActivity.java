@@ -42,7 +42,6 @@ import org.blockinger.game.components.GameState;
 import org.blockinger.game.db.HighscoreOpenHelper;
 import org.blockinger.game.db.ScoreDataSource;
 
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -53,7 +52,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.v4.widget.SimpleCursorAdapter;
-import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -80,10 +78,6 @@ public class MainActivity extends ListActivity {
 		setContentView(R.layout.activity_main);
 		PreferenceManager.setDefaultValues(this, R.xml.simple_preferences, true);
 		PreferenceManager.setDefaultValues(this, R.xml.advanced_preferences, true);
-		
-		// Make Hyperlink in this textview clickable (obsolete now)
-		TextView t2 = (TextView) findViewById(R.id.TextView1);
-	    t2.setMovementMethod(LinkMovementMethod.getInstance());
 		
 	    datasource = new ScoreDataSource(this);
 	    datasource.open();

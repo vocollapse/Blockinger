@@ -62,7 +62,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.1"
+            android:layout_weight="2.4"
             android:gravity="center" >
 
             <ImageButton
@@ -99,7 +99,7 @@
             android:id="@+id/spacerl0"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.4" />
+            android:layout_weight="0.1" />
 
         <ImageButton
             android:id="@+id/softDropButton"
@@ -116,14 +116,13 @@
             android:id="@+id/View03"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.3" />
 
-        <Button
-            android:id="@+id/pausebutton_1"
-            android:layout_width="match_parent"
+        <View
+            android:id="@+id/View07"
+            android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:layout_weight="0"
-            android:text="@string/pausebutton" />
+            android:layout_weight="0" />
 
     </LinearLayout>
 
@@ -131,7 +130,7 @@
         android:id="@+id/boardView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="2.5"
+        android:layout_weight="2.1"
         android:background="@null" />
 
     <LinearLayout
@@ -147,39 +146,46 @@
             android:layout_height="0dp"
             android:layout_weight="0.4" />
 
-        <ImageButton
-            android:id="@+id/rotateRightButton"
-            style="@android:style/Widget.ImageWell"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:contentDescription="rotate right Button"
-            android:scaleType="centerInside"
-            android:src="@drawable/rotate_right_button_icon_noburn" />
+            android:layout_weight="2.4" >
 
-        <View
-            android:id="@+id/View02"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="0.1" />
+            <ImageButton
+                android:id="@+id/rotateLeftButton"
+                style="@android:style/Widget.ImageWell"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="rotate left Button"
+                android:scaleType="centerInside"
+                android:src="@drawable/rotate_left_button_icon_noburn" />
 
-        <ImageButton
-            android:id="@+id/rotateLeftButton"
-            style="@android:style/Widget.ImageWell"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:contentDescription="rotate left Button"
-            android:scaleType="centerInside"
-            android:src="@drawable/rotate_left_button_icon_noburn" />
+            <View
+                android:id="@+id/View02"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1" />
+
+            <ImageButton
+                android:id="@+id/rotateRightButton"
+                style="@android:style/Widget.ImageWell"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="rotate right Button"
+                android:scaleType="centerInside"
+                android:src="@drawable/rotate_right_button_icon_noburn" />
+
+        </LinearLayout>
 
         <View
             android:id="@+id/bottom_right_spacer"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.4" />
+            android:layout_weight="0.1" />
 
         <ImageButton
             android:id="@+id/hardDropButton"
@@ -196,13 +202,14 @@
             android:id="@+id/View01"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.3" />
 
-        <View
-            android:id="@+id/View07"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/pausebutton_1"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_weight="0" />
+            android:layout_weight="0"
+            android:text="@string/pausebutton" />
 
     </LinearLayout>
 

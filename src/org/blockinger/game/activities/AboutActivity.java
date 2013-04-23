@@ -65,20 +65,7 @@ public class AboutActivity extends PreferenceActivity {
 	        actionBar.setDisplayHomeAsUpEnabled(true);
 	    }
         
-		Preference pref = findPreference("pref_license_music");
-        pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				String url = getResources().getString(R.string.music_url);
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(url));
-				startActivity(i);
-				return true;
-			}
-		});
-        
-        pref = findPreference("pref_license");
+        Preference pref = findPreference("pref_license");
         pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			
 			@Override
@@ -109,10 +96,6 @@ public class AboutActivity extends PreferenceActivity {
 			
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
-				/*String url = getResources().getString(R.string.author_url);
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(url));
-				startActivity(i);*/
 				Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
 		        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{getResources().getString(R.string.pref_author_url)});
 		        emailIntent.setType("plain/text");

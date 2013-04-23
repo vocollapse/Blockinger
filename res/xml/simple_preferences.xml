@@ -80,7 +80,7 @@
 	    <CheckBoxPreference 
 	        android:key="pref_vibration_button"
 	        android:summary="@string/pref_vibration_button_summary"
-	        android:defaultValue="true"
+	        android:defaultValue="false"
 	        android:title="@string/pref_vibration_button_title"/>
         
 	    <CheckBoxPreference 
