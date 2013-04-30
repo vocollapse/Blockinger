@@ -40,6 +40,8 @@ package org.blockinger.game.components;
 import org.blockinger.game.R;
 import org.blockinger.game.activities.GameActivity;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 
@@ -49,16 +51,21 @@ public class Sound extends Component {
 	private MediaPlayer dropSoundPlayer;
 	private MediaPlayer clearSoundPlayer;
 	private MediaPlayer gameOverPlayer;
+	private MediaPlayer buttonSoundPlayer;
 	
 	public Sound(GameActivity c) {
 		super(c);
 		tetrisSoundPlayer = MediaPlayer.create(c,R.raw.seqlong);
 		tetrisSoundPlayer.setLooping(false);
 		tetrisSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
-		
+
 		dropSoundPlayer = MediaPlayer.create(c,R.raw.drop2);
 		dropSoundPlayer.setLooping(false);
 		dropSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
+
+		buttonSoundPlayer = MediaPlayer.create(c,R.raw.keypressstandard);
+		buttonSoundPlayer.setLooping(false);
+		buttonSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
 	    
 		clearSoundPlayer = MediaPlayer.create(c,R.raw.synthaccord);
 		clearSoundPlayer.setLooping(false);
@@ -70,13 +77,28 @@ public class Sound extends Component {
 	}
 	
 	public void clearSound() {
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+			return;
 		//if(clearSoundPlayer.isPlaying()) 
 		//	clearSoundPlayer.stop();
 		clearSoundPlayer.seekTo(0);
 		clearSoundPlayer.start();
 	}
 	
+	public void buttonSound() {
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+			return;
+		if(!PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_button_sound", true))
+			return;
+		//if(buttonSoundPlayer.isPlaying()) 
+		//	buttonSoundPlayer.stop();
+		buttonSoundPlayer.seekTo(0);
+		buttonSoundPlayer.start();
+	}
+	
 	public void dropSound() {
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+			return;
 		//if(dropSoundPlayer.isPlaying())
 		//	dropSoundPlayer.stop();
 		dropSoundPlayer.seekTo(0);
@@ -84,6 +106,8 @@ public class Sound extends Component {
 	}
 	
 	public void release() {
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+			return;
 		dropSoundPlayer.release();
 		clearSoundPlayer.release();
 		tetrisSoundPlayer.release();
@@ -91,6 +115,8 @@ public class Sound extends Component {
 	}
 
 	public void tetrisSound() {
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+			return;
 		//if(tetrisSoundPlayer.isPlaying())
 		//	tetrisSoundPlayer.stop();
 		tetrisSoundPlayer.seekTo(0);
@@ -98,6 +124,8 @@ public class Sound extends Component {
 	}
 
 	public void gameOverSound() {
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+			return;
 		//if(tetrisSoundPlayer.isPlaying())
 		//	tetrisSoundPlayer.stop();
 		gameOverPlayer.seekTo(0);

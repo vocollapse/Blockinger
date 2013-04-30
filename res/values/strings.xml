@@ -121,6 +121,9 @@
     <string name="pref_vibration_events_summary">Vibrates on important game events</string>
     
 <!-- Advanced Preference Strings -->
+    <string name="pref_button_sound_summary">Provides auditory feedback when pressing the game buttons</string>
+    <string name="pref_button_sound_title">Button Sound</string>
+    
     <string name="pref_fpslimit_summary">Significantly lowers power consumption but may slow down the game</string>
     <string name="pref_fpslimit_title">Limit FPS</string>
     
@@ -128,9 +131,9 @@
     <string name="pref_fpslimittext_title">Target FPS</string>
     <string name="pref_fpslimittext_default">35</string>
     
-    <string name="pref_vibDurOffset_summary">Compensate for the delay of your phone\'s vibrator (time in milliseconds)</string>
-    <string name="pref_vibDurOffset_title">Vibration Delay Compensation</string>
-    <string name="pref_vibDurOffset_default">10</string>
+    <string name="pref_vibDurOffset_summary">Increase this time to compensate for the delay of your phone\'s vibrator. The duration of button vibrations should be adjusted to be just barely noticeable.\nTime in milliseconds</string>
+    <string name="pref_vibDurOffset_title">Button Vibration Duration</string>
+    <string name="pref_vibDurOffset_default">15</string>
     
     <string name="pref_antialiasing_summary">Improves the display quality of text. Disable this for better performance</string>
     <string name="pref_antialiasing_title">Text Anti-Aliasing</string>
@@ -142,7 +145,7 @@
     <string name="pref_accelerationV_title">Soft Drop Acceleration</string>
     
     
-    <string name="pref_version_summary">1.4.5\nTouch here to view the public repository of this project</string>
+    <string name="pref_version_summary">1.5\nTouch here to view the public repository of this project</string>
     <string name="pref_version_title">Version</string>
     <string name="repository_url">https://github.com/vocollapse/Blockinger</string>
     
@@ -181,7 +184,7 @@
     
     <string name="pref_help_vibration_title">Vibration</string>
     <string name="pref_help_vibration_summary">How to achieve an optimal haptic feedback with vibration.</string>
-    <string name="pref_help_vibration_message">There are some problems with the vibration functionality that can occur on a few devices.\nAlso most tablet devices don\'t support Vibration at all.\nIf your device does support vibration but you don\'t notice the button vibrations, you can increase the vibration duration. This setting is called \"Vibration Delay Compensation\" and can be found under advanced settings.\nThe duration of button vibrations should be adjusted to be just barely noticeable.</string>
+    <string name="pref_help_vibration_message">There are some problems with the vibration functionality that can occur on a few devices.\nAlso most tablet devices don\'t support Vibration at all.\nIf your device does support vibration but you don\'t notice the button vibrations, you can increase the vibration duration. This setting is called \"Button Vibration Duration\" and can be found under advanced settings.\nThe duration of button vibrations should be adjusted to be just barely noticeable.</string>
     
     <string name="pref_help_apm_title">APM</string>
     <string name="pref_help_apm_summary">What does APM mean?</string>

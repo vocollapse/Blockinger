@@ -43,6 +43,7 @@ import org.blockinger.game.pieces.*;
 
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 
@@ -113,31 +114,40 @@ public class Controls extends Component {
 	}
 	
 	public void vibrateWall() {
-		if (!eventVibrationEnabled || v == null)
+		if (v == null)
+			return;
+		if (!eventVibrationEnabled)
+			return;
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() == AudioManager.RINGER_MODE_SILENT)
 			return;
 		v.vibrate(host.game.getMoveInterval() + vibrationOffset);
 	}
 	
 	public void cancelVibration() {
-		if ((!eventVibrationEnabled && !buttonVibrationEnabled) || v == null)
-			return;
 		v.cancel();
 	}
 	
 	public void vibrateBottom() {
-		if (!eventVibrationEnabled || v == null)
+		if (v == null)
+			return;
+		if (!eventVibrationEnabled)
+			return;
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() == AudioManager.RINGER_MODE_SILENT)
 			return;
 		v.cancel();
 		v.vibrate(new long[] {0, 5 + vibrationOffset, 30 + vibrationOffset, 20 + vibrationOffset}, -1);
 	}
 	
 	public void vibrateShort() {
-		if (!buttonVibrationEnabled || v == null)
+		if (v == null)
 			return;
-		//v.cancel();
+		if (!buttonVibrationEnabled)
+			return;
+		if(((AudioManager)host.getSystemService(Context.AUDIO_SERVICE)).getRingerMode() == AudioManager.RINGER_MODE_SILENT)
+			return;
 		if((host.game.getTime() - shortVibeTime) > (host.getResources().getInteger(R.integer.shortVibeInterval) + vibrationOffset)) {
 			shortVibeTime = host.game.getTime();
-			v.vibrate(5 + vibrationOffset);
+			v.vibrate(vibrationOffset);
 		}
 	}
 
@@ -146,6 +156,7 @@ public class Controls extends Component {
 		leftRotation = true;
 		host.game.action();
 		vibrateShort();
+		host.sound.buttonSound();
     	//Thread.yield();
 	}
 
@@ -157,6 +168,7 @@ public class Controls extends Component {
 		rightRotation = true;
 		host.game.action();
 		vibrateShort();
+		host.sound.buttonSound();
 	    //Thread.yield();
 	}
 
@@ -176,6 +188,7 @@ public class Controls extends Component {
 		clearPlayerSoftDrop = false;
 		vibrateShort();
 		host.game.setNextPlayerDropTime(host.game.getTime());
+		host.sound.buttonSound();
 		//nextPlayerDropTime = host.game.getTime();
     	//Thread.yield();
 	}
@@ -191,6 +204,7 @@ public class Controls extends Component {
 		playerHardDrop = true;
 		if(buttonVibrationEnabled & !eventVibrationEnabled)
 			vibrateShort();
+		host.sound.buttonSound();
 	}
 
 	public void leftButtonReleased() {
@@ -205,6 +219,7 @@ public class Controls extends Component {
 		leftMove = true;
 		rightMove = false;
 		host.game.setNextPlayerMoveTime(host.game.getTime());
+		host.sound.buttonSound();
 		//nextPlayerMoveTime = host.game.getTime();
 		//vibrateShort(); wird schon unten gemacht (weil in jedem tick)
 		
@@ -223,6 +238,7 @@ public class Controls extends Component {
 		rightMove = true;
 		leftMove = false;
 		host.game.setNextPlayerMoveTime(host.game.getTime());
+		host.sound.buttonSound();
 		//nextPlayerMoveTime = host.game.getTime();
 		//vibrateShort(); wird schon unten gemacht (weil in jedem tick)
 		

@@ -47,6 +47,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.view.MenuItem;
@@ -68,7 +69,13 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
 		Preference pref = findPreference("pref_advanced");
 		pref.setOnPreferenceClickListener(this);
-		
+
+        pref = findPreference("pref_vibDurOffset");
+        String timeString = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_vibDurOffset", "");
+        if(timeString.equals(""))
+        	timeString = "0";
+        timeString = "" + timeString + " ms";
+        pref.setSummary(timeString);
  /*       Preference pref = findPreference("pref_rng");
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_rng", "").equals("sevenbag"))
         	pref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[0]);//"7-Bag-Randomization");
@@ -85,10 +92,19 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         
 	}
 
-	//@SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,String key) {
 
+		if (key.equals("pref_vibDurOffset")) {
+            Preference connectionPref = findPreference(key);
+            // Set summary to be the user-description for the selected value
+            String timeString = sharedPreferences.getString(key, "");
+            if(timeString.equals(""))
+            	timeString = "0";
+            timeString = "" + timeString + " ms";
+            connectionPref.setSummary(timeString);
+        }
 		/*if (key.equals("pref_rng")) {
             Preference connectionPref = findPreference(key);
             // Set summary to be the user-description for the selected value

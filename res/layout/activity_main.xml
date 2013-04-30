@@ -85,6 +85,7 @@
             android:ems="10"
             android:hint="@string/playerNameInputFieldHint"
             android:imeOptions="actionDone"
+            android:inputType="textCapWords"
             android:singleLine="true" >
         </EditText>
 

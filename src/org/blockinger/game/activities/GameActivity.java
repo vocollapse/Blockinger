@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Simon Willeke
+b * Copyright 2013 Simon Willeke
  * contact: hamstercount@hotmail.com
  */
 
@@ -47,10 +47,10 @@ import org.blockinger.game.components.Sound;
 
 
 import android.database.Cursor;
-import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnSeekCompleteListener;
+//import android.media.MediaPlayer;
+//import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+//import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.MotionEvent;
 import android.view.View;

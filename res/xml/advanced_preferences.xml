@@ -79,6 +79,12 @@
 		        android:summary="@string/pref_accelerationH_summary"
 		        android:defaultValue="true"
 		        android:title="@string/pref_accelerationH_title"/>
+    
+		    <CheckBoxPreference 
+		        android:key="pref_fps"
+		        android:summary="@string/pref_fps_summary"
+		        android:defaultValue="false"
+		        android:title="@string/pref_fps_title"/>
 	        
 		    <CheckBoxPreference 
 		        android:key="pref_fpslimit"
@@ -96,16 +102,6 @@
 		        android:title="@string/pref_fpslimittext_title"
 		        android:dialogTitle="@string/pref_fpslimittext_title"
 		        android:defaultValue="@string/pref_fpslimittext_default" />
-		    
-		    <EditTextPreference
-		        android:dialogMessage="@string/pref_vibDurOffset_summary"
-		        android:positiveButtonText="OK"
-		        android:negativeButtonText="Cancel"
-		        android:key="pref_vibDurOffset"
-		        android:numeric="integer"
-		        android:title="@string/pref_vibDurOffset_title"
-		        android:dialogTitle="@string/pref_vibDurOffset_title"
-		        android:defaultValue="@string/pref_vibDurOffset_default" />
 		    
 		    <CheckBoxPreference 
 		        android:key="pref_antialiasing"

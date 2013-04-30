@@ -47,12 +47,6 @@
         android:title="@string/pref_phantom_title"/>
     
     <CheckBoxPreference 
-        android:key="pref_fps"
-        android:summary="@string/pref_fps_summary"
-        android:defaultValue="false"
-        android:title="@string/pref_fps_title"/>
-    
-    <CheckBoxPreference 
         android:key="pref_popup"
         android:summary="@string/pref_popup_summary"
         android:defaultValue="true"
@@ -70,6 +64,11 @@
 	        robobunny:min="0"
 	        robobunny:unitsLeft=""
 	        robobunny:unitsRight=" %" />
+        
+	    <CheckBoxPreference
+	        android:key="pref_button_sound"
+	        android:defaultValue="true"
+	        android:title="@string/pref_button_sound_title"/>
 	    
     </PreferenceCategory>
     
@@ -80,13 +79,23 @@
 	    <CheckBoxPreference 
 	        android:key="pref_vibration_button"
 	        android:summary="@string/pref_vibration_button_summary"
-	        android:defaultValue="false"
+	        android:defaultValue="true"
 	        android:title="@string/pref_vibration_button_title"/>
+		    
+	    <EditTextPreference
+	        android:dialogMessage="@string/pref_vibDurOffset_summary"
+	        android:positiveButtonText="OK"
+	        android:negativeButtonText="Cancel"
+	        android:key="pref_vibDurOffset"
+	        android:numeric="integer"
+	        android:title="@string/pref_vibDurOffset_title"
+	        android:dialogTitle="@string/pref_vibDurOffset_title"
+	        android:defaultValue="@string/pref_vibDurOffset_default" />
         
 	    <CheckBoxPreference 
 	        android:key="pref_vibration_events"
 	        android:summary="@string/pref_vibration_events_summary"
-	        android:defaultValue="true"
+	        android:defaultValue="false"
 	        android:title="@string/pref_vibration_events_title"/>
     
     </PreferenceCategory>
