@@ -39,6 +39,7 @@ package org.blockinger.game.activities;
 
 import org.blockinger.game.R;
 import org.blockinger.game.components.GameState;
+import org.blockinger.game.components.Sound;
 import org.blockinger.game.db.HighscoreOpenHelper;
 import org.blockinger.game.db.ScoreDataSource;
 
@@ -71,6 +72,7 @@ public class MainActivity extends ListActivity {
 	private View dialogView;
 	private SeekBar leveldialogBar;
 	private TextView leveldialogtext;
+	private Sound sound;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,11 +81,13 @@ public class MainActivity extends ListActivity {
 		PreferenceManager.setDefaultValues(this, R.xml.simple_preferences, true);
 		PreferenceManager.setDefaultValues(this, R.xml.advanced_preferences, true);
 		
+		/* Create Music */
+		sound = new Sound(this,Sound.NO_MUSIC);
+		
+		/* Database Management */
 	    datasource = new ScoreDataSource(this);
 	    datasource.open();
-	    
 	    mc = datasource.getCursor();
-
 	    // Use the SimpleCursorAdapter to show the
 	    // elements in a ListView
 	    adapter = new SimpleCursorAdapter(
@@ -225,16 +229,20 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onStop() {
     	super.onStop();
+    	sound.pause();
     };
     
     @Override
     protected void onDestroy() {
     	super.onDestroy();
+    	sound.release();
+    	sound = null;
     };
     
     @Override
     protected void onResume() {
     	super.onResume();
+    	sound.resume();
     	datasource.open();
 	    Cursor cursor = datasource.getCursor();
 	    adapter.changeCursor(cursor);

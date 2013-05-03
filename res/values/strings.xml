@@ -129,7 +129,7 @@
     
     <string name="pref_fpslimittext_summary">The game tries to maintain this frame rate as closely as possible</string>
     <string name="pref_fpslimittext_title">Target FPS</string>
-    <string name="pref_fpslimittext_default">35</string>
+    <string name="pref_fpslimittext_default">30</string>
     
     <string name="pref_vibDurOffset_summary">Increase this time to compensate for the delay of your phone\'s vibrator. The duration of button vibrations should be adjusted to be just barely noticeable.\nTime in milliseconds</string>
     <string name="pref_vibDurOffset_title">Button Vibration Duration</string>

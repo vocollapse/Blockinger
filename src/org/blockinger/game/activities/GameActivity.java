@@ -99,7 +99,7 @@ public class GameActivity extends FragmentActivity {
 		}
 		game.reconnect(this);
 		dialog = new DefeatDialogFragment();
-		sound = new Sound(this);
+		sound = new Sound(this,Sound.NO_MUSIC);
 		controls = new Controls(this);
 		display = new Display(this);
 		
@@ -246,25 +246,27 @@ public class GameActivity extends FragmentActivity {
 	    Cursor cursor = MainActivity.getDS().getCursor();
 	    MainActivity.getAdapter().changeCursor(cursor);
 	}
-
-    public void pauseMusic() {
-    };
     
     @Override
     protected void onStop() {
     	super.onStop();
     	//game.disconnect();
+    	sound.pause();
     };
     
     @Override
     protected void onDestroy() {
     	super.onDestroy();
+    	sound.release();
+    	sound = null;
     	game.disconnect();
+    	game = null;
     };
     
     @Override
     protected void onResume() {
     	super.onResume();
+    	sound.resume();
     };
     
     @Override
