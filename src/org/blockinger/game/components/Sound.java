@@ -43,23 +43,31 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.media.AudioManager.OnAudioFocusChangeListener;
+import android.media.SoundPool;
+import android.media.SoundPool.OnLoadCompleteListener;
 import android.preference.PreferenceManager;
 
-public class Sound implements OnAudioFocusChangeListener{
+public class Sound implements OnAudioFocusChangeListener, OnLoadCompleteListener{
 
 	private Activity host;
 	private AudioManager audioCEO;
-	private MediaPlayer musicPlayer;
-	private MediaPlayer tetrisSoundPlayer;
-	private MediaPlayer dropSoundPlayer;
-	private MediaPlayer clearSoundPlayer;
-	private MediaPlayer gameOverPlayer;
-	private MediaPlayer buttonSoundPlayer;
+//	private MediaPlayer musicPlayer;
+//	private MediaPlayer tetrisSoundPlayer;
+//	private MediaPlayer dropSoundPlayer;
+//	private MediaPlayer clearSoundPlayer;
+//	private MediaPlayer gameOverPlayer;
+//	private MediaPlayer buttonSoundPlayer;
+	private int soundID_musicPlayer;
+	private int soundID_tetrisSoundPlayer;
+	private int soundID_dropSoundPlayer;
+	private int soundID_clearSoundPlayer;
+	private int soundID_gameOverPlayer;
+	private int soundID_buttonSoundPlayer;
 	private boolean noFocus;
 	private IntentFilter intentFilter;
 	private NoiseBroadcastReceiver noisyAudioStreamReceiver;
+	private SoundPool soundPool;
 
 	public static final int NO_MUSIC = 0x0;
 	public static final int MENU_MUSIC = 0x1;
@@ -84,41 +92,52 @@ public class Sound implements OnAudioFocusChangeListener{
 		noisyAudioStreamReceiver = new NoiseBroadcastReceiver();
 		c.registerReceiver(noisyAudioStreamReceiver, intentFilter);
 		
-		tetrisSoundPlayer = MediaPlayer.create(c,R.raw.seqlong);
-		tetrisSoundPlayer.setLooping(false);
-		tetrisSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
+		soundPool = new SoundPool(c.getResources().getInteger(R.integer.audio_streams),AudioManager.STREAM_MUSIC,0);
+		soundPool.setOnLoadCompleteListener(this);
 
-		dropSoundPlayer = MediaPlayer.create(c,R.raw.drop2);
-		dropSoundPlayer.setLooping(false);
-		dropSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
+		soundID_tetrisSoundPlayer = soundPool.load(c, R.raw.seqlong, 1);
+//		tetrisSoundPlayer = MediaPlayer.create(c,R.raw.seqlong);
+//		tetrisSoundPlayer.setLooping(false);
+//		tetrisSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
 
-		buttonSoundPlayer = MediaPlayer.create(c,R.raw.keypressstandard);
-		buttonSoundPlayer.setLooping(false);
-		buttonSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
-	    
-		clearSoundPlayer = MediaPlayer.create(c,R.raw.synthaccord);
-		clearSoundPlayer.setLooping(false);
-		clearSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
-		
-		gameOverPlayer = MediaPlayer.create(c,R.raw.gameover);
-		gameOverPlayer.setLooping(false);
-		gameOverPlayer.setVolume(0.015f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
+		soundID_dropSoundPlayer = soundPool.load(c, R.raw.drop2, 1);
+//		dropSoundPlayer = MediaPlayer.create(c,R.raw.drop2);
+//		dropSoundPlayer.setLooping(false);
+//		dropSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
+
+		soundID_buttonSoundPlayer = soundPool.load(c, R.raw.keypressstandard, 1);
+//		buttonSoundPlayer = MediaPlayer.create(c,R.raw.keypressstandard);
+//		buttonSoundPlayer.setLooping(false);
+//		buttonSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
+
+		soundID_clearSoundPlayer = soundPool.load(c, R.raw.synthaccord, 1);
+//		clearSoundPlayer = MediaPlayer.create(c,R.raw.synthaccord);
+//		clearSoundPlayer.setLooping(false);
+//		clearSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
+
+		soundID_gameOverPlayer = soundPool.load(c, R.raw.synthaccord, 1);
+//		gameOverPlayer = MediaPlayer.create(c,R.raw.gameover);
+//		gameOverPlayer.setLooping(false);
+//		gameOverPlayer.setVolume(0.015f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
 		
 		switch(musicChoice) {
 			case MENU_MUSIC :
-				musicPlayer = MediaPlayer.create(host,R.raw.lemmings03);
-				musicPlayer.setLooping(true);
-				musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
-				musicPlayer.start();
+				soundID_musicPlayer = soundPool.load(c, R.raw.lemmings03, 2);
+//				musicPlayer = MediaPlayer.create(c,R.raw.lemmings03);
+//				musicPlayer.setLooping(true);
+//				musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_musicvolume", 60));
+//				musicPlayer.start();
 				break;
 			case GAME_MUSIC :
-				musicPlayer = MediaPlayer.create(host,R.raw.sadrobot01);
-				musicPlayer.setLooping(true);
-				musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
-				musicPlayer.start();
+				soundID_musicPlayer = soundPool.load(c, R.raw.sadrobot01, 2);
+//				musicPlayer = MediaPlayer.create(c,R.raw.sadrobot01);
+//				musicPlayer.setLooping(true);
+//				musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_musicvolume", 60));
+//				musicPlayer.start();
 				break;
 			default :
-				musicPlayer = new MediaPlayer();
+				soundID_musicPlayer = 0;
+//				musicPlayer = new MediaPlayer();
 				break;
 		}
 	}
@@ -128,8 +147,16 @@ public class Sound implements OnAudioFocusChangeListener{
 			return;
 		if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
 			return;
-		clearSoundPlayer.seekTo(0);
-		clearSoundPlayer.start();
+		soundPool.play(
+			soundID_clearSoundPlayer,
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			1, 
+			0, 
+			1.0f
+		);
+//		clearSoundPlayer.seekTo(0);
+//		clearSoundPlayer.start();
 	}
 	
 	public void buttonSound() {
@@ -139,8 +166,16 @@ public class Sound implements OnAudioFocusChangeListener{
 			return;
 		if(!PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_button_sound", true))
 			return;
-		buttonSoundPlayer.seekTo(0);
-		buttonSoundPlayer.start();
+		soundPool.play(
+			soundID_buttonSoundPlayer,
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			1, 
+			0, 
+			1.0f
+		);
+//		buttonSoundPlayer.seekTo(0);
+//		buttonSoundPlayer.start();
 	}
 	
 	public void dropSound() {
@@ -148,8 +183,16 @@ public class Sound implements OnAudioFocusChangeListener{
 			return;
 		if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
 			return;
-		dropSoundPlayer.seekTo(0);
-		dropSoundPlayer.start();
+		soundPool.play(
+			soundID_dropSoundPlayer,
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			1, 
+			0, 
+			1.0f
+		);
+//		dropSoundPlayer.seekTo(0);
+//		dropSoundPlayer.start();
 	}
 
 	public void tetrisSound() {
@@ -157,8 +200,16 @@ public class Sound implements OnAudioFocusChangeListener{
 			return;
 		if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
 			return;
-		tetrisSoundPlayer.seekTo(0);
-		tetrisSoundPlayer.start();
+		soundPool.play(
+			soundID_tetrisSoundPlayer,
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			1, 
+			0, 
+			1.0f
+		);
+//		tetrisSoundPlayer.seekTo(0);
+//		tetrisSoundPlayer.start();
 	}
 
 	public void gameOverSound() {
@@ -167,33 +218,45 @@ public class Sound implements OnAudioFocusChangeListener{
 		if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
 			return;
 		pause(); // pause music to make the end of the game feel more dramatic. hhheheh.
-		gameOverPlayer.seekTo(0);
-		gameOverPlayer.start();
+		soundPool.play(
+			soundID_gameOverPlayer,
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+			1, 
+			0, 
+			1.0f
+		);
+//		gameOverPlayer.seekTo(0);
+//		gameOverPlayer.start();
 	}
 
 	public void resume() {
-		try {
-			musicPlayer.start();
-		} catch(IllegalStateException e) {
-			return;
-		}
+		soundPool.autoResume();
+//		try {
+//			musicPlayer.start();
+//		} catch(IllegalStateException e) {
+//			return;
+//		}
 	}
 
 	public void pause() {
-		try {
-			musicPlayer.pause();
-		} catch(IllegalStateException e) {
-			return;
-		}
+		soundPool.autoPause();
+//		try {
+//			musicPlayer.pause();
+//		} catch(IllegalStateException e) {
+//			return;
+//		}
 	}
 	
 	public void release() {
-		buttonSoundPlayer.release();
-		dropSoundPlayer.release();
-		clearSoundPlayer.release();
-		tetrisSoundPlayer.release();
-		gameOverPlayer.release();
-		musicPlayer.release();
+		soundPool.release();
+		soundPool = null;
+//		buttonSoundPlayer.release();
+//		dropSoundPlayer.release();
+//		clearSoundPlayer.release();
+//		tetrisSoundPlayer.release();
+//		gameOverPlayer.release();
+//		musicPlayer.release();
 
 		host.unregisterReceiver(noisyAudioStreamReceiver);
 		audioCEO.abandonAudioFocus(this);
@@ -204,25 +267,40 @@ public class Sound implements OnAudioFocusChangeListener{
 	@Override
 	public void onAudioFocusChange(int focusChange) {
         if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-        	buttonSoundPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	dropSoundPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	clearSoundPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	tetrisSoundPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	gameOverPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	musicPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
+        	soundPool.setVolume(soundID_musicPlayer, 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
+//        	buttonSoundPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	dropSoundPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	clearSoundPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	tetrisSoundPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	gameOverPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	musicPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
     	} else if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
             pause();
         } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-        	buttonSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	dropSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	clearSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	tetrisSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	gameOverPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
-        	musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
+        	soundPool.setVolume(soundID_musicPlayer, 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
+//        	buttonSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	dropSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	clearSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	tetrisSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	gameOverPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+//        	musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
     		resume();
         } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
         	pause();
         }
     }
+
+	@Override
+	public void onLoadComplete(SoundPool sp, int soundID, int status) {
+		if((status == 0) && (soundID == soundID_musicPlayer))
+			soundID_musicPlayer = sp.play( // overwrite the old soundID with the new streamID
+				soundID, // sound to play = music sound id
+				0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 
+				0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 
+				2, 
+				-1, 
+				1.0f
+			);
+	}
 
 }

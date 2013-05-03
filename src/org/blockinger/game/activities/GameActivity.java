@@ -87,7 +87,7 @@ public class GameActivity extends FragmentActivity {
 		/* Create Components */
 		game = (GameState)getLastCustomNonConfigurationInstance();
 		if(game == null) {
-			/* Check for Resuming */
+			/* Check for Resuming (or Resumption?) */
 			if(b!=null)
 				value = b.getInt("mode");
 				

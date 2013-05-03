@@ -152,22 +152,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int view2=0x7f0d0015;
     }
     public static final class integer {
-        public static final int clearAnimation_burstDuration=0x7f070017;
-        public static final int clearAnimation_enableBurst=0x7f070016;
-        public static final int clearAnimation_enableFlash=0x7f070013;
-        public static final int clearAnimation_flashCount=0x7f070014;
-        public static final int clearAnimation_flashInterval=0x7f070015;
+        public static final int audio_streams=0x7f070010;
+        public static final int clearAnimation_burstDuration=0x7f070018;
+        public static final int clearAnimation_enableBurst=0x7f070017;
+        public static final int clearAnimation_enableFlash=0x7f070014;
+        public static final int clearAnimation_flashCount=0x7f070015;
+        public static final int clearAnimation_flashInterval=0x7f070016;
         public static final int doubleLineScore=0x7f07000a;
         public static final int hardDropBonusFactor=0x7f07000e;
-        public static final int levels=0x7f070018;
-        public static final int levelsplusone=0x7f070019;
+        public static final int levels=0x7f070019;
+        public static final int levelsplusone=0x7f07001a;
         public static final int multiTetrisScore=0x7f07000d;
         public static final int padding_columns=0x7f070004;
         public static final int phantom_alpha=0x7f070005;
         public static final int piece_start_x=0x7f070007;
-        public static final int popup_attack=0x7f070010;
-        public static final int popup_decay=0x7f070012;
-        public static final int popup_sustain=0x7f070011;
+        public static final int popup_attack=0x7f070011;
+        public static final int popup_decay=0x7f070013;
+        public static final int popup_sustain=0x7f070012;
         public static final int quadLineScore=0x7f07000c;
         /**  number of lines necessary to double the score 
          */
