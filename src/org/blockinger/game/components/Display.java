@@ -127,7 +127,12 @@ public class Display extends Component {
 			//portraitInitialized = false;
 			landscapeInitialized = true;
 			squaresize   = (int)(((c.getHeight()-1) - 2*rowOffset)/rows);
-			columnOffset = (int)(((c.getWidth()-1) - squaresize*(host.getResources().getInteger(R.integer.padding_columns)+4+columns))/2);
+			int size2 = (int)(((c.getHeight()-1) - 2*columnOffset)/(columns + 4 + host.getResources().getInteger(R.integer.padding_columns)));
+			if(size2 < squaresize) {
+				squaresize = size2;
+				rowOffset = (int)(((c.getHeight()-1) - squaresize*rows)/2);
+			} else
+				columnOffset = (int)(((c.getWidth()-1) - squaresize*(host.getResources().getInteger(R.integer.padding_columns)+4+columns))/2);
 			gridRowBorder = rowOffset + squaresize*rows;
 			gridColumnBorder = columnOffset + squaresize*columns;
 			prev_top = rowOffset;

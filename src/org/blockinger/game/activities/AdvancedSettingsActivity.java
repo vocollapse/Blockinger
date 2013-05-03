@@ -75,9 +75,6 @@ public class AdvancedSettingsActivity extends PreferenceActivity implements OnSh
         pref = findPreference("pref_fpslimittext");
         pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_fpslimittext", ""));
 
-        pref = findPreference("pref_vibDurOffset");
-        pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_vibDurOffset", ""));
-
         
         
 	}
@@ -95,11 +92,6 @@ public class AdvancedSettingsActivity extends PreferenceActivity implements OnSh
             	connectionPref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[1]);
         }
 		if (key.equals("pref_fpslimittext")) {
-            Preference connectionPref = findPreference(key);
-            // Set summary to be the user-description for the selected value
-            connectionPref.setSummary(sharedPreferences.getString(key, ""));
-        }
-		if (key.equals("pref_vibDurOffset")) {
             Preference connectionPref = findPreference(key);
             // Set summary to be the user-description for the selected value
             connectionPref.setSummary(sharedPreferences.getString(key, ""));

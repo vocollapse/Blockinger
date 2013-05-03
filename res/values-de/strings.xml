@@ -116,14 +116,17 @@
     <string name="pref_vibration_events_summary">Lange Vibration bei wichtigen Spielereignissen</string>
     
 <!-- Advanced Preference Strings -->
+    <string name="pref_button_sound_summary"></string>
+    <string name="pref_button_sound_title">Ton bei Tastendruck</string>
+    
     <string name="pref_fpslimit_summary">Reduziert den Energieverbrauch deutlich aber kann das Spiel verlangsamen</string>
     <string name="pref_fpslimit_title">FPS begrenzen</string>
     
     <string name="pref_fpslimittext_summary">Das Spiel versucht, diese Bildwiederholrate so gut wie möglich einzuhalten</string>
     <string name="pref_fpslimittext_title">Ziel-FPS</string>
     
-    <string name="pref_vibDurOffset_summary">Erhöht die Dauer aller Vibrationen, um die Beschleunigungszeit des Vibrators zu kompensieren (Zeit in Millisekunden)</string>
-    <string name="pref_vibDurOffset_title">Kompensation für Vibrationsverzögerung</string>
+    <string name="pref_vibDurOffset_summary">Erhöhe die Dauer der Tastenvibrationen, um die Beschleunigungszeit des Vibrators zu kompensieren. Die Zeit sollte so gewählt werden, dass die Vibration gerade noch wahrnehmbar ist.\nZeit in Millisekunden</string>
+    <string name="pref_vibDurOffset_title">Tastenvibrationsdauer</string>
     
     <string name="pref_antialiasing_summary">Verbessert die Darstellungsqualität von Text deutlich. Deaktivieren reduziert die Rechenlast</string>
     <string name="pref_antialiasing_title">Anti-Aliasing für Text</string>
@@ -170,7 +173,7 @@
     
     <string name="pref_help_vibration_title">Vibration</string>
     <string name="pref_help_vibration_summary">Wie sollte die Vibration eingestellt werden?</string>
-    <string name="pref_help_vibration_message">Auf einigen Geräten kann es zu Problemen mit der Vibration kommen. Außerdem haben viele Tablets keinen eingebauten Vibrator.\nWenn dein Gerät Vibrationen unterstützt, aber trotzdem keine Tastenvibration wahrgenommen werden, kann die Dauer der Vibration in den erweiterten Einstellungen erhöht werden (\"Kompensation für Vibrationsverzögerung\").\nDie Dauer der Tastenvibration sollte so kurz eingestellt werden, dass sie gerade noch wahrnehmbar ist.</string>
+    <string name="pref_help_vibration_message">Auf einigen Geräten kann es zu Problemen mit der Vibration kommen. Außerdem haben viele Tablets keinen eingebauten Vibrator.\nWenn dein Gerät Vibrationen unterstützt, aber trotzdem keine Tastenvibration wahrgenommen werden, kann die Dauer der Vibration in den Einstellungen erhöht werden (\"Vibrationsdauer\").\nDie Dauer der Tastenvibration sollte so kurz eingestellt werden, dass sie gerade noch wahrnehmbar ist.</string>
     
     <string name="pref_help_apm_title">APM</string>
     <string name="pref_help_apm_summary">Was bedeutet APM?</string>

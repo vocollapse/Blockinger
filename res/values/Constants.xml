@@ -70,6 +70,8 @@
     
     <integer name="shortVibeInterval">100</integer>
     
+    <integer name="audio_streams">10</integer>
+    
     <integer name="popup_attack">125</integer>
     <integer name="popup_sustain">1050</integer>
     <integer name="popup_decay">300</integer>

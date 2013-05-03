@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Simon Willeke
+b * Copyright 2013 Simon Willeke
  * contact: hamstercount@hotmail.com
  */
 
@@ -47,10 +47,10 @@ import org.blockinger.game.components.Sound;
 
 
 import android.database.Cursor;
-import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnSeekCompleteListener;
+//import android.media.MediaPlayer;
+//import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+//import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -69,7 +69,6 @@ public class GameActivity extends FragmentActivity {
 	public GameState game;
 	private WorkThread mainThread;
 	private DefeatDialogFragment dialog;
-	private MediaPlayer gameMusicPlayer;
 	//private int songtime;
 
 	public static final int start_new_game = 0;
@@ -88,7 +87,7 @@ public class GameActivity extends FragmentActivity {
 		/* Create Components */
 		game = (GameState)getLastCustomNonConfigurationInstance();
 		if(game == null) {
-			/* Check for Resuming */
+			/* Check for Resuming (or Resumption?) */
 			if(b!=null)
 				value = b.getInt("mode");
 				
@@ -100,7 +99,7 @@ public class GameActivity extends FragmentActivity {
 		}
 		game.reconnect(this);
 		dialog = new DefeatDialogFragment();
-		sound = new Sound(this);
+		sound = new Sound(this,Sound.NO_MUSIC);
 		controls = new Controls(this);
 		display = new Display(this);
 		
@@ -247,64 +246,27 @@ public class GameActivity extends FragmentActivity {
 	    Cursor cursor = MainActivity.getDS().getCursor();
 	    MainActivity.getAdapter().changeCursor(cursor);
 	}
-
-    public void pauseMusic() {
-    	gameMusicPlayer.pause();
-    };
     
     @Override
     protected void onStop() {
     	super.onStop();
-    	gameMusicPlayer.pause();
-    	game.setSongtime(gameMusicPlayer.getCurrentPosition());
-    	gameMusicPlayer.release();
     	//game.disconnect();
+    	sound.pause();
     };
     
     @Override
     protected void onDestroy() {
     	super.onDestroy();
-    	try {
-        	game.setSongtime(gameMusicPlayer.getCurrentPosition());
-    	} catch(IllegalStateException e) {
-    		
-    	}
-    	gameMusicPlayer.release();
+    	sound.release();
+    	sound = null;
     	game.disconnect();
+    	game = null;
     };
     
     @Override
     protected void onResume() {
     	super.onResume();
-    	try {
-    		if(gameMusicPlayer != null)
-    			gameMusicPlayer.release();
-    	} catch(IllegalStateException e) {
-    		
-    	}
-    	
-	    try{
-		    if(gameMusicPlayer == null) {
-			    gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-		    } else if (!gameMusicPlayer.isPlaying()) {
-			    gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-		    }
-	    } catch(IllegalStateException e) {
-	    	gameMusicPlayer = MediaPlayer.create(this, R.raw.sadrobot01);
-	    }
-
-	    gameMusicPlayer.setLooping(true);
-	    gameMusicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(this).getInt("pref_musicvolume", 60));
-	    gameMusicPlayer.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-			
-			@Override
-			public void onSeekComplete(MediaPlayer mp) {
-				mp.start();
-			}
-		});
-	    gameMusicPlayer.seekTo(game.getSongtime());
-	    
-	    //gameMusicPlayer.start();
+    	sound.resume();
     };
     
     @Override

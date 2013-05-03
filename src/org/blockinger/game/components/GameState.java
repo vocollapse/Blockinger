@@ -310,7 +310,6 @@ public class GameState extends Component {
 		if(!activePieces[activeIndex].setPosition(piece_start_x, 0, false, board)) {
 			stateOfTheGame = state_finished;
 			host.sound.gameOverSound();
-			host.pauseMusic();
 			host.gameOver(score, getTimeString(), (int)((float)actions*(60000.0f / gameTime)));
 		}
 	}
@@ -439,6 +438,7 @@ public class GameState extends Component {
 	}
 
 	public static void destroy() {
+		instance.disconnect();
 		instance = null;
 	}
 
