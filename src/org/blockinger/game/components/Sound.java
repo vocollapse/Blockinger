@@ -40,9 +40,7 @@ package org.blockinger.game.components;
 import org.blockinger.game.R;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -61,7 +59,7 @@ public class Sound implements OnAudioFocusChangeListener{
 	private MediaPlayer buttonSoundPlayer;
 	private boolean noFocus;
 	private IntentFilter intentFilter;
-	private BroadcastReceiver noisyAudioStreamReceiver;
+	private NoiseBroadcastReceiver noisyAudioStreamReceiver;
 
 	public static final int NO_MUSIC = 0x0;
 	public static final int MENU_MUSIC = 0x1;
@@ -83,14 +81,7 @@ public class Sound implements OnAudioFocusChangeListener{
 			noFocus = true;
 
 		intentFilter = new IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY);
-		noisyAudioStreamReceiver = new BroadcastReceiver(){
-			@Override
-			public void onReceive(Context c, Intent i) {
-				if (AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(i.getAction())) {
-		            // Not implemented due to lack of reversibility.
-		        }
-			}
-		};
+		noisyAudioStreamReceiver = new NoiseBroadcastReceiver();
 		c.registerReceiver(noisyAudioStreamReceiver, intentFilter);
 		
 		tetrisSoundPlayer = MediaPlayer.create(c,R.raw.seqlong);
@@ -175,7 +166,7 @@ public class Sound implements OnAudioFocusChangeListener{
 			return;
 		if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
 			return;
-		pause(); // pause music to make the end of game feel more dramatic. hehe.
+		pause(); // pause music to make the end of the game feel more dramatic. hhheheh.
 		gameOverPlayer.seekTo(0);
 		gameOverPlayer.start();
 	}
