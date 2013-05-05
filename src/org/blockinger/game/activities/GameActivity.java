@@ -66,7 +66,6 @@ public class GameActivity extends FragmentActivity {
 	public GameState game;
 	private WorkThread mainThread;
 	private DefeatDialogFragment dialog;
-	//private int songtime;
 
 	public static final int NEW_GAME = 0;
 	public static final int RESUME_GAME = 1;
@@ -96,11 +95,13 @@ public class GameActivity extends FragmentActivity {
 		}
 		game.reconnect(this);
 		dialog = new DefeatDialogFragment();
-		sound = new Sound(this,Sound.NO_MUSIC);
 		controls = new Controls(this);
 		display = new Display(this);
+		sound = new Sound(this);
 		
 		/* Init Components */
+		sound.loadEffects();
+		sound.loadMusic(Sound.GAME_MUSIC);
 		if(b!=null){
 			value = b.getInt("mode");
 			if(b.getString("playername") != null)
@@ -199,7 +200,6 @@ public class GameActivity extends FragmentActivity {
 
 		((BlockBoardView)findViewById(R.id.boardView)).init();
 		((BlockBoardView)findViewById(R.id.boardView)).setHost(this);
-	    //MainActivity.getAdapter().notifyDataSetChanged(); TODO: wtf.
 	}
 	
 	/**
@@ -250,7 +250,6 @@ public class GameActivity extends FragmentActivity {
     @Override
     protected void onStop() {
     	super.onStop();
-    	//game.disconnect();
     	sound.pause();
     };
     

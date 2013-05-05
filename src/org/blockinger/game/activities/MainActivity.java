@@ -65,12 +65,12 @@ public class MainActivity extends ListActivity {
 
 	public static final int SCORE_REQUEST = 0x0;
 	
-	/** This key is used to access the player name, which is returned from the gameactivity upon completion (gameover).
+	/** This key is used to access the player name, which is returned as an Intent from the gameactivity upon completion (gameover).
 	 *  The Package Prefix is mandatory for Intent data
 	 */
 	public static final String PLAYERNAME_KEY = "org.blockinger.game.activities.playername";
 	
-	/** This key is used to access the player name, which is returned from the gameactivity upon completion (gameover).
+	/** This key is used to access the player name, which is returned as an Intent from the gameactivity upon completion (gameover).
 	 *  The Package Prefix is mandatory for Intent data
 	 */
 	public static final String SCORE_KEY = "org.blockinger.game.activities.score";
@@ -93,7 +93,8 @@ public class MainActivity extends ListActivity {
 		PreferenceManager.setDefaultValues(this, R.xml.advanced_preferences, true);
 		
 		/* Create Music */
-		sound = new Sound(this,Sound.NO_MUSIC);
+		sound = new Sound(this);
+		sound.loadMusic(Sound.MENU_MUSIC);
 		
 		/* Database Management */
 		Cursor mc;
@@ -210,7 +211,6 @@ public class MainActivity extends ListActivity {
 
 
     public void onClickStart(View view) {
-		//dialog.setSingleChoiceItems(R.array.levelChooseArray, startLevel, this);
 		dialogView = getLayoutInflater().inflate(R.layout.seek_bar_dialog, null);
 		leveldialogtext = ((TextView)dialogView.findViewById(R.id.leveldialogleveldisplay));
 		leveldialogBar = ((SeekBar)dialogView.findViewById(R.id.levelseekbar));
@@ -245,12 +245,6 @@ public class MainActivity extends ListActivity {
 		intent.putExtras(b); //Put your id to your next Intent
 		startActivityForResult(intent,SCORE_REQUEST);
     }
-
-/*    public void onClickQuit(View view) {
-	    mainMenuMusicPlayer.release();
-	    GameState.destroy();
-		this.finish();
-    }*/
     
     @Override
     protected void onStop() {
