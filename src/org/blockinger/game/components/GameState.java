@@ -438,7 +438,8 @@ public class GameState extends Component {
 	}
 
 	public static void destroy() {
-		instance.disconnect();
+		if(instance != null)
+			instance.disconnect();
 		instance = null;
 	}
 

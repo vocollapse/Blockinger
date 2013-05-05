@@ -115,7 +115,7 @@ public class Sound implements OnAudioFocusChangeListener, OnLoadCompleteListener
 //		clearSoundPlayer.setLooping(false);
 //		clearSoundPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));
 
-		soundID_gameOverPlayer = soundPool.load(c, R.raw.synthaccord, 1);
+		soundID_gameOverPlayer = soundPool.load(c, R.raw.gameover, 1);
 //		gameOverPlayer = MediaPlayer.create(c,R.raw.gameover);
 //		gameOverPlayer.setLooping(false);
 //		gameOverPlayer.setVolume(0.015f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(c).getInt("pref_soundvolume", 60));

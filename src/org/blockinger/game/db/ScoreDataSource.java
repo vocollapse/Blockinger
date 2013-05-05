@@ -68,8 +68,7 @@ public class ScoreDataSource {
 	    ContentValues values = new ContentValues();
 	    values.put(HighscoreOpenHelper.COLUMN_SCORE, score);
 	    values.put(HighscoreOpenHelper.COLUMN_PLAYERNAME, playerName);
-	    long insertId = database.insert(HighscoreOpenHelper.TABLE_HIGHSCORES, null,
-	        values);
+	    long insertId = database.insert(HighscoreOpenHelper.TABLE_HIGHSCORES, null, values);
 	    Cursor cursor = database.query(HighscoreOpenHelper.TABLE_HIGHSCORES,
 	        allColumns, HighscoreOpenHelper.COLUMN_ID + " = " + insertId, null,
 	        null, null, HighscoreOpenHelper.COLUMN_SCORE + " DESC");

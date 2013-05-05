@@ -71,7 +71,7 @@ public class DefeatDialogFragment extends DialogFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setTitle(R.string.defeatDialogTitle);
 		builder.setMessage(
-				getResources().getString(R.string.scoreLabel) + 
+				getResources().getString(R.string.scoreLabel) +
 				"\n    " + scoreString + "\n\n" +
 				getResources().getString(R.string.timeLabel) +
 				"\n    " + timeString + "\n\n" +
@@ -84,8 +84,6 @@ public class DefeatDialogFragment extends DialogFragment {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				((GameActivity)getActivity()).putScore(score);
-				//GameState.getNewInstance((GameActivity)getActivity());
-				getActivity().finish();
 			}
 		});
 		return builder.create();

@@ -63,9 +63,20 @@ import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
 
-	public static ScoreDataSource datasource;
-	private Cursor mc;
-	private static SimpleCursorAdapter adapter;
+	public static final int SCORE_REQUEST = 0x0;
+	
+	/** This key is used to access the player name, which is returned from the gameactivity upon completion (gameover).
+	 *  The Package Prefix is mandatory for Intent data
+	 */
+	public static final String PLAYERNAME_KEY = "org.blockinger.game.activities.playername";
+	
+	/** This key is used to access the player name, which is returned from the gameactivity upon completion (gameover).
+	 *  The Package Prefix is mandatory for Intent data
+	 */
+	public static final String SCORE_KEY = "org.blockinger.game.activities.score";
+	
+	public ScoreDataSource datasource;
+	private SimpleCursorAdapter adapter;
 	private AlertDialog.Builder startLevelDialog;
 	private AlertDialog.Builder donateDialog;
 	private int startLevel;
@@ -85,6 +96,7 @@ public class MainActivity extends ListActivity {
 		sound = new Sound(this,Sound.NO_MUSIC);
 		
 		/* Database Management */
+		Cursor mc;
 	    datasource = new ScoreDataSource(this);
 	    datasource.open();
 	    mc = datasource.getCursor();
@@ -175,11 +187,25 @@ public class MainActivity extends ListActivity {
 	public void start() {
 		Intent intent = new Intent(this, GameActivity.class);
 		Bundle b = new Bundle();
-		b.putInt("mode", GameActivity.start_new_game); //Your id
+		b.putInt("mode", GameActivity.NEW_GAME); //Your id
 		b.putInt("level", startLevel); //Your id
 		b.putString("playername", ((TextView)findViewById(R.id.nicknameEditView)).getText().toString()); //Your id
 		intent.putExtras(b); //Put your id to your next Intent
-		startActivity(intent);
+		startActivityForResult(intent,SCORE_REQUEST);
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(requestCode != SCORE_REQUEST)
+			return;
+		if(resultCode != RESULT_OK)
+			return;
+
+		String playerName = data.getStringExtra(PLAYERNAME_KEY);
+		long score = data.getLongExtra(SCORE_KEY,0);
+
+	    datasource.open();
+	    datasource.createScore(score, playerName);
 	}
 
 
@@ -214,10 +240,10 @@ public class MainActivity extends ListActivity {
     public void onClickResume(View view) {
 		Intent intent = new Intent(this, GameActivity.class);
 		Bundle b = new Bundle();
-		b.putInt("mode", GameActivity.resume_old_game); //Your id
+		b.putInt("mode", GameActivity.RESUME_GAME); //Your id
 		b.putString("playername", ((TextView)findViewById(R.id.nicknameEditView)).getText().toString()); //Your id
 		intent.putExtras(b); //Put your id to your next Intent
-		startActivity(intent);
+		startActivityForResult(intent,SCORE_REQUEST);
     }
 
 /*    public void onClickQuit(View view) {
@@ -230,6 +256,7 @@ public class MainActivity extends ListActivity {
     protected void onStop() {
     	super.onStop();
     	sound.pause();
+    	datasource.close();
     };
     
     @Override
@@ -237,6 +264,7 @@ public class MainActivity extends ListActivity {
     	super.onDestroy();
     	sound.release();
     	sound = null;
+    	datasource.close();
     };
     
     @Override
@@ -253,13 +281,5 @@ public class MainActivity extends ListActivity {
 	    	((Button)findViewById(R.id.resumeButton)).setEnabled(false);
 	    }
     };
-
-	public static ScoreDataSource getDS() {
-		return datasource;
-	}
-
-	public static SimpleCursorAdapter getAdapter() {
-		return adapter;
-	}
 
 }

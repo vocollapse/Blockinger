@@ -70,7 +70,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="2.4"
                 android:gravity="center"
                 android:orientation="horizontal" >
 
@@ -134,18 +134,19 @@
             android:layout_weight="1.1"
             android:orientation="vertical" >
 
+            <Button
+                android:id="@+id/pausebutton_1"
+            	style="@android:style/Widget.ImageWell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/pausebutton" />
+
             <View
                 android:id="@+id/View01"
                 android:layout_width="wrap_content"
                 android:layout_height="8dp"
                 android:layout_weight="0" />
-
-            <Button
-                android:id="@+id/pausebutton_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="@string/pausebutton" />
 
         </LinearLayout>
 
@@ -165,7 +166,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2" >
+                android:layout_weight="2.4" >
 
                 <ImageButton
                     android:id="@+id/rotateLeftButton"

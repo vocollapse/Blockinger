@@ -46,11 +46,8 @@ import org.blockinger.game.components.GameState;
 import org.blockinger.game.components.Sound;
 
 
-import android.database.Cursor;
-//import android.media.MediaPlayer;
-//import android.media.MediaPlayer.OnSeekCompleteListener;
+import android.content.Intent;
 import android.os.Bundle;
-//import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -71,8 +68,8 @@ public class GameActivity extends FragmentActivity {
 	private DefeatDialogFragment dialog;
 	//private int songtime;
 
-	public static final int start_new_game = 0;
-	public static final int resume_old_game = 1;
+	public static final int NEW_GAME = 0;
+	public static final int RESUME_GAME = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +79,7 @@ public class GameActivity extends FragmentActivity {
 
 		/* Read Starting Arguments */
 		Bundle b = getIntent().getExtras();
-		int value = start_new_game;
+		int value = NEW_GAME;
 		
 		/* Create Components */
 		game = (GameState)getLastCustomNonConfigurationInstance();
@@ -91,7 +88,7 @@ public class GameActivity extends FragmentActivity {
 			if(b!=null)
 				value = b.getInt("mode");
 				
-			if((value == start_new_game)) {
+			if((value == NEW_GAME)) {
 				game = GameState.getNewInstance(this);
 				game.setLevel(b.getInt("level"));
 			} else
@@ -202,7 +199,7 @@ public class GameActivity extends FragmentActivity {
 
 		((BlockBoardView)findViewById(R.id.boardView)).init();
 		((BlockBoardView)findViewById(R.id.boardView)).setHost(this);
-	    MainActivity.getAdapter().notifyDataSetChanged();
+	    //MainActivity.getAdapter().notifyDataSetChanged(); TODO: wtf.
 	}
 	
 	/**
@@ -241,10 +238,13 @@ public class GameActivity extends FragmentActivity {
 		String playerName = game.getPlayerName();
 		if(playerName == null || playerName.equals(""))
 			playerName = getResources().getString(R.string.anonymous);//"Anonymous";
-	    MainActivity.getDS().createScore(score, playerName);
-	    MainActivity.getDS().open();
-	    Cursor cursor = MainActivity.getDS().getCursor();
-	    MainActivity.getAdapter().changeCursor(cursor);
+		
+		Intent data = new Intent();
+		data.putExtra(MainActivity.PLAYERNAME_KEY, playerName);
+		data.putExtra(MainActivity.SCORE_KEY, score);
+		setResult(MainActivity.RESULT_OK, data);
+		
+		finish();
 	}
     
     @Override
@@ -260,7 +260,6 @@ public class GameActivity extends FragmentActivity {
     	sound.release();
     	sound = null;
     	game.disconnect();
-    	game = null;
     };
     
     @Override
@@ -271,7 +270,6 @@ public class GameActivity extends FragmentActivity {
     
     @Override
     public Object onRetainCustomNonConfigurationInstance () {
-    	game.disconnect();
         return game;
     }
 	

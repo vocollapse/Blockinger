@@ -57,12 +57,12 @@
             android:id="@+id/View05"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.4" />
+            android:layout_weight="0.2" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.4"
+            android:layout_weight="2.8"
             android:gravity="center" >
 
             <ImageButton
@@ -144,12 +144,12 @@
             android:id="@+id/View06"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.4" />
+            android:layout_weight="0.2" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.4" >
+            android:layout_weight="2.8" >
 
             <ImageButton
                 android:id="@+id/rotateLeftButton"
@@ -206,6 +206,7 @@
 
         <Button
             android:id="@+id/pausebutton_1"
+            style="@android:style/Widget.ImageWell"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_weight="0"
@@ -217,6 +218,6 @@
         android:id="@+id/top_right_spacer"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.04" />
+        android:layout_weight="0.05" />
 
 </LinearLayout>
