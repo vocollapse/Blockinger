@@ -78,6 +78,19 @@ public class AboutActivity extends PreferenceActivity {
 			}
 		});
         
+        pref = findPreference("pref_license_music");
+        pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				String url = getResources().getString(R.string.music_url);
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(Uri.parse(url));
+				startActivity(i);
+				return true;
+			}
+		});
+        
         pref = findPreference("pref_version");
         pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			

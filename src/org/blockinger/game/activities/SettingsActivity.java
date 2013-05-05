@@ -76,20 +76,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         	timeString = "0";
         timeString = "" + timeString + " ms";
         pref.setSummary(timeString);
- /*       Preference pref = findPreference("pref_rng");
-        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_rng", "").equals("sevenbag"))
-        	pref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[0]);//"7-Bag-Randomization");
-        else
-        	pref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[1]);
-        
-        pref = findPreference("pref_fpslimittext");
-        pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_fpslimittext", ""));
-
-        pref = findPreference("pref_vibDurOffset");
-        pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_vibDurOffset", ""));
-*/
-        
-        
 	}
 
 	@SuppressWarnings("deprecation")
@@ -105,25 +91,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             timeString = "" + timeString + " ms";
             connectionPref.setSummary(timeString);
         }
-		/*if (key.equals("pref_rng")) {
-            Preference connectionPref = findPreference(key);
-            // Set summary to be the user-description for the selected value
-            if(sharedPreferences.getString(key, "").equals("sevenbag"))
-            	connectionPref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[0]);//"7-Bag-Randomization");
-            else
-            	connectionPref.setSummary(getResources().getStringArray(R.array.randomizer_preference_array)[1]);
-        }
-		if (key.equals("pref_fpslimittext")) {
-            Preference connectionPref = findPreference(key);
-            // Set summary to be the user-description for the selected value
-            connectionPref.setSummary(sharedPreferences.getString(key, ""));
-        }
-		if (key.equals("pref_vibDurOffset")) {
-            Preference connectionPref = findPreference(key);
-            // Set summary to be the user-description for the selected value
-            connectionPref.setSummary(sharedPreferences.getString(key, ""));
-        }*/
-
 	}
 	
 	@Override

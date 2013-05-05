@@ -100,8 +100,9 @@ public class GameActivity extends FragmentActivity {
 		sound = new Sound(this);
 		
 		/* Init Components */
+		if(game.isResumable())
+			sound.loadMusic(Sound.GAME_MUSIC, game.getSongtime());
 		sound.loadEffects();
-		sound.loadMusic(Sound.GAME_MUSIC);
 		if(b!=null){
 			value = b.getInt("mode");
 			if(b.getString("playername") != null)
@@ -256,6 +257,7 @@ public class GameActivity extends FragmentActivity {
     @Override
     protected void onDestroy() {
     	super.onDestroy();
+    	game.setSongtime(sound.getSongtime());
     	sound.release();
     	sound = null;
     	game.disconnect();

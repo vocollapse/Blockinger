@@ -49,10 +49,10 @@
 	        android:summary="@string/pref_license_summary"
 	        android:title="@string/pref_license_title" />
 	    
-	    <!-- <Preference
+	    <Preference
 	        android:key="pref_license_music"
 	        android:summary="@string/pref_license_music_summary"
-	        android:title="@string/pref_license_music_title" /> -->
+	        android:title="@string/pref_license_music_title" />
 	    
 	    <Preference
 	        android:key="pref_author"

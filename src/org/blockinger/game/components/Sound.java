@@ -44,24 +44,25 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
-import android.media.SoundPool.OnLoadCompleteListener;
 import android.preference.PreferenceManager;
 
-public class Sound implements OnAudioFocusChangeListener, OnLoadCompleteListener{
+public class Sound implements OnAudioFocusChangeListener {
 
 	private Activity host;
 	private AudioManager audioCEO;
-	private int soundID_musicPlayer;
 	private int soundID_tetrisSoundPlayer;
 	private int soundID_dropSoundPlayer;
 	private int soundID_clearSoundPlayer;
 	private int soundID_gameOverPlayer;
 	private int soundID_buttonSoundPlayer;
+	private MediaPlayer musicPlayer;
 	private boolean noFocus;
 	private IntentFilter intentFilter;
 	private NoiseBroadcastReceiver noisyAudioStreamReceiver;
 	private SoundPool soundPool;
+	private int songtime;
 
 	public static final int NO_MUSIC = 0x0;
 	public static final int MENU_MUSIC = 0x1;
@@ -87,8 +88,14 @@ public class Sound implements OnAudioFocusChangeListener, OnLoadCompleteListener
 		c.registerReceiver(noisyAudioStreamReceiver, intentFilter);
 		
 		soundPool = new SoundPool(c.getResources().getInteger(R.integer.audio_streams),AudioManager.STREAM_MUSIC,0);
-		soundPool.setOnLoadCompleteListener(this);
 
+		soundID_tetrisSoundPlayer = -1;
+		soundID_dropSoundPlayer = -1;
+		soundID_clearSoundPlayer = -1;
+		soundID_gameOverPlayer = -1;
+		soundID_buttonSoundPlayer = -1;
+		
+		songtime = 0;
 	}
 	
 	public void loadEffects() {
@@ -99,18 +106,24 @@ public class Sound implements OnAudioFocusChangeListener, OnLoadCompleteListener
 		soundID_gameOverPlayer = soundPool.load(host, R.raw.gameover, 1);
 	}
 	
-	public void loadMusic(int type) {
+	public void loadMusic(int type, int startTime) {
+		songtime = startTime;
 		switch(type) {
 			case MENU_MUSIC :
-				soundID_musicPlayer = soundPool.load(host, R.raw.lemmings03, 2);
+				musicPlayer = MediaPlayer.create(host, R.raw.lemmings03);
 				break;
 			case GAME_MUSIC :
-				soundID_musicPlayer = soundPool.load(host, R.raw.sadrobot01, 2);
+				musicPlayer = MediaPlayer.create(host, R.raw.sadrobot01);
 				break;
 			default :
-				soundID_musicPlayer = 0;
+				musicPlayer = new MediaPlayer();
 				break;
 		}
+		musicPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+		musicPlayer.setLooping(true);
+		musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
+		musicPlayer.seekTo(songtime);
+		musicPlayer.start();
 	}
 	
 	public void clearSound() {
@@ -193,18 +206,35 @@ public class Sound implements OnAudioFocusChangeListener, OnLoadCompleteListener
 
 	public void resume() {
 		soundPool.autoResume();
+		if(musicPlayer != null)
+			try{
+				musicPlayer.start();
+			} catch(IllegalStateException e) {
+				
+			}
 	}
 
 	public void pause() {
 		soundPool.autoPause();
+		if(musicPlayer != null)
+			try{
+				musicPlayer.pause();
+			} catch(IllegalStateException e) {
+				
+			}
 	}
 	
 	public void release() {
+		soundPool.autoPause();
 		soundPool.release();
 		soundPool = null;
+		if(musicPlayer != null)
+			musicPlayer.release();
+		musicPlayer = null;
 
 		host.unregisterReceiver(noisyAudioStreamReceiver);
 		audioCEO.abandonAudioFocus(this);
+		audioCEO = null;
 		host = null;
 		noFocus = true;
 	}
@@ -212,28 +242,44 @@ public class Sound implements OnAudioFocusChangeListener, OnLoadCompleteListener
 	@Override
 	public void onAudioFocusChange(int focusChange) {
         if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-        	soundPool.setVolume(soundID_musicPlayer, 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
-    	} else if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
+    		if(musicPlayer != null)
+    			try{
+    				musicPlayer.setVolume(0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
+    	        } catch(IllegalStateException e) {
+    				
+    			}
+        	soundPool.setVolume(soundID_tetrisSoundPlayer, 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	soundPool.setVolume(soundID_dropSoundPlayer, 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	soundPool.setVolume(soundID_clearSoundPlayer, 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	soundPool.setVolume(soundID_gameOverPlayer, 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	soundPool.setVolume(soundID_buttonSoundPlayer, 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.0025f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
             pause();
         } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-        	soundPool.setVolume(soundID_musicPlayer, 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
-    		resume();
+    		if(musicPlayer != null)
+    			try{
+    				musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
+    	        } catch(IllegalStateException e) {
+    				
+    			}
+    		soundPool.setVolume(soundID_tetrisSoundPlayer, 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	soundPool.setVolume(soundID_dropSoundPlayer, 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	soundPool.setVolume(soundID_clearSoundPlayer, 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	soundPool.setVolume(soundID_gameOverPlayer, 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	soundPool.setVolume(soundID_buttonSoundPlayer, 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60));
+        	resume();
         } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
         	pause();
         }
-    }
-
-	@Override
-	public void onLoadComplete(SoundPool sp, int soundID, int status) {
-		if((status == 0) && (soundID == soundID_musicPlayer))
-			soundID_musicPlayer = sp.play( // overwrite the old soundID with the new streamID
-				soundID, // sound to play = music sound id
-				0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 
-				0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 
-				2, 
-				-1, 
-				1.0f
-			);
 	}
 
+	public int getSongtime() {
+		if(musicPlayer != null)
+			try{
+				return musicPlayer.getCurrentPosition();
+			} catch(IllegalStateException e) {
+				
+			}
+		return 0;
+	}
 }

@@ -189,12 +189,10 @@ public class Controls extends Component {
 		vibrateShort();
 		host.game.setNextPlayerDropTime(host.game.getTime());
 		host.sound.buttonSound();
-		//nextPlayerDropTime = host.game.getTime();
-    	//Thread.yield();
 	}
 
 	public void dropButtonReleased() {
-    	//Thread.yield();
+		
 	}
 
 	public void dropButtonPressed() {
@@ -204,13 +202,11 @@ public class Controls extends Component {
 		playerHardDrop = true;
 		if(buttonVibrationEnabled & !eventVibrationEnabled)
 			vibrateShort();
-		host.sound.buttonSound();
 	}
 
 	public void leftButtonReleased() {
 		clearLeftMove = true;
 		cancelVibration();
-    	//Thread.yield();
 	}
 
 	public void leftButtonPressed() {
@@ -220,16 +216,11 @@ public class Controls extends Component {
 		rightMove = false;
 		host.game.setNextPlayerMoveTime(host.game.getTime());
 		host.sound.buttonSound();
-		//nextPlayerMoveTime = host.game.getTime();
-		//vibrateShort(); wird schon unten gemacht (weil in jedem tick)
-		
-    	//Thread.yield();
 	}
 
 	public void rightButtonReleased() {
 		clearRightMove = true;
 		cancelVibration();
-    	//Thread.yield();
 	}
 
 	public void rightButtonPressed() {
@@ -239,10 +230,6 @@ public class Controls extends Component {
 		leftMove = false;
 		host.game.setNextPlayerMoveTime(host.game.getTime());
 		host.sound.buttonSound();
-		//nextPlayerMoveTime = host.game.getTime();
-		//vibrateShort(); wird schon unten gemacht (weil in jedem tick)
-		
-    	//Thread.yield();
 	}
 
 	public void cycle(long tempTime) {
@@ -264,8 +251,6 @@ public class Controls extends Component {
 				host.game.nextLevel();
 			host.game.setNextDropTime(gameTime + host.game.getAutoDropInterval());
 			host.game.setNextPlayerDropTime(gameTime);
-			//nextDropTime = gameTime + host.game.getAutoDropInterval();
-			//nextPlayerDropTime = gameTime;
 
 		// Initial Soft Drop
 		} else if(playerSoftDrop) {
@@ -278,14 +263,11 @@ public class Controls extends Component {
 				host.game.pieceTransition(eventVibrationEnabled);
 				board.invalidate();
 			} else {
-				//vibrateShort(); DAS WUERDE HIER BEI JEDEM TICK VIBRIEREN UND DAS MUSS DOCH NICHT SEIN. BEIM BESTEN WILLEN NICHT MEIN LIEBER FREUND.
 			}
 			if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
 				host.game.nextLevel();
 			host.game.setNextDropTime(host.game.getNextPlayerDropTime() + host.game.getAutoDropInterval());
 			host.game.setNextPlayerDropTime(host.game.getNextPlayerDropTime() + initialVIntervalFactor*host.game.getSoftDropInterval());
-			//nextDropTime = nextPlayerDropTime + host.game.getAutoDropInterval();
-			//nextPlayerDropTime = nextPlayerDropTime + initialIntervalFactor*host.game.getSoftDropInterval(); // initial interval is doubled!
 			
 		// Continuous Soft Drop
 		} else if(continuousSoftDrop) {
@@ -297,14 +279,11 @@ public class Controls extends Component {
 					host.game.pieceTransition(eventVibrationEnabled);
 					board.invalidate();
 				} else {
-					//vibrateShort(); DAS WUERDE HIER BEI JEDEM TICK VIBRIEREN UND DAS MUSS DOCH NICHT SEIN. BEIM BESTEN WILLEN NICHT MEIN LIEBER FREUND.
 				}
 				if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
 					host.game.nextLevel();
 				host.game.setNextDropTime(host.game.getNextPlayerDropTime() + host.game.getAutoDropInterval());
 				host.game.setNextPlayerDropTime(host.game.getNextPlayerDropTime() + host.game.getSoftDropInterval());
-				//nextDropTime = nextPlayerDropTime + host.game.getAutoDropInterval();
-				//nextPlayerDropTime = nextPlayerDropTime + host.game.getSoftDropInterval();
 				
 			// Autodrop if faster than playerDrop
 			} else if(gameTime >= host.game.getNextDropTime()) {
@@ -319,8 +298,6 @@ public class Controls extends Component {
 					host.game.nextLevel();
 				host.game.setNextDropTime(host.game.getNextDropTime() + host.game.getAutoDropInterval());
 				host.game.setNextPlayerDropTime(host.game.getNextDropTime() + host.game.getSoftDropInterval());
-				//nextDropTime = nextDropTime + host.game.getAutoDropInterval();
-				//nextPlayerDropTime = nextDropTime + host.game.getSoftDropInterval();
 			}
 
 			if(clearPlayerSoftDrop) {
@@ -341,18 +318,14 @@ public class Controls extends Component {
 				host.game.nextLevel();
 			host.game.setNextDropTime(host.game.getNextDropTime() + host.game.getAutoDropInterval());
 			host.game.setNextPlayerDropTime(host.game.getNextDropTime());
-			//nextDropTime = nextDropTime + host.game.getAutoDropInterval();
-			//nextPlayerDropTime = nextDropTime;
 			
 		} else
 			host.game.setNextPlayerDropTime(gameTime);
-			//nextPlayerDropTime = gameTime;
 
 		
 		// Reset Move Time
 		if((!leftMove && !rightMove) && (!continuousLeftMove && !continuousRightMove))
 			host.game.setNextPlayerMoveTime(gameTime);
-			//nextPlayerMoveTime = gameTime;
 		
 		// Left Move
 		if(leftMove) {
@@ -364,7 +337,6 @@ public class Controls extends Component {
 			} else
 				vibrateWall();
 			host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + initialHIntervalFactor*host.game.getMoveInterval());
-			//nextPlayerMoveTime = nextPlayerMoveTime + initialIntervalFactor*host.game.getMoveInterval(); // first interval is doubled!
 			
 		} else if(continuousLeftMove) {
 			if(gameTime >= host.game.getNextPlayerMoveTime()) {

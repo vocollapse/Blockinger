@@ -94,7 +94,7 @@ public class MainActivity extends ListActivity {
 		
 		/* Create Music */
 		sound = new Sound(this);
-		sound.loadMusic(Sound.MENU_MUSIC);
+		sound.loadMusic(Sound.MENU_MUSIC, 0);
 		
 		/* Database Management */
 		Cursor mc;

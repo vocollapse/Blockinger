@@ -109,7 +109,6 @@ public class GameState extends Component {
 	
 	private GameState(GameActivity ga) {
 		super(ga);
-		setSongtime(0);
 		actions = 0;
 		board = new Board(host);
 		date = new GregorianCalendar();

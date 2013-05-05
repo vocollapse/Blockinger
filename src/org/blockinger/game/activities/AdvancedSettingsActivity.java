@@ -74,9 +74,6 @@ public class AdvancedSettingsActivity extends PreferenceActivity implements OnSh
         
         pref = findPreference("pref_fpslimittext");
         pref.setSummary(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_fpslimittext", ""));
-
-        
-        
 	}
 
 	@SuppressWarnings("deprecation")
@@ -96,7 +93,6 @@ public class AdvancedSettingsActivity extends PreferenceActivity implements OnSh
             // Set summary to be the user-description for the selected value
             connectionPref.setSummary(sharedPreferences.getString(key, ""));
         }
-
 	}
 	
 	@Override
@@ -118,6 +114,4 @@ public class AdvancedSettingsActivity extends PreferenceActivity implements OnSh
 	    super.onPause();
 	    getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
 	}
-
-
 }
