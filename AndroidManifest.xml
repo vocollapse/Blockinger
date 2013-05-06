@@ -38,8 +38,8 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.blockinger.game"
-    android:versionCode="9"
-    android:versionName="1.5" >
+    android:versionCode="10"
+    android:versionName="1.6" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -69,11 +69,7 @@
             android:name="org.blockinger.game.activities.GameActivity"
             android:label="@string/title_activity_game"
             android:theme="@style/AppTheme" >
-
-            <!-- android:theme="@style/FullscreenTheme"> -->
-
         </activity>
-        <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
         <activity
             android:name="org.blockinger.game.activities.SettingsActivity"
             android:icon="@drawable/ic_settings"
@@ -93,11 +89,19 @@
             android:name="org.blockinger.game.activities.HelpActivity"
             android:label="@string/title_activity_help" >
         </activity>
-        <receiver android:name="org.blockinger.game.components.NoiseBroadcastReceiver">
+        
+        <!-- <receiver android:name="org.blockinger.game.components.NoiseBroadcastReceiver">
 		   <intent-filter>
 		      <action android:name="android.media.AUDIO_BECOMING_NOISY" />
 		   </intent-filter>
 		</receiver>
+        
+        <receiver android:name="org.blockinger.game.components.RingerModeChangeReceiver">
+		   <intent-filter>
+		      <action android:name="AudioManager.RINGER_MODE_CHANGED_ACTION" />
+		   </intent-filter>
+		</receiver> -->
+		
     </application>
 
 </manifest>

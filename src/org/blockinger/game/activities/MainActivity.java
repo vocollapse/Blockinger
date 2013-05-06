@@ -94,7 +94,7 @@ public class MainActivity extends ListActivity {
 		
 		/* Create Music */
 		sound = new Sound(this);
-		sound.loadMusic(Sound.MENU_MUSIC, 0);
+		sound.startMusic(Sound.MENU_MUSIC, 0);
 		
 		/* Database Management */
 		Cursor mc;
@@ -249,6 +249,7 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onStop() {
     	super.onStop();
+    	sound.setActivity(false);
     	sound.pause();
     	datasource.close();
     };
@@ -264,6 +265,7 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onResume() {
     	super.onResume();
+    	sound.setActivity(true);
     	sound.resume();
     	datasource.open();
 	    Cursor cursor = datasource.getCursor();

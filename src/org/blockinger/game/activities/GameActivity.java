@@ -101,7 +101,7 @@ public class GameActivity extends FragmentActivity {
 		
 		/* Init Components */
 		if(game.isResumable())
-			sound.loadMusic(Sound.GAME_MUSIC, game.getSongtime());
+			sound.startMusic(Sound.GAME_MUSIC, game.getSongtime());
 		sound.loadEffects();
 		if(b!=null){
 			value = b.getInt("mode");

@@ -40,6 +40,7 @@ package org.blockinger.game.components;
 import org.blockinger.game.R;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.media.AudioManager;
@@ -59,10 +60,14 @@ public class Sound implements OnAudioFocusChangeListener {
 	private int soundID_buttonSoundPlayer;
 	private MediaPlayer musicPlayer;
 	private boolean noFocus;
-	private IntentFilter intentFilter;
-	private NoiseBroadcastReceiver noisyAudioStreamReceiver;
+	private boolean isMusicReady;
+	private BroadcastReceiver noisyAudioStreamReceiver;
+	private BroadcastReceiver ringerModeReceiver;
+	private BroadcastReceiver headsetPlugReceiver;
 	private SoundPool soundPool;
 	private int songtime;
+	private int musicType;
+	private boolean isInactive;
 
 	public static final int NO_MUSIC = 0x0;
 	public static final int MENU_MUSIC = 0x1;
@@ -83,9 +88,53 @@ public class Sound implements OnAudioFocusChangeListener {
 		} else
 			noFocus = true;
 
+		IntentFilter intentFilter;
+		/*Noise Receiver (when unplugging headphones) */
 		intentFilter = new IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY);
-		noisyAudioStreamReceiver = new NoiseBroadcastReceiver();
+		noisyAudioStreamReceiver = new BroadcastReceiver() {
+				public void onReceive(Context context, android.content.Intent intent) {
+					Sound.this.pauseMusic();
+				}
+			};
 		c.registerReceiver(noisyAudioStreamReceiver, intentFilter);
+
+		/* Headphone Receiver (whenheadphone state changes) */
+		intentFilter = new IntentFilter(android.content.Intent.ACTION_HEADSET_PLUG );
+		headsetPlugReceiver = new BroadcastReceiver() {
+			
+				public void onReceive(Context context, android.content.Intent intent) {
+					if (intent.getAction().equals(android.content.Intent.ACTION_HEADSET_PLUG)) {
+			            int state = intent.getIntExtra("state", -1);
+			            switch (state) {
+			            case 0:
+			                // Headset is unplugged
+			            	//Sound.this.pauseMusic();
+			                break;
+			            case 1:
+			                // Headset is plugged
+			            	Sound.this.startMusic(musicType,songtime);
+			                break;
+			            default:
+			                // I have no idea what the headset state is
+			            }
+			        }
+				}
+				
+			};
+		c.registerReceiver(headsetPlugReceiver, intentFilter);
+		
+		/* Ringer Mode Receiver (when the user changes audio mode to silent or back to normal) */
+		intentFilter = new IntentFilter(AudioManager.RINGER_MODE_CHANGED_ACTION);
+		ringerModeReceiver = new BroadcastReceiver() {
+			
+			public void onReceive(Context context, android.content.Intent intent) {
+				songtime = getSongtime();
+            	Sound.this.pauseMusic();
+				Sound.this.startMusic(musicType,songtime);
+			}
+			
+		};
+		c.registerReceiver(ringerModeReceiver,intentFilter);
 		
 		soundPool = new SoundPool(c.getResources().getInteger(R.integer.audio_streams),AudioManager.STREAM_MUSIC,0);
 
@@ -96,6 +145,13 @@ public class Sound implements OnAudioFocusChangeListener {
 		soundID_buttonSoundPlayer = -1;
 		
 		songtime = 0;
+		musicType = 0;
+		isMusicReady = false;
+		isInactive = false;
+	}
+	
+	public void setActivity(boolean b) {
+		isInactive = !b;
 	}
 	
 	public void loadEffects() {
@@ -107,7 +163,24 @@ public class Sound implements OnAudioFocusChangeListener {
 	}
 	
 	public void loadMusic(int type, int startTime) {
+		if(isInactive)
+			return;
+		
+		/* Reset previous Music */
+		isMusicReady = false;
+		if(musicPlayer != null)
+			musicPlayer.release();
+		musicPlayer = null;
+		
+		/* Check if Music is allowed to start */
+		if(noFocus)
+			return;
+		if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+			return;
+		
+		/* Start Music */
 		songtime = startTime;
+		musicType = type;
 		switch(type) {
 			case MENU_MUSIC :
 				musicPlayer = MediaPlayer.create(host, R.raw.lemmings03);
@@ -123,7 +196,27 @@ public class Sound implements OnAudioFocusChangeListener {
 		musicPlayer.setLooping(true);
 		musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
 		musicPlayer.seekTo(songtime);
-		musicPlayer.start();
+		isMusicReady = true;
+	}
+	
+	public void startMusic(int type, int startTime) {
+		if(isInactive)
+			return;
+		
+		if(isMusicReady) {
+			/* NOP */
+		} else {
+			loadMusic(type,startTime);
+		}
+		if(isMusicReady) {
+			/* Check if Music is allowed to start */
+			if(noFocus)
+				return;
+			if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+				return;
+			
+			musicPlayer.start();
+		}
 	}
 	
 	public void clearSound() {
@@ -205,34 +298,47 @@ public class Sound implements OnAudioFocusChangeListener {
 	}
 
 	public void resume() {
+		if(isInactive)
+			return;
+		
 		soundPool.autoResume();
+		startMusic(musicType,songtime);
+	}
+	
+	public void pauseMusic() {
+		if(isInactive)
+			return;
+		
+		isMusicReady = false;
 		if(musicPlayer != null)
 			try{
-				musicPlayer.start();
+				musicPlayer.pause();
+				isMusicReady = true;
 			} catch(IllegalStateException e) {
-				
+				isMusicReady = false;
 			}
 	}
 
 	public void pause() {
+		if(isInactive)
+			return;
+		
 		soundPool.autoPause();
-		if(musicPlayer != null)
-			try{
-				musicPlayer.pause();
-			} catch(IllegalStateException e) {
-				
-			}
+		pauseMusic();
 	}
 	
 	public void release() {
 		soundPool.autoPause();
 		soundPool.release();
 		soundPool = null;
+		isMusicReady = false;
 		if(musicPlayer != null)
 			musicPlayer.release();
 		musicPlayer = null;
 
 		host.unregisterReceiver(noisyAudioStreamReceiver);
+		host.unregisterReceiver(ringerModeReceiver);
+		host.unregisterReceiver(headsetPlugReceiver);
 		audioCEO.abandonAudioFocus(this);
 		audioCEO = null;
 		host = null;
