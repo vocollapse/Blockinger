@@ -165,7 +165,7 @@
 <!-- Help Menu Strings -->
     <string name="pref_help_scoring_title">Punkte</string>
     <string name="pref_help_scoring_summary">Wie genau werden die Punkte vergeben?</string>
-    <string name="pref_help_scoring_message">Punkte für gesprengte Reihen:\n10 Punkte für 1 Reihe,\n30 Punkte für 2 Reihen,\n50 Punkte für 3 Reihen,\n80 Punkte für 4 Reihen (genannt \"Tetris\").\n\nMehrfache Tetrisse hintereinander geben zusätzliche 40 Bonuspunkte per Tetris.\n\nDiese Punkte werden außerdem noch mit einem Bonusfaktor multiplizert, falls ein \"hard drop\" ausgeführt wurde.\nDie Größe des Faktors hängt von der Fallhöhe ab. Maximal können 15 Quadrate übersprungen werden, in diesem Fall werden die erreichten Punkte mit dem Faktor 2 multipliziert.</string>
+    <string name="pref_help_scoring_message">Punkte für gesprengte Reihen:\n100 Punkte für 1 Reihe,\n300 Punkte für 2 Reihen,\n500 Punkte für 3 Reihen,\n800 Punkte für 4 Reihen (genannt \"Tetris\").\n\nMehrfache Tetrisse hintereinander geben zusätzliche 400 Bonuspunkte per Tetris.\nZusätzliche Boni gibt es für Soft und Hard Drops. Soft Drops gewähren 1 Punkt je gefallener Reihe, Hard Drops dagegen 2.</string>
     
     <string name="pref_help_levels_title">Level</string>
     <string name="pref_help_levels_summary">Was bedeuten Level?</string>

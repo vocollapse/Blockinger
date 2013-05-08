@@ -65,7 +65,7 @@
     <integer name="doubleLineScore">300</integer>
     <integer name="trippleLineScore">500</integer>
     <integer name="quadLineScore">800</integer>
-    <integer name="multiTetrisScore">120</integer>
+    <integer name="multiTetrisScore">1200</integer>
     <integer name="softDropBonus">1</integer> <!-- points per dropped square -->
     <integer name="hardDropBonus">2</integer> <!-- points per dropped square -->
     

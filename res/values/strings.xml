@@ -176,7 +176,7 @@
 <!-- Help Menu Strings -->
     <string name="pref_help_scoring_title">Scoring</string>
     <string name="pref_help_scoring_summary">How does the scoring work?</string>
-    <string name="pref_help_scoring_message">Basic points per cleared line are:\n10 points for 1 line,\n30 points for 2 lines,\n50 points for 3 lines,\n80 points for 4 lines (called \"Tetris\").\n\nScoring consecutive Tetrises provides 40 bonus points per Tetris.\n\nAdditionally the player receives a score multiplier for using the instant placement button (called \"hard drop\").\nThis multiplier is linearily dependent on the dropping distance. The maximum hard drop distance is 15 Squares, where the player receives a multiplier to the basic score of x2.</string>
+    <string name="pref_help_scoring_message">Basic points per cleared line are:\n100 points for 1 line,\n300 points for 2 lines,\n500 points for 3 lines,\n800 points for 4 lines (called \"Tetris\").\n\nScoring consecutive Tetrises provides 400 bonus points per Tetris.\nAdditionally the player receives a bonus score for using Soft and Hard Drops. Soft Drops award 1 point per dropped line, while Hard Drops award 2 points per dropped line.</string>
     
     <string name="pref_help_levels_title">Levels</string>
     <string name="pref_help_levels_summary">What do Levels mean?</string>
