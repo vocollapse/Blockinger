@@ -89,9 +89,9 @@
     <string name="pref_phantom_title">Phantom</string>
     
     <string name="pref_fps_summary">The current Frames per Second will be shown below "APM"</string>
-    <string name="pref_fps_title">Display FPS</string>
+    <string name="pref_fps_title">Show FPS</string>
     
-    <string name="pref_popup_summary">The points for each successful line clear are shortly popping up</string>
+    <string name="pref_popup_summary">For successful line clears</string>
     <string name="pref_popup_title">Pop-Up Text</string>
     
     <string name="pref_rng_title">Piece Generation</string>
