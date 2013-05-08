@@ -247,11 +247,19 @@ public class GameActivity extends FragmentActivity {
 		
 		finish();
 	}
+	
+	@Override
+	protected void onPause() {
+    	super.onPause();
+    	sound.pause();
+    	sound.setInactive(true);
+	};
     
     @Override
     protected void onStop() {
     	super.onStop();
     	sound.pause();
+    	sound.setInactive(true);
     };
     
     @Override
@@ -267,6 +275,7 @@ public class GameActivity extends FragmentActivity {
     protected void onResume() {
     	super.onResume();
     	sound.resume();
+    	sound.setInactive(false);
     };
     
     @Override

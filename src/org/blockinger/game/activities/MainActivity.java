@@ -247,9 +247,16 @@ public class MainActivity extends ListActivity {
     }
     
     @Override
+    protected void onPause() {
+    	super.onPause();
+    	sound.setInactive(true);
+    	sound.pause();
+    };
+    
+    @Override
     protected void onStop() {
     	super.onStop();
-    	sound.setActivity(false);
+    	sound.setInactive(true);
     	sound.pause();
     	datasource.close();
     };
@@ -265,7 +272,7 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onResume() {
     	super.onResume();
-    	sound.setActivity(true);
+    	sound.setInactive(false);
     	sound.resume();
     	datasource.open();
 	    Cursor cursor = datasource.getCursor();

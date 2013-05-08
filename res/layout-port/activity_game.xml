@@ -136,9 +136,9 @@
 
             <Button
                 android:id="@+id/pausebutton_1"
-            	style="@android:style/Widget.ImageWell"
+                style="@android:style/Widget.ImageWell"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="0"
                 android:text="@string/pausebutton" />
 
