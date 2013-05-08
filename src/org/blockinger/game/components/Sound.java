@@ -216,6 +216,7 @@ public class Sound implements OnAudioFocusChangeListener {
 			if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
 				return;
 			
+			musicPlayer.setVolume(0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60), 0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60));
 			musicPlayer.start();
 		}
 	}
