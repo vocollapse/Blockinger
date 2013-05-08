@@ -95,7 +95,8 @@ public class GameState extends Component {
 	private int multiTetrisScore;
 	private boolean multitetris;
 	private int quadLineScore;
-	private int hardDropBonusFactor;
+	private int hardDropBonus;
+	private int softDropBonus;
 	private int spawn_delay;
 	private int piece_start_x;
 	private long actions;
@@ -106,6 +107,7 @@ public class GameState extends Component {
 	private int popupAttack;
 	private int popupSustain;
 	private int popupDecay;
+	private int softDropDistance;
 	
 	private GameState(GameActivity ga) {
 		super(ga);
@@ -127,7 +129,9 @@ public class GameState extends Component {
 		trippleLineScore = host.getResources().getInteger(R.integer.trippleLineScore);
 		multiTetrisScore = host.getResources().getInteger(R.integer.multiTetrisScore);
 		quadLineScore = host.getResources().getInteger(R.integer.quadLineScore);
-		hardDropBonusFactor = host.getResources().getInteger(R.integer.hardDropBonusFactor);
+		hardDropBonus = host.getResources().getInteger(R.integer.hardDropBonus);
+		softDropBonus = host.getResources().getInteger(R.integer.softDropBonus);
+		softDropDistance = 0;
 		spawn_delay = host.getResources().getInteger(R.integer.spawn_delay);
 		piece_start_x = host.getResources().getInteger(R.integer.piece_start_x);
 		popupAttack = host.getResources().getInteger(R.integer.popup_attack);
@@ -269,8 +273,14 @@ public class GameState extends Component {
 		}
 		//long tempBonus = consecutiveBonusScore;
 		//consecutiveBonusScore += addScore;
-		if(playerHardDrop)
-			addScore = (int)((float)addScore* (1.0f + ((float)hardDropDistance/(float)hardDropBonusFactor)));
+		
+		/* HardDrop/SoftDrop Boni: we comply to Tetrisfriends rules now */
+		if(playerHardDrop) {
+			addScore += hardDropDistance*hardDropBonus;
+			//addScore = (int)((float)addScore* (1.0f + ((float)hardDropDistance/(float)hardDropBonusFactor)));
+		} else
+			addScore += softDropDistance*softDropBonus;
+		
 		score += addScore;// + tempBonus;
 		if(addScore != 0)
 			popupString = "+"+addScore;
@@ -304,6 +314,7 @@ public class GameState extends Component {
 		setNextDropTime(gameTime + dropIntervals[Math.min(level,maxLevel)]);
 		setNextPlayerDropTime(gameTime);
 		setNextPlayerMoveTime(gameTime);
+		softDropDistance = 0;
 		
 		// Checking for Defeat
 		if(!activePieces[activeIndex].setPosition(piece_start_x, 0, false, board)) {
@@ -517,6 +528,10 @@ public class GameState extends Component {
 		if(multitetris)
 			return host.getResources().getColor(R.color.yellow);
 		return host.getResources().getColor(color.white);
+	}
+
+	public void incSoftDropCounter() {
+		softDropDistance++;
 	}
 	
 }

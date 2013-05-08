@@ -249,15 +249,15 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onPause() {
     	super.onPause();
-    	sound.setInactive(true);
     	sound.pause();
+    	sound.setInactive(true);
     };
     
     @Override
     protected void onStop() {
     	super.onStop();
-    	sound.setInactive(true);
     	sound.pause();
+    	sound.setInactive(true);
     	datasource.close();
     };
     

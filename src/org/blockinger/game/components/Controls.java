@@ -263,6 +263,7 @@ public class Controls extends Component {
 				host.game.pieceTransition(eventVibrationEnabled);
 				board.invalidate();
 			} else {
+				host.game.incSoftDropCounter();
 			}
 			if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
 				host.game.nextLevel();
@@ -279,6 +280,7 @@ public class Controls extends Component {
 					host.game.pieceTransition(eventVibrationEnabled);
 					board.invalidate();
 				} else {
+					host.game.incSoftDropCounter();
 				}
 				if((host.game.getLevel() < maxLevel) && (host.game.getClearedLines() > lineThresholds[Math.min(host.game.getLevel(),maxLevel - 1)]))
 					host.game.nextLevel();
@@ -300,6 +302,7 @@ public class Controls extends Component {
 				host.game.setNextPlayerDropTime(host.game.getNextDropTime() + host.game.getSoftDropInterval());
 			}
 
+			/* Cancel continuous SoftDrop */
 			if(clearPlayerSoftDrop) {
 				continuousSoftDrop = false;
 				clearPlayerSoftDrop = false;

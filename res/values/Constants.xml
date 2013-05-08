@@ -61,12 +61,13 @@
     
     <integer name="spawn_delay">200</integer>
     
-    <integer name="singleLineScore">10</integer>
-    <integer name="doubleLineScore">30</integer>
-    <integer name="trippleLineScore">50</integer>
-    <integer name="quadLineScore">80</integer>
+    <integer name="singleLineScore">100</integer>
+    <integer name="doubleLineScore">300</integer>
+    <integer name="trippleLineScore">500</integer>
+    <integer name="quadLineScore">800</integer>
     <integer name="multiTetrisScore">120</integer>
-    <integer name="hardDropBonusFactor">15</integer> <!-- number of lines necessary to double the score -->
+    <integer name="softDropBonus">1</integer> <!-- points per dropped square -->
+    <integer name="hardDropBonus">2</integer> <!-- points per dropped square -->
     
     <integer name="shortVibeInterval">100</integer>
     
