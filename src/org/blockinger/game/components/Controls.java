@@ -237,7 +237,90 @@ public class Controls extends Component {
 		Piece active = host.game.getActivePiece();
 		Board board = host.game.getBoard();
 		int maxLevel = host.game.getMaxLevel();
+
 		
+		// Left Rotation
+		if(leftRotation) {
+			leftRotation = false;
+			active.turnLeft(board);
+			host.display.invalidatePhantom();
+		}
+		
+		// Right Rotation
+		if(rightRotation) {
+			rightRotation = false;
+			active.turnRight(board);
+			host.display.invalidatePhantom();
+		}
+		
+		// Reset Move Time
+		if((!leftMove && !rightMove) && (!continuousLeftMove && !continuousRightMove))
+			host.game.setNextPlayerMoveTime(gameTime);
+		
+		// Left Move
+		if(leftMove) {
+			continuousLeftMove = true;
+			leftMove = false;
+			if(active.moveLeft(board)) { // successful move
+				vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
+				host.display.invalidatePhantom();
+				host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + initialHIntervalFactor*host.game.getMoveInterval());
+			} else { // failed move
+				vibrateWall();
+				host.game.setNextPlayerMoveTime(gameTime);
+			}
+			
+		} else if(continuousLeftMove) {
+			if(gameTime >= host.game.getNextPlayerMoveTime()) {
+				if(active.moveLeft(board)) { // successful move
+					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
+					host.display.invalidatePhantom();
+					host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + host.game.getMoveInterval());
+				} else { // failed move
+					vibrateWall();
+					host.game.setNextPlayerMoveTime(gameTime);
+				}
+			}
+
+			if(clearLeftMove) {
+				continuousLeftMove = false;
+				clearLeftMove = false;
+			}
+		}
+		
+		// Right Move
+		if(rightMove) {
+			continuousRightMove = true;
+			rightMove = false;
+			if(active.moveRight(board)) { // successful move
+				vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
+				host.display.invalidatePhantom();
+				host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + initialHIntervalFactor*host.game.getMoveInterval());
+			} else { // failed move
+				vibrateWall();
+				host.game.setNextPlayerMoveTime(gameTime); // first interval is doubled!
+			}
+			
+		} else if(continuousRightMove) {
+			if(gameTime >= host.game.getNextPlayerMoveTime()) {
+				if(active.moveRight(board)) { // successful move
+					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
+					host.display.invalidatePhantom();
+					host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + host.game.getMoveInterval());
+				} else { // failed move
+					vibrateWall();
+					host.game.setNextPlayerMoveTime(gameTime);
+				}
+			}
+
+			if(clearRightMove) {
+				continuousRightMove = false;
+				clearRightMove = false;
+			}
+		}
+		
+		
+		// Hard Drop
 		if(playerHardDrop) {
 			board.interruptClearAnimation();
 			int hardDropDistance = active.hardDrop(false, board);
@@ -324,79 +407,6 @@ public class Controls extends Component {
 			
 		} else
 			host.game.setNextPlayerDropTime(gameTime);
-
-		
-		// Reset Move Time
-		if((!leftMove && !rightMove) && (!continuousLeftMove && !continuousRightMove))
-			host.game.setNextPlayerMoveTime(gameTime);
-		
-		// Left Move
-		if(leftMove) {
-			continuousLeftMove = true;
-			leftMove = false;
-			if(active.moveLeft(board)) {
-				vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
-				host.display.invalidatePhantom();
-			} else
-				vibrateWall();
-			host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + initialHIntervalFactor*host.game.getMoveInterval());
-			
-		} else if(continuousLeftMove) {
-			if(gameTime >= host.game.getNextPlayerMoveTime()) {
-				if(active.moveLeft(board)) {
-					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
-					host.display.invalidatePhantom();
-				} else
-					vibrateWall();
-				host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + host.game.getMoveInterval());
-			}
-
-			if(clearLeftMove) {
-				continuousLeftMove = false;
-				clearLeftMove = false;
-			}
-		}
-		
-		// Right Move
-		if(rightMove) {
-			continuousRightMove = true;
-			rightMove = false;
-			if(active.moveRight(board)) {
-				vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
-				host.display.invalidatePhantom();
-			} else
-				vibrateWall();
-			host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + initialHIntervalFactor*host.game.getMoveInterval()); // first interval is doubled!
-			
-		} else if(continuousRightMove) {
-			if(gameTime >= host.game.getNextPlayerMoveTime()) {
-				if(active.moveRight(board)) {
-					vibrateShort(); // ES SOLL BEI JEDEM TICK VIBRIEREN
-					host.display.invalidatePhantom();
-				} else
-					vibrateWall();
-				host.game.setNextPlayerMoveTime(host.game.getNextPlayerMoveTime() + host.game.getMoveInterval());
-			}
-
-			if(clearRightMove) {
-				continuousRightMove = false;
-				clearRightMove = false;
-			}
-		}
-		
-		// Left Rotation
-		if(leftRotation) {
-			leftRotation = false;
-			active.turnLeft(board);
-			host.display.invalidatePhantom();
-		}
-		
-		// Right Rotation
-		if(rightRotation) {
-			rightRotation = false;
-			active.turnRight(board);
-			host.display.invalidatePhantom();
-		}
 	}
 
 	public void setBoard(Board instance2) {
