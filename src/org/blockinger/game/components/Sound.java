@@ -308,9 +308,6 @@ public class Sound implements OnAudioFocusChangeListener {
 	}
 	
 	public void pauseMusic() {
-		if(isInactive)
-			return;
-		
 		isMusicReady = false;
 		if(musicPlayer != null) {
 			try{
@@ -323,9 +320,6 @@ public class Sound implements OnAudioFocusChangeListener {
 	}
 
 	public void pause() {
-		if(isInactive)
-			return;
-		
 		soundPool.autoPause();
 		pauseMusic();
 	}
