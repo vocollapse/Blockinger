@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -40,7 +41,9 @@ public class HelpActivity extends PreferenceActivity {
 	        ActionBar actionBar = getActionBar();
 	        actionBar.setDisplayHomeAsUpEnabled(true);
 	    }
-        
+
+		setVolumeControlStream(AudioManager.STREAM_MUSIC);
+		
 		/* Initialize Dialog */
 	    dialog = new AlertDialog.Builder(this);
 	    dialog.setCancelable(true);

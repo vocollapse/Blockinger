@@ -41,7 +41,9 @@ import org.blockinger.game.R;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -64,6 +66,9 @@ public class AboutActivity extends PreferenceActivity {
 	        ActionBar actionBar = getActionBar();
 	        actionBar.setDisplayHomeAsUpEnabled(true);
 	    }
+		
+
+		setVolumeControlStream(AudioManager.STREAM_MUSIC);
         
         Preference pref = findPreference("pref_license");
         pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {

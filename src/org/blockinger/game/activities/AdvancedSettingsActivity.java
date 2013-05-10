@@ -43,6 +43,7 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -65,6 +66,7 @@ public class AdvancedSettingsActivity extends PreferenceActivity implements OnSh
 	        actionBar.setDisplayHomeAsUpEnabled(true);
 	    }
 
+		setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
         Preference pref = findPreference("pref_rng");
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_rng", "").equals("sevenbag"))

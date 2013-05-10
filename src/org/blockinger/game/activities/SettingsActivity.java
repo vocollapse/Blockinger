@@ -44,6 +44,7 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -66,6 +67,8 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 	        ActionBar actionBar = getActionBar();
 	        actionBar.setDisplayHomeAsUpEnabled(true);
 	    }
+
+		setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
 		Preference pref = findPreference("pref_advanced");
 		pref.setOnPreferenceClickListener(this);
