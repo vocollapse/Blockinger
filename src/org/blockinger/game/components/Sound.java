@@ -156,11 +156,11 @@ public class Sound implements OnAudioFocusChangeListener {
 	}
 	
 	public void loadEffects() {
-		soundID_tetrisSoundPlayer = soundPool.load(host, R.raw.seqlong, 1);
-		soundID_dropSoundPlayer = soundPool.load(host, R.raw.drop2, 1);
-		soundID_buttonSoundPlayer = soundPool.load(host, R.raw.keypressstandard, 1);
-		soundID_clearSoundPlayer = soundPool.load(host, R.raw.synthaccord, 1);
-		soundID_gameOverPlayer = soundPool.load(host, R.raw.gameover, 1);
+		soundID_tetrisSoundPlayer = soundPool.load(host, R.raw.tetris_free, 1);
+		soundID_dropSoundPlayer = soundPool.load(host, R.raw.drop_free, 1);
+		soundID_buttonSoundPlayer = soundPool.load(host, R.raw.key_free, 1);
+		soundID_clearSoundPlayer = soundPool.load(host, R.raw.clear2_free, 1);
+		soundID_gameOverPlayer = soundPool.load(host, R.raw.gameover2_free, 1);
 	}
 	
 	public void loadMusic(int type, int startTime) {
