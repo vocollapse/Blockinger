@@ -140,7 +140,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_weight="0"
-                android:text="@string/pausebutton" />
+                android:text="@string/pausebutton"
+            	android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <View
                 android:id="@+id/View01"
