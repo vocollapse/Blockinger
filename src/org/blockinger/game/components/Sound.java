@@ -68,6 +68,9 @@ public class Sound implements OnAudioFocusChangeListener {
 	private int songtime;
 	private int musicType;
 	private boolean isInactive;
+	private int soundID_hihat;
+	private int soundID_snare;
+	private int soundID_kick;
 
 	public static final int NO_MUSIC = 0x0;
 	public static final int MENU_MUSIC = 0x1;
@@ -144,6 +147,10 @@ public class Sound implements OnAudioFocusChangeListener {
 		soundID_clearSoundPlayer = -1;
 		soundID_gameOverPlayer = -1;
 		soundID_buttonSoundPlayer = -1;
+
+		soundID_kick = -1;
+		soundID_snare = -1;
+		soundID_hihat = -1;
 		
 		songtime = 0;
 		musicType = 0;
@@ -161,6 +168,10 @@ public class Sound implements OnAudioFocusChangeListener {
 		soundID_buttonSoundPlayer = soundPool.load(host, R.raw.key_free, 1);
 		soundID_clearSoundPlayer = soundPool.load(host, R.raw.clear2_free, 1);
 		soundID_gameOverPlayer = soundPool.load(host, R.raw.gameover2_free, 1);
+
+		soundID_kick = soundPool.load(host, R.raw.kick_soft02, 1);
+		soundID_snare = soundPool.load(host, R.raw.snare01, 1);
+		soundID_hihat = soundPool.load(host, R.raw.hihat_closed03, 1);
 	}
 	
 	public void loadMusic(int type, int startTime) {
@@ -236,21 +247,35 @@ public class Sound implements OnAudioFocusChangeListener {
 		);
 	}
 	
-	public void buttonSound() {
+	public void buttonSound(int i) {
 		if(noFocus)
 			return;
 		if(audioCEO.getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
 			return;
 		if(!PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_button_sound", true))
 			return;
+		int temp = soundID_buttonSoundPlayer;
+		switch(i) {
+			case 1:
+				temp = soundID_hihat;
+				break;
+			case 2:
+				temp = soundID_kick;
+				break;
+			case 3:
+				temp = soundID_snare;
+				break;
+			default:
+				temp = soundID_buttonSoundPlayer;
+		}
 		soundPool.play(
-			soundID_buttonSoundPlayer,
-			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
-			0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
-			1, 
-			0, 
-			1.0f
-		);
+				temp,
+				0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+				0.01f * PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_soundvolume", 60), 
+				1, 
+				0, 
+				1.0f
+			);
 	}
 	
 	public void dropSound() {

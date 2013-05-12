@@ -156,7 +156,7 @@ public class Controls extends Component {
 		leftRotation = true;
 		host.game.action();
 		vibrateShort();
-		host.sound.buttonSound();
+		host.sound.buttonSound(2);
     	//Thread.yield();
 	}
 
@@ -168,7 +168,7 @@ public class Controls extends Component {
 		rightRotation = true;
 		host.game.action();
 		vibrateShort();
-		host.sound.buttonSound();
+		host.sound.buttonSound(2);
 	    //Thread.yield();
 	}
 
@@ -188,7 +188,7 @@ public class Controls extends Component {
 		clearPlayerSoftDrop = false;
 		vibrateShort();
 		host.game.setNextPlayerDropTime(host.game.getTime());
-		host.sound.buttonSound();
+		host.sound.buttonSound(3);
 	}
 
 	public void dropButtonReleased() {
@@ -215,7 +215,7 @@ public class Controls extends Component {
 		leftMove = true;
 		rightMove = false;
 		host.game.setNextPlayerMoveTime(host.game.getTime());
-		host.sound.buttonSound();
+		host.sound.buttonSound(1);
 	}
 
 	public void rightButtonReleased() {
@@ -229,7 +229,7 @@ public class Controls extends Component {
 		rightMove = true;
 		leftMove = false;
 		host.game.setNextPlayerMoveTime(host.game.getTime());
-		host.sound.buttonSound();
+		host.sound.buttonSound(1);
 	}
 
 	public void cycle(long tempTime) {

@@ -200,10 +200,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int clear2_free=0x7f050000;
         public static final int drop_free=0x7f050001;
         public static final int gameover2_free=0x7f050002;
-        public static final int key_free=0x7f050003;
-        public static final int lemmings03=0x7f050004;
-        public static final int sadrobot01=0x7f050005;
-        public static final int tetris_free=0x7f050006;
+        public static final int hihat_closed03=0x7f050003;
+        public static final int key_free=0x7f050004;
+        public static final int kick_soft02=0x7f050005;
+        public static final int lemmings03=0x7f050006;
+        public static final int sadrobot01=0x7f050007;
+        public static final int snare01=0x7f050008;
+        public static final int tetris_free=0x7f050009;
     }
     public static final class string {
         public static final int action_about=0x7f0a0003;

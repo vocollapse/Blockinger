@@ -266,7 +266,8 @@ public class GameState extends Component {
 			default:
 				addScore = 0;
 				//consecutiveBonusScore = 0;
-				host.sound.dropSound();
+				//host.sound.dropSound();
+				host.sound.buttonSound(3);
 				if((gameTime - popupTime) < (popupAttack + popupSustain))
 					popupTime = gameTime - (popupAttack + popupSustain);
 				break;
