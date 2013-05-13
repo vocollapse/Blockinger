@@ -8,14 +8,12 @@ Softwarelizenz: GNU GENERAL PUBLIC LICENSE Version 3
 Punkte
 ------
 Punkte für gesprengte Reihen:
-10 Punkte für 1 Reihe,
-30 Punkte für 2 Reihen,
-50 Punkte für 3 Reihen,
-80 Punkte für 4 Reihen (genannt "Tetris").
-Mehrfache Tetrisse hintereinander geben zusätzliche 40 Bonuspunkte per Tetris.
-Diese Punkte werden außerdem noch mit einem Bonusfaktor multiplizert, falls ein "hard drop" ausgeführt wurde.
-Die Größe des Faktors hängt von der Fallhöhe ab.
-Maximal können 15 Quadrate übersprungen werden, in diesem Fall werden die erreichten Punkte mit dem Faktor 2 multipliziert.
+100 Punkte für 1 Reihe,
+300 Punkte für 2 Reihen,
+500 Punkte für 3 Reihen,
+800 Punkte für 4 Reihen (genannt "Tetris").
+Mehrfache Tetrisse hintereinander geben zusätzliche 400 Bonuspunkte per Tetris.
+Zusätzliche Boni gibt es für Soft und Hard Drops. Soft Drops gewähren 1 Punkt je gefallener Reihe, Hard Drops dagegen 2.
 
 Level
 -----
