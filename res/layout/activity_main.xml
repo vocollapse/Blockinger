@@ -103,7 +103,8 @@
 
         <Button
             android:id="@+id/resumeButton"
-            style="?android:attr/buttonStyleSmall"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            style="@android:style/Widget.ImageWell"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
@@ -120,7 +121,8 @@
 
         <Button
             android:id="@+id/restartButton"
-            style="?android:attr/buttonStyleSmall"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            style="@android:style/Widget.ImageWell"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
