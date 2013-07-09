@@ -43,6 +43,7 @@ import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.media.MediaPlayer;
@@ -146,7 +147,19 @@ public class Sound implements OnAudioFocusChangeListener {
 	}
 	
 	private void requestFocus() {
-		if(PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60) > 0) {
+		SharedPreferences prefs;
+		try{
+			prefs = PreferenceManager.getDefaultSharedPreferences(host);
+				
+		} catch(Exception e) {
+			noFocus = true;
+			return;
+		}
+		if(prefs == null) {
+			noFocus = true;
+			return;
+		}
+		if(prefs.getInt("pref_musicvolume", 60) > 0) {
 			int result = audioCEO.requestAudioFocus(this,
 		                // Use the music stream.
 		                AudioManager.STREAM_MUSIC,

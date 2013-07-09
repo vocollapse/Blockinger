@@ -89,8 +89,25 @@ public class Board extends Component {
 			c.drawBitmap(blockMap, x, y, null);
 			return;
 		}
-
-		blockMap = Bitmap.createBitmap(width*squareSize, height*squareSize, Bitmap.Config.ARGB_8888);
+		
+		/* This Block is responsible to prevent the
+		 * java.lang.OutOfMemoryError: bitmap size exceeds VM budget
+		 * Crash.
+		 */
+		try {
+			blockMap = Bitmap.createBitmap(width*squareSize, height*squareSize, Bitmap.Config.ARGB_8888);
+		} catch(Exception e) {
+			valid = false;
+			tempRow = topRow;
+			for(int i = 0; i < height; i++) {
+				if(tempRow != null) {
+					c.drawBitmap(tempRow.drawBitmap(squareSize), x, y+i*squareSize, null);
+					tempRow = tempRow.below();
+				}
+			}
+			return;
+		}
+		
 		blockVas = new Canvas(blockMap);
 		valid = true;
 		tempRow = topRow;
