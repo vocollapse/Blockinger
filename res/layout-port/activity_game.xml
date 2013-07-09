@@ -141,7 +141,9 @@
                 android:layout_height="48dp"
                 android:layout_weight="0"
                 android:text="@string/pausebutton"
-            	android:textAppearance="?android:attr/textAppearanceMedium" />
+            	android:textColor="@color/square_error" 
+            	android:textAppearance="?android:attr/textAppearanceMedium"
+            	android:textColorHint="@color/holo_grey" />
 
             <View
                 android:id="@+id/View01"

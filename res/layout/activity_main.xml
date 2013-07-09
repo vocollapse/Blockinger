@@ -64,6 +64,17 @@
             android:text="@string/highscore_title"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
+        <View
+            android:id="@+id/titledivider"
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <View
+            android:id="@+id/scoredivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/holo_grey" />
+
         <ListView
             android:id="@android:id/list"
             android:layout_width="wrap_content"
@@ -103,31 +114,36 @@
 
         <Button
             android:id="@+id/resumeButton"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             style="@android:style/Widget.ImageWell"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_gravity="center|top"
             android:layout_weight="1"
             android:enabled="false"
             android:onClick="onClickResume"
-            android:text="@string/resumeButtonString" />
+            android:text="@string/resumeButtonString"
+            android:textColor="@color/holo_grey" 
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColorHint="@color/holo_grey" />
 
         <View
             android:id="@+id/spacer2"
-            android:layout_width="10dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25" />
 
         <Button
             android:id="@+id/restartButton"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             style="@android:style/Widget.ImageWell"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_weight="1"
             android:onClick="onClickStart"
-            android:text="@string/startButtonString" />
+            android:text="@string/startButtonString"
+            android:textColor="@color/square_error" 
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColorHint="@color/holo_grey" />
+        
     </LinearLayout>
 
     <TextView

@@ -41,7 +41,6 @@ import org.blockinger.game.R;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.net.Uri;

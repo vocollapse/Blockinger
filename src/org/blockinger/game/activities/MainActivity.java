@@ -280,8 +280,10 @@ public class MainActivity extends ListActivity {
 	    
 	    if(!GameState.isFinished()) {
 	    	((Button)findViewById(R.id.resumeButton)).setEnabled(true);
+	    	((Button)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.square_error));
 	    } else {
 	    	((Button)findViewById(R.id.resumeButton)).setEnabled(false);
+	    	((Button)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.holo_grey));
 	    }
     };
 

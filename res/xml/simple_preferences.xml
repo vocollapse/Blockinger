@@ -59,7 +59,7 @@
 	    <org.blockinger.game.SeekBarPreference
 	        android:key="pref_soundvolume"
 	        android:title="@string/soundvolume_pref_title"
-	        android:defaultValue="80"
+	        android:defaultValue="40"
 	        android:max="100"
 	        robobunny:min="0"
 	        robobunny:unitsLeft=""
@@ -67,13 +67,13 @@
         
 	    <CheckBoxPreference
 	        android:key="pref_button_sound"
-	        android:defaultValue="true"
+	        android:defaultValue="false"
 	        android:title="@string/pref_button_sound_title"/>
 	    
 		<org.blockinger.game.SeekBarPreference
 			android:key="pref_musicvolume"
 			android:title="@string/musicvolume_pref_title"
-			android:defaultValue="60"
+			android:defaultValue="30"
 			android:max="100"
 			robobunny:min="0"
 			robobunny:unitsLeft=""
@@ -88,7 +88,7 @@
 	    <CheckBoxPreference 
 	        android:key="pref_vibration_button"
 	        android:summary="@string/pref_vibration_button_summary"
-	        android:defaultValue="true"
+	        android:defaultValue="false"
 	        android:title="@string/pref_vibration_button_title"/>
 		    
 	    <EditTextPreference
@@ -104,7 +104,7 @@
 	    <CheckBoxPreference 
 	        android:key="pref_vibration_events"
 	        android:summary="@string/pref_vibration_events_summary"
-	        android:defaultValue="false"
+	        android:defaultValue="true"
 	        android:title="@string/pref_vibration_events_title"/>
     
     </PreferenceCategory>

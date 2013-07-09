@@ -78,15 +78,9 @@ public class Sound implements OnAudioFocusChangeListener {
 		
 		audioCEO = (AudioManager) c.getSystemService(Context.AUDIO_SERVICE);
 		c.setVolumeControlStream(AudioManager.STREAM_MUSIC);
-		int result = audioCEO.requestAudioFocus(this,
-	                // Use the music stream.
-	                AudioManager.STREAM_MUSIC,
-	                // Request permanent focus.
-	                AudioManager.AUDIOFOCUS_GAIN);
-		if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-			noFocus = false;
-		} else
-			noFocus = true;
+		
+		// Request AudioFocus if The Music Volume is greater than zero
+		requestFocus();
 
 		IntentFilter intentFilter;
 		/*Noise Receiver (when unplugging headphones) */
@@ -151,6 +145,20 @@ public class Sound implements OnAudioFocusChangeListener {
 		isInactive = false;
 	}
 	
+	private void requestFocus() {
+		if(PreferenceManager.getDefaultSharedPreferences(host).getInt("pref_musicvolume", 60) > 0) {
+			int result = audioCEO.requestAudioFocus(this,
+		                // Use the music stream.
+		                AudioManager.STREAM_MUSIC,
+		                // Request permanent focus.
+		                AudioManager.AUDIOFOCUS_GAIN);
+			if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+				noFocus = false;
+			} else
+				noFocus = true;
+		}
+	}
+
 	public void setInactive(boolean b) {
 		isInactive = b;
 	}
@@ -172,6 +180,7 @@ public class Sound implements OnAudioFocusChangeListener {
 		musicPlayer = null;
 		
 		/* Check if Music is allowed to start */
+		requestFocus();
 		if(noFocus)
 			return;
 		if(isInactive)
@@ -202,6 +211,7 @@ public class Sound implements OnAudioFocusChangeListener {
 	
 	public void startMusic(int type, int startTime) {
 		/* Check if Music is allowed to start */
+		requestFocus();
 		if(noFocus)
 			return;
 		if(isInactive)
