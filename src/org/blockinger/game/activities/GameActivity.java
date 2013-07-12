@@ -48,6 +48,7 @@ import org.blockinger.game.components.Sound;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -66,6 +67,7 @@ public class GameActivity extends FragmentActivity {
 	public GameState game;
 	private WorkThread mainThread;
 	private DefeatDialogFragment dialog;
+	private boolean layoutSwap;
 
 	public static final int NEW_GAME = 0;
 	public static final int RESUME_GAME = 1;
@@ -74,7 +76,13 @@ public class GameActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_game);
+		if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("pref_layoutswap", false)) {
+			setContentView(R.layout.activity_game_alt);
+			layoutSwap = true;
+		} else {
+			setContentView(R.layout.activity_game);
+			layoutSwap = false;
+		}
 
 		/* Read Starting Arguments */
 		Bundle b = getIntent().getExtras();
@@ -119,6 +127,17 @@ public class GameActivity extends FragmentActivity {
 			public void onClick(View arg0) {
 				GameActivity.this.finish();
 			}
+		});
+		((BlockBoardView)findViewById(R.id.boardView)).setOnTouchListener(new OnTouchListener() {
+		    @Override
+		    public boolean onTouch(View v, MotionEvent event) {
+		        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+		        	controls.boardPressed(event.getX(), event.getY());
+		        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+		        	controls.boardReleased();
+		        }
+		        return true;
+		    }
 		});
 		((ImageButton)findViewById(R.id.rightButton)).setOnTouchListener(new OnTouchListener() {
 		    @Override
@@ -276,6 +295,17 @@ public class GameActivity extends FragmentActivity {
     	super.onResume();
     	sound.resume();
     	sound.setInactive(false);
+    	
+    	/* Check for changed Layout */
+    	boolean tempswap = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("pref_layoutswap", false);
+		if(layoutSwap != tempswap) {
+			layoutSwap = tempswap;
+			if(layoutSwap) {
+				setContentView(R.layout.activity_game_alt);
+			} else {
+				setContentView(R.layout.activity_game);
+			}
+		}
     };
     
     @Override

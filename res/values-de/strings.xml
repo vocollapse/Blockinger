@@ -137,6 +137,9 @@
     <string name="pref_accelerationV_summary">Je länger man die Bewegungsbuttons gedrückt hält, desto so schneller wird die Bewegung. Nützlich, um ungewollte Bewegungen zu verhindern</string>
     <string name="pref_accelerationV_title">Soft Drop Beschleunigung</string>
     
+    <string name="pref_layoutswap_summary">Vertausche die Position von Soft- und Hard-Drop Button</string>
+    <string name="pref_layoutswap_title">Drop Buttons vertauschen</string>
+    
     
     
     <string name="pref_version_summary">1.0\nHier berühren, um das öffentliche Quelltextverzeichnis dieses Projekts anzusehen</string>

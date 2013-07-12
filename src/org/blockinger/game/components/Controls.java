@@ -43,6 +43,7 @@ import org.blockinger.game.pieces.*;
 
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.media.AudioManager;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
@@ -76,6 +77,8 @@ public class Controls extends Component {
 	private boolean eventVibrationEnabled;
 	private int initialHIntervalFactor;
 	private int initialVIntervalFactor;
+	private Rect previewBox;
+	private boolean boardTouched;
 	
 	public Controls(GameActivity ga) {
 		super(ga);
@@ -111,6 +114,8 @@ public class Controls extends Component {
 		continuousSoftDrop = false;
 		continuousLeftMove = false;
 		continuousRightMove = false;
+		previewBox = null;
+		boardTouched = false;
 	}
 	
 	public void vibrateWall() {
@@ -441,6 +446,28 @@ public class Controls extends Component {
 	public void disconnect() {
 		super.disconnect();
 		v = null;
+	}
+
+	public void boardPressed(float x, float y) {
+		if(previewBox == null)
+			return;
+		
+		boardTouched = true;
+		
+		if(previewBox.contains((int)x, (int)y))
+			host.game.hold();
+	}
+
+	public void boardReleased() {
+		boardTouched = false;
+	}
+
+	public void setPreviewRect(Rect rect) {
+		previewBox = rect;
+	}
+
+	public boolean isBoardTouched() {
+		return boardTouched;
 	}
 	
 }

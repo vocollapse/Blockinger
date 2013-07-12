@@ -108,5 +108,17 @@
 		        android:summary="@string/pref_antialiasing_summary"
 		        android:defaultValue="true"
 		        android:title="@string/pref_antialiasing_title" />
+    
+		    <PreferenceCategory
+		        android:title="@string/pref_category_layout"
+		        android:key="layout_settings">
+			    
+				    <CheckBoxPreference 
+				        android:key="pref_layoutswap"
+				        android:summary="@string/pref_layoutswap_summary"
+				        android:defaultValue="false"
+				        android:title="@string/pref_layoutswap_title" />
+	    
+    		</PreferenceCategory>
 		    
 </PreferenceScreen>

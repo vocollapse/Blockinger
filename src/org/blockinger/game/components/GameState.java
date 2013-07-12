@@ -304,6 +304,13 @@ public class GameState extends Component {
 		activePieces[activeIndex].reset(host);
 	}
 	
+	public void hold() {
+		if(host == null)
+			return;
+		
+		
+	}
+	
 	public void finishTransition() {
 		if(host == null)
 			return;

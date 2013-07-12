@@ -144,6 +144,9 @@
     <string name="pref_accelerationV_summary">Short delay after the initial move. Useful for beginners</string>
     <string name="pref_accelerationV_title">Soft Drop Acceleration</string>
     
+    <string name="pref_layoutswap_summary">Swap the position of soft drop button and hard drop button</string>
+    <string name="pref_layoutswap_title">Swap Drop Buttons</string>
+    
     
     <string name="pref_version_summary">1.8.1\nTouch here to view the public repository of this project</string>
     <string name="pref_version_title">Version</string>
@@ -171,6 +174,7 @@
     <string name="pref_category_vibration">VIBRATION</string>
     <string name="pref_category_other">OTHER</string>
     <string name="pref_category_advanced">Advanced</string>
+    <string name="pref_category_layout">LAYOUT</string>
     
     
 <!-- Help Menu Strings -->

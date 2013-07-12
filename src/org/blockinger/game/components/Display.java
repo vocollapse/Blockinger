@@ -162,6 +162,8 @@ public class Display extends Component {
 			textPaint.getTextBounds((String)"Level:32", 0, 6, textRect);
 			textHeight = textRect.height() + 3;
 			textEmptySpacing = ((textBottom - textTop) - (textLines*(textHeight))) / (3 + fpsenabled);
+			
+			host.controls.setPreviewRect(new Rect(prev_left,prev_top,prev_right,prev_bottom));
 		}
 
 		// Background
@@ -178,12 +180,19 @@ public class Display extends Component {
 		
 	    drawGrid(columnOffset, rowOffset, gridColumnBorder, gridRowBorder, c);
 		
+	    if(host.controls.isBoardTouched())
+	    	drawTouchIndicator();
+	    
 	    drawPreview(prev_left, prev_top, prev_right, prev_bottom, c);
 
 	    drawTextFillBox(c, fps);
 
 		if(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_popup", true))
 			drawPopupText(c);
+	}
+
+	private void drawTouchIndicator() {
+		// TODO touch indicator on preview box
 	}
 
 	private void drawGrid(int x, int y, int xBorder, int yBorder, Canvas c) {
