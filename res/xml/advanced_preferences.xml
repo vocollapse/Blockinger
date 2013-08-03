@@ -68,7 +68,7 @@
 		    <org.blockinger.game.SeekBarPreference
 		        android:key="pref_movespeed"
 		        android:title="@string/movespeed_pref_title"
-		        android:defaultValue="4"
+		        android:defaultValue="5"
 		        android:max="20"
 		        robobunny:min="1"
 		        robobunny:unitsLeft=""

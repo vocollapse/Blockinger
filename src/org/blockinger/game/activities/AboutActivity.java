@@ -82,7 +82,7 @@ public class AboutActivity extends PreferenceActivity {
 			}
 		});
         
-        pref = findPreference("pref_license_music");
+        /*pref = findPreference("pref_license_music");
         pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 
 			@Override
@@ -93,7 +93,7 @@ public class AboutActivity extends PreferenceActivity {
 				startActivity(i);
 				return true;
 			}
-		});
+		});*/
         
         pref = findPreference("pref_version");
         pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
