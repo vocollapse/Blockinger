@@ -272,6 +272,7 @@ public class GameActivity extends FragmentActivity {
     	super.onPause();
     	sound.pause();
     	sound.setInactive(true);
+    	game.setRunning(false);
 	};
     
     @Override
@@ -306,6 +307,7 @@ public class GameActivity extends FragmentActivity {
 				setContentView(R.layout.activity_game);
 			}
 		}
+    	game.setRunning(true);
     };
     
     @Override
