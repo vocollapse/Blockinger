@@ -273,14 +273,15 @@ public class GameState extends Component {
 		}
 		//long tempBonus = consecutiveBonusScore;
 		//consecutiveBonusScore += addScore;
-		
-		/* HardDrop/SoftDrop Boni: we comply to Tetrisfriends rules now */
-		if(playerHardDrop) {
-			addScore += hardDropDistance*hardDropBonus;
-			//addScore = (int)((float)addScore* (1.0f + ((float)hardDropDistance/(float)hardDropBonusFactor)));
-		} else
-			addScore += softDropDistance*softDropBonus;
-		
+		if(cleared > 0) {
+			/* HardDrop/SoftDrop Boni: we comply to Tetrisfriends rules now */
+			if(playerHardDrop) {
+				addScore += hardDropDistance*hardDropBonus;
+				//addScore = (int)((float)addScore* (1.0f + ((float)hardDropDistance/(float)hardDropBonusFactor)));
+			} else {
+				addScore += softDropDistance*softDropBonus;
+			}
+		}
 		score += addScore;// + tempBonus;
 		if(addScore != 0)
 			popupString = "+"+addScore;
