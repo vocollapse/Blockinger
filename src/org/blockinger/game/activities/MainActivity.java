@@ -224,7 +224,7 @@ public class MainActivity extends ListActivity {
 	}
 
 
-    public void onClickStart() {
+    public void onClickStart(View view) {
         View dialogView = getLayoutInflater().inflate(R.layout.seek_bar_dialog, null);
 		leveldialogtext = ((TextView) dialogView.findViewById(R.id.leveldialogleveldisplay));
         SeekBar leveldialogBar = ((SeekBar) dialogView.findViewById(R.id.levelseekbar));
@@ -251,7 +251,7 @@ public class MainActivity extends ListActivity {
 		startLevelDialog.show();
     }
 
-    public void onClickResume() {
+    public void onClickResume(View view) {
         persistNickname();
 		Intent intent = new Intent(this, GameActivity.class);
 		Bundle b = new Bundle();
