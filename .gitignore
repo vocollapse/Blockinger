@@ -13,4 +13,4 @@ proguard-project.txt
 gen
 *.iml
 build.xml
-
+.idea
