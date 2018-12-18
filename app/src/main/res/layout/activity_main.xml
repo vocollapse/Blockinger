@@ -1,0 +1,156 @@
+<!--
+    Copyright 2013 Simon Willeke
+    contact: hamstercount@hotmail.com
+ -->
+
+<!--
+    This file is part of Blockinger.
+
+    Blockinger is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Blockinger is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Blockinger.  If not, see <http://www.gnu.org/licenses/>.
+
+    Diese Datei ist Teil von Blockinger.
+
+    Blockinger ist Freie Software: Sie können es unter den Bedingungen
+    der GNU General Public License, wie von der Free Software Foundation,
+    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
+    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+    Blockinger wird in der Hoffnung, dass es nützlich sein wird, aber
+    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
+    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+    Siehe die GNU General Public License für weitere Details.
+
+    Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+  -->
+
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.8"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/highscore_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <View
+            android:id="@+id/titledivider"
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <View
+            android:id="@+id/scoredivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/holo_grey" />
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/highscoreListDescription" >
+        </ListView>
+
+        <View
+            android:id="@+id/hdivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/holo_grey" />
+
+        <EditText
+            android:id="@+id/nicknameEditView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/playerNameInputFieldHint"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:singleLine="true" >
+        </EditText>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/spacer0"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/resumeButton"
+            style="@android:style/Widget.ImageWell"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center|top"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="onClickResume"
+            android:text="@string/resumeButtonString"
+            android:textColor="@color/holo_grey"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColorHint="@color/holo_grey" />
+
+        <View
+            android:id="@+id/spacer2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25" />
+
+        <Button
+            android:id="@+id/restartButton"
+            style="@android:style/Widget.ImageWell"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:onClick="onClickStart"
+            android:text="@string/startButtonString"
+            android:textColor="@color/square_error"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColorHint="@color/holo_grey" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/musicAuthorNote"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</LinearLayout>

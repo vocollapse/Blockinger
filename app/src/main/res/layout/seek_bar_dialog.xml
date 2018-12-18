@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/paddingtop"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp" >
+
+        <View
+            android:id="@+id/paddingleft"
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <SeekBar
+            android:id="@+id/levelseekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="@integer/levels" />
+
+        <View
+            android:id="@+id/paddingcenter"
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/leveldialogleveldisplay"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:gravity="center_horizontal|center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <View
+            android:id="@+id/paddingright"
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/holdbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp" />
+
+</LinearLayout>
