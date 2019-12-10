@@ -21,15 +21,15 @@
 
     Diese Datei ist Teil von Blockinger.
 
-    Blockinger ist Freie Software: Sie können es unter den Bedingungen
+    Blockinger ist Freie Software: Sie kï¿½nnen es unter den Bedingungen
     der GNU General Public License, wie von der Free Software Foundation,
-    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
-    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+    Version 3 der Lizenz oder (nach Ihrer Option) jeder spï¿½teren
+    verï¿½ffentlichten Version, weiterverbreiten und/oder modifizieren.
 
-    Blockinger wird in der Hoffnung, dass es nützlich sein wird, aber
-    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
-    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
-    Siehe die GNU General Public License für weitere Details.
+    Blockinger wird in der Hoffnung, dass es nï¿½tzlich sein wird, aber
+    OHNE JEDE GEWï¿½HELEISTUNG, bereitgestellt; sogar ohne die implizite
+    Gewï¿½hrleistung der MARKTFï¿½HIGKEIT oder EIGNUNG Fï¿½R EINEN BESTIMMTEN ZWECK.
+    Siehe die GNU General Public License fï¿½r weitere Details.
 
     Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
@@ -37,29 +37,28 @@
 
 package org.blockinger.game.activities;
 
+import android.app.AlertDialog;
+import android.app.ListActivity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
+
 import org.blockinger.game.R;
 import org.blockinger.game.components.GameState;
 import org.blockinger.game.components.Sound;
 import org.blockinger.game.db.HighscoreOpenHelper;
 import org.blockinger.game.db.ScoreDataSource;
-
-import android.net.Uri;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.app.AlertDialog;
-import android.app.ListActivity;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
-import android.support.v4.widget.SimpleCursorAdapter;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.SeekBar;
-import android.widget.Button;
-import android.widget.SeekBar.OnSeekBarChangeListener;
-import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
 
@@ -80,9 +79,7 @@ public class MainActivity extends ListActivity {
 	private AlertDialog.Builder startLevelDialog;
 	private AlertDialog.Builder donateDialog;
 	private int startLevel;
-	private View dialogView;
-	private SeekBar leveldialogBar;
-	private TextView leveldialogtext;
+    private TextView leveldialogtext;
 	private Sound sound;
 	
 	@Override
@@ -104,7 +101,7 @@ public class MainActivity extends ListActivity {
 	    // Use the SimpleCursorAdapter to show the
 	    // elements in a ListView
 	    adapter = new SimpleCursorAdapter(
-	    	(Context)this,
+            this,
 	        R.layout.blockinger_list_item,
 	        mc,
 	        new String[] {HighscoreOpenHelper.COLUMN_SCORE, HighscoreOpenHelper.COLUMN_PLAYERNAME},
@@ -184,8 +181,25 @@ public class MainActivity extends ListActivity {
 				return super.onOptionsItemSelected(item);
 		}
 	}
+
+    private void persistNickname(){
+        TextView nickNameEditText = (TextView) findViewById(R.id.nicknameEditView);
+        if(null != nickNameEditText){
+            PreferenceManager.getDefaultSharedPreferences(this)
+                    .edit().putString(PLAYERNAME_KEY, nickNameEditText.getText().toString()).commit();
+        }
+    }
+
+    private void restoreNickname(){
+        TextView nickNameEditText = (TextView) findViewById(R.id.nicknameEditView);
+        if(null != nickNameEditText){
+            nickNameEditText.setText(PreferenceManager.getDefaultSharedPreferences(this)
+                    .getString(PLAYERNAME_KEY, null));
+        }
+    }
 	
 	public void start() {
+        persistNickname();
 		Intent intent = new Intent(this, GameActivity.class);
 		Bundle b = new Bundle();
 		b.putInt("mode", GameActivity.NEW_GAME); //Your id
@@ -211,26 +225,26 @@ public class MainActivity extends ListActivity {
 
 
     public void onClickStart(View view) {
-		dialogView = getLayoutInflater().inflate(R.layout.seek_bar_dialog, null);
-		leveldialogtext = ((TextView)dialogView.findViewById(R.id.leveldialogleveldisplay));
-		leveldialogBar = ((SeekBar)dialogView.findViewById(R.id.levelseekbar));
+        View dialogView = getLayoutInflater().inflate(R.layout.seek_bar_dialog, null);
+		leveldialogtext = ((TextView) dialogView.findViewById(R.id.leveldialogleveldisplay));
+        SeekBar leveldialogBar = ((SeekBar) dialogView.findViewById(R.id.levelseekbar));
 		leveldialogBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
-			@Override
-			public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-				leveldialogtext.setText("" + arg1);
-				startLevel = arg1;
-			}
+            @Override
+            public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+                leveldialogtext.setText("" + arg1);
+                startLevel = arg1;
+            }
 
-			@Override
-			public void onStartTrackingTouch(SeekBar arg0) {
-			}
+            @Override
+            public void onStartTrackingTouch(SeekBar arg0) {
+            }
 
-			@Override
-			public void onStopTrackingTouch(SeekBar arg0) {
-			}
-			
-		});
+            @Override
+            public void onStopTrackingTouch(SeekBar arg0) {
+            }
+
+        });
 		leveldialogBar.setProgress(startLevel);
 		leveldialogtext.setText("" + startLevel);
 		startLevelDialog.setView(dialogView);
@@ -238,6 +252,7 @@ public class MainActivity extends ListActivity {
     }
 
     public void onClickResume(View view) {
+        persistNickname();
 		Intent intent = new Intent(this, GameActivity.class);
 		Bundle b = new Bundle();
 		b.putInt("mode", GameActivity.RESUME_GAME); //Your id
@@ -272,6 +287,7 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onResume() {
     	super.onResume();
+        restoreNickname();
     	sound.setInactive(false);
     	sound.resume();
     	datasource.open();
@@ -279,10 +295,10 @@ public class MainActivity extends ListActivity {
 	    adapter.changeCursor(cursor);
 	    
 	    if(!GameState.isFinished()) {
-	    	((Button)findViewById(R.id.resumeButton)).setEnabled(true);
+	    	findViewById(R.id.resumeButton).setEnabled(true);
 	    	((Button)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.square_error));
 	    } else {
-	    	((Button)findViewById(R.id.resumeButton)).setEnabled(false);
+	    	findViewById(R.id.resumeButton).setEnabled(false);
 	    	((Button)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.holo_grey));
 	    }
     };
