@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2013 Simon Willeke
+    contact: hamstercount@hotmail.com
+ -->
+
+<!--
+    This file is part of Blockinger.
+
+    Blockinger is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Blockinger is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Blockinger.  If not, see <http://www.gnu.org/licenses/>.
+
+    Diese Datei ist Teil von Blockinger.
+
+    Blockinger ist Freie Software: Sie können es unter den Bedingungen
+    der GNU General Public License, wie von der Free Software Foundation,
+    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
+    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+    Blockinger wird in der Hoffnung, dass es nützlich sein wird, aber
+    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
+    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+    Siehe die GNU General Public License für weitere Details.
+
+    Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string name="app_name">Blockinger</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_backtomain">Voltar</string>
+    <string name="action_about">Sobre</string>
+    <string name="action_donate">Doar</string>
+    <string name="action_help">Ajuda</string>
+    <string name="startButtonString">Novo Jogo</string>
+    <string name="resumeButtonString">Continuar o jogo</string>
+    <string name="quitButtonString">Sair</string>
+    <string name="pausebutton">Pausar</string>
+    <string name="holdbuttonstring">Esperar</string>
+    <string name="playerNameInputFieldHint">Escolha seu nome de jogador</string>
+    <string name="highscoreListDescription">Recordes</string>
+
+    <string name="startLevelDialogTitle">Iniciando Nível</string>
+    <string name="startLevelDialogCancel">Cancelar</string>
+    <string name="startLevelDialogStart">Iniciar</string>
+
+    <string name="title_activity_game">Blockinger</string>
+    <string name="title_activity_help">Ajuda</string>
+    <string name="score_title">Pontuação</string>
+    <string name="level_title">Nível</string>
+    <string name="time_title">Tempo</string>
+    <string name="apm_title">APM</string>
+    <string name="fps_title">FPS</string>
+
+    <string name="defeatDialogTitle">Fim do Jogo</string>
+    <string name="defeatDialogReturn">Voltar</string>
+
+    <string name="tab">\u0009</string>
+
+    <string name="anonymous">Anônimo</string>
+    <string name="scoreLabel">Pontuação:</string>
+    <string name="timeLabel">Tempo:</string>
+    <string name="apmLabel">APM Total:</string>
+    <string name="hint">Dica: O Blockinger pode ser jogado em qualquer orientação de tela.</string>
+    <string name="highscore_title">Recordes</string>
+
+    <string name="musicAuthorNote">música por pornophonique</string>
+
+
+    <!-- Preference Strings -->
+    <string name="title_activity_settings">Configurações</string>
+    <string name="title_activity_about">Sobre</string>
+    <string name="title_activity_donate">Doar</string>
+
+    <string name="pref_phantom_summary">Mostra a localização em que a peça ativa cairá</string>
+    <string name="pref_phantom_title">Fantasma</string>
+
+    <string name="pref_fps_summary">O número de Quadros por Segundo (FPS) será exibido abaixo do "APM"</string>
+    <string name="pref_fps_title">Mostrar FPS</string>
+
+    <string name="pref_popup_summary">Por limpar linhas</string>
+    <string name="pref_popup_title">Pop-Up de Texto</string>
+
+    <string name="pref_rng_title">Geração de Peças</string>
+    <string name="pref_rngs_default">sevenbag</string>
+    <string name="pref_rng_summary">Escolha como a sequência de peças é gerada. 7-Bag-Randomization é altamente recomendada e também é usada em Tetris competitivo</string>
+    <string-array name ="randomizer_preference_array">
+        <item>7-Bag-Randomization (default)</item>
+        <item>Aleatório</item>
+    </string-array>
+    <string-array name ="randomizer_preference_values">
+        <item>sevenbag</item>
+        <item>aleatório</item>
+    </string-array>
+
+    <string name="softdropspeed_pref_title">Velocidade de Queda Suave</string>
+
+    <string name="movespeed_pref_title">Velocidade Horizontal</string>
+
+    <string name="soundvolume_pref_title">Volume de Efeitos</string>
+
+    <string name="musicvolume_pref_title">Volume da Música</string>
+
+    <string name="pref_vibration_button_title">Vibração dos botões</string>
+    <string name="pref_vibration_button_summary">Vibra rapidamente quando os botões do jogo são pressionados</string>
+
+    <string name="pref_vibration_events_title">Vibração de Eventos</string>
+    <string name="pref_vibration_events_summary">Vibra em eventos importantes do jogo</string>
+
+    <!-- Advanced Preference Strings -->
+    <string name="pref_button_sound_summary">Provides auditory feedback when pressing the game buttons</string>
+    <string name="pref_button_sound_title">Som de Botões</string>
+
+    <string name="pref_fpslimit_summary">Diminui significativamente o consumo de energia, mas pode deixar o jogo mais lento</string>
+    <string name="pref_fpslimit_title">Limitar FPS</string>
+
+    <string name="pref_fpslimittext_summary">O jogo tentará essa taxa de quadros o mais próximo possível</string>
+    <string name="pref_fpslimittext_title">Limite de FPS</string>
+    <string name="pref_fpslimittext_default">30</string>
+
+    <string name="pref_vibDurOffset_summary">Aumente esse tempo para compensar o atraso da vibração do seu celular. A duração da vibração dos botões deve ser ajustada para ser quase imperceptível.\nTempo em milissegundos</string>
+    <string name="pref_vibDurOffset_title">Duração da Vibração dos Botões</string>
+    <string name="pref_vibDurOffset_default">15</string>
+
+    <string name="pref_antialiasing_summary">Melhora a qualidade de exibição do texto. Desabilite isso para melhor desempenho</string>
+    <string name="pref_antialiasing_title">Anti-Aliasing do Texto</string>
+
+    <string name="pref_accelerationH_summary">Pequeno atraso após o movimento inicial. Útil para principiantes</string>
+    <string name="pref_accelerationH_title">Aceleração Horizontal</string>
+
+    <string name="pref_accelerationV_summary">Pequeno atraso após o movimento inicial. Útil para principiantes</string>
+    <string name="pref_accelerationV_title">Aceleração de Queda Suave</string>
+
+    <string name="pref_layoutswap_summary">Trocar a posição dos botões de queda suave e queda brusca</string>
+    <string name="pref_layoutswap_title">Trocar Botões de Queda</string>
+
+
+    <string name="pref_version_summary">1.8.2\nToque aqui para visualizar o repositório público desse projeto</string>
+    <string name="pref_version_title">Versão</string>
+    <string name="repository_url">https://github.com/vocollapse/Blockinger</string>
+
+    <string name="pref_license_summary">Blockinger é software livre: licenciado sob a GNU General Public License (GPLv3) como publicado pela Free Software Foundation.\nToque aqui para visualizar essa licença online</string>
+    <string name="pref_license_title">Informações de Licença</string>
+    <string name="license_url">http://www.gnu.org/licenses/gpl-3.0</string>
+
+    <string name="pref_license_music_summary">\"lemmings in love (karaoke)\" e \"sad robot (karaoke)\" por Pornophonique. Licenciado sob a licença Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Germany (CC BY-NC-SA 3.0 DE).\nToque aqui para navegar pela página do artista</string>
+    <string name="pref_license_music_title">Atribuição de Música</string>
+    <string name="music_url">http://www.pornophonique.de</string>
+
+    <string name="pref_author_summary">Simon Willeke\nToque aqui para entrar em contato com o autor para sugestões, comentários ou qualquer coisa relacionada à este projeto</string>
+    <string name="pref_author_title">Autor</string>
+    <string name="pref_author_url">rasyl@web.de</string>
+
+    <string name="pref_donate_title">Doe</string>
+    <string name="pref_donate_summary">Se você gostou desse Software e gostaria que o autor também se beneficie, você pode fazer uma Doação.</string>
+    <string name="donation_url">"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=H6VS9SNRHMJSS"</string>
+    <string name="donate_button">Ir para Paypal</string>
+
+
+    <string name="pref_category_sound">SOM</string>
+    <string name="pref_category_vibration">VIBRAÇÃO</string>
+    <string name="pref_category_other">OUTROS</string>
+    <string name="pref_category_advanced">Avançado</string>
+    <string name="pref_category_layout">LAYOUT</string>
+
+
+    <!-- Help Menu Strings -->
+    <string name="pref_help_scoring_title">Pontuação</string>
+    <string name="pref_help_scoring_summary">Como a pontuação funciona?</string>
+    <string name="pref_help_scoring_message">Pontos básicos pro linha limpa são:\n100 pontos por 1 linha,\n300 pontos por 2 linhas,\n500 pontos por 3 linhas,\n800 pointos por 4 linhas(chamado \"Tetris\").\n\nPontuar consecutivos Tetrises proporciona 400 pontos de bônus por Tetris.\nAdicionalmente o jogador recebe uma pontuação bônus por usar Quedas Suaves e Bruscas. Quedas Suaves dão 1 ponto por linha, enquanto Quedas Bruscas dão 2 pontos por linha.</string>
+
+    <string name="pref_help_levels_title">Níveis</string>
+    <string name="pref_help_levels_summary">O que os Níveis significam?</string>
+    <string name="pref_help_levels_message">Níveis são uma medida de dificuldade.\nA velocidade que as peças caem automaticamente aumenta 10% por nível.\nO nível atual aumenta
+    após limpar 10 linhas adicionais.</string>
+
+    <string name="pref_help_vibration_title">Vibração</string>
+    <string name="pref_help_vibration_summary">Como alcançar uma resposta háptica ótima com vibração.</string>
+    <string name="pref_help_vibration_message">Existem alguns problemas com a funcionalidade de vibração que podem ocorrer em alguns dispositivos.\nTambém a maioria dos tablets não têm suporte nenhum para vibração.\nSe o seu dispositivo suporta vibração, mas você não percebe a vibração dos botões, você pode aumentar a duração da vibração. Essa definição é chamada de \"Duração da Vibração do Botão\" e pode ser encontrada nas configurações avançadas.\nA duração das vibrações do botão deveriam ser ajustadas para ser pouco percebida.</string>
+
+    <string name="pref_help_apm_title">APM</string>
+    <string name="pref_help_apm_summary">O que significa APM?</string>
+    <string name="pref_help_apm_message">APM significa \"Ações Por Minuto\".\nEssa é uma medida da velocidade do dedo do jogador.</string>
+
+    <string name="pref_help_fps_title">QPS (FPS)</string>
+    <string name="pref_help_fps_summary">O que significa QPS (FPS)? Por que ele é útil?</string>
+    <string name="pref_help_fps_message">FPS Significa \"Frames Per Second ou Quadros Por Segundo\".\nEssa é uma medida da frequênca de atualização da tela. Baixo FPS pode ser percebido por reações lentas do jogo e imagens cortadas. Alto FPS por outro lado consume mais energia. Um bom balanço entre suavidade de exibição e consumo de energia pode ser alcançado entre 25 e 30 FPS.\nO FPS pode ser limitado nas configurações avançadas.</string>
+
+    <string name="pref_help_randomizer_title">Randomizer</string>
+    <string name="pref_help_randomizer_summary">Qual é a diferença entre os dois modos randomizer modes? (configurações avançadas)</string>
+    <string name="pref_help_randomizer_message">7-Bag-Randomization:\nGera sequências aleatoriamente permutadas de todas as 7 peças. Isso significa, que o jogador nunca poderá encontrar 3 peças idênticas em sequência.\n\nAleatório:\nA próxima peça será gerada independentemente de forma aleatória.</string>
+
+    <string name="pref_help_resumability_title">Continuação</string>
+    <string name="pref_help_resumability_summary">Sob quais circunstâncias um jogo interrompido pode ser continuado?</string>
+    <string name="pref_help_resumability_message">O jogo pode ser continuado a partir da tela inicial, se o botão \"Pausar\" ou o botão \"Voltar\" nativo do Android foi pressionado.\nO jogo também pode ser continuado se o jogador mudar para outro app ou para a tela inicial e não sair do Blockinger.\nO jogo não pode ser continuado se o botão \"Sair\" foi pressionado na tela inicial.</string>
+
+
+</resources>
